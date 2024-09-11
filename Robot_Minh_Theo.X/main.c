@@ -17,8 +17,10 @@ int main (void){
     InitTimer23();
     InitTimer1();
     InitPWM();
-    PWMSetSpeed(20,0);
-    PWMSetSpeed(20,1);
+    PWMSetSpeedConsigne(20,1);
+    PWMSetSpeedConsigne(20,0);
+    //PWMSetSpeed(100,0);
+    //PWMSetSpeed(20,1);
 //    LED_BLANCHE_1 = 1;
 //    LED_BLEUE_1 = 1;
 //    LED_ORANGE_1 = 1;
