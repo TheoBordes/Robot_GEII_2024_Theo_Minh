@@ -84,7 +84,7 @@ void PWMUpdateSpeed() {
     }
 }
 
-PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
+void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
      if (Abs(vitesseEnPourcents) > 100) {
         return;
     }
