@@ -11,13 +11,13 @@ unsigned char toggle = 0;
 void InitTimer1(void) {
     //Timer1 pour horodater les mesures (1ms)
     T1CONbits.TON = 0; // Disable Timer
-    T1CONbits.TCKPS = 0b11; //Prescaler
+    T1CONbits.TCKPS = 0b10; //Prescaler
     //11 = 1:256 prescale value
     //10 = 1:64 prescale value
     //01 = 1:8 prescale value
     //00 = 1:1 prescale value
     T1CONbits.TCS = 0; //clock source = internal clock
-    PR1 = 0x124f;
+    PR1 = 0x249f;
     IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
@@ -28,6 +28,7 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
     //LED_BLANCHE_1 = !LED_BLANCHE_1;
     ADC1StartConversionSequence();
+    PWMUpdateSpeed();
 }
 
 //Initialisation d?un timer 32 bits
@@ -60,5 +61,5 @@ void __attribute__((interrupt, no_auto_psv)) _T3Interrupt(void) {
 //        PWMSetSpeed(-20, MOTEUR_GAUCHE);
 //        toggle = 0;
 //    }
-    PWMUpdateSpeed();
+   
 }

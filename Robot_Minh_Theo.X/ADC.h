@@ -7,6 +7,7 @@
 void InitADC1(void);
 void ADC1StartConversionSequence(void);
 void ADCClearConversionFinishedFlag(void);
+unsigned char ADCIsConversionFinished(void);
 unsigned int * ADCGetResult(void);
 
 

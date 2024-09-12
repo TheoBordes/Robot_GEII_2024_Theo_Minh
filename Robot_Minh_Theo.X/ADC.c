@@ -46,7 +46,7 @@ void InitADC1(void) {
     ANSELBbits.ANSB8 = 1;  
     ANSELBbits.ANSB9 = 1;
     ANSELBbits.ANSB10 = 1;
-     ANSELBbits.ANSB11 = 1;
+    ANSELBbits.ANSB11 = 1;
     
     AD1CSSLbits.CSS0 = 1;  // Enable AN0 for scan
     AD1CSSLbits.CSS8 = 1; // Enable AN8 for scan
@@ -65,12 +65,11 @@ void InitADC1(void) {
 /* This is ADC interrupt routine */
 void __attribute__((interrupt, no_auto_psv)) _AD1Interrupt(void) {
     IFS0bits.AD1IF = 0;
-    ADCResult[0] = ADC1BUF0; // E G   capteur
-    ADCResult[1] = ADC1BUF1; // G capteur
-    ADCResult[2] = ADC1BUF2; // MID
-    ADCResult[3] = ADC1BUF3; // Read the AN5 conversion result
-    ADCResult[4] = ADC1BUF4; // Read the AN5 conversion result
-    ADCResult[5] = ADC1BUF5;
+    ADCResult[0] = ADC1BUF0; //Read the AN0  conversion result E G   capteur
+    ADCResult[1] = ADC1BUF1; //  Read the AN1 conversion result  G capteur
+    ADCResult[2] = ADC1BUF2; //  Read the AN2 conversion result  MID
+    ADCResult[3] = ADC1BUF3; // Read the AN3 conversion result
+    ADCResult[4] = ADC1BUF4; // Read the AN4 conversion result
     ADCConversionFinishedFlag = 1;
 }
 

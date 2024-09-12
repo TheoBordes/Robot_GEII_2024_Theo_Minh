@@ -6,7 +6,7 @@
 
 #define PWMPER 24.0
 
-float acceleration = 1.0;
+float acceleration = 0.09;
 float talon = 20;
 
 void InitPWM(void) {
