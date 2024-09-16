@@ -9,8 +9,14 @@
 #include "robot.h"
 #include "main.h"
 
+#define SPEED 10
+void OperatingSystemLoop2(){
+    if (timestamp > 1000){
+        PWMSetSpeedConsigne((robotState.distanceTelemetreGauche/109.0), MOTEUR_DROIT);
+        PWMSetSpeedConsigne((robotState.distanceTelemetreDroit/109.0), MOTEUR_GAUCHE);
+    }
 
-
+}
 
 unsigned char stateRobot;
 
@@ -26,8 +32,8 @@ void OperatingSystemLoop(void) {
                 stateRobot = STATE_AVANCE;
             break;
         case STATE_AVANCE:
-            PWMSetSpeedConsigne(16, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(16, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(10, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(10, MOTEUR_GAUCHE);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:
@@ -35,7 +41,7 @@ void OperatingSystemLoop(void) {
             break;
         case STATE_TOURNE_GAUCHE:
             PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(20, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_EN_COURS:
@@ -52,7 +58,7 @@ void OperatingSystemLoop(void) {
             break;
             
         case STATE_TOURNE_DROITE:
-            PWMSetSpeedConsigne(20, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(15, MOTEUR_DROIT);
             PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_EN_COURS;
             break;
