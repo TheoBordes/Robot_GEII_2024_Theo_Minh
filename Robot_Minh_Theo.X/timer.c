@@ -4,6 +4,7 @@
 #include "IO.h"
 #include "ADC.h"
 #include  "main.h"
+
 unsigned long timestamp;
 unsigned char toggle = 0;
 
@@ -22,7 +23,7 @@ void InitTimer1(void) {
     IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
-    SetFreqTimer1(2.5);
+    SetFreqTimer1(50);
 }
 //Interruption du timer 1
 
@@ -79,13 +80,15 @@ void InitTimer4(void) {
     IFS1bits.T4IF = 0; // Clear Timer Interrupt Flag
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
-    SetFreqTimer4(2.5);
+    SetFreqTimer4(1000);
 }
 //Interruption du timer 1
 
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
-    LED_BLEUE_2 = !LED_BLEUE_2;   
+    timestamp+=1;  
+    OperatingSystemLoop();
+   
 }
 
 
