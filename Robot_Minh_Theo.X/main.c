@@ -10,10 +10,15 @@
 #include "main.h"
 
 #define SPEED 10
+#define DIST_MAX 100.0
+#define DIST_MUR 20.0
+#define DIST_M 10
+float cap_M;
+float cap_G;
+float cap_D;
 void OperatingSystemLoop2(){
-    if (timestamp > 1000){
-        PWMSetSpeedConsigne((robotState.distanceTelemetreGauche/109.0), MOTEUR_DROIT);
-        PWMSetSpeedConsigne((robotState.distanceTelemetreDroit/109.0), MOTEUR_GAUCHE);
+    if (timestamp% 1000 == 0){
+        
     }
 
 }
@@ -182,17 +187,24 @@ int main(void) {
             ADCClearConversionFinishedFlag();
             unsigned int * result = ADCGetResult();
             float volts = ((float) result [0])* 3.3 / 4096;
+            if (volts<0.325)volts = 0.325; // permet de bloquer une détection à 100 centimètre
             robotState.distanceTelemetrePlusGauche = 34 / volts - 5;
             volts = ((float) result [1])* 3.3 / 4096;
+            if (volts<0.325)volts = 0.325;
             robotState.distanceTelemetreGauche = 34 / volts - 5;
             volts = ((float) result [2])* 3.3 / 4096;
-            robotState.distanceTelemetreCentre = 34 / volts - 5;
+            if (volts<0.325)volts = 0.325;
+            robotState.distanceTelemetreCentre = 34 / volts - 5; 
             volts = ((float) result [3])* 3.3 / 4096;
+            if (volts<0.325)volts = 0.325;
             robotState.distanceTelemetreDroit = 34 / volts - 5;
             volts = ((float) result [4])* 3.3 / 4096;
+            if (volts<0.325)volts = 0.325;
             robotState.distanceTelemetrePlusDroit = 34 / volts - 5;
         }
-
+           
+           
+           
         if (robotState.distanceTelemetreGauche > 20) {
             LED_BLEUE_1 = 1;
         } else {
