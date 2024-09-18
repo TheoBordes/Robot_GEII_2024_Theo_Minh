@@ -23,7 +23,7 @@ void InitTimer1(void) {
     IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
-    SetFreqTimer1(50);
+    SetFreqTimer1(250);
 }
 //Interruption du timer 1
 
@@ -80,7 +80,7 @@ void InitTimer4(void) {
     IFS1bits.T4IF = 0; // Clear Timer Interrupt Flag
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
-    SetFreqTimer4(1000);
+    SetFreqTimer4(2000);
 }
 //Interruption du timer 1
 
@@ -88,7 +88,9 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
     timestamp+=1;  
     //OperatingSystemLoop();
-    OperatingSystemLoop2();
+    OperatingSystemLoop();
+    ADC_value();
+    
    
 }
 

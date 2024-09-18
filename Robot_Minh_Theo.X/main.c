@@ -8,89 +8,112 @@
 #include "ADC.h"
 #include "robot.h"
 #include "main.h"
-
+#include <math.h>
 #define SPEED 10
-#define DIST_MAX 100.0
-#define DIST_MUR 20.0
-#define DIST_M 10
-float cap_M;
-float cap_G;
-float cap_D;
-void OperatingSystemLoop2(){
-    if (timestamp% 1000 == 0){
-        
-    }
-
-}
 
 unsigned char stateRobot;
+int CapVal = 0;
+
+int trigger(float capteur) {
+    if (capteur < DIST_MAX) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+unsigned char CallCap() {
+    unsigned char value = 0;
+    if (trigger(robotState.distanceTelemetrePlusGauche)) {
+        value |= 0b10000;
+   
+    }
+    if (trigger(robotState.distanceTelemetreGauche)) {
+        value |= 0b01000;
+  
+    }
+    if (trigger(robotState.distanceTelemetreCentre)) {
+        value |= 0b00100;
+  
+    }
+    if (trigger(robotState.distanceTelemetreDroit)) {
+        value |= 0b000010;
+ 
+    }
+    if (trigger(robotState.distanceTelemetrePlusDroit)) {
+        value |= 0b00001;
+       
+    }
+    return value;
+}
 
 void OperatingSystemLoop(void) {
     switch (stateRobot) {
         case STATE_ATTENTE:
             timestamp = 0;
-            PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
             stateRobot = STATE_ATTENTE_EN_COURS;
         case STATE_ATTENTE_EN_COURS:
             if (timestamp > 1000)
                 stateRobot = STATE_AVANCE;
             break;
         case STATE_AVANCE:
-            PWMSetSpeedConsigne(15, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(STATE_VIT_AVANCE, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(STATE_VIT_AVANCE, MOTEUR_GAUCHE);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_GAUCHE:
-            PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(TOURNER_VIT, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
-            
+
         case STATE_TOURNE_GAUCHE_PLUS:
-            PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(12, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(TOURNER_VIT, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_GAUCHE_PLUS_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_PLUS_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
-            
+
         case STATE_TOURNE_DROITE:
-            PWMSetSpeedConsigne(15, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(TOURNER_VIT, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_DROITE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
-            
-         case STATE_TOURNE_DROITE_PLUS:
-            PWMSetSpeedConsigne(12, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
+
+        case STATE_TOURNE_DROITE_PLUS:
+            PWMSetSpeedConsigne(TOURNER_VIT, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_PLUS_EN_COURS;
             break;
         case STATE_TOURNE_DROITE_PLUS_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
-            
+
         case STATE_TOURNE_SUR_PLACE_GAUCHE:
-            PWMSetSpeedConsigne(15, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(-15, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(TOURNER_SUR_PLACE_VIT, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(-TOURNER_SUR_PLACE_VIT, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE:
-            PWMSetSpeedConsigne(-15, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(-TOURNER_SUR_PLACE_VIT, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(TOURNER_SUR_PLACE_VIT, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS:
@@ -102,64 +125,134 @@ void OperatingSystemLoop(void) {
     }
 }
 
+void ADC_value() {
+    if (ADCIsConversionFinished()) {
+        ADCClearConversionFinishedFlag();
+        unsigned int * result = ADCGetResult();
+        float volts = ((float) result [0])* 3.3 / 4096;
+        if (volts < 0.325)volts = 0.325; // permet de bloquer une détection à 100 centimètre
+        robotState.distanceTelemetrePlusGauche = 34 / volts - 5;
+        volts = ((float) result [1])* 3.3 / 4096;
+        if (volts < 0.325)volts = 0.325;
+        robotState.distanceTelemetreGauche = 34 / volts - 5;
+        volts = ((float) result [2])* 3.3 / 4096;
+        if (volts < 0.325)volts = 0.325;
+        robotState.distanceTelemetreCentre = 34 / volts - 5;
+        volts = ((float) result [3])* 3.3 / 4096;
+        if (volts < 0.325)volts = 0.325;
+        robotState.distanceTelemetreDroit = 34 / volts - 5;
+        volts = ((float) result [4])* 3.3 / 4096;
+        if (volts < 0.325)volts = 0.325;
+        robotState.distanceTelemetrePlusDroit = 34 / volts - 5;
+    }
+}
+
 
 unsigned char nextStateRobot = 0;
 
 void SetNextRobotStateInAutomaticMode() {
-    unsigned char positionObstacle = PAS_D_OBSTACLE;
-    //éDtermination de la position des obstacles en fonction des ééètlmtres
-    if (robotState.distanceTelemetreDroit < 30 &&
-            robotState.distanceTelemetreCentre > 20 &&
-            robotState.distanceTelemetreGauche > 30) //Obstacle àdroite
-        positionObstacle = OBSTACLE_A_DROITE;
-    
-    
-    if (robotState.distanceTelemetreDroit < 30 &&
-            robotState.distanceTelemetreCentre > 20 &&
-            robotState.distanceTelemetreGauche > 30) //Obstacle àdroite
-        positionObstacle = OBSTACLE_A_DROITE;
-    
-    
-    else if (robotState.distanceTelemetreDroit > 30 &&
-            robotState.distanceTelemetreCentre > 20 &&
-            robotState.distanceTelemetreGauche < 30 
-            ) //Obstacle àgauche
-        positionObstacle = OBSTACLE_A_GAUCHE;
-    
-    
-    else if (robotState.distanceTelemetreCentre < 30) //Obstacle en face
-        positionObstacle = OBSTACLE_EN_FACE;
-    
-    else if (robotState.distanceTelemetreDroit > 30 &&
-            robotState.distanceTelemetreCentre > 20 &&
-            robotState.distanceTelemetreGauche > 30
-            ) //pas d?obstacle
-        positionObstacle = PAS_D_OBSTACLE;
-    
-    else if (robotState.distanceTelemetreDroit < 30 &&
-            robotState.distanceTelemetrePlusDroit < 30)
-        positionObstacle = OBSTACLE_A_DROITE_PLUS;
-    
-    else if (robotState.distanceTelemetreGauche < 30 &&
-            robotState.distanceTelemetrePlusGauche < 30)
-        positionObstacle = OBSTACLE_A_GAUCHE_PLUS;
- 
-    
-    
-    //éDtermination de lé?tat àvenir du robot
-    if (positionObstacle == PAS_D_OBSTACLE)
+     CapVal = CallCap();
+    switch (CapVal) {
+    case 0b00000:
+        nextStateRobot  = STATE_AVANCE;
+        break;
+    case 0b00001:
+        nextStateRobot  = STATE_TOURNE_GAUCHE;
+        break;
+    case 0b00010:
+        nextStateRobot  = STATE_TOURNE_GAUCHE;
+        break;
+    case 0b00011:
+        nextStateRobot  = STATE_TOURNE_GAUCHE;
+        break;
+    case 0b00100:
+        nextStateRobot  = STATE_TOURNE_SUR_PLACE_GAUCHE;
+        break;
+    case 0b00101:
+        nextStateRobot  = STATE_TOURNE_SUR_PLACE_GAUCHE ;
+        break;
+    case 0b00110:
+        nextStateRobot  = STATE_TOURNE_GAUCHE;
+        break;
+    case 0b00111:
+        nextStateRobot  = STATE_TOURNE_GAUCHE; 
+        break;
+    case 0b01000:
+        nextStateRobot  = STATE_TOURNE_DROITE;
+        break;
+    case 0b01001:
+        nextStateRobot  = STATE_TOURNE_DROITE; //                      attention 
+        break;
+    case 0b01010:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b01011:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b01100:
+        nextStateRobot  = STATE_TOURNE_DROITE;
+        break;
+    case 0b01101:
+      nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b01110:
+        nextStateRobot  = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b01111:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE; // ATTENTION
+        break;  
+    case 0b10000:
+        nextStateRobot  = STATE_TOURNE_DROITE;
+        break;
+    case 0b10001:
         nextStateRobot = STATE_AVANCE;
-    else if (positionObstacle == OBSTACLE_A_DROITE)
+        break;
+    case 0b10010:
         nextStateRobot = STATE_TOURNE_GAUCHE;
-    else if (positionObstacle == OBSTACLE_A_GAUCHE)
+        break;
+    case 0b10011:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b10100:
+        nextStateRobot  = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b10101:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b10110:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b10111:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b11000:
+        nextStateRobot  = STATE_TOURNE_DROITE;
+        break;
+    case 0b11001:
+        nextStateRobot = STATE_TOURNE_DROITE; // ATTENTION
+        break;
+    case 0b11010:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;  
+    case 0b11011:
         nextStateRobot = STATE_TOURNE_DROITE;
-    else if (positionObstacle == OBSTACLE_EN_FACE)
-        nextStateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE;
-    else if (positionObstacle == OBSTACLE_A_DROITE_PLUS )
-        nextStateRobot = STATE_TOURNE_DROITE_PLUS;
-    else if (positionObstacle == OBSTACLE_A_GAUCHE_PLUS )
-        nextStateRobot = STATE_TOURNE_GAUCHE_PLUS;
-    //Si l?on n?est pas dans la transition de lé?tape en cours
+        break;
+    case 0b11100:
+        nextStateRobot  = STATE_TOURNE_DROITE;
+        break;
+    case 0b11101:
+        nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b11110:
+        nextStateRobot  = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    case 0b11111:
+        nextStateRobot  = STATE_TOURNE_SUR_PLACE_DROITE;
+        break;
+    default:
+        break;
+}
+
     if (nextStateRobot != stateRobot - 1)
         stateRobot = nextStateRobot;
 }
@@ -183,28 +276,8 @@ int main(void) {
 
 
     while (1) {
-        if (ADCIsConversionFinished()) {
-            ADCClearConversionFinishedFlag();
-            unsigned int * result = ADCGetResult();
-            float volts = ((float) result [0])* 3.3 / 4096;
-            if (volts<0.325)volts = 0.325; // permet de bloquer une détection à 100 centimètre
-            robotState.distanceTelemetrePlusGauche = 34 / volts - 5;
-            volts = ((float) result [1])* 3.3 / 4096;
-            if (volts<0.325)volts = 0.325;
-            robotState.distanceTelemetreGauche = 34 / volts - 5;
-            volts = ((float) result [2])* 3.3 / 4096;
-            if (volts<0.325)volts = 0.325;
-            robotState.distanceTelemetreCentre = 34 / volts - 5; 
-            volts = ((float) result [3])* 3.3 / 4096;
-            if (volts<0.325)volts = 0.325;
-            robotState.distanceTelemetreDroit = 34 / volts - 5;
-            volts = ((float) result [4])* 3.3 / 4096;
-            if (volts<0.325)volts = 0.325;
-            robotState.distanceTelemetrePlusDroit = 34 / volts - 5;
-        }
-           
-           
-           
+
+
         if (robotState.distanceTelemetreGauche > 20) {
             LED_BLEUE_1 = 1;
         } else {
@@ -237,7 +310,7 @@ int main(void) {
         } else {
             LED_ROUGE_1 = 0;
         }
-      
+
 
 
 

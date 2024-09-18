@@ -11,7 +11,7 @@
 #define STATE_TOURNE_GAUCHE_EN_COURS 5
 #define STATE_TOURNE_DROITE_PLUS 6
 #define STATE_TOURNE_DROITE_PLUS_EN_COURS 7
-#define STATE_TOURNE_GAUCHE_PLUS  8
+#define STATE_TOURNE_GAUCHE_PLUS  8 
 #define STATE_TOURNE_GAUCHE_PLUS_EN_COURS 9
 #define STATE_TOURNE_DROITE 10
 #define STATE_TOURNE_DROITE_EN_COURS 11
@@ -29,8 +29,18 @@
 #define OBSTACLE_EN_FACE 3
 #define OBSTACLE_A_DROITE_PLUS 4
 #define OBSTACLE_A_GAUCHE_PLUS 5
+#define DIST_MAX 30.0
+// CONFIG 1 : ARRET 0 , STATE_VIT_AVANCE 25 STATE_VIT_RETOUR 15, TOURNER_SUR_PLACE_VIT 15, TOURNER_VIT 22,DIST_MAX 30.0
+#define ARRET 0
+#define STATE_VIT_AVANCE 27
+#define  STATE_VIT_RETOUR 15
+#define TOURNER_SUR_PLACE_VIT 16
+#define TOURNER_VIT 20
 
-void OperatingSystemLoop2(void);
+
+int trigger(float capteur);
+unsigned char CallCap();
+void ADC_value();
 void OperatingSystemLoop(void);
 void SetNextRobotStateInAutomaticMode();
 #endif /* ROBOT_H */
