@@ -29,15 +29,15 @@
 #define OBSTACLE_EN_FACE 3
 #define OBSTACLE_A_DROITE_PLUS 4
 #define OBSTACLE_A_GAUCHE_PLUS 5
-#define DIST_MAX 30.0
+#define DIST_MAX 25.0
 // CONFIG 1 : ARRET 0 , STATE_VIT_AVANCE 25 STATE_VIT_RETOUR 15, TOURNER_SUR_PLACE_VIT 15, TOURNER_VIT 22,DIST_MAX 30.0
 #define ARRET 0
 #define STATE_VIT_AVANCE 25
-#define TOURNER_SUR_PLACE_VIT 15
-#define TOURNER_VIT 17
+#define TOURNER_SUR_PLACE_VIT 30
+#define TOURNER_VIT 22
 
 
-
+void determine_speeds();
 int trigger(float capteur);
 unsigned char CallCap();
 void ADC_value();

@@ -87,8 +87,9 @@ void InitTimer4(void) {
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
     timestamp+=1;  
-    //OperatingSystemLoop();
+    
     OperatingSystemLoop();
+   
     ADC_value();
     
    

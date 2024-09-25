@@ -217,6 +217,11 @@
         <property key="programmerToGoFilePath"
                   value="C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/debug/default/Robot_Minh_Theo_ptg"/>
       </ICD4Tool>
+      <Tool>
+        <property key="memories.programmemory.ranges" value="0-7fffff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/debug/default/Robot_Minh_Theo_ptg"/>
+      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>
