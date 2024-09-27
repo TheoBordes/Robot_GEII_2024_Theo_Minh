@@ -16,6 +16,7 @@
 #define NUM_TRAINING_SETS 4
 
 int speeds[2];
+int vitL,vitR;
 unsigned char stateRobot;
 int CapVal = 0;
 
@@ -61,12 +62,12 @@ void determine_speeds() {
     float weighted_avg_left = (2.0 * avg_left + center) / 3.0;
     float weighted_avg_right = (2.0 * avg_right + center) / 3.0;
 
-    float max_speed = 30.0;
+    float max_speed = 23.0;
     float min_speed = 12.0;
 
     speeds[1] = min_speed + ((weighted_avg_left / 100.0) * (max_speed - min_speed));
     speeds[0] = min_speed + ((weighted_avg_right / 100.0) * (max_speed - min_speed));
-    if (15 + speeds[0] > 30.0) {
+    if (speeds[0] > 23.0) {
         LED_BLANCHE_2 = 1;
 
     } else {
@@ -128,8 +129,16 @@ void OperatingSystemLoop(void) {
                 stateRobot = STATE_AVANCE;
             break;
         case STATE_AVANCE:
-            PWMSetSpeedConsigne(speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsigne(speeds[0], MOTEUR_GAUCHE);
+            if (robotState.distanceTelemetreCentre > 80){
+                vitR= 25;
+                vitL = 25;
+            }
+            else {
+                vitR= 15;
+                vitL = 15;
+            }
+            PWMSetSpeedConsigne(speeds[0], MOTEUR_DROIT);
+            PWMSetSpeedConsigne(speeds[1], MOTEUR_GAUCHE);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:
@@ -146,7 +155,7 @@ void OperatingSystemLoop(void) {
 
         case STATE_TOURNE_GAUCHE_PLUS:
             PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(2 + speeds[0], MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(speeds[0], MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_GAUCHE_PLUS_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_PLUS_EN_COURS:
@@ -163,7 +172,7 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_DROITE_PLUS:
-            PWMSetSpeedConsigne(2 + speeds[1], MOTEUR_DROIT);
+            PWMSetSpeedConsigne( speeds[1], MOTEUR_DROIT);
             PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_PLUS_EN_COURS;
             break;
