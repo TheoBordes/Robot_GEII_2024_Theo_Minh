@@ -1,0 +1,35 @@
+﻿<Window x:Class="RobotInterface_Ly_Bordes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RobotInterface_Ly_Bordes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0">
+        <Grid.ColumnDefinitions>
+            <!-- with width-->
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!-- with width-->
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="1*" />
+            
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="Reception" Grid.Column="1" Grid.Row="0" Header="Reception" Background="#FF79ECC4" BorderBrush="Black">
+            <TextBox x:Name="RichTextBox" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" IsReadOnly="True" Text="" TextChanged="TextBox_TextChanged" />
+        </GroupBox>
+        <GroupBox x:Name="Emission" Grid.Column="0" Grid.Row="0" Header="Emission" Background="#FFA41C1C" BorderBrush="Black">
+            <TextBox x:Name="TextBoxEmission" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Stretch"  AcceptsReturn="True"  Margin="0" TextWrapping="Wrap" Text="" TextChanged="TextBoxEmission_TextChanged" KeyUp="TextBoxEmission_KeyUp" />
+        </GroupBox>
+
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
+            <Button x:Name ="buttonEnvoyer" Content="ENVOIE" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonEnvoyer_Click"/>
+        </StackPanel>
+        <Ellipse Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="525,161,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+
+
+    </Grid>
+</Window>

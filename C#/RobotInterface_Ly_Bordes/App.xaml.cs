@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RobotInterface_Borde_LY
+namespace RobotInterface_Ly_Bordes
 {
     /// <summary>
     /// Interaction logic for App.xaml
