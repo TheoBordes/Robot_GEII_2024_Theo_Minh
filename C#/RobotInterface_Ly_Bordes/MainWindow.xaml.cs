@@ -19,7 +19,10 @@ namespace RobotInterface_Ly_Bordes
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>  
+    /// </summary> 
+    /// 
+
+
     public partial class MainWindow : Window
     {
         ExtendedSerialPort serialPort1;
