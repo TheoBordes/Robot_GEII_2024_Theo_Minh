@@ -42,9 +42,9 @@ void InitIO()
     /****************************************************************************************************/
     UnlockIO(); // On unlock les registres d'entrées/sorties, ainsi que les registres des PPS
     
-    //Assignation des remappable pins
-        
-    LockIO(); // On lock les registres d'entrées/sorties, ainsi que les registres des PPS
+    _U1RXR = _RD14;
+    _RP79R = 0b00001;  
+    LockIO(); 
 }
 
 

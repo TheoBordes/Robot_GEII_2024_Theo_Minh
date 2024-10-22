@@ -26,11 +26,12 @@ namespace RobotInterface_Ly_Bordes
     public partial class MainWindow : Window
     {
         ExtendedSerialPort serialPort1;
-        String ReceivedText = "";
-        
+        Robot robot = new Robot();
+
         public MainWindow()
         {
             InitializeComponent();
+            
             serialPort1 = new ExtendedSerialPort("COM9", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
@@ -41,10 +42,14 @@ namespace RobotInterface_Ly_Bordes
             timerAffichage.Start();
         }
 
-        private void TimerAffichage_Tick(object? sender, EventArgs e)
+        private void TimerAffichage_Tick(object sender, EventArgs e)
         {
-            RichTextBox.Text = ReceivedText;
-            
+            if (robot.byteListReceived.Count != 0)
+            {
+                RichTextBox.Text += "0x" + robot.byteListReceived.Dequeue().ToString("X2") + " ";
+
+            }
+
         }
        
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -53,23 +58,29 @@ namespace RobotInterface_Ly_Bordes
         }
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
-             ReceivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
+            for (int i = 0;i <e.Data.Length;i++) {
+               robot.byteListReceived.Enqueue(e.Data[i]);
+            }
+            robot.receivedText += Encoding.ASCII.GetString(e.Data, 0, e.Data.Length);
+
         }
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
-
-           if (buttonEnvoyer.Background == Brushes.Beige || buttonEnvoyer.Background != Brushes.RoyalBlue)
-            buttonEnvoyer.Background = Brushes.RoyalBlue;
-           else if (buttonEnvoyer.Background == Brushes.RoyalBlue)
-            {
-                buttonEnvoyer.Background = Brushes.Beige;
-            }
-            
+            byte[] byteList = new byte[] { 115, 97, 108, 117, 116, 32, 108, 121, 32, 109, 105, 110, 104 };
+          
+            ///for (int i = 0; i < 20; i++)
+            ///{
+            /// byteList[i] = (byte)(2 * i);
+            ///}
+            serialPort1.Write(byteList, 0, byteList.Length);
         }
         private void sendMessage()
         {
-            serialPort1.WriteLine(TextBoxEmission.Text);
-
+            byte[] byteArray = Encoding.UTF8.GetBytes(TextBoxEmission.Text);
+            for (int i = 0; i < TextBoxEmission.Text.Length; i++)
+            {
+                robot.byteListReceived.Enqueue(byteArray[i]);
+            }
         }
         private void TextBoxEmission_TextChanged(object sender, TextChangedEventArgs e)
         {

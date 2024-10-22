@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <xc.h>
+#include "UART.h"
 #include "ChipConfig.h"
 #include "IO.h"
 #include "timer.h"
@@ -20,7 +21,7 @@ int vitL,vitR;
 unsigned char stateRobot;
 int CapVal = 0;
 
-#include <stdio.h>
+
 
 //void determine_speeds2() {
 //    int left_1 = robotState.distanceTelemetreGauche;
@@ -427,6 +428,7 @@ int main(void) {
     InitTimer4();
     InitPWM();
     InitADC1();
+    InitUART();
     /*********************************************************************************************** Boucle Principale*/
     /***********************************************************************************************/
     //int vitesse = 20;
