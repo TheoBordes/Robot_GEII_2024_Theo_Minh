@@ -42,7 +42,7 @@ void InitIO()
     /****************************************************************************************************/
     UnlockIO(); // On unlock les registres d'entrées/sorties, ainsi que les registres des PPS
     
-    _U1RXR = _RD14;
+    _U1RXR = 78;
     _RP79R = 0b00001;  
     LockIO(); 
 }

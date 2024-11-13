@@ -44,9 +44,13 @@ namespace RobotInterface_Ly_Bordes
 
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
-            if (robot.byteListReceived.Count != 0)
+            while (robot.byteListReceived.Count != 0)
             {
                 RichTextBox.Text += "0x" + robot.byteListReceived.Dequeue().ToString("X2") + " ";
+                if (robot.byteListReceived.Count == 0)
+                {
+                    RichTextBox.Text += "\n";
+                }
 
             }
 
@@ -76,11 +80,7 @@ namespace RobotInterface_Ly_Bordes
         }
         private void sendMessage()
         {
-            byte[] byteArray = Encoding.UTF8.GetBytes(TextBoxEmission.Text);
-            for (int i = 0; i < TextBoxEmission.Text.Length; i++)
-            {
-                robot.byteListReceived.Enqueue(byteArray[i]);
-            }
+            serialPort1.WriteLine(TextBoxEmission.Text);
         }
         private void TextBoxEmission_TextChanged(object sender, TextChangedEventArgs e)
         {

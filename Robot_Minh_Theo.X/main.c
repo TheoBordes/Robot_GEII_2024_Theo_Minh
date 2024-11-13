@@ -17,7 +17,7 @@
 #define NUM_TRAINING_SETS 4
 
 int speeds[2];
-int vitL,vitR;
+int vitL, vitR;
 unsigned char stateRobot;
 int CapVal = 0;
 
@@ -130,12 +130,11 @@ void OperatingSystemLoop(void) {
                 stateRobot = STATE_AVANCE;
             break;
         case STATE_AVANCE:
-            if (robotState.distanceTelemetreCentre > 80){
-                vitR= 25;
+            if (robotState.distanceTelemetreCentre > 80) {
+                vitR = 25;
                 vitL = 25;
-            }
-            else {
-                vitR= 15;
+            } else {
+                vitR = 15;
                 vitL = 15;
             }
             PWMSetSpeedConsigne(speeds[0], MOTEUR_DROIT);
@@ -173,7 +172,7 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_DROITE_PLUS:
-            PWMSetSpeedConsigne( speeds[1], MOTEUR_DROIT);
+            PWMSetSpeedConsigne(speeds[1], MOTEUR_DROIT);
             PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_PLUS_EN_COURS;
             break;
@@ -370,13 +369,13 @@ void SetNextRobotStateInAutomaticMode() {
             nextStateRobot = STATE_TOURNE_GAUCHE;
             break;
         case 0b10011:
-              nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+            nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
             break;
         case 0b10100:
-                 nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+            nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
             break;
         case 0b10101:
-             nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+            nextStateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
             break;
         case 0b10110:
             nextStateRobot = STATE_TOURNE_DROITE;
@@ -433,54 +432,55 @@ int main(void) {
     /***********************************************************************************************/
     //int vitesse = 20;
 
-    if (BOUTON1 == 1) {
+    //  if (BOUTON1 == 1) {
 
 
 
-        while (1) {
-            if (timestamp > 60000) {
-                PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
-                PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
-                if (BOUTON1 == 1) {
-                    timestamp = 0;
-                }
-            }
+    while (1) {
+       
+        //            if (timestamp > 60000) {
+        //                PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
+        //                PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
+        //                if (BOUTON1 == 1) {
+        //                    timestamp = 0;
+        //                }
+        //            }
+        //
+        //
+        //            if (robotState.distanceTelemetreGauche > 20) {
+        //                LED_BLEUE_1 = 1;
+        //            } else {
+        //                LED_BLEUE_1 = 0;
+        //
+        //            }
+        //            if (robotState.distanceTelemetrePlusGauche > 20) {
+        //                LED_BLANCHE_1 = 1;
+        //
+        //            } else {
+        //                LED_BLANCHE_1 = 0;
+        //
+        //            }
+        //            if (robotState.distanceTelemetreCentre > 20) {
+        //                LED_ORANGE_1 = 1;
+        //
+        //            } else {
+        //                LED_ORANGE_1 = 0;
+        //
+        //            }
+        //            if (robotState.distanceTelemetrePlusDroit > 20) {
+        //                LED_VERTE_1 = 1;
+        //
+        //            } else {
+        //                LED_VERTE_1 = 0;
+        //
+        //            }
+        //            if (robotState.distanceTelemetreDroit > 20) {
+        //                LED_ROUGE_1 = 1;
+        //            } else {
+        //                LED_ROUGE_1 = 0;
+        //            }
 
 
-            if (robotState.distanceTelemetreGauche > 20) {
-                LED_BLEUE_1 = 1;
-            } else {
-                LED_BLEUE_1 = 0;
-
-            }
-            if (robotState.distanceTelemetrePlusGauche > 20) {
-                LED_BLANCHE_1 = 1;
-
-            } else {
-                LED_BLANCHE_1 = 0;
-
-            }
-            if (robotState.distanceTelemetreCentre > 20) {
-                LED_ORANGE_1 = 1;
-
-            } else {
-                LED_ORANGE_1 = 0;
-
-            }
-            if (robotState.distanceTelemetrePlusDroit > 20) {
-                LED_VERTE_1 = 1;
-
-            } else {
-                LED_VERTE_1 = 0;
-
-            }
-            if (robotState.distanceTelemetreDroit > 20) {
-                LED_ROUGE_1 = 1;
-            } else {
-                LED_ROUGE_1 = 0;
-            }
-
-
-        }
     }
+    //  }
 }
