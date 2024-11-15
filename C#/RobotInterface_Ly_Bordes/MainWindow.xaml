@@ -28,7 +28,6 @@
         <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
             <Button x:Name ="buttonEnvoyer" Content="ENVOIE" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonEnvoyer_Click"/>
         </StackPanel>
-        <Ellipse Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="525,161,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
 
 
     </Grid>

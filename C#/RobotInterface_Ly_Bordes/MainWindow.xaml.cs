@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using ExtendedSerialPort_NS;
 using System.IO.Ports;
 using System.Windows.Threading;
+using System.Windows.Automation.Provider;
+
 namespace RobotInterface_Ly_Bordes
 {
     /// <summary>
@@ -56,7 +58,7 @@ namespace RobotInterface_Ly_Bordes
 
         }
        
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextBox_TextChanged(object sex, TextChangedEventArgs e)
         {
             
         }
@@ -70,17 +72,40 @@ namespace RobotInterface_Ly_Bordes
         }
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
-            byte[] byteList = new byte[] { 115, 97, 108, 117, 116, 32, 108, 121, 32, 109, 105, 110, 104 };
-          
-            ///for (int i = 0; i < 20; i++)
-            ///{
-            /// byteList[i] = (byte)(2 * i);
-            ///}
-            serialPort1.Write(byteList, 0, byteList.Length);
+            byte[] byteList = new byte[] {20,30,40};
+            UartEncodeAndSendMessage(10, 3,byteList);
+
         }
         private void sendMessage()
         {
-            serialPort1.WriteLine(TextBoxEmission.Text);
+            serialPort1.Write(TextBoxEmission.Text);
+        }
+        public byte CalculateChecksum(Int16 msgFunction,int msgPayloadLength, byte[] msgPayload)
+        {
+           
+            // Todo faire checksum pour sof command and playload SEX
+            byte checksum = 0xFE;
+            checksum = (byte) ( msgFunction ^ checksum) ;
+
+            for (int j = 0; j < msgPayloadLength; j++)
+            {
+                checksum = (byte)(checksum ^ msgPayload[j]);
+                
+            }
+            return checksum;
+        }
+        void UartEncodeAndSendMessage(Int16 msgFunction,int msgPayloadLength, byte[] msgPayload)
+        {
+            byte checksum = CalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
+            serialPort1.Write(string.Join("", 0XFE));
+            serialPort1.Write(string.Join("", msgFunction));
+            for (int j = 0; j < msgPayloadLength; j++)
+            {
+                serialPort1.Write(string.Join("", msgPayload[j]));
+            }
+            serialPort1.Write(string.Join("", checksum));
+
+
         }
         private void TextBoxEmission_TextChanged(object sender, TextChangedEventArgs e)
         {

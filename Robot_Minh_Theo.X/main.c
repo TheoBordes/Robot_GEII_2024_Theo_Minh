@@ -426,7 +426,7 @@ int main(void) {
     InitTimer23();
     InitTimer1();
     InitTimer4();
-    InitPWM();
+    //InitPWM();
     InitADC1();
     InitUART();
     /*********************************************************************************************** Boucle Principale*/
@@ -435,10 +435,16 @@ int main(void) {
 
     //  if (BOUTON1 == 1) {
 
-
-
     while (1) {
-       
+        int i;
+        for (i = 0; i < CB_RX1_GetDataSize(); i++) {
+            unsigned char c = CB_RX1_Get();
+            SendMessage(&c, 1);
+        }
+        __delay32(1000);
+
+
+
         //            if (timestamp > 60000) {
         //                PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
         //                PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);

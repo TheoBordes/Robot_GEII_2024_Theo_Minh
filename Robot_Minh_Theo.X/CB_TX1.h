@@ -15,7 +15,7 @@ void SendOne();
 unsigned char CB_TX1_Get(void);
 void CB_TX1_Add(unsigned char value);
 void SendMessage(unsigned char* message, int length);
-
+byte CalculateChecksum(int msgFunction,int msgPayloadLength, byte[] msgPayload);
 
 
 #endif	/* CB_TX1_H */
