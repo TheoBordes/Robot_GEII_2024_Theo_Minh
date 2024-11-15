@@ -8,6 +8,7 @@
 #include "PWM.h" 
 #include "ADC.h"
 #include "robot.h"
+#include "CB_TX1.h"
 #include "main.h"
 #include <math.h>
 #define SPEED 10
