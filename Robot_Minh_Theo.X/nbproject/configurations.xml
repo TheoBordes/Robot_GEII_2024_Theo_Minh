@@ -49,7 +49,7 @@
         <targetDevice>dsPIC33EP512MU814</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>ICD4Tool</platformTool>
+        <platformTool></platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>2.00</languageToolchainVersion>
         <platform>3</platform>
@@ -214,16 +214,6 @@
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
       </C30Global>
-      <ICD4Tool>
-        <property key="memories.programmemory.ranges" value="0-7fffff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/debug/default/Robot_Minh_Theo_ptg"/>
-      </ICD4Tool>
-      <Tool>
-        <property key="memories.programmemory.ranges" value="0-7fffff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/debug/default/Robot_Minh_Theo_ptg"/>
-      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>
