@@ -89,10 +89,7 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     timestamp+=1;  
     
     OperatingSystemLoop();
-   
     ADC_value();
-    
-   
 }
 
 
