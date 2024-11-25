@@ -72,13 +72,41 @@ namespace RobotInterface_Ly_Bordes
             robot.receivedText += Encoding.ASCII.GetString(e.Data, 0, e.Data.Length);
 
         }
+        IDfonction func = IDfonction.TextTransmission;
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
-            //byte[] byteList = new byte[] {20,30,40,50};
+            byte[] byteList = new byte[] { 0x42, 0x6f, 0x6e, 0x6a, 0x6f, 0x75, 0x72, 0x0a, 0x0d };
             //UartEncodeAndSendMessage(20, 4,byteList);
-            byte start = 0xFE;
-            DecodeMessage(start);
+            //byte[] array = Encoding.ASCII.GetBytes(TextBoxEmission.Text); 
+            //byte CalculatedChecksum = CalculateChecksum(0x0080, byteList.Length, byteList);
+            while (func != IDfonction.functionTestValue)
+            {
+                switch (func)
+                {
 
+                    case IDfonction.TextTransmission:
+                        UartEncodeAndSendMessage((byte)func, 9, byteList);
+                        func = IDfonction.SetLed;
+                        break;
+                    case IDfonction.SetLed:
+                        UartEncodeAndSendMessage((byte)func, 9, byteList);
+                        func = IDfonction.IRdistance;
+                        break;
+                    case IDfonction.IRdistance:
+                        UartEncodeAndSendMessage((byte)func, 9, byteList);
+                        func = IDfonction.SpeedRule;
+                        break;
+                    case IDfonction.SpeedRule:
+                        UartEncodeAndSendMessage((byte)func, 9, byteList);
+                        func = IDfonction.functionTestValue;
+                        break;
+                    default:
+                        func = IDfonction.SetLed;
+                        break;
+
+                }
+            }
+            func = IDfonction.TextTransmission;
         }
         private void sendMessage()
         {
@@ -113,6 +141,11 @@ namespace RobotInterface_Ly_Bordes
             serialPort1.Write(msgPayload, 0, msgPayload.Length);
             serialPort1.Write(checksum, 0, checksum.Length);
  
+        }
+        void ProcessDecodedMessage(int msgFunction,int msgPayloadLength, byte[] msgPayload)
+        {
+            RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength);
+
         }
         private void TextBoxEmission_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -189,21 +222,34 @@ namespace RobotInterface_Ly_Bordes
                     break;
                 case StateReception.CheckSum:
                     byte calculatedChecksum =  CalculateChecksum((byte)msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+                    //RichTextBox.Text += calculatedChecksum;
                     byte receivedChecksum = c;
                         if (calculatedChecksum == receivedChecksum){
-                            RichTextBox.Text += "ça marche";
+                            //RichTextBox.Text += "ça marche";
                             rcvState = StateReception.Waiting;
-                            }
+                            ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+                            msgDecodedFunction = 0;
+                            msgDecodedPayloadLength = 0;
+                            msgDecodedPayloadIndex = 0;
+                    }
                         else{ 
                             RichTextBox.Text += "les problèmes";
-                            }
+                            rcvState = StateReception.Waiting;
+                    }
                     break;
                 default:
                     rcvState = StateReception.Waiting;
                     break;
             }
         }
-
+        public enum IDfonction
+        {
+            TextTransmission = 0x0080,
+            SetLed = 0x0020,
+            IRdistance = 0x0030,
+            SpeedRule = 0x0040,
+            functionTestValue,
+        }
 
 
     }
