@@ -22,14 +22,20 @@ void CB_TX1_Add(unsigned char value) {
 
     if (CB_TX1_GetRemainingSize() > 0) {
         cbTx1Buffer[cbTx1Head] = value;
-        cbTx1Head = (cbTx1Head + 1) % CBTX1_BUFFER_SIZE;
+        if (cbTx1Head >= 128) {
+            cbTx1Head = 0;
+        }
+        cbTx1Head += 1;
     }
 }
 
 unsigned char CB_TX1_Get(void) {
     unsigned char value = cbTx1Buffer[cbTx1Tail];
     cbTx1Buffer[cbTx1Tail] = 0;
-    cbTx1Tail = (cbTx1Tail + 1) % CBTX1_BUFFER_SIZE;
+    if (cbTx1Tail >= 128) {
+        cbTx1Tail = 0;
+    }
+    cbTx1Tail += 1;
     return value;
 
 }

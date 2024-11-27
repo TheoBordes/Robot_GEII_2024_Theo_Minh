@@ -17,6 +17,9 @@ using System.IO.Ports;
 using System.Windows.Threading;
 using System.Windows.Automation.Provider;
 using System.Collections;
+using System.Data.Common;
+using System.Threading;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RobotInterface_Ly_Bordes
 {
@@ -43,23 +46,39 @@ namespace RobotInterface_Ly_Bordes
             timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
+
+            // Create a thread
+            //Thread backgroundThread = new Thread(new ThreadStart(ProcessQueue));
+            //// Start thread
+            //backgroundThread.IsBackground = true;
+            //backgroundThread.Start();
         }
+
 
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
-            while (robot.byteListReceived.Count != 0)
-            {
-                DecodeMessage(robot.byteListReceived.Dequeue());
-                //RichTextBox.Text += "0x" + robot.byteListReceived.Dequeue().ToString("X2") + " ";
-                //if (robot.byteListReceived.Count == 0)
-                //{
-                //    RichTextBox.Text += "\n";
-                //}
-
-            }
+            //ProcessQueue();
 
         }
-       
+
+        private void ProcessQueue()
+        {
+            while (true)
+            {
+                while (robot.byteListReceived.Count != 0)
+                {
+                    DecodeMessage(robot.byteListReceived.Dequeue());
+                    //RichTextBox.Text += "0x" + robot.byteListReceived.Dequeue().ToString("X2") + " ";
+                    //if (robot.byteListReceived.Count == 0)
+                    //{
+                    //    RichTextBox.Text += "\n";
+                    //}
+
+                }
+                Thread.Sleep(10);
+            }
+        }
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             
@@ -67,46 +86,20 @@ namespace RobotInterface_Ly_Bordes
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
             for (int i = 0;i <e.Data.Length;i++) {
-               robot.byteListReceived.Enqueue(e.Data[i]);
+                DecodeMessage(e.Data[i]);
+                //robot.byteListReceived.Enqueue(e.Data[i]);
             }
-            robot.receivedText += Encoding.ASCII.GetString(e.Data, 0, e.Data.Length);
-
+            //robot.receivedText += Encoding.ASCII.GetString(e.Data, 0, e.Data.Length);
         }
-        IDfonction func = IDfonction.TextTransmission;
+        
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
-            byte[] byteList = new byte[] { 0x42, 0x6f, 0x6e, 0x6a, 0x6f, 0x75, 0x72, 0x0a, 0x0d };
-            //UartEncodeAndSendMessage(20, 4,byteList);
-            //byte[] array = Encoding.ASCII.GetBytes(TextBoxEmission.Text); 
-            //byte CalculatedChecksum = CalculateChecksum(0x0080, byteList.Length, byteList);
-            while (func != IDfonction.functionTestValue)
+            if (TextBoxEmission.Text != "")
             {
-                switch (func)
-                {
-
-                    case IDfonction.TextTransmission:
-                        UartEncodeAndSendMessage((byte)func, 9, byteList);
-                        func = IDfonction.SetLed;
-                        break;
-                    case IDfonction.SetLed:
-                        UartEncodeAndSendMessage((byte)func, 9, byteList);
-                        func = IDfonction.IRdistance;
-                        break;
-                    case IDfonction.IRdistance:
-                        UartEncodeAndSendMessage((byte)func, 9, byteList);
-                        func = IDfonction.SpeedRule;
-                        break;
-                    case IDfonction.SpeedRule:
-                        UartEncodeAndSendMessage((byte)func, 9, byteList);
-                        func = IDfonction.functionTestValue;
-                        break;
-                    default:
-                        func = IDfonction.SetLed;
-                        break;
-
-                }
+                byte[] array = Encoding.ASCII.GetBytes(TextBoxEmission.Text);
+                UartEncodeAndSendMessage(0x0080, (Int16)array.Length, array);
+                TextBoxEmission.Text = "";
             }
-            func = IDfonction.TextTransmission;
         }
         private void sendMessage()
         {
@@ -115,7 +108,7 @@ namespace RobotInterface_Ly_Bordes
         public byte CalculateChecksum(Int16 msgFunction,int msgPayloadLength, byte[] msgPayload)
         {
            
-            // Todo faire checksum pour sof command and playload
+            // Todo faire checksum pour command and playload    
             byte checksum = 0xFE;
             checksum = (byte) ( msgFunction ^ checksum) ;
 
@@ -140,16 +133,11 @@ namespace RobotInterface_Ly_Bordes
             serialPort1.Write(PayloadLength, 0, PayloadLength.Length);
             serialPort1.Write(msgPayload, 0, msgPayload.Length);
             serialPort1.Write(checksum, 0, checksum.Length);
- 
         }
-        void ProcessDecodedMessage(int msgFunction,int msgPayloadLength, byte[] msgPayload)
+        void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
-            RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength);
-
-        }
-        private void TextBoxEmission_TextChanged(object sender, TextChangedEventArgs e)
-        {
-          
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+               RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength)));
         }
 
         private void TextBoxEmission_KeyUp(object sender, KeyEventArgs e)
@@ -158,7 +146,7 @@ namespace RobotInterface_Ly_Bordes
             {
                 //sendMessage();
                 byte[] array = Encoding.ASCII.GetBytes(TextBoxEmission.Text);
-                UartEncodeAndSendMessage(20, (Int16)array.Length, array);
+                UartEncodeAndSendMessage(0x0080, (Int16)array.Length, array);
                 TextBoxEmission.Text = "";
 
             }
@@ -224,17 +212,22 @@ namespace RobotInterface_Ly_Bordes
                     byte calculatedChecksum =  CalculateChecksum((byte)msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
                     //RichTextBox.Text += calculatedChecksum;
                     byte receivedChecksum = c;
-                        if (calculatedChecksum == receivedChecksum){
-                            //RichTextBox.Text += "ça marche";
-                            rcvState = StateReception.Waiting;
-                            ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-                            msgDecodedFunction = 0;
-                            msgDecodedPayloadLength = 0;
-                            msgDecodedPayloadIndex = 0;
+                    if (calculatedChecksum == receivedChecksum)
+                    {
+                        //RichTextBox.Text += "ça marche";
+                        rcvState = StateReception.Waiting;
+                        ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+                        RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            RichTextBox.Text += "Checksum : " + calculatedChecksum.ToString("X") + "\n";
+                        }));
+                        msgDecodedFunction = 0;
+                        msgDecodedPayloadLength = 0;
+                        msgDecodedPayloadIndex = 0;
                     }
-                        else{ 
-                            RichTextBox.Text += "les problèmes";
-                            rcvState = StateReception.Waiting;
+                    else
+                    {
+                        rcvState = StateReception.Waiting;
                     }
                     break;
                 default:
@@ -252,5 +245,43 @@ namespace RobotInterface_Ly_Bordes
         }
 
 
+        IDfonction func = IDfonction.TextTransmission;
+        private void buttonTest_Click(object sender, RoutedEventArgs e)
+        {
+            byte[] byteList = new byte[] { 0x42, 0x6f, 0x6e, 0x6a, 0x6f, 0x75, 0x72, 0x0a, 0x0d };
+            while (func != IDfonction.functionTestValue)
+            {
+                switch (func)
+                {
+
+                    case IDfonction.TextTransmission:
+                        UartEncodeAndSendMessage((byte)func, 9, byteList);
+                        func = IDfonction.SetLed;
+                        break;
+                    case IDfonction.SetLed:
+                        UartEncodeAndSendMessage((byte)func, 9, byteList);
+                        func = IDfonction.IRdistance;
+                        break;
+                    case IDfonction.IRdistance:
+                        UartEncodeAndSendMessage((byte)func, 9, byteList);
+                        func = IDfonction.SpeedRule;
+                        break;
+                    case IDfonction.SpeedRule:
+                        UartEncodeAndSendMessage((byte)func, 9, byteList);
+                        func = IDfonction.functionTestValue;
+                        break;
+                    default:
+                        func = IDfonction.SetLed;
+                        break;
+
+                }
+            }
+            func = IDfonction.TextTransmission;
+        }
+
+        private void buttonClear_Click(object sender, RoutedEventArgs e)
+        {
+            RichTextBox.Text = "";
+        }
     }
 }

@@ -12,23 +12,30 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <!-- with width-->
             <RowDefinition Height="10*" />
-            <RowDefinition Height="1*" />
-            
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="5*" />
+
         </Grid.RowDefinitions>
         <GroupBox x:Name="Reception" Grid.Column="1" Grid.Row="0" Header="Reception" Background="#FF79ECC4" BorderBrush="Black">
             <TextBox x:Name="RichTextBox" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" IsReadOnly="True" Text="" TextChanged="TextBox_TextChanged" />
         </GroupBox>
         <GroupBox x:Name="Emission" Grid.Column="0" Grid.Row="0" Header="Emission" Background="#FFA41C1C" BorderBrush="Black">
-            <TextBox x:Name="TextBoxEmission" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Stretch"  AcceptsReturn="True"  Margin="0" TextWrapping="Wrap" Text="" TextChanged="TextBoxEmission_TextChanged" KeyUp="TextBoxEmission_KeyUp" />
+            <TextBox x:Name="TextBoxEmission" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Stretch"  AcceptsReturn="True"  Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" />
         </GroupBox>
 
-        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
-            <Button x:Name ="buttonEnvoyer" Content="ENVOIE" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonEnvoyer_Click"/>
+        <StackPanel HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Grid.Row="1" Width="130" >
+            <Button x:Name ="buttonEnvoyer" Content="Envoyer" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonEnvoyer_Click"/>
         </StackPanel>
-
+        <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="center" Grid.Row="1" Width="130" >
+            <Button x:Name ="buttonTest" Content="Test" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonTest_Click"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="center" Grid.Row="1" Width="130" >
+            <Button x:Name ="buttonClear" Content="Clear" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonClear_Click"/>
+        </StackPanel>
 
     </Grid>
 </Window>
