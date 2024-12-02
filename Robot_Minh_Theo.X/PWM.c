@@ -1,9 +1,11 @@
 #include <xc.h>
 #include "IO.h"
 #include "PWM.h"
+#include "timer.h"
 #include "Toolbox.h"
 #include "robot.h"
-
+#include "UART_Protocol.h"   
+#include "UART.h"
 #define PWMPER 24.0
 
 float acceleration = 3;
@@ -82,18 +84,27 @@ void PWMUpdateSpeed() {
         SDC2 = talon;
         PDC2 = -robotState.vitesseGaucheCommandeCourante * PWMPER + talon;
     }
+
 }
 
 void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
-     if (Abs(vitesseEnPourcents) > 100) {
+    unsigned char payload_state[5] = {};
+    payload_state[0] = robotState.taskEnCours;
+    payload_state[1] = (unsigned char) (timestamp & 0xFF);
+    payload_state[2] = (unsigned char) ((timestamp >> 8) & 0xFF);
+    payload_state[3] = (unsigned char) ((timestamp >> 16) & 0xFF);
+    payload_state[4] = (unsigned char) ((timestamp >> 24) & 0xFF);
+    UartEncodeAndSendMessage(0x0050, 5, payload_state);
+
+    if (Abs(vitesseEnPourcents) > 100) {
         return;
     }
     switch (moteur) {
         case MOTEUR_GAUCHE:
-                robotState.vitesseGaucheConsigne = vitesseEnPourcents;
+            robotState.vitesseGaucheConsigne = vitesseEnPourcents;
             break;
         case MOTEUR_DROIT:
-                 robotState.vitesseDroiteConsigne = -vitesseEnPourcents ;
+            robotState.vitesseDroiteConsigne = -vitesseEnPourcents;
             break;
     }
 }

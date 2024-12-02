@@ -22,7 +22,8 @@ int speeds[2];
 int vitL, vitR;
 unsigned char stateRobot;
 int CapVal = 0;
-
+unsigned char payload_Telemetre[5] = {};
+unsigned char payload_motors[2] = {};
 
 
 //void determine_speeds2() {
@@ -122,6 +123,7 @@ unsigned char CallCap() {
 void OperatingSystemLoop(void) {
     determine_speeds();
     switch (stateRobot) {
+        
         case STATE_ATTENTE:
             timestamp = 0;
             PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
@@ -305,6 +307,12 @@ void ADC_value() {
         volts = ((float) result [4])* 3.3 / 4096;
         if (volts < 0.325)volts = 0.325;
         robotState.distanceTelemetrePlusDroit = 34 / volts - 5;
+        payload_Telemetre[0] = (unsigned char) robotState.distanceTelemetrePlusGauche;
+        payload_Telemetre[1] = (unsigned char) robotState.distanceTelemetreGauche;
+        payload_Telemetre[2] = (unsigned char) robotState.distanceTelemetreCentre;
+        payload_Telemetre[3] = (unsigned char) robotState.distanceTelemetreDroit;
+        payload_Telemetre[4] = (unsigned char) robotState.distanceTelemetrePlusDroit;
+        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);
     }
 }
 
@@ -412,9 +420,10 @@ void SetNextRobotStateInAutomaticMode() {
         default:
             break;
     }
-
+    
     if (nextStateRobot != stateRobot - 1)
         stateRobot = nextStateRobot;
+        robotState.taskEnCours = stateRobot;
 }
 
 int main(void) {
@@ -427,63 +436,66 @@ int main(void) {
     InitTimer23();
     InitTimer1();
     InitTimer4();
-    //InitPWM();
+    InitPWM();
     InitADC1();
     InitUART();
     /*********************************************************************************************** Boucle Principale*/
     /***********************************************************************************************/
     //int vitesse = 20;
 
-    //  if (BOUTON1 == 1) {
+    if (BOUTON1 == 1) {
 
-    while (1) {
-        unsigned char payload[] = {'B', 'o', 'n', 'j', 'o', 'u', 'r'};
-        
-        UartEncodeAndSendMessage(20,7,payload);
-        __delay32(40000000) ;
-        //            if (timestamp > 60000) {
-        //                PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
-        //                PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
-        //                if (BOUTON1 == 1) {
-        //                    timestamp = 0;
-        //                }
-        //            }
-        //
-        //
-        //            if (robotState.distanceTelemetreGauche > 20) {
-        //                LED_BLEUE_1 = 1;
-        //            } else {
-        //                LED_BLEUE_1 = 0;
-        //
-        //            }
-        //            if (robotState.distanceTelemetrePlusGauche > 20) {
-        //                LED_BLANCHE_1 = 1;
-        //
-        //            } else {
-        //                LED_BLANCHE_1 = 0;
-        //
-        //            }
-        //            if (robotState.distanceTelemetreCentre > 20) {
-        //                LED_ORANGE_1 = 1;
-        //
-        //            } else {
-        //                LED_ORANGE_1 = 0;
-        //
-        //            }
-        //            if (robotState.distanceTelemetrePlusDroit > 20) {
-        //                LED_VERTE_1 = 1;
-        //
-        //            } else {
-        //                LED_VERTE_1 = 0;
-        //
-        //            }
-        //            if (robotState.distanceTelemetreDroit > 20) {
-        //                LED_ROUGE_1 = 1;
-        //            } else {
-        //                LED_ROUGE_1 = 0;
-        //            }
+        while (1) {
+            if (flagMessageMotor) {
+                flagMessageMotor = 0;
+                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
+                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
+                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
+
+            }
+            if (timestamp > 60000) {
+                PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
+                PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
+                if (BOUTON1 == 1) {
+                    timestamp = 0;
+                }
+            }
 
 
+            if (robotState.distanceTelemetreGauche > 20) {
+                LED_BLEUE_1 = 1;
+            } else {
+                LED_BLEUE_1 = 0;
+
+            }
+            if (robotState.distanceTelemetrePlusGauche > 20) {
+                LED_BLANCHE_1 = 1;
+
+            } else {
+                LED_BLANCHE_1 = 0;
+
+            }
+            if (robotState.distanceTelemetreCentre > 20) {
+                LED_ORANGE_1 = 1;
+
+            } else {
+                LED_ORANGE_1 = 0;
+
+            }
+            if (robotState.distanceTelemetrePlusDroit > 20) {
+                LED_VERTE_1 = 1;
+
+            } else {
+                LED_VERTE_1 = 0;
+
+            }
+            if (robotState.distanceTelemetreDroit > 20) {
+                LED_ROUGE_1 = 1;
+            } else {
+                LED_ROUGE_1 = 0;
+            }
+
+
+        }
     }
-    //  }
 }

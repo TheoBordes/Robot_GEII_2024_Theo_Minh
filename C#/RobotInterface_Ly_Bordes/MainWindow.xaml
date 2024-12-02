@@ -15,8 +15,8 @@
 
         <Grid.RowDefinitions>
             <!-- with width-->
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="5*" />
 
         </Grid.RowDefinitions>
@@ -27,15 +27,71 @@
             <TextBox x:Name="TextBoxEmission" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Stretch"  AcceptsReturn="True"  Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" />
         </GroupBox>
 
-        <StackPanel HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Grid.Row="1" Width="130" >
-            <Button x:Name ="buttonEnvoyer" Content="Envoyer" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonEnvoyer_Click"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1"  Grid.Row="1">
+            <Button x:Name ="buttonEnvoyer" Content="Envoyer" Width="60" Margin="5" Click="buttonEnvoyer_Click"/>
+            <Button x:Name ="buttonTest" Content="Test" Width="60" Margin="5" Click="buttonTest_Click"/>
+            <Button x:Name ="buttonClear" Content="Clear" Width="60" Margin="5" Click="buttonClear_Click"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="center" Grid.Row="1" Width="130" >
-            <Button x:Name ="buttonTest" Content="Test" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonTest_Click"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.RowSpan="2">
+            <GroupBox x:Name="Leds"  Header="Leds">
+                <StackPanel Orientation="Vertical">
+                    <CheckBox x:Name="Led1" Content="Led1" HorizontalAlignment="Left" />
+                    <CheckBox x:Name="Led2" Content="Led2" HorizontalAlignment="Left" />
+                    <CheckBox x:Name="Led3" Content="Led3" HorizontalAlignment="Left" />
+                    <CheckBox x:Name="Led4" Content="Led4" HorizontalAlignment="Left" />
+                    <CheckBox x:Name="Led5" Content="Led5" HorizontalAlignment="Left" />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox x:Name="IRTels" Header="Telemetres IR">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="IR Plus Gauche :" HorizontalAlignment="Left" />
+                        <Label x:Name="IRpg" Content="..." HorizontalAlignment="Left" />
+                        <Label Content="cm" HorizontalAlignment="Left" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label  Content="IR Gauche  :" HorizontalAlignment="Left" />
+                        <Label x:Name="IRg" Content="..." HorizontalAlignment="Left" />
+                        <Label  Content="cm" HorizontalAlignment="Left" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="IR Centre :" HorizontalAlignment="Left" />
+                        <Label x:Name="IRc" Content="..." HorizontalAlignment="Left" />
+                        <Label  Content="cm" HorizontalAlignment="Left" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label  Content="IR Droite  :" HorizontalAlignment="Left" />
+                        <Label x:Name="IRd" Content="..." HorizontalAlignment="Left" />
+                        <Label  Content="cm" HorizontalAlignment="Left" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label  Content="IR Plus Droite :" HorizontalAlignment="Left" />
+                        <Label x:Name="IRpd" Content="..." HorizontalAlignment="Left" />
+                        <Label  Content=" cm" HorizontalAlignment="Left" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox x:Name="Motors" Header="Moteurs" Width="131">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <Label  Content="Vitesse Gauche :" HorizontalAlignment="Left" />
+                        <Label x:Name="vitg" Content="..." HorizontalAlignment="Left" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label  Content="Vitesse Droite :" HorizontalAlignment="Left" />
+                        <Label x:Name="vitd" Content="..." HorizontalAlignment="Left" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="center" Grid.Row="1" Width="130" >
-            <Button x:Name ="buttonClear" Content="Clear" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"  Click="buttonClear_Click"/>
-        </StackPanel>
+        
+       
+      
+
+       
 
     </Grid>
 </Window>

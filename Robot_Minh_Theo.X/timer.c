@@ -5,6 +5,7 @@
 #include "ADC.h"
 #include  "main.h"
 
+
 unsigned long timestamp;
 unsigned char toggle = 0;
 
@@ -29,7 +30,7 @@ void InitTimer1(void) {
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
-    
+
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
 }
@@ -83,15 +84,22 @@ void InitTimer4(void) {
     SetFreqTimer4(1000);
 }
 //Interruption du timer 1
+int messageMotorCounter =0;
+unsigned char flagMessageMotor=0;
 
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
-    timestamp+=1;  
+    timestamp += 1;
+    if(messageMotorCounter++ >= 1000)
+    {
+        messageMotorCounter=0;
+        flagMessageMotor=1;
+    }
+    
     
     OperatingSystemLoop();
     ADC_value();
 }
-
 
 void SetFreqTimer1(float freq) {
     T1CONbits.TCKPS = 0b00; //00 = 1:1 prescaler value

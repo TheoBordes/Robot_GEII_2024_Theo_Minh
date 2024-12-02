@@ -17,4 +17,3 @@ void CB_TX1_Add(unsigned char value);
 void SendMessage(unsigned char* message, int length);
 
 #endif	/* CB_TX1_H */
-

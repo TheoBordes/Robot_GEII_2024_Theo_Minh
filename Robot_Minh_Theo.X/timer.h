@@ -1,6 +1,7 @@
 #ifndef TIMER_H
 #define TIMER_H
 extern unsigned long timestamp;
+extern unsigned char flagMessageMotor;
 void InitTimer23(void);
 void InitTimer1(void);
 void InitTimer4(void);

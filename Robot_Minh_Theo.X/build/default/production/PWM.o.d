@@ -1,9 +1,16 @@
-build/default/production/PWM.o: PWM.c IO.h PWM.h Toolbox.h robot.h
+build/default/production/PWM.o: PWM.c IO.h PWM.h timer.h Toolbox.h \
+ robot.h UART_Protocol.h UART.h
 
 IO.h:
 
 PWM.h:
 
+timer.h:
+
 Toolbox.h:
 
 robot.h:
+
+UART_Protocol.h:
+
+UART.h:

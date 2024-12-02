@@ -136,8 +136,44 @@ namespace RobotInterface_Ly_Bordes
         }
         void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
-            RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-               RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength)));
+            switch (msgFunction)
+            {
+                case (byte)IDfonction.TextTransmission:
+                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                                   RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength))); break;
+                case (byte)IDfonction.SetLed:
+
+                    break;
+                case (byte)IDfonction.IRdistance:
+                    int a = (int)msgDecodedPayload[0];
+                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        IRpg.Content = msgDecodedPayload[4];
+                        IRg.Content = msgDecodedPayload[3];
+                        IRc.Content = msgDecodedPayload[2];
+                        IRd.Content = msgDecodedPayload[1];
+                        IRpd.Content = msgDecodedPayload[0];
+
+                    }));
+
+                    break;
+                case (byte)IDfonction.SpeedRule:
+                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        vitg.Content = msgDecodedPayload[0];
+                        vitd.Content = msgDecodedPayload[1];
+                    }));
+                    break;
+                case (byte)IDfonction.RobotState:
+                    int instant = (((int)msgPayload[1]) << 24) + (((int)msgPayload[2]) << 16)
+                    + (((int)msgPayload[3]) << 8) + ((int)msgPayload[4]);
+                    
+                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                    RichTextBox.Text += "\nRobot␣State␣:␣" +((StateRobot)(msgPayload[0])).ToString() +"␣-␣" + instant.ToString() + "␣ms"));
+                    break;
+
+            }
+            
         }
 
         private void TextBoxEmission_KeyUp(object sender, KeyEventArgs e)
@@ -161,6 +197,31 @@ namespace RobotInterface_Ly_Bordes
             PayloadLengthLSB,
             Payload,
             CheckSum
+        }
+
+        public enum StateRobot
+        {
+
+            STATE_ATTENTE = 0,
+            STATE_ATTENTE_EN_COURS = 1,
+            STATE_AVANCE = 2,
+            STATE_AVANCE_EN_COURS = 3,
+            STATE_TOURNE_GAUCHE = 4,
+            STATE_TOURNE_GAUCHE_EN_COURS = 5,
+            STATE_TOURNE_DROITE_PLUS = 6,
+            STATE_TOURNE_DROITE_PLUS_EN_COURS = 7,
+            STATE_TOURNE_GAUCHE_PLUS = 8,
+            STATE_TOURNE_GAUCHE_PLUS_EN_COURS = 9,
+            STATE_TOURNE_DROITE = 10,
+            STATE_TOURNE_DROITE_EN_COURS = 11,
+            STATE_TOURNE_SUR_PLACE_GAUCHE = 12,
+            STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS = 13,
+            STATE_TOURNE_SUR_PLACE_DROITE = 14,
+            STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS = 15,
+            STATE_ARRET = 16,
+            STATE_ARRET_EN_COURS = 17,
+            STATE_RECULE = 18,
+            STATE_RECULE_EN_COURS = 19
         }
 
         StateReception rcvState = StateReception.Waiting;
@@ -216,11 +277,9 @@ namespace RobotInterface_Ly_Bordes
                     {
                         //RichTextBox.Text += "ça marche";
                         rcvState = StateReception.Waiting;
-                        ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-                        RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-                        {
-                            RichTextBox.Text += "Checksum : " + calculatedChecksum.ToString("X") + "\n";
-                        }));
+                     
+                       ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+
                         msgDecodedFunction = 0;
                         msgDecodedPayloadLength = 0;
                         msgDecodedPayloadIndex = 0;
@@ -235,13 +294,17 @@ namespace RobotInterface_Ly_Bordes
                     break;
             }
         }
+
+
+
         public enum IDfonction
         {
             TextTransmission = 0x0080,
             SetLed = 0x0020,
             IRdistance = 0x0030,
             SpeedRule = 0x0040,
-            functionTestValue,
+            RobotState = 0x0050,
+            functionTestValue
         }
 
 
@@ -282,6 +345,11 @@ namespace RobotInterface_Ly_Bordes
         private void buttonClear_Click(object sender, RoutedEventArgs e)
         {
             RichTextBox.Text = "";
+        }
+
+        private void TextBlock_TextInput(object sender, TextCompositionEventArgs e)
+        {
+
         }
     }
 }

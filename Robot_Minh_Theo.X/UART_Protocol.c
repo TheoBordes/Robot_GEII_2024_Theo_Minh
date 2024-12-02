@@ -31,16 +31,76 @@ void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, unsigned ch
     message[msgPayloadLength + 5] = UartCalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
     SendMessage(message,6+msgPayloadLength);
 }
+int rcvState = Waiting;
+int msgDecodedFunction = 0;
+int msgDecodedPayloadLength = 0;
+unsigned char msgDecodedPayload[128];
+int msgDecodedPayloadIndex = 0;
+unsigned char calculatedChecksum;
+unsigned char receivedChecksum ;
 
-//int msgDecodedFunction = 0;
-//int msgDecodedPayloadLength = 0;
-//unsigned char msgDecodedPayload[128];
-//int msgDecodedPayloadIndex = 0;
-//
-//void UartDecodeMessage(unsigned char c) {
-//    //Fonction prenant en entree un octet et servant a reconstituer les trames
-//
-//}
+void UartDecodeMessage(unsigned char c) {
+    
+    switch (rcvState)
+    {
+        case Waiting:
+            if (c == 0xFE)
+            {
+                rcvState = FunctionLSB;
+                //RichTextBox.Text += "IN";
+            }
+            break;
+        case FunctionMSB:
+            msgDecodedFunction += c;
+            rcvState = PayloadLengthLSB;
+            //RichTextBox.Text += "functionMSB";
+            break;
+        case FunctionLSB:
+            msgDecodedFunction += c;
+            rcvState = FunctionMSB;
+            //RichTextBox.Text += "functionLSB";
+            break;
+        case PayloadLengthMSB:
+            msgDecodedPayloadLength += c;
+            rcvState = Payload;
+            break;
+        case PayloadLengthLSB:
+            msgDecodedPayloadLength += c;
+            rcvState = PayloadLengthMSB;
+            break;
+        case Payload:
+            //RichTextBox.Text += msgDecodedPayloadIndex;
+            msgDecodedPayloadIndex += 1;
+            if (msgDecodedPayloadIndex == msgDecodedPayloadLength){
+                rcvState = CheckSum;
+                }
+            msgDecodedPayload[msgDecodedPayloadIndex-1] = c;
+            
+            break;
+        case CheckSum:
+            calculatedChecksum =  UartCalculateChecksum( msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+            //RichTextBox.Text += calculatedChecksum;
+            receivedChecksum = c;
+            if (calculatedChecksum == receivedChecksum)
+            {
+                //RichTextBox.Text += "ça marche";
+                rcvState = Waiting;
+             
+                msgDecodedFunction = 0;
+                msgDecodedPayloadLength = 0;
+                msgDecodedPayloadIndex = 0;
+            }
+            else
+            {
+                rcvState = Waiting;
+            }
+            break;
+        default:
+            rcvState = Waiting;
+            break;
+    }
+}
+
 //
 //void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
 //    //Fonction appelee apres le decodage pour executer l?action
