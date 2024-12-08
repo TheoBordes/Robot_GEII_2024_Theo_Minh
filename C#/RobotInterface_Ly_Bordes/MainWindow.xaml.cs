@@ -20,6 +20,8 @@ using System.Collections;
 using System.Data.Common;
 using System.Threading;
 using static System.Net.Mime.MediaTypeNames;
+using SharpDX.XInput;
+using System.Reflection.Metadata;
 
 namespace RobotInterface_Ly_Bordes
 {
@@ -33,11 +35,13 @@ namespace RobotInterface_Ly_Bordes
     {
         ExtendedSerialPort serialPort1;
         Robot robot = new Robot();
+        private Timer TimerAffichage;
+        private Controller gamepad;
 
         public MainWindow()
         {
             InitializeComponent();
-            
+
             serialPort1 = new ExtendedSerialPort("COM9", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
@@ -46,7 +50,7 @@ namespace RobotInterface_Ly_Bordes
             timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
-
+            gamepad = new Controller(UserIndex.One);
             // Create a thread
             //Thread backgroundThread = new Thread(new ThreadStart(ProcessQueue));
             //// Start thread
@@ -58,6 +62,19 @@ namespace RobotInterface_Ly_Bordes
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
             //ProcessQueue();
+            RichTextBox.Text += "100";
+            if (!gamepad.IsConnected)
+            {
+                RichTextBox.Text += "Gamepad not connected.\n";
+                return;
+            }
+
+            // Obtenir l'état de la manette
+            var state = gamepad.GetState();
+            var gamepadState = state.Gamepad;
+
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                   RichTextBox.Text += $"Buttons: {gamepadState.Buttons}\n"));     
 
         }
 
@@ -186,7 +203,7 @@ namespace RobotInterface_Ly_Bordes
                 TextBoxEmission.Text = "";
 
             }
-            
+
         }
         public enum StateReception
         {
