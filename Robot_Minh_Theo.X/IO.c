@@ -44,6 +44,7 @@ void InitIO()
     
     _U1RXR = 78;
     _RP79R = 0b00001;  
+    
     LockIO(); 
 }
 

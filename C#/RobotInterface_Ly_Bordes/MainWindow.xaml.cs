@@ -22,6 +22,7 @@ using System.Threading;
 using static System.Net.Mime.MediaTypeNames;
 using SharpDX.XInput;
 using System.Reflection.Metadata;
+using System.Linq.Expressions;
 
 namespace RobotInterface_Ly_Bordes
 {
@@ -42,7 +43,7 @@ namespace RobotInterface_Ly_Bordes
         {
             InitializeComponent();
 
-            serialPort1 = new ExtendedSerialPort("COM9", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
             DispatcherTimer timerAffichage;
@@ -58,23 +59,35 @@ namespace RobotInterface_Ly_Bordes
             //backgroundThread.Start();
         }
 
-
+        bool gamepad_state = true;
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
+            
             //ProcessQueue();
-            RichTextBox.Text += "100";
-            if (!gamepad.IsConnected)
+            //RichTextBox.Text += "100";
+            if (!gamepad.IsConnected & gamepad_state)
             {
-                RichTextBox.Text += "Gamepad not connected.\n";
-                return;
+                gamepad_state = false ;
+                RichTextBox.Text += "Gamepad not connected.\n";  
             }
-
-            // Obtenir l'état de la manette
-            var state = gamepad.GetState();
-            var gamepadState = state.Gamepad;
-
-            RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-                   RichTextBox.Text += $"Buttons: {gamepadState.Buttons}\n"));     
+            if ( gamepad_state == true) {
+                var state = gamepad.GetState();
+                var gamepadState = state.Gamepad;
+                byte rightTrigger = gamepadState.RightTrigger;  
+                byte dividedValue = (byte)(rightTrigger / 5f);
+                //RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                //           RichTextBox.Text += $"Buttons: {dividedValue}\n"));
+                byte[] vit = new byte[] { dividedValue };
+                UartEncodeAndSendMessage(0X0090, 1, vit);
+                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                          RichTextBox.Text += $"vitesse: {dividedValue}\n"));
+                if (gamepadState.Buttons != GamepadButtonFlags.None)
+                {
+                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                           RichTextBox.Text += $"Buttons: {gamepadState.Buttons}\n"));
+                }
+            }
+           
 
         }
 
@@ -351,7 +364,7 @@ namespace RobotInterface_Ly_Bordes
                         func = IDfonction.functionTestValue;
                         break;
                     default:
-                        func = IDfonction.SetLed;
+                        func = IDfonction.TextTransmission;
                         break;
 
                 }
@@ -362,6 +375,8 @@ namespace RobotInterface_Ly_Bordes
         private void buttonClear_Click(object sender, RoutedEventArgs e)
         {
             RichTextBox.Text = "";
+            byte[] byteList = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
+            UartEncodeAndSendMessage(0x0090, 9, byteList);
         }
 
         private void TextBlock_TextInput(object sender, TextCompositionEventArgs e)

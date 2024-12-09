@@ -4,7 +4,7 @@
 #include "IO.h"
 #include "ADC.h"
 #include  "main.h"
-
+#include "UART_Protocol.h"
 
 unsigned long timestamp;
 unsigned char toggle = 0;
@@ -97,7 +97,7 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     }
     
     
-    OperatingSystemLoop();
+    //OperatingSystemLoop();
     ADC_value();
 }
 

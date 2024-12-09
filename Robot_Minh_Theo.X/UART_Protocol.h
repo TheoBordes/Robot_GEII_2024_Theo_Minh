@@ -14,10 +14,11 @@
 #define PayloadLengthLSB 5
 #define Payload 6
 #define CheckSum 7
+#define ControlXbox 0x0090
 unsigned char UartCalculateChecksum(int msgFunction,int msgPayloadLength, unsigned char* msgPayload);
 void UartEncodeAndSendMessage(int msgFunction,int msgPayloadLength, unsigned char* msgPayload);
 void UartDecodeMessage(unsigned char c);
-//void UartProcessDecodedMessage(int function,int payloadLength, unsigned char* payload);
+void UartProcessDecodedMessage(int function,int payloadLength, unsigned char* payload);
 
 #endif	/* UART_PROTOCOL_H */
 

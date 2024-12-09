@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "CB_RX1.h"
+#include "UART_Protocol.h"
+#include "CB_TX1.h"
 #define CBRX1_BUFFER_SIZE 128
 int cbRx1Head;
 int cbRx1Tail;
@@ -10,23 +12,21 @@ unsigned char cbRx1Buffer[CBRX1_BUFFER_SIZE];
 void CB_RX1_Add(unsigned char value) {
     if (CB_RX1_GetRemainingSize() > 0) {
         cbRx1Buffer[cbRx1Head] = value;
-        
-         if ( cbRx1Head >=128){
+        if (cbRx1Head >= 128) {
             cbRx1Head = 0;
         }
-        cbRx1Head+=1;
+        cbRx1Head += 1;
     }
 }
 
 unsigned char CB_RX1_Get(void) {
-    unsigned char value = cbRx1Buffer[cbRx1Tail];
-    cbRx1Buffer[cbRx1Tail] = 0;
-    
-     if ( cbRx1Tail >=128){
+        unsigned char value = cbRx1Buffer[cbRx1Tail];
+        cbRx1Buffer[cbRx1Tail] = 0;
+        if (cbRx1Tail >= 128) {
             cbRx1Tail = 0;
         }
-    cbRx1Tail +=1;
-    return value;
+        cbRx1Tail += 1;
+        return value;
 }
 
 unsigned char CB_RX1_IsDataAvailable(void) {
@@ -51,7 +51,6 @@ void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt(void) {
         CB_RX1_Add(U1RXREG);
     }
 }
-
 
 int CB_RX1_GetDataSize(void) {
     if (cbRx1Head >= cbRx1Tail)

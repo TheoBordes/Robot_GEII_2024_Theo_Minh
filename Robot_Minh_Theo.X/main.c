@@ -9,6 +9,7 @@
 #include "ADC.h"
 #include "robot.h"
 #include "CB_TX1.h"
+#include "CB_RX1.h"
 #include "UART_Protocol.h"
 #include "main.h"
 #include <math.h>
@@ -123,7 +124,7 @@ unsigned char CallCap() {
 void OperatingSystemLoop(void) {
     determine_speeds();
     switch (stateRobot) {
-        
+
         case STATE_ATTENTE:
             timestamp = 0;
             PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
@@ -420,10 +421,11 @@ void SetNextRobotStateInAutomaticMode() {
         default:
             break;
     }
-    
-    if (nextStateRobot != stateRobot - 1)
+
+    if (nextStateRobot != stateRobot - 1) {
         stateRobot = nextStateRobot;
         robotState.taskEnCours = stateRobot;
+    }
 }
 
 int main(void) {
@@ -442,10 +444,15 @@ int main(void) {
     /*********************************************************************************************** Boucle Principale*/
     /***********************************************************************************************/
     //int vitesse = 20;
-
-    if (BOUTON1 == 1) {
+    
+    
+    if (BOUTON1 == 0) {
 
         while (1) {
+            while(CB_RX1_IsDataAvailable()){
+                UartDecodeMessage(CB_RX1_Get());
+            }
+            //UartEncodeAndSendMessage(0x0080,7,"bonjour");
             if (flagMessageMotor) {
                 flagMessageMotor = 0;
                 payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
@@ -456,9 +463,7 @@ int main(void) {
             if (timestamp > 60000) {
                 PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
                 PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
-                if (BOUTON1 == 1) {
-                    timestamp = 0;
-                }
+                timestamp = 0;
             }
 
 

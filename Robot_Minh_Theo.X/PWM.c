@@ -94,7 +94,7 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
     payload_state[2] = (unsigned char) ((timestamp >> 8) & 0xFF);
     payload_state[3] = (unsigned char) ((timestamp >> 16) & 0xFF);
     payload_state[4] = (unsigned char) ((timestamp >> 24) & 0xFF);
-    UartEncodeAndSendMessage(0x0050, 5, payload_state);
+//    UartEncodeAndSendMessage(0x0050, 5, payload_state);
 
     if (Abs(vitesseEnPourcents) > 100) {
         return;
