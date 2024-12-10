@@ -48,7 +48,7 @@ namespace RobotInterface_Ly_Bordes
             serialPort1.Open();
             DispatcherTimer timerAffichage;
             timerAffichage = new DispatcherTimer();
-            timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 1);
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             gamepad = new Controller(UserIndex.One);
@@ -60,27 +60,42 @@ namespace RobotInterface_Ly_Bordes
         }
 
         bool gamepad_state = true;
+        int compteur = 0;
+
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
             
             //ProcessQueue();
             //RichTextBox.Text += "100";
-            if (!gamepad.IsConnected & gamepad_state)
+            if (!gamepad.IsConnected)
             {
                 gamepad_state = false ;
-                RichTextBox.Text += "Gamepad not connected.\n";  
-            }
-            if ( gamepad_state == true) {
+                //RichTextBox.Text += "Gamepad not connected.\n";
+                byte[] mode = new byte[] {1};
+                UartEncodeAndSendMessage(0x0052, 1, mode);
+            }   
+            else if ( gamepad.IsConnected ) {
+                byte[] mode = new byte[] { 0 };
+                UartEncodeAndSendMessage(0x0052, 1, mode);
                 var state = gamepad.GetState();
                 var gamepadState = state.Gamepad;
-                byte rightTrigger = gamepadState.RightTrigger;  
-                byte dividedValue = (byte)(rightTrigger / 5f);
+                byte rightTrigger = gamepadState.RightTrigger; 
+                byte dividedValueR = (byte)(rightTrigger / 3f);
+                short rightThumbStickX = gamepadState.RightThumbX;
+                byte dividedValueSX = (byte)(rightThumbStickX / 650f);
+                byte leftTrigger = gamepadState.LeftTrigger;
+                byte dividedValueL = (byte)(leftTrigger / 3f);
                 //RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
                 //           RichTextBox.Text += $"Buttons: {dividedValue}\n"));
-                byte[] vit = new byte[] { dividedValue };
-                UartEncodeAndSendMessage(0X0090, 1, vit);
+                byte[] vit = new byte[] { dividedValueR,dividedValueL };
+               
+                UartEncodeAndSendMessage(0X0090, 2, vit);
+                compteur += 1;
                 RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-                          RichTextBox.Text += $"vitesse: {dividedValue}\n"));
+                         // RichTextBox.Text += $"vitesse: {dividedValue}\n"));
+                         RichTextBox.Text = $"compteur {compteur}\n"
+                         ));
+
                 if (gamepadState.Buttons != GamepadButtonFlags.None)
                 {
                     RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
@@ -175,7 +190,6 @@ namespace RobotInterface_Ly_Bordes
 
                     break;
                 case (byte)IDfonction.IRdistance:
-                    int a = (int)msgDecodedPayload[0];
                     RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
                     {
                         IRpg.Content = msgDecodedPayload[4];
@@ -183,16 +197,30 @@ namespace RobotInterface_Ly_Bordes
                         IRc.Content = msgDecodedPayload[2];
                         IRd.Content = msgDecodedPayload[1];
                         IRpd.Content = msgDecodedPayload[0];
-
                     }));
-
                     break;
+
                 case (byte)IDfonction.SpeedRule:
-                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                    byte valG = msgDecodedPayload[0];
+                    byte valD = msgDecodedPayload[1];
+                    if (valG == 0 && valD == 0)
                     {
-                        vitg.Content = msgDecodedPayload[0];
-                        vitd.Content = msgDecodedPayload[1];
-                    }));
+                        vitg.Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            vitg.Content = valG;
+                        }));
+                        vitd.Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            vitd.Content = valD;
+                        }));
+                    }
+                    else
+                    {
+                        Console.WriteLine(valG.ToString() + " | " + valD.ToString());
+                        //RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                        //          RichTextBox.Text += "0x" + msgFunction.ToString("X")));
+                    }
+                   
                     break;
                 case (byte)IDfonction.RobotState:
                     int instant = (((int)msgPayload[1]) << 24) + (((int)msgPayload[2]) << 16)
@@ -300,6 +328,7 @@ namespace RobotInterface_Ly_Bordes
                     
                     break;
                 case StateReception.CheckSum:
+
                     byte calculatedChecksum =  CalculateChecksum((byte)msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
                     //RichTextBox.Text += calculatedChecksum;
                     byte receivedChecksum = c;
@@ -308,15 +337,18 @@ namespace RobotInterface_Ly_Bordes
                         //RichTextBox.Text += "ça marche";
                         rcvState = StateReception.Waiting;
                      
-                       ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-
-                        msgDecodedFunction = 0;
-                        msgDecodedPayloadLength = 0;
-                        msgDecodedPayloadIndex = 0;
+                       ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);  
                     }
                     else
                     {
                         rcvState = StateReception.Waiting;
+                    }
+                    msgDecodedFunction = 0;
+                    msgDecodedPayloadLength = 0;
+                    msgDecodedPayloadIndex = 0;
+                    for (int i = 0; i < msgDecodedPayloadLength; i++)
+                    {
+                        msgDecodedPayload[i] = 0;
                     }
                     break;
                 default:

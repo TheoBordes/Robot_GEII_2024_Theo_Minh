@@ -14,8 +14,10 @@ typedef struct robotStateBITS {
             float distanceTelemetreCentre;
             float distanceTelemetreDroit;
             float distanceTelemetrePlusDroit;
+            unsigned int mode;
         };
     };
 } ROBOT_STATE_BITS;
 extern volatile ROBOT_STATE_BITS robotState;
+void SetRobotAutoControlState(int mode);
 #endif /* ROBOT_H */

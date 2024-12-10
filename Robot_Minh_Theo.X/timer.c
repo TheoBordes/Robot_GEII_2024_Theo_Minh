@@ -4,6 +4,7 @@
 #include "IO.h"
 #include "ADC.h"
 #include  "main.h"
+#include "robot.h"
 #include "UART_Protocol.h"
 
 unsigned long timestamp;
@@ -84,20 +85,21 @@ void InitTimer4(void) {
     SetFreqTimer4(1000);
 }
 //Interruption du timer 1
-int messageMotorCounter =0;
-unsigned char flagMessageMotor=0;
+int messageMotorCounter = 0;
+unsigned char flagMessageMotor = 0;
 
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
     timestamp += 1;
-    if(messageMotorCounter++ >= 1000)
-    {
-        messageMotorCounter=0;
-        flagMessageMotor=1;
+    if (messageMotorCounter++ >= 1000) {
+        messageMotorCounter = 0;
+        flagMessageMotor = 1;
     }
-    
-    
-    //OperatingSystemLoop();
+
+
+    if (robotState.mode) {
+        OperatingSystemLoop();
+    }
     ADC_value();
 }
 

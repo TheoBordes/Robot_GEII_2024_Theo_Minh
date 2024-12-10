@@ -4,7 +4,7 @@
 #include "CB_RX1.h"
 #include "PWM.h"
 #include "IO.h"
-
+#include "robot.h"
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload) {
     // Fonction prenant entree la trame et sa longueur pour calculer le checksum
@@ -82,12 +82,16 @@ void UartDecodeMessage(unsigned char c) {
             if (calculatedChecksum == receivedChecksum) {
                 //RichTextBox.Text += "ça marche";
                 rcvState = Waiting;
-                UartProcessDecodedMessage(msgDecodedFunction,msgDecodedPayloadLength,msgDecodedPayload);
-                msgDecodedFunction = 0;
-                msgDecodedPayloadLength = 0;
-                msgDecodedPayloadIndex = 0;
+                UartProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+
             } else {
                 rcvState = Waiting;
+            }
+            msgDecodedFunction = 0;
+            msgDecodedPayloadLength = 0;
+            msgDecodedPayloadIndex = 0;
+            for (int i = 0; i < msgDecodedPayloadLength; i++) {
+                msgDecodedPayload[i] = 0;
             }
             break;
         default:
@@ -101,13 +105,20 @@ void UartDecodeMessage(unsigned char c) {
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
     switch (function) {
         case ControlXbox:
-            PWMSetSpeedConsigne(payload[0],MOTEUR_DROIT);
-            PWMSetSpeedConsigne(payload[0],MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(payload[0], MOTEUR_DROIT);
+            PWMSetSpeedConsigne(payload[1], MOTEUR_GAUCHE);
             break;
-
+        case SET_ROBOT_STATE:
+           // SetRobotState(payload[0]);
+            break;
+        case SET_ROBOT_MANUAL_CONTROL:
+            SetRobotAutoControlState(payload[0]);
+            break;
+        default:
+            break;
     }
-
 }
+
 //*************************************************************************/
 //Fonctions correspondant aux messages
 //*************************************************************************/
