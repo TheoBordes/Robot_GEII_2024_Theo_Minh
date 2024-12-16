@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <StartupObject>BaballeStalkerQuiMarcheVraiment.App</StartupObject>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SciChart" Version="8.1.0.27856" />
+    <PackageReference Include="SciChart3D" Version="8.1.0.27856" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExtendedSerialPort\ExtendedSerialPort.csproj" />
+    <ProjectReference Include="..\Position\Position.csproj" />
+  </ItemGroup>
+
+</Project>

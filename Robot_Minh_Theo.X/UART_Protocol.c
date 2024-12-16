@@ -103,10 +103,21 @@ void UartDecodeMessage(unsigned char c) {
 //
 
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
+    int SigneD = 1;
+    int SigneG = 1;
+    
     switch (function) {
         case ControlXbox:
+//            if(payload[1] == 1){
+//                SigneD = -1;
+//            }
+//            if(payload[3] == 1){
+//                SigneG = -1;
+//            }
+                
             PWMSetSpeedConsigne(payload[0], MOTEUR_DROIT);
             PWMSetSpeedConsigne(payload[1], MOTEUR_GAUCHE);
+
             break;
         case SET_ROBOT_STATE:
            // SetRobotState(payload[0]);

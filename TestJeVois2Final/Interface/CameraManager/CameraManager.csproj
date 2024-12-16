@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CameraJeVoisProAdapter\CameraJeVoisProAdapter.csproj" />
+    <ProjectReference Include="..\Constants\Constants.csproj" />
+    <ProjectReference Include="..\EventArgsLibrary\EventArgsLibrary.csproj" />
+    <ProjectReference Include="..\ExtendedSerialPort\ExtendedSerialPort.csproj" />
+    <ProjectReference Include="..\Utilities\Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

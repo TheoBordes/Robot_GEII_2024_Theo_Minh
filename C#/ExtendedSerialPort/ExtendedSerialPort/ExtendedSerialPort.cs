@@ -129,7 +129,7 @@ namespace ExtendedSerialPort_NS
                     int count = BaseStream.EndRead(ar);
                     byte[] dst = new byte[count];
                     Buffer.BlockCopy(buffer, 0, dst, 0, count);
-                    //On lance un évènement OnDatReceived
+                    //On lance un évènement OnDatReceived amour
                     OnDataReceived(dst);
                 }
                 //catch (Exception exception)

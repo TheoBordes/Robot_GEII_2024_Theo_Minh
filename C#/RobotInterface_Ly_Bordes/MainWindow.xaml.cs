@@ -62,6 +62,7 @@ namespace RobotInterface_Ly_Bordes
         bool gamepad_state = true;
         int compteur = 0;
 
+
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
             
