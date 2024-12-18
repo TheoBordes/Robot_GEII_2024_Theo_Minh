@@ -116,6 +116,8 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 //            }
                 
             PWMSetSpeedConsigne(payload[0], MOTEUR_DROIT);
+                                                                                                                                                                                                                                                                                                   
+            
             PWMSetSpeedConsigne(payload[1], MOTEUR_GAUCHE);
 
             break;
