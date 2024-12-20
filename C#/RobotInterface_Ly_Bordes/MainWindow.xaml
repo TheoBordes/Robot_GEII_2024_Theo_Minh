@@ -35,11 +35,11 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.RowSpan="2">
             <GroupBox x:Name="Leds"  Header="Leds">
                 <StackPanel Orientation="Vertical">
-                    <CheckBox x:Name="Led1" Content="Led1" HorizontalAlignment="Left" />
-                    <CheckBox x:Name="Led2" Content="Led2" HorizontalAlignment="Left" />
-                    <CheckBox x:Name="Led3" Content="Led3" HorizontalAlignment="Left" />
-                    <CheckBox x:Name="Led4" Content="Led4" HorizontalAlignment="Left" />
-                    <CheckBox x:Name="Led5" Content="Led5" HorizontalAlignment="Left" />
+                    <CheckBox x:Name="Led1" Content="Led1" HorizontalAlignment="Left" Checked="Led1_Checked" Unchecked="Led1_Checked"/>
+                    <CheckBox x:Name="Led2" Content="Led2" HorizontalAlignment="Left" Checked="Led2_Checked" Unchecked="Led2_Checked"/>
+                    <CheckBox x:Name="Led3" Content="Led3" HorizontalAlignment="Left" Checked="Led3_Checked" Unchecked="Led3_Checked"/>
+                    <CheckBox x:Name="Led4" Content="Led4" HorizontalAlignment="Left" Checked="Led4_Checked" Unchecked="Led4_Checked"/>
+                    <CheckBox x:Name="Led5" Content="Led5" HorizontalAlignment="Left" Checked="Led5_Checked" Unchecked="Led5_Checked"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox x:Name="IRTels" Header="Telemetres IR">

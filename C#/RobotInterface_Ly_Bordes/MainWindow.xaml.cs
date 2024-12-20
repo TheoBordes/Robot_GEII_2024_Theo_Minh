@@ -43,7 +43,7 @@ namespace RobotInterface_Ly_Bordes
         {
             InitializeComponent();
 
-            serialPort1 = new ExtendedSerialPort("COM6", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
             DispatcherTimer timerAffichage;
@@ -73,7 +73,7 @@ namespace RobotInterface_Ly_Bordes
                 gamepad_state = false ;
                 //RichTextBox.Text += "Gamepad not connected.\n";
                 byte[] mode = new byte[] {1};
-                UartEncodeAndSendMessage(0x0052, 1, mode);
+                UartEncodeAndSendMessage(0x0052, 0, mode);
             }   
             else if ( gamepad.IsConnected ) {
                 byte[] mode = new byte[] { 0 };
@@ -414,7 +414,97 @@ namespace RobotInterface_Ly_Bordes
 
         private void TextBlock_TextInput(object sender, TextCompositionEventArgs e)
         {
+           
+            
+        }
 
+
+        bool L1 = false;
+        bool L2 = false;
+        bool L3 = false;
+        bool L4 = false;
+        bool L5 = false;
+        byte[] ledList = new byte[] { 0x00, 0x00};
+        private void Led1_Checked(object sender, RoutedEventArgs e)
+        {
+            
+            L1 = !L1;
+            ledList[0]=0x01;
+            if ( L1)
+            {
+                ledList[1] = 0x01;
+            }
+            else
+            {
+                ledList[1] = 0x00;
+            }
+      
+     
+                UartEncodeAndSendMessage(0x0020, 2, ledList);
+           
+           
+        }
+        private void Led2_Checked(object sender, RoutedEventArgs e)
+        {
+            L2 = !L2;
+            ledList[0] = 0x02;
+            if (L2)
+            {
+                ledList[1] = 0x01;
+            }
+            else
+            {
+                ledList[1] = 0x00;
+            }
+
+            UartEncodeAndSendMessage(0x0020, 2, ledList);
+        }
+        private void Led3_Checked(object sender, RoutedEventArgs e)
+        {
+            L3 = !L3;
+            ledList[0] = 0x03;
+            if (L3)
+            {
+                ledList[1] = 0x01;
+            }
+            else
+            {
+                ledList[1] = 0x00;
+            }
+
+            UartEncodeAndSendMessage(0x0020, 2, ledList);
+        }
+
+        private void Led4_Checked(object sender, RoutedEventArgs e)
+        {
+            L4 = !L4;
+            ledList[0] = 0x04;
+            if (L4)
+            {
+                ledList[1] = 0x01;
+            }
+            else
+            {
+                ledList[1] = 0x00;
+            }
+
+            UartEncodeAndSendMessage(0x0020, 2, ledList);
+        }
+
+        private void Led5_Checked(object sender, RoutedEventArgs e)
+        {
+            L5 = !L5;
+            ledList[0] = 0x05;
+            if (L5)
+            {
+                ledList[1] = 0x01;
+            }
+            else
+            {
+                ledList[1] = 0x00;
+            }
+
+            UartEncodeAndSendMessage(0x0020, 2, ledList);
         }
     }
 }

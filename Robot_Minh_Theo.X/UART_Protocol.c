@@ -100,38 +100,60 @@ void UartDecodeMessage(unsigned char c) {
     }
 }
 
-//
+int L1 = 0;
+int L2 = 0;
+int L3 = 0;
+int L4 = 0;
+int L5 = 0;
 
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
-    int SigneD = 1;
-    int SigneG = 1;
-    
+    int Signe = 1;
     switch (function) {
         case ControlXbox:
-//            if(payload[1] == 1){
-//                SigneD = -1;
-//            }
-//            if(payload[3] == 1){
-//                SigneG = -1;
-//            }
-                
-            PWMSetSpeedConsigne(payload[0], MOTEUR_DROIT);
-                                                                                                                                                                                                                                                                                                   
-            
-            PWMSetSpeedConsigne(payload[1], MOTEUR_GAUCHE);
+            if (payload[0] == 1) {
+                Signe = -1;
+            }
+
+
+            PWMSetSpeedConsigne(Signe * payload[1], MOTEUR_DROIT);
+            PWMSetSpeedConsigne(Signe * payload[2], MOTEUR_GAUCHE);
 
             break;
         case SET_ROBOT_STATE:
-           // SetRobotState(payload[0]);
+            // SetRobotState(payload[0]);
             break;
         case SET_ROBOT_MANUAL_CONTROL:
             SetRobotAutoControlState(payload[0]);
+        case SetLed:
+            switch (payload[0]) {
+                case 1:
+                    L1 = payload[1];             
+                    break;
+                case 2:
+                    L2 = payload[1];
+                    break;
+                case 3:
+                    L3 = payload[1];
+                    break;
+                case 4:
+                    L4 = payload[1];
+                    break;
+                case 5:
+                    L5 = payload[1];
+                    break;
+            }
+            if ( L1== 1){
+                
+                 LED_BLANCHE_2 = L1;
+            }
+            LED_BLANCHE_2 = L1;
+            LED_ORANGE_2 = L2;
+            LED_ROUGE_2 = L3;
+            LED_VERTE_2 = L4;
+            LED_BLEUE_2 = L5;
             break;
         default:
             break;
     }
 }
 
-//*************************************************************************/
-//Fonctions correspondant aux messages
-//*************************************************************************/
