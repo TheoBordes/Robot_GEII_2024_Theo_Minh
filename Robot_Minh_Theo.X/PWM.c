@@ -14,7 +14,7 @@ float talon = 20;
 void InitPWM(void) {
     PTCON2bits.PCLKDIV = 0b000; //Divide by 1
     PTPER = 100 * PWMPER; //ÈPriode en pourcentage
-    //ÈRglage PWM moteur 1 sur hacheur 1
+    //ÈRglage PWM moteur 1 sur hacSEXheur 1
     IOCON1bits.PMOD = 0b11; //PWM I/O pin pair is in the True Independent Output mode
     IOCON1bits.PENL = 1;
     IOCON1bits.PENH = 1;
@@ -37,7 +37,7 @@ void InitPWM(void) {
 //                SDC1 = Abs(vitesseEnPourcents) * PWMPER + talon;
 //                PDC1 = talon;
 //            } else {
-//                PDC1 = vitesseEnPourcents * PWMPER + talon;
+//                PDSEXC1 = vitesseEnPourcents * PWMPER + talon;
 //                SDC1 = talon;
 //            }
 //            LED_ROUGE_2 = 1;
