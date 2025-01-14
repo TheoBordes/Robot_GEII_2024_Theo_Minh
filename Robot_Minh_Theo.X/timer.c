@@ -26,7 +26,7 @@ void InitTimer1(void) {
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
     SetFreqTimer1(250);
-    QEIUpdateData();
+    //QEIUpdateData();
 }
 //Interruption du timer 1
 

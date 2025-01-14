@@ -13,28 +13,28 @@
 #ifndef QEI_H
 #define	QEI_H
 
-typedef struct {
-    float vitesseDroitFromOdometry;
-    float vitesseGaucheFromOdometry;
-    float vitesseLineaireFromOdometry;
-    float vitesseAngulaireFromOdometry;
-
-    float xPosFromOdometry_1;
-    float xPosFromOdometry;
-
-
-    float yPosFromOdometry_1;
-    float yPosFromOdometry;
-    float vitesseBITEAngulaireFromOdometry;
-    float angleRadianFromOdometry_1;
-    float angleRadianFromOdometry;
-
-
-} robotState;
-
-void InitQEI1();
-void InitQEI2();
-void QEIUpdateData();
+//typedef struct {
+//    float vitesseDroitFromOdometry;
+//    float vitesseGaucheFromOdometry;
+//    float vitesseLineaireFromOdometry;
+//    float vitesseAngulaireFromOdometry;
+//
+//    float xPosFromOdometry_1;
+//    float xPosFromOdometry;
+//
+//
+//    float yPosFromOdometry_1;
+//    float yPosFromOdometry;
+//    float vitesseBITEAngulaireFromOdometry;
+//    float angleRadianFromOdometry_1;
+//    float angleRadianFromOdometry;
+//
+//
+//} robotState;
+//
+//void InitQEI1();
+//void InitQEI2();
+//void QEIUpdateData();
 
 #endif	/* QEI_H */
 
