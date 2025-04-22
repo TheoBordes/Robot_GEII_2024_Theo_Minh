@@ -3,6 +3,7 @@
 #include <xc.h>
 #include "UART.h"
 #include "ChipConfig.h"
+#include "QEI.h"
 #include "IO.h"
 #include "timer.h"
 #include "PWM.h" 
@@ -13,6 +14,7 @@
 #include "UART_Protocol.h"
 #include "main.h"
 #include <math.h>
+
 #define SPEED 10
 #define NUM_INPUTS 5
 #define NUM_OUTPUTS 2
@@ -441,7 +443,8 @@ int main(void) {
     LED_VERTE_1 = 1;
     LED_ROUGE_1 = 1;
     
-    
+//    InitQEI1();
+//    InitQEI2();
     InitTimer23();
     InitTimer1();
     InitTimer4();
