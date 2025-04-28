@@ -4,6 +4,7 @@
 // *
 // * Created on 6 janvier 2025, 14:24
 // */
+#include "Utilities.h"
 #include "robot.h"
 #include "QEI.h"
 #include "IO.h"
@@ -13,15 +14,15 @@
 #include <math.h>
 #include <xc.h>
 
-float QeiDroitPosition_T_1;
-float QeiDroitPosition;
-float QeiGauchePosition_T_1;
-float QeiGauchePosition;
-float delta_d;
-float delta_g;
-float vitesseDroitFromOdometry;
-float vitesseGaucheFromOdometry;
-float FREQ_ECH_QEI = 250;
+double QeiDroitPosition_T_1;
+double QeiDroitPosition;
+double QeiGauchePosition_T_1;
+double QeiGauchePosition;
+double delta_d;
+double delta_g;
+double vitesseDroitFromOdometry;
+double vitesseGaucheFromOdometry;
+double FREQ_ECH_QEI = 250;
 
 void InitQEI1()
 {
@@ -71,8 +72,8 @@ void QEIUpdateData()
     robotState.angleRadianFromOdometry_1 = robotState.angleRadianFromOdometry;
     
     //Calcul des positions dans le referentiel du terrain
-    robotState.xPosFromOdometry = robotState.xPosFromOdometry_1 * robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) ;
-    robotState.yPosFromOdometry = robotState.yPosFromOdometry_1 * robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1);
+    robotState.xPosFromOdometry = robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) ;
+    robotState.yPosFromOdometry = robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) ;
     robotState.angleRadianFromOdometry = robotState.vitesseAngulaireFromOdometry ;
     
     
@@ -83,6 +84,15 @@ void QEIUpdateData()
 
 }
 
-
-
-
+#define POSITION_DATA 0x0061
+void SendPositionData()
+{
+unsigned char positionPayload[24];
+getBytesFromInt32(positionPayload, 0, timestamp);
+getBytesFromFloat(positionPayload, 4, (float)(robotState.xPosFromOdometry));
+getBytesFromFloat(positionPayload, 8, (float)(robotState.yPosFromOdometry));
+getBytesFromFloat(positionPayload, 12, (float)(robotState.angleRadianFromOdometry));
+getBytesFromFloat(positionPayload, 16, (float)(robotState.vitesseLineaireFromOdometry));
+getBytesFromFloat(positionPayload, 20, (float)(robotState.vitesseAngulaireFromOdometry));
+UartEncodeAndSendMessage(POSITION_DATA, 24, positionPayload);
+}

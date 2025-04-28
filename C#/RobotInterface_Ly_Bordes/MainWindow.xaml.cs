@@ -43,7 +43,7 @@ namespace RobotInterface_Ly_Bordes
         {
             InitializeComponent();
 
-            serialPort1 = new ExtendedSerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM4", 115200, Parity.None, 8, StopBits.One);// Cjhanger le port USB (COM)
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
             DispatcherTimer timerAffichage;
@@ -506,5 +506,44 @@ namespace RobotInterface_Ly_Bordes
 
             UartEncodeAndSendMessage(0x0020, 2, ledList);
         }
+        byte[] msgPayload = { };
+        private void Converter(object sender, RoutedEventArgs e)
+        {
+            float timestamp = BitConverter.ToInt32(msgPayload);
+            float  Xpos = BitConverter.ToSingle(msgPayload, 4);
+            float  Ypos = BitConverter.ToSingle(msgPayload, 8);
+            float  Angle = BitConverter.ToSingle(msgPayload, 12);
+            float  VitesseLineaire= BitConverter.ToSingle(msgPayload, 16);
+            float  VitesseAngulaire= BitConverter.ToSingle(msgPayload, 20);
+            robot.positionYOdo = Xpos;
+            robot.positionXOdo = Ypos;
+            robot.angleRadianFromOdometry = Angle;
+            robot.vitesseLineaireFromOdometry = VitesseLineaire;
+            robot.vitesseAngulaireFromOdometry = VitesseAngulaire;
+        }
+
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

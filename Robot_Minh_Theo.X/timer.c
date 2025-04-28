@@ -26,15 +26,22 @@ void InitTimer1(void) {
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
     SetFreqTimer1(250);
-//    QEIUpdateData();
+
 }
 //Interruption du timer 1
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
+    int i;
     IFS0bits.T1IF = 0;
 
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
+    if(i < 10){
+    QEIUpdateData();
+    SendPositionData();
+    i++;
+    }
+
 }
 
 //Initialisation d?un timer 32 bits

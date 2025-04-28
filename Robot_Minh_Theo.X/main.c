@@ -443,8 +443,8 @@ int main(void) {
     LED_VERTE_1 = 1;
     LED_ROUGE_1 = 1;
     
-//    InitQEI1();
-//    InitQEI2();
+    InitQEI1();
+    InitQEI2();
     InitTimer23();
     InitTimer1();
     InitTimer4();

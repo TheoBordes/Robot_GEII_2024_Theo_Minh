@@ -16,6 +16,11 @@ namespace RobotInterface_Ly_Bordes
         public float distanceTelemetreCentre;
         public float distanceTelemetreGauche;
         public float distanceTelemetreplusGauche;
+        public float positionYOdo;
+        public float positionXOdo ;
+        public float angleRadianFromOdometry ;
+        public float vitesseLineaireFromOdometry;
+        public float vitesseAngulaireFromOdometry;
         public Robot()
         {
             
