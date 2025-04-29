@@ -209,10 +209,6 @@ void OperatingSystemLoop(void) {
     }
 }
 
-
-
-
-
 //void OperatingSystemLoop(void) {
 //
 //    switch (stateRobot) {
@@ -511,7 +507,6 @@ int main(void) {
             } else {
                 LED_ROUGE_1 = 0;
             }
-
 
         }
     }

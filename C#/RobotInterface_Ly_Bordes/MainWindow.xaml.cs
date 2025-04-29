@@ -38,6 +38,7 @@ namespace RobotInterface_Ly_Bordes
         Robot robot = new Robot();
         private Timer TimerAffichage;
         private Controller gamepad;
+        public int pape;
 
         public MainWindow()
         {
@@ -102,8 +103,27 @@ namespace RobotInterface_Ly_Bordes
                     RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
                            RichTextBox.Text += $"Buttons: {gamepadState.Buttons}\n"));
                 }
+
             }
-           
+            if (pape == 1)
+            {
+                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+           RichTextBox.Text = $"posX: {robot.positionXOdo}\n"));
+
+                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+           RichTextBox.Text += $"posY: {robot.positionYOdo}\n"));
+
+                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+           RichTextBox.Text += $"Angle: {robot.angleRadianFromOdometry}\n"));
+
+                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+           RichTextBox.Text += $"VitLin: {robot.vitesseLineaireFromOdometry}\n"));
+
+                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+           RichTextBox.Text += $"VitAngl: {robot.vitesseAngulaireFromOdometry}\n"));
+                pape = 0;
+            }
+
 
         }
 
@@ -231,6 +251,20 @@ namespace RobotInterface_Ly_Bordes
                     RichTextBox.Text += "\nRobot␣State␣:␣" +((StateRobot)(msgPayload[0])).ToString() +"␣-␣" + instant.ToString() + "␣ms"));
                     break;
 
+                case (byte)IDfonction.QEIReception:
+                    robot.positionXOdo = BitConverter.ToSingle(msgPayload, 4);
+                    robot.positionYOdo = BitConverter.ToSingle(msgPayload, 8);
+                    robot.angleRadianFromOdometry = BitConverter.ToSingle(msgPayload, 12);
+                    robot.vitesseLineaireFromOdometry = BitConverter.ToSingle(msgPayload, 16);
+                    robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
+                    pape = 1;
+
+
+
+
+
+
+                    break;
             }
             
         }
@@ -367,6 +401,7 @@ namespace RobotInterface_Ly_Bordes
             IRdistance = 0x0030,
             SpeedRule = 0x0040,
             RobotState = 0x0050,
+            QEIReception = 0x0061,
             functionTestValue
         }
 
@@ -506,30 +541,6 @@ namespace RobotInterface_Ly_Bordes
 
             UartEncodeAndSendMessage(0x0020, 2, ledList);
         }
-        byte[] msgPayload = { };
-        private void Converter(object sender, RoutedEventArgs e)
-        {
-            float timestamp = BitConverter.ToInt32(msgPayload);
-            float  Xpos = BitConverter.ToSingle(msgPayload, 4);
-            float  Ypos = BitConverter.ToSingle(msgPayload, 8);
-            float  Angle = BitConverter.ToSingle(msgPayload, 12);
-            float  VitesseLineaire= BitConverter.ToSingle(msgPayload, 16);
-            float  VitesseAngulaire= BitConverter.ToSingle(msgPayload, 20);
-            robot.positionYOdo = Xpos;
-            robot.positionXOdo = Ypos;
-            robot.angleRadianFromOdometry = Angle;
-            robot.vitesseLineaireFromOdometry = VitesseLineaire;
-            robot.vitesseAngulaireFromOdometry = VitesseAngulaire;
-        }
-
-
-
-
-
-
-
-
-
     }
 
 

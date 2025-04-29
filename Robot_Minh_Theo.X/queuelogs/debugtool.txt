@@ -1,185 +1,1006 @@
-352 1733759276951 GEN4_CONNECT_DIAGNOSTICS:MPLABCommTool is NOT null
-352 1733759276951 GEN4_CONNECT_DIAGNOSTICS:AttachedToolPID = 9015, AttachedToolVID = 4d8
-352 1733759276951 GEN4_CONNECT_DIAGNOSTICS:transport type = USB
-352 1733759276951 GEN4_CONNECT_DIAGNOSTICS:AttachedToolPID = 9015, AttachedToolVID = 4d8
-352 1733759277875 com.microchip.mplab.mdbcore.RealICETool.RIDbgToolCom
-352 1733759277875 GEN4_CONNECT_DIAGNOSTICS:Before MPLABCommTool.Connect()
-352 1733759277875 GEN4_CONNECT_DIAGNOSTICS:After MPLABCommTool.Connect()
-352 1733759277875 GEN4_CONNECT_DIAGNOSTICS:MPLABCommTool.Connect() returned MPLABCOMM_NO_ERROR
-352 1733759277876 GEN4_CONNECT_DIAGNOSTICS:Attaching to MPLABCommTool plugnplay
-352 1733759277894 GEN4_CONNECT_DIAGNOSTICS:Adding new plug and play observer com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@1b3b0d1c
-352 1733759277894 GEN4_CONNECT_DIAGNOSTICS:Begin PlugNPlayObservers list dump:
-352 1733759277894 GEN4_CONNECT_DIAGNOSTICS:com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@1b3b0d1c
-352 1733759277894 GEN4_CONNECT_DIAGNOSTICS:End PlugNPlayObservers list dump:
+454 1745930775066 XXXX 1745930775066, Thread 454: XXXX 1745930775066, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775071 XXXX 1745930775071, Thread 454: XXXX 1745930775071, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775071 XXXX 1745930775071, Thread 454: XXXX 1745930775071, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775071 XXXX 1745930775071, Thread 454: XXXX 1745930775071, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775074 XXXX 1745930775074, Thread 454: XXXX 1745930775074, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775074 XXXX 1745930775074, Thread 454: XXXX 1745930775074, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775074 XXXX 1745930775074, Thread 454: XXXX 1745930775074, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775079 XXXX 1745930775079, Thread 454: XXXX 1745930775079, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775079 XXXX 1745930775079, Thread 454: XXXX 1745930775079, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775079 XXXX 1745930775079, Thread 454: XXXX 1745930775079, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775080 XXXX 1745930775080, Thread 454: XXXX 1745930775080, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775080 XXXX 1745930775080, Thread 454: XXXX 1745930775080, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775080 XXXX 1745930775080, Thread 454: XXXX 1745930775080, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775086 XXXX 1745930775086, Thread 454: XXXX 1745930775086, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775086 XXXX 1745930775086, Thread 454: XXXX 1745930775086, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775086 XXXX 1745930775086, Thread 454: XXXX 1745930775086, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775088 XXXX 1745930775088, Thread 454: XXXX 1745930775088, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775088 XXXX 1745930775088, Thread 454: XXXX 1745930775088, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775088 XXXX 1745930775088, Thread 454: XXXX 1745930775088, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775093 XXXX 1745930775093, Thread 454: XXXX 1745930775093, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775093 XXXX 1745930775093, Thread 454: XXXX 1745930775093, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775093 XXXX 1745930775093, Thread 454: XXXX 1745930775093, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775094 XXXX 1745930775094, Thread 454: XXXX 1745930775094, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775094 XXXX 1745930775094, Thread 454: XXXX 1745930775094, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775095 XXXX 1745930775095, Thread 454: XXXX 1745930775095, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775100 XXXX 1745930775100, Thread 454: XXXX 1745930775100, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775100 XXXX 1745930775100, Thread 454: XXXX 1745930775100, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775100 XXXX 1745930775100, Thread 454: XXXX 1745930775100, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775102 XXXX 1745930775102, Thread 454: XXXX 1745930775102, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775102 XXXX 1745930775102, Thread 454: XXXX 1745930775102, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775102 XXXX 1745930775102, Thread 454: XXXX 1745930775102, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775107 XXXX 1745930775107, Thread 454: XXXX 1745930775107, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775107 XXXX 1745930775107, Thread 454: XXXX 1745930775107, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775107 XXXX 1745930775107, Thread 454: XXXX 1745930775107, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775109 XXXX 1745930775109, Thread 454: XXXX 1745930775109, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775109 XXXX 1745930775109, Thread 454: XXXX 1745930775109, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775109 XXXX 1745930775109, Thread 454: XXXX 1745930775109, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775114 XXXX 1745930775114, Thread 454: XXXX 1745930775114, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775114 XXXX 1745930775114, Thread 454: XXXX 1745930775114, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775114 XXXX 1745930775114, Thread 454: XXXX 1745930775114, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775116 XXXX 1745930775116, Thread 454: XXXX 1745930775116, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775116 XXXX 1745930775116, Thread 454: XXXX 1745930775116, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775116 XXXX 1745930775116, Thread 454: XXXX 1745930775116, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775121 XXXX 1745930775121, Thread 454: XXXX 1745930775121, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775121 XXXX 1745930775121, Thread 454: XXXX 1745930775121, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775121 XXXX 1745930775121, Thread 454: XXXX 1745930775121, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775123 XXXX 1745930775123, Thread 454: XXXX 1745930775123, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775123 XXXX 1745930775123, Thread 454: XXXX 1745930775123, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775123 XXXX 1745930775123, Thread 454: XXXX 1745930775123, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775129 XXXX 1745930775129, Thread 454: XXXX 1745930775129, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775129 XXXX 1745930775129, Thread 454: XXXX 1745930775129, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775129 XXXX 1745930775129, Thread 454: XXXX 1745930775129, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775131 XXXX 1745930775131, Thread 454: XXXX 1745930775131, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775131 XXXX 1745930775131, Thread 454: XXXX 1745930775131, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775131 XXXX 1745930775131, Thread 454: XXXX 1745930775131, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775136 XXXX 1745930775136, Thread 454: XXXX 1745930775136, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775136 XXXX 1745930775136, Thread 454: XXXX 1745930775136, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775136 XXXX 1745930775136, Thread 454: XXXX 1745930775136, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775139 XXXX 1745930775139, Thread 454: XXXX 1745930775139, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775139 XXXX 1745930775139, Thread 454: XXXX 1745930775139, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775139 XXXX 1745930775139, Thread 454: XXXX 1745930775139, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775144 XXXX 1745930775144, Thread 454: XXXX 1745930775144, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775144 XXXX 1745930775144, Thread 454: XXXX 1745930775144, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775144 XXXX 1745930775144, Thread 454: XXXX 1745930775144, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775147 XXXX 1745930775147, Thread 454: XXXX 1745930775147, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775147 XXXX 1745930775147, Thread 454: XXXX 1745930775147, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775147 XXXX 1745930775147, Thread 454: XXXX 1745930775147, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775152 XXXX 1745930775152, Thread 454: XXXX 1745930775152, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775152 XXXX 1745930775152, Thread 454: XXXX 1745930775152, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775152 XXXX 1745930775152, Thread 454: XXXX 1745930775152, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775155 XXXX 1745930775155, Thread 454: XXXX 1745930775155, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775155 XXXX 1745930775155, Thread 454: XXXX 1745930775155, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775155 XXXX 1745930775155, Thread 454: XXXX 1745930775155, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775160 XXXX 1745930775160, Thread 454: XXXX 1745930775160, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775160 XXXX 1745930775160, Thread 454: XXXX 1745930775160, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775160 XXXX 1745930775160, Thread 454: XXXX 1745930775160, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775162 XXXX 1745930775162, Thread 454: XXXX 1745930775162, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775162 XXXX 1745930775162, Thread 454: XXXX 1745930775162, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775162 XXXX 1745930775162, Thread 454: XXXX 1745930775162, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775168 XXXX 1745930775168, Thread 454: XXXX 1745930775168, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775168 XXXX 1745930775168, Thread 454: XXXX 1745930775168, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775168 XXXX 1745930775168, Thread 454: XXXX 1745930775168, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775170 XXXX 1745930775170, Thread 454: XXXX 1745930775170, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775170 XXXX 1745930775170, Thread 454: XXXX 1745930775170, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775170 XXXX 1745930775170, Thread 454: XXXX 1745930775170, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775176 XXXX 1745930775176, Thread 454: XXXX 1745930775176, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775176 XXXX 1745930775176, Thread 454: XXXX 1745930775176, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775176 XXXX 1745930775176, Thread 454: XXXX 1745930775176, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775178 XXXX 1745930775178, Thread 454: XXXX 1745930775178, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775178 XXXX 1745930775178, Thread 454: XXXX 1745930775178, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775178 XXXX 1745930775178, Thread 454: XXXX 1745930775178, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775183 XXXX 1745930775183, Thread 454: XXXX 1745930775183, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775183 XXXX 1745930775183, Thread 454: XXXX 1745930775183, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775183 XXXX 1745930775183, Thread 454: XXXX 1745930775183, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775186 XXXX 1745930775186, Thread 454: XXXX 1745930775186, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775186 XXXX 1745930775186, Thread 454: XXXX 1745930775186, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775186 XXXX 1745930775186, Thread 454: XXXX 1745930775186, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775191 XXXX 1745930775191, Thread 454: XXXX 1745930775191, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775191 XXXX 1745930775191, Thread 454: XXXX 1745930775191, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775191 XXXX 1745930775191, Thread 454: XXXX 1745930775191, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775194 XXXX 1745930775194, Thread 454: XXXX 1745930775194, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775194 XXXX 1745930775194, Thread 454: XXXX 1745930775194, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775194 XXXX 1745930775194, Thread 454: XXXX 1745930775194, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775199 XXXX 1745930775199, Thread 454: XXXX 1745930775199, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775199 XXXX 1745930775199, Thread 454: XXXX 1745930775199, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775199 XXXX 1745930775199, Thread 454: XXXX 1745930775199, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775201 XXXX 1745930775201, Thread 454: XXXX 1745930775201, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775201 XXXX 1745930775201, Thread 454: XXXX 1745930775201, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775201 XXXX 1745930775201, Thread 454: XXXX 1745930775201, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775207 XXXX 1745930775207, Thread 454: XXXX 1745930775207, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775207 XXXX 1745930775207, Thread 454: XXXX 1745930775207, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775207 XXXX 1745930775207, Thread 454: XXXX 1745930775207, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775209 XXXX 1745930775209, Thread 454: XXXX 1745930775209, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775209 XXXX 1745930775209, Thread 454: XXXX 1745930775209, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775209 XXXX 1745930775209, Thread 454: XXXX 1745930775209, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775215 XXXX 1745930775215, Thread 454: XXXX 1745930775215, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775215 XXXX 1745930775215, Thread 454: XXXX 1745930775215, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775215 XXXX 1745930775215, Thread 454: XXXX 1745930775215, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775217 XXXX 1745930775217, Thread 454: XXXX 1745930775217, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775217 XXXX 1745930775217, Thread 454: XXXX 1745930775217, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775217 XXXX 1745930775217, Thread 454: XXXX 1745930775217, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775222 XXXX 1745930775222, Thread 454: XXXX 1745930775222, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775222 XXXX 1745930775222, Thread 454: XXXX 1745930775222, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775222 XXXX 1745930775222, Thread 454: XXXX 1745930775222, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775225 XXXX 1745930775225, Thread 454: XXXX 1745930775225, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775225 XXXX 1745930775225, Thread 454: XXXX 1745930775225, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775225 XXXX 1745930775225, Thread 454: XXXX 1745930775225, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775231 XXXX 1745930775231, Thread 454: XXXX 1745930775231, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775231 XXXX 1745930775231, Thread 454: XXXX 1745930775231, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775231 XXXX 1745930775231, Thread 454: XXXX 1745930775231, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775233 XXXX 1745930775233, Thread 454: XXXX 1745930775233, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775233 XXXX 1745930775233, Thread 454: XXXX 1745930775233, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775233 XXXX 1745930775233, Thread 454: XXXX 1745930775233, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775238 XXXX 1745930775238, Thread 454: XXXX 1745930775238, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775238 XXXX 1745930775238, Thread 454: XXXX 1745930775238, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775238 XXXX 1745930775238, Thread 454: XXXX 1745930775238, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775240 XXXX 1745930775240, Thread 454: XXXX 1745930775240, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775240 XXXX 1745930775240, Thread 454: XXXX 1745930775240, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775240 XXXX 1745930775240, Thread 454: XXXX 1745930775240, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775246 XXXX 1745930775246, Thread 454: XXXX 1745930775246, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775246 XXXX 1745930775246, Thread 454: XXXX 1745930775246, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775246 XXXX 1745930775246, Thread 454: XXXX 1745930775246, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775248 XXXX 1745930775248, Thread 454: XXXX 1745930775248, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775248 XXXX 1745930775248, Thread 454: XXXX 1745930775248, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775248 XXXX 1745930775248, Thread 454: XXXX 1745930775248, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775254 XXXX 1745930775254, Thread 454: XXXX 1745930775254, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775254 XXXX 1745930775254, Thread 454: XXXX 1745930775254, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775254 XXXX 1745930775254, Thread 454: XXXX 1745930775254, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775256 XXXX 1745930775256, Thread 454: XXXX 1745930775256, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775256 XXXX 1745930775256, Thread 454: XXXX 1745930775256, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775256 XXXX 1745930775256, Thread 454: XXXX 1745930775256, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775261 XXXX 1745930775261, Thread 454: XXXX 1745930775261, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775261 XXXX 1745930775261, Thread 454: XXXX 1745930775261, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775261 XXXX 1745930775261, Thread 454: XXXX 1745930775261, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775264 XXXX 1745930775264, Thread 454: XXXX 1745930775264, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775264 XXXX 1745930775264, Thread 454: XXXX 1745930775264, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775264 XXXX 1745930775264, Thread 454: XXXX 1745930775264, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775269 XXXX 1745930775269, Thread 454: XXXX 1745930775269, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775269 XXXX 1745930775269, Thread 454: XXXX 1745930775269, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775269 XXXX 1745930775269, Thread 454: XXXX 1745930775269, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775272 XXXX 1745930775272, Thread 454: XXXX 1745930775272, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775272 XXXX 1745930775272, Thread 454: XXXX 1745930775272, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775272 XXXX 1745930775272, Thread 454: XXXX 1745930775272, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775277 XXXX 1745930775277, Thread 454: XXXX 1745930775277, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775277 XXXX 1745930775277, Thread 454: XXXX 1745930775277, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775277 XXXX 1745930775277, Thread 454: XXXX 1745930775277, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775279 XXXX 1745930775279, Thread 454: XXXX 1745930775279, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775279 XXXX 1745930775279, Thread 454: XXXX 1745930775279, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775279 XXXX 1745930775279, Thread 454: XXXX 1745930775279, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775314 XXXX 1745930775314, Thread 454: XXXX 1745930775314, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775314 XXXX 1745930775314, Thread 454: XXXX 1745930775314, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775315 XXXX 1745930775315, Thread 454: XXXX 1745930775315, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775317 XXXX 1745930775317, Thread 454: XXXX 1745930775317, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775317 XXXX 1745930775317, Thread 454: XXXX 1745930775317, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775317 XXXX 1745930775317, Thread 454: XXXX 1745930775317, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775323 XXXX 1745930775323, Thread 454: XXXX 1745930775323, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775323 XXXX 1745930775323, Thread 454: XXXX 1745930775323, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775323 XXXX 1745930775323, Thread 454: XXXX 1745930775323, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775325 XXXX 1745930775325, Thread 454: XXXX 1745930775325, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775325 XXXX 1745930775325, Thread 454: XXXX 1745930775325, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775325 XXXX 1745930775325, Thread 454: XXXX 1745930775325, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775330 XXXX 1745930775330, Thread 454: XXXX 1745930775330, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775330 XXXX 1745930775330, Thread 454: XXXX 1745930775330, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775330 XXXX 1745930775330, Thread 454: XXXX 1745930775330, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775332 XXXX 1745930775332, Thread 454: XXXX 1745930775332, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775332 XXXX 1745930775332, Thread 454: XXXX 1745930775332, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775332 XXXX 1745930775332, Thread 454: XXXX 1745930775332, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775338 XXXX 1745930775338, Thread 454: XXXX 1745930775338, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775338 XXXX 1745930775338, Thread 454: XXXX 1745930775338, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775338 XXXX 1745930775338, Thread 454: XXXX 1745930775338, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775340 XXXX 1745930775340, Thread 454: XXXX 1745930775340, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775340 XXXX 1745930775340, Thread 454: XXXX 1745930775340, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775340 XXXX 1745930775340, Thread 454: XXXX 1745930775340, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775346 XXXX 1745930775346, Thread 454: XXXX 1745930775346, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775346 XXXX 1745930775346, Thread 454: XXXX 1745930775346, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775346 XXXX 1745930775346, Thread 454: XXXX 1745930775346, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775348 XXXX 1745930775348, Thread 454: XXXX 1745930775348, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775348 XXXX 1745930775348, Thread 454: XXXX 1745930775348, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775348 XXXX 1745930775348, Thread 454: XXXX 1745930775348, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775353 XXXX 1745930775353, Thread 454: XXXX 1745930775353, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775353 XXXX 1745930775353, Thread 454: XXXX 1745930775353, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775353 XXXX 1745930775353, Thread 454: XXXX 1745930775353, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775356 XXXX 1745930775356, Thread 454: XXXX 1745930775356, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775356 XXXX 1745930775356, Thread 454: XXXX 1745930775356, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775356 XXXX 1745930775356, Thread 454: XXXX 1745930775356, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775362 XXXX 1745930775362, Thread 454: XXXX 1745930775362, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775362 XXXX 1745930775362, Thread 454: XXXX 1745930775362, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775362 XXXX 1745930775362, Thread 454: XXXX 1745930775362, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775365 XXXX 1745930775365, Thread 454: XXXX 1745930775365, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775365 XXXX 1745930775365, Thread 454: XXXX 1745930775365, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775365 XXXX 1745930775365, Thread 454: XXXX 1745930775365, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775371 XXXX 1745930775371, Thread 454: XXXX 1745930775371, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775371 XXXX 1745930775371, Thread 454: XXXX 1745930775371, Entering Thread 454: Commands::runScriptWithUpload, script name = ReadSFR  
+454 1745930775371 XXXX 1745930775371, Thread 454: XXXX 1745930775371, Entering Thread 454: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+454 1745930775373 XXXX 1745930775373, Thread 454: XXXX 1745930775373, Exiting Thread 454: ToolCommUsb::readTransfer,  cr.status = 0x0  
+454 1745930775373 XXXX 1745930775373, Thread 454: XXXX 1745930775373, Exiting Thread 454: Commands::runScriptWithUpload  
+454 1745930775373 XXXX 1745930775373, Thread 454: XXXX 1745930775373, Entering Thread 454: Commands::runScriptWithDownload, script name = WriteSFR  
+454 1745930775379 XXXX 1745930775379, Thread 454: XXXX 1745930775379, Exiting Thread 454: Commands::runScriptWithDownload(WriteSFR)  
+454 1745930775379 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Post:SetFreezePerihperalInfo
+454 1745930775379 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return Value
+454 1745930775379 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 none
+454 1745930775379 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return End
 
-352 1733759285891 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:init
-352 1733759285891 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759285891 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: Values:
-352 1733759285891 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: pcAddress = 0000002e, Vpp = 3,25, useRowEraseIfVoltageIsLow = false, voltageBelowWhichUseRowErase = 0,00, deviceName = dsPIC33EP512MU814, programmerType = DSPIC33EP
-352 1733759285891 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: MemInfo values:
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffffff, exists = true, startAddr = 00000000, endAddr = 007fffff, rowSize = 0800, rowEraseSize = 0800, addrInc = 0002, widthProgram = 0004
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffff, exists = true, startAddr = 00f80004, endAddr = 00f80011, rowSize = 0001, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 00ff, exists = true, startAddr = 00f80012, endAddr = 00f80013, rowSize = 0001, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffffff, exists = true, startAddr = 00800000, endAddr = 00800fff, rowSize = 0800, rowEraseSize = 0800, addrInc = 0002, widthProgram = 0004
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 7fffffff, exists = true, startAddr = 00ff0000, endAddr = 00ff0003, rowSize = 0001, rowEraseSize = 0000, addrInc = 0001, widthProgram = 0001
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-352 1733759285892 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: CfgRequiredBitsMask Values:
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80004, Mask = 00000003
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80006, Mask = 00000087
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80008, Mask = 000000e7
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000a, Mask = 000000ff
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000c, Mask = 0000003f
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000e, Mask = 00000077
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80010, Mask = 00000003
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 BasicInfo: Values:
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 BasicInfo: InputStream = com.microchip.mplab.libs.toolpacksupport.EquatableFileInputStream@d90ad689, ToolFlavor = PIC32C
-352 1733759285893 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:init
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 none
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+594 1745930775415 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:setTraceDescriptor
+594 1745930775415 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
+594 1745930775415 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.DataClasses.TraceDescriptor@790f9d11
+594 1745930775415 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
+594 1745930775415 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Post:setTraceDescriptor
+594 1745930775415 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return Value
+594 1745930775415 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 none
+594 1745930775415 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return End
 
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4DebugInterface
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4DebugInterfaceImpl@ed4f3ec
-352 1733759289539 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+594 1745930775416 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:DebugReadTargetMemory
+594 1745930775416 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
+594 1745930775416 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Emulation
+594 1745930775416 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 fd0000
+594 1745930775416 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 fd000b
+594 1745930775416 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Length = 12
+594 1745930775416 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
+594 1745930775416 XXXX 1745930775416, Thread 594: XXXX 1745930775416, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadEmu  
+594 1745930775416 XXXX 1745930775416, Thread 594: XXXX 1745930775416, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0xc bytes long  
+594 1745930775418 XXXX 1745930775418, Thread 594: XXXX 1745930775418, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775418 XXXX 1745930775418, Thread 594: XXXX 1745930775418, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Post:DebugReadTargetMemory
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return Value
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 true
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return End
 
-352 1733759289661 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-352 1733759289661 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289661 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ProgramInterface
-352 1733759289661 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289661 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-352 1733759289661 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289661 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4ProgramInterfaceImpl@75b2fd81
-352 1733759289661 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:DebugWriteTargetMemory
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Emulation
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 fd0000
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 fd006b
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Length = 108
+594 1745930775419 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
+594 1745930775419 XXXX 1745930775419, Thread 594: XXXX 1745930775419, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadEmu  
+594 1745930775419 XXXX 1745930775419, Thread 594: XXXX 1745930775419, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x6c bytes long  
+594 1745930775422 XXXX 1745930775422, Thread 594: XXXX 1745930775422, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775422 XXXX 1745930775422, Thread 594: XXXX 1745930775422, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775422 XXXX 1745930775422, Thread 594: XXXX 1745930775422, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteEmu  
+594 1745930775425 XXXX 1745930775425, Thread 594: XXXX 1745930775425, Exiting Thread 594: Commands::runScriptWithDownload(WriteEmu)  
+594 1745930775425 XXXX 1745930775425, Thread 594: XXXX 1745930775425, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteEmu  
+594 1745930775429 XXXX 1745930775429, Thread 594: XXXX 1745930775429, Exiting Thread 594: Commands::runScriptWithDownload(WriteEmu)  
+594 1745930775429 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Post:DebugWriteTargetMemory
+594 1745930775429 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return Value
+594 1745930775429 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 true
+594 1745930775429 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return End
 
-352 1733759289763 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-352 1733759289763 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289763 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ConnectInterface
-352 1733759289763 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289765 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-352 1733759289765 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289765 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ArmToolsController.comm.ICD4ArmConnectInterfaceImpl@49a0623b
-352 1733759289765 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:SetFreezePerihperalInfo
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 104, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 110, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 112, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 11e, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 120, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 12c, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 12e, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 13a, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 13c, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 140, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 148, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 150, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 158, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 160, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 168, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 170, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 178, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 180, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 188, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 190, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 198, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 1a0, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 1a8, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 1b0, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 1b8, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 206, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 216, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 220, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 230, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 240, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 250, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 260, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 280, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 2a0, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 2b0, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 2c0, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 320, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 360, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 4dc, Mask = 20, SetVal = 20, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 600, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 626, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 640, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 900, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 90a, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 914, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 91e, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 928, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 932, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 93c, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 946, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 950, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 95a, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 964, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 96e, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 978, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 982, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 98c, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = 996, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = a80, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = c00, Mask = 4000, SetVal = 4000, Type = FileRegs
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Values:
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 BitSetInfo: Address = fd0036, Mask = 1, SetVal = 1, Type = Emulation
+594 1745930775430 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
+594 1745930775430 XXXX 1745930775430, Thread 594: XXXX 1745930775430, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775430 XXXX 1745930775430, Thread 594: XXXX 1745930775430, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775432 XXXX 1745930775432, Thread 594: XXXX 1745930775432, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775432 XXXX 1745930775432, Thread 594: XXXX 1745930775432, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775432 XXXX 1745930775432, Thread 594: XXXX 1745930775432, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775437 XXXX 1745930775437, Thread 594: XXXX 1745930775437, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775437 XXXX 1745930775437, Thread 594: XXXX 1745930775437, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775437 XXXX 1745930775437, Thread 594: XXXX 1745930775437, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775439 XXXX 1745930775439, Thread 594: XXXX 1745930775439, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775439 XXXX 1745930775439, Thread 594: XXXX 1745930775439, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775439 XXXX 1745930775439, Thread 594: XXXX 1745930775439, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775445 XXXX 1745930775445, Thread 594: XXXX 1745930775445, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775445 XXXX 1745930775445, Thread 594: XXXX 1745930775445, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775445 XXXX 1745930775445, Thread 594: XXXX 1745930775445, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775447 XXXX 1745930775447, Thread 594: XXXX 1745930775447, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775447 XXXX 1745930775447, Thread 594: XXXX 1745930775447, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775447 XXXX 1745930775447, Thread 594: XXXX 1745930775447, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775452 XXXX 1745930775452, Thread 594: XXXX 1745930775452, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775452 XXXX 1745930775452, Thread 594: XXXX 1745930775452, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775452 XXXX 1745930775452, Thread 594: XXXX 1745930775452, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775455 XXXX 1745930775455, Thread 594: XXXX 1745930775455, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775455 XXXX 1745930775455, Thread 594: XXXX 1745930775455, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775455 XXXX 1745930775455, Thread 594: XXXX 1745930775455, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775461 XXXX 1745930775461, Thread 594: XXXX 1745930775461, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775461 XXXX 1745930775461, Thread 594: XXXX 1745930775461, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775461 XXXX 1745930775461, Thread 594: XXXX 1745930775461, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775463 XXXX 1745930775463, Thread 594: XXXX 1745930775463, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775463 XXXX 1745930775463, Thread 594: XXXX 1745930775463, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775463 XXXX 1745930775463, Thread 594: XXXX 1745930775463, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775468 XXXX 1745930775468, Thread 594: XXXX 1745930775468, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775468 XXXX 1745930775468, Thread 594: XXXX 1745930775468, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775468 XXXX 1745930775468, Thread 594: XXXX 1745930775468, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775471 XXXX 1745930775471, Thread 594: XXXX 1745930775471, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775471 XXXX 1745930775471, Thread 594: XXXX 1745930775471, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775471 XXXX 1745930775471, Thread 594: XXXX 1745930775471, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775476 XXXX 1745930775476, Thread 594: XXXX 1745930775476, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775476 XXXX 1745930775476, Thread 594: XXXX 1745930775476, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775476 XXXX 1745930775476, Thread 594: XXXX 1745930775476, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775478 XXXX 1745930775478, Thread 594: XXXX 1745930775478, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775478 XXXX 1745930775478, Thread 594: XXXX 1745930775478, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775478 XXXX 1745930775478, Thread 594: XXXX 1745930775478, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775484 XXXX 1745930775484, Thread 594: XXXX 1745930775484, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775484 XXXX 1745930775484, Thread 594: XXXX 1745930775484, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775484 XXXX 1745930775484, Thread 594: XXXX 1745930775484, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775486 XXXX 1745930775486, Thread 594: XXXX 1745930775486, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775486 XXXX 1745930775486, Thread 594: XXXX 1745930775486, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775486 XXXX 1745930775486, Thread 594: XXXX 1745930775486, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775492 XXXX 1745930775492, Thread 594: XXXX 1745930775492, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775492 XXXX 1745930775492, Thread 594: XXXX 1745930775492, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775492 XXXX 1745930775492, Thread 594: XXXX 1745930775492, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775494 XXXX 1745930775494, Thread 594: XXXX 1745930775494, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775494 XXXX 1745930775494, Thread 594: XXXX 1745930775494, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775494 XXXX 1745930775494, Thread 594: XXXX 1745930775494, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775499 XXXX 1745930775499, Thread 594: XXXX 1745930775499, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775499 XXXX 1745930775499, Thread 594: XXXX 1745930775499, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775499 XXXX 1745930775499, Thread 594: XXXX 1745930775499, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775502 XXXX 1745930775502, Thread 594: XXXX 1745930775502, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775502 XXXX 1745930775502, Thread 594: XXXX 1745930775502, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775503 XXXX 1745930775503, Thread 594: XXXX 1745930775502, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775508 XXXX 1745930775508, Thread 594: XXXX 1745930775508, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775508 XXXX 1745930775508, Thread 594: XXXX 1745930775508, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775508 XXXX 1745930775508, Thread 594: XXXX 1745930775508, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775510 XXXX 1745930775510, Thread 594: XXXX 1745930775510, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775510 XXXX 1745930775510, Thread 594: XXXX 1745930775510, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775510 XXXX 1745930775510, Thread 594: XXXX 1745930775510, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775516 XXXX 1745930775516, Thread 594: XXXX 1745930775516, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775516 XXXX 1745930775516, Thread 594: XXXX 1745930775516, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775516 XXXX 1745930775516, Thread 594: XXXX 1745930775516, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775518 XXXX 1745930775518, Thread 594: XXXX 1745930775518, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775518 XXXX 1745930775518, Thread 594: XXXX 1745930775518, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775518 XXXX 1745930775518, Thread 594: XXXX 1745930775518, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775523 XXXX 1745930775523, Thread 594: XXXX 1745930775523, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775523 XXXX 1745930775523, Thread 594: XXXX 1745930775523, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775523 XXXX 1745930775523, Thread 594: XXXX 1745930775523, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775525 XXXX 1745930775525, Thread 594: XXXX 1745930775525, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775525 XXXX 1745930775525, Thread 594: XXXX 1745930775525, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775525 XXXX 1745930775525, Thread 594: XXXX 1745930775525, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775530 XXXX 1745930775530, Thread 594: XXXX 1745930775530, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775530 XXXX 1745930775530, Thread 594: XXXX 1745930775530, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775530 XXXX 1745930775530, Thread 594: XXXX 1745930775530, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775532 XXXX 1745930775532, Thread 594: XXXX 1745930775532, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775532 XXXX 1745930775532, Thread 594: XXXX 1745930775532, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775532 XXXX 1745930775532, Thread 594: XXXX 1745930775532, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775537 XXXX 1745930775537, Thread 594: XXXX 1745930775537, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775537 XXXX 1745930775537, Thread 594: XXXX 1745930775537, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775537 XXXX 1745930775537, Thread 594: XXXX 1745930775537, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775539 XXXX 1745930775539, Thread 594: XXXX 1745930775539, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775539 XXXX 1745930775539, Thread 594: XXXX 1745930775539, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775539 XXXX 1745930775539, Thread 594: XXXX 1745930775539, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775545 XXXX 1745930775545, Thread 594: XXXX 1745930775545, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775545 XXXX 1745930775545, Thread 594: XXXX 1745930775545, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775545 XXXX 1745930775545, Thread 594: XXXX 1745930775545, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775547 XXXX 1745930775547, Thread 594: XXXX 1745930775547, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775547 XXXX 1745930775547, Thread 594: XXXX 1745930775547, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775547 XXXX 1745930775547, Thread 594: XXXX 1745930775547, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775552 XXXX 1745930775552, Thread 594: XXXX 1745930775552, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775552 XXXX 1745930775552, Thread 594: XXXX 1745930775552, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775552 XXXX 1745930775552, Thread 594: XXXX 1745930775552, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775555 XXXX 1745930775555, Thread 594: XXXX 1745930775555, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775555 XXXX 1745930775555, Thread 594: XXXX 1745930775555, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775555 XXXX 1745930775555, Thread 594: XXXX 1745930775555, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775560 XXXX 1745930775560, Thread 594: XXXX 1745930775560, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775560 XXXX 1745930775560, Thread 594: XXXX 1745930775560, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775560 XXXX 1745930775560, Thread 594: XXXX 1745930775560, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775563 XXXX 1745930775563, Thread 594: XXXX 1745930775563, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775563 XXXX 1745930775563, Thread 594: XXXX 1745930775563, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775563 XXXX 1745930775563, Thread 594: XXXX 1745930775563, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775568 XXXX 1745930775568, Thread 594: XXXX 1745930775568, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775568 XXXX 1745930775568, Thread 594: XXXX 1745930775568, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775568 XXXX 1745930775568, Thread 594: XXXX 1745930775568, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775570 XXXX 1745930775570, Thread 594: XXXX 1745930775570, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775570 XXXX 1745930775570, Thread 594: XXXX 1745930775570, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775570 XXXX 1745930775570, Thread 594: XXXX 1745930775570, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775576 XXXX 1745930775576, Thread 594: XXXX 1745930775576, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775576 XXXX 1745930775576, Thread 594: XXXX 1745930775576, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775576 XXXX 1745930775576, Thread 594: XXXX 1745930775576, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775578 XXXX 1745930775578, Thread 594: XXXX 1745930775578, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775578 XXXX 1745930775578, Thread 594: XXXX 1745930775578, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775578 XXXX 1745930775578, Thread 594: XXXX 1745930775578, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775584 XXXX 1745930775584, Thread 594: XXXX 1745930775584, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775584 XXXX 1745930775584, Thread 594: XXXX 1745930775584, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775584 XXXX 1745930775584, Thread 594: XXXX 1745930775584, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775586 XXXX 1745930775586, Thread 594: XXXX 1745930775586, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775586 XXXX 1745930775586, Thread 594: XXXX 1745930775586, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775586 XXXX 1745930775586, Thread 594: XXXX 1745930775586, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775591 XXXX 1745930775591, Thread 594: XXXX 1745930775591, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775591 XXXX 1745930775591, Thread 594: XXXX 1745930775591, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775591 XXXX 1745930775591, Thread 594: XXXX 1745930775591, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775594 XXXX 1745930775594, Thread 594: XXXX 1745930775594, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775594 XXXX 1745930775594, Thread 594: XXXX 1745930775594, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775594 XXXX 1745930775594, Thread 594: XXXX 1745930775594, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775599 XXXX 1745930775599, Thread 594: XXXX 1745930775599, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775599 XXXX 1745930775599, Thread 594: XXXX 1745930775599, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775599 XXXX 1745930775599, Thread 594: XXXX 1745930775599, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775602 XXXX 1745930775602, Thread 594: XXXX 1745930775602, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775602 XXXX 1745930775602, Thread 594: XXXX 1745930775602, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775603 XXXX 1745930775603, Thread 594: XXXX 1745930775603, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775608 XXXX 1745930775608, Thread 594: XXXX 1745930775608, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775608 XXXX 1745930775608, Thread 594: XXXX 1745930775608, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775608 XXXX 1745930775608, Thread 594: XXXX 1745930775608, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775610 XXXX 1745930775610, Thread 594: XXXX 1745930775610, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775610 XXXX 1745930775610, Thread 594: XXXX 1745930775610, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775610 XXXX 1745930775610, Thread 594: XXXX 1745930775610, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775615 XXXX 1745930775615, Thread 594: XXXX 1745930775615, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775615 XXXX 1745930775615, Thread 594: XXXX 1745930775615, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775615 XXXX 1745930775615, Thread 594: XXXX 1745930775615, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775617 XXXX 1745930775617, Thread 594: XXXX 1745930775617, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775617 XXXX 1745930775617, Thread 594: XXXX 1745930775617, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775617 XXXX 1745930775617, Thread 594: XXXX 1745930775617, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775622 XXXX 1745930775622, Thread 594: XXXX 1745930775622, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775622 XXXX 1745930775622, Thread 594: XXXX 1745930775622, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775622 XXXX 1745930775622, Thread 594: XXXX 1745930775622, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775624 XXXX 1745930775624, Thread 594: XXXX 1745930775624, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775624 XXXX 1745930775624, Thread 594: XXXX 1745930775624, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775624 XXXX 1745930775624, Thread 594: XXXX 1745930775624, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775629 XXXX 1745930775629, Thread 594: XXXX 1745930775629, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775629 XXXX 1745930775629, Thread 594: XXXX 1745930775629, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775629 XXXX 1745930775629, Thread 594: XXXX 1745930775629, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775631 XXXX 1745930775631, Thread 594: XXXX 1745930775631, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775631 XXXX 1745930775631, Thread 594: XXXX 1745930775631, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775631 XXXX 1745930775631, Thread 594: XXXX 1745930775631, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775637 XXXX 1745930775637, Thread 594: XXXX 1745930775637, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775637 XXXX 1745930775637, Thread 594: XXXX 1745930775637, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775637 XXXX 1745930775637, Thread 594: XXXX 1745930775637, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775639 XXXX 1745930775639, Thread 594: XXXX 1745930775639, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775639 XXXX 1745930775639, Thread 594: XXXX 1745930775639, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775639 XXXX 1745930775639, Thread 594: XXXX 1745930775639, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775645 XXXX 1745930775645, Thread 594: XXXX 1745930775645, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775645 XXXX 1745930775645, Thread 594: XXXX 1745930775645, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775645 XXXX 1745930775645, Thread 594: XXXX 1745930775645, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775647 XXXX 1745930775647, Thread 594: XXXX 1745930775647, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775647 XXXX 1745930775647, Thread 594: XXXX 1745930775647, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775647 XXXX 1745930775647, Thread 594: XXXX 1745930775647, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775652 XXXX 1745930775652, Thread 594: XXXX 1745930775652, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775652 XXXX 1745930775652, Thread 594: XXXX 1745930775652, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775652 XXXX 1745930775652, Thread 594: XXXX 1745930775652, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775655 XXXX 1745930775655, Thread 594: XXXX 1745930775655, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775655 XXXX 1745930775655, Thread 594: XXXX 1745930775655, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775655 XXXX 1745930775655, Thread 594: XXXX 1745930775655, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775660 XXXX 1745930775660, Thread 594: XXXX 1745930775660, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775660 XXXX 1745930775660, Thread 594: XXXX 1745930775660, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775660 XXXX 1745930775660, Thread 594: XXXX 1745930775660, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775662 XXXX 1745930775662, Thread 594: XXXX 1745930775662, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775662 XXXX 1745930775662, Thread 594: XXXX 1745930775662, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775662 XXXX 1745930775662, Thread 594: XXXX 1745930775662, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775668 XXXX 1745930775668, Thread 594: XXXX 1745930775668, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775668 XXXX 1745930775668, Thread 594: XXXX 1745930775668, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775668 XXXX 1745930775668, Thread 594: XXXX 1745930775668, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775670 XXXX 1745930775670, Thread 594: XXXX 1745930775670, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775670 XXXX 1745930775670, Thread 594: XXXX 1745930775670, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775670 XXXX 1745930775670, Thread 594: XXXX 1745930775670, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775676 XXXX 1745930775676, Thread 594: XXXX 1745930775676, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775676 XXXX 1745930775676, Thread 594: XXXX 1745930775676, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775676 XXXX 1745930775676, Thread 594: XXXX 1745930775676, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775678 XXXX 1745930775678, Thread 594: XXXX 1745930775678, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775678 XXXX 1745930775678, Thread 594: XXXX 1745930775678, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775678 XXXX 1745930775678, Thread 594: XXXX 1745930775678, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775684 XXXX 1745930775684, Thread 594: XXXX 1745930775684, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775684 XXXX 1745930775684, Thread 594: XXXX 1745930775684, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775684 XXXX 1745930775684, Thread 594: XXXX 1745930775684, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775686 XXXX 1745930775686, Thread 594: XXXX 1745930775686, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775686 XXXX 1745930775686, Thread 594: XXXX 1745930775686, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775686 XXXX 1745930775686, Thread 594: XXXX 1745930775686, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775691 XXXX 1745930775691, Thread 594: XXXX 1745930775691, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775691 XXXX 1745930775691, Thread 594: XXXX 1745930775691, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775691 XXXX 1745930775691, Thread 594: XXXX 1745930775691, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775694 XXXX 1745930775694, Thread 594: XXXX 1745930775694, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775694 XXXX 1745930775694, Thread 594: XXXX 1745930775694, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775694 XXXX 1745930775694, Thread 594: XXXX 1745930775694, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775699 XXXX 1745930775699, Thread 594: XXXX 1745930775699, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775699 XXXX 1745930775699, Thread 594: XXXX 1745930775699, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775699 XXXX 1745930775699, Thread 594: XXXX 1745930775699, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775701 XXXX 1745930775701, Thread 594: XXXX 1745930775701, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775701 XXXX 1745930775701, Thread 594: XXXX 1745930775701, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775701 XXXX 1745930775701, Thread 594: XXXX 1745930775701, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775707 XXXX 1745930775707, Thread 594: XXXX 1745930775707, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775707 XXXX 1745930775707, Thread 594: XXXX 1745930775707, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775707 XXXX 1745930775707, Thread 594: XXXX 1745930775707, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775709 XXXX 1745930775709, Thread 594: XXXX 1745930775709, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775709 XXXX 1745930775709, Thread 594: XXXX 1745930775709, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775709 XXXX 1745930775709, Thread 594: XXXX 1745930775709, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775715 XXXX 1745930775715, Thread 594: XXXX 1745930775715, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775715 XXXX 1745930775715, Thread 594: XXXX 1745930775715, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775715 XXXX 1745930775715, Thread 594: XXXX 1745930775715, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775717 XXXX 1745930775717, Thread 594: XXXX 1745930775717, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775717 XXXX 1745930775717, Thread 594: XXXX 1745930775717, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775717 XXXX 1745930775717, Thread 594: XXXX 1745930775717, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775722 XXXX 1745930775722, Thread 594: XXXX 1745930775722, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775722 XXXX 1745930775722, Thread 594: XXXX 1745930775722, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775722 XXXX 1745930775722, Thread 594: XXXX 1745930775722, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775725 XXXX 1745930775725, Thread 594: XXXX 1745930775725, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775725 XXXX 1745930775725, Thread 594: XXXX 1745930775725, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775725 XXXX 1745930775725, Thread 594: XXXX 1745930775725, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775731 XXXX 1745930775731, Thread 594: XXXX 1745930775731, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775731 XXXX 1745930775731, Thread 594: XXXX 1745930775731, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775731 XXXX 1745930775731, Thread 594: XXXX 1745930775731, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775733 XXXX 1745930775733, Thread 594: XXXX 1745930775733, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775733 XXXX 1745930775733, Thread 594: XXXX 1745930775733, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775733 XXXX 1745930775733, Thread 594: XXXX 1745930775733, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775738 XXXX 1745930775738, Thread 594: XXXX 1745930775738, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775738 XXXX 1745930775738, Thread 594: XXXX 1745930775738, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775738 XXXX 1745930775738, Thread 594: XXXX 1745930775738, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775740 XXXX 1745930775740, Thread 594: XXXX 1745930775740, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775740 XXXX 1745930775740, Thread 594: XXXX 1745930775740, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775740 XXXX 1745930775740, Thread 594: XXXX 1745930775740, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775746 XXXX 1745930775746, Thread 594: XXXX 1745930775746, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775746 XXXX 1745930775746, Thread 594: XXXX 1745930775746, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775746 XXXX 1745930775746, Thread 594: XXXX 1745930775746, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775747 XXXX 1745930775747, Thread 594: XXXX 1745930775747, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775747 XXXX 1745930775747, Thread 594: XXXX 1745930775747, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775748 XXXX 1745930775748, Thread 594: XXXX 1745930775748, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775753 XXXX 1745930775753, Thread 594: XXXX 1745930775753, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775753 XXXX 1745930775753, Thread 594: XXXX 1745930775753, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775753 XXXX 1745930775753, Thread 594: XXXX 1745930775753, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775756 XXXX 1745930775756, Thread 594: XXXX 1745930775756, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775756 XXXX 1745930775756, Thread 594: XXXX 1745930775756, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775756 XXXX 1745930775756, Thread 594: XXXX 1745930775756, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775762 XXXX 1745930775762, Thread 594: XXXX 1745930775762, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775762 XXXX 1745930775762, Thread 594: XXXX 1745930775762, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775762 XXXX 1745930775762, Thread 594: XXXX 1745930775762, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775764 XXXX 1745930775764, Thread 594: XXXX 1745930775764, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775764 XXXX 1745930775764, Thread 594: XXXX 1745930775764, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775764 XXXX 1745930775764, Thread 594: XXXX 1745930775764, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775769 XXXX 1745930775769, Thread 594: XXXX 1745930775769, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775769 XXXX 1745930775769, Thread 594: XXXX 1745930775769, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775769 XXXX 1745930775769, Thread 594: XXXX 1745930775769, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775772 XXXX 1745930775772, Thread 594: XXXX 1745930775772, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775772 XXXX 1745930775772, Thread 594: XXXX 1745930775772, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775772 XXXX 1745930775772, Thread 594: XXXX 1745930775772, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775778 XXXX 1745930775778, Thread 594: XXXX 1745930775778, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775778 XXXX 1745930775778, Thread 594: XXXX 1745930775778, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775778 XXXX 1745930775778, Thread 594: XXXX 1745930775778, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775780 XXXX 1745930775780, Thread 594: XXXX 1745930775780, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775780 XXXX 1745930775780, Thread 594: XXXX 1745930775780, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775780 XXXX 1745930775780, Thread 594: XXXX 1745930775780, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775785 XXXX 1745930775785, Thread 594: XXXX 1745930775785, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775785 XXXX 1745930775785, Thread 594: XXXX 1745930775785, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775785 XXXX 1745930775785, Thread 594: XXXX 1745930775785, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775787 XXXX 1745930775787, Thread 594: XXXX 1745930775787, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775787 XXXX 1745930775787, Thread 594: XXXX 1745930775787, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775787 XXXX 1745930775787, Thread 594: XXXX 1745930775787, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775793 XXXX 1745930775793, Thread 594: XXXX 1745930775793, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775793 XXXX 1745930775793, Thread 594: XXXX 1745930775793, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775793 XXXX 1745930775793, Thread 594: XXXX 1745930775793, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775795 XXXX 1745930775795, Thread 594: XXXX 1745930775795, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775795 XXXX 1745930775795, Thread 594: XXXX 1745930775795, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775795 XXXX 1745930775795, Thread 594: XXXX 1745930775795, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775801 XXXX 1745930775801, Thread 594: XXXX 1745930775801, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775801 XXXX 1745930775801, Thread 594: XXXX 1745930775801, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775801 XXXX 1745930775801, Thread 594: XXXX 1745930775801, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775803 XXXX 1745930775803, Thread 594: XXXX 1745930775803, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775803 XXXX 1745930775803, Thread 594: XXXX 1745930775803, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775803 XXXX 1745930775803, Thread 594: XXXX 1745930775803, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775809 XXXX 1745930775809, Thread 594: XXXX 1745930775809, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775809 XXXX 1745930775809, Thread 594: XXXX 1745930775809, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775809 XXXX 1745930775809, Thread 594: XXXX 1745930775809, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775811 XXXX 1745930775811, Thread 594: XXXX 1745930775811, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775811 XXXX 1745930775811, Thread 594: XXXX 1745930775811, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775811 XXXX 1745930775811, Thread 594: XXXX 1745930775811, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775817 XXXX 1745930775817, Thread 594: XXXX 1745930775817, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775817 XXXX 1745930775817, Thread 594: XXXX 1745930775817, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775817 XXXX 1745930775817, Thread 594: XXXX 1745930775817, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775819 XXXX 1745930775819, Thread 594: XXXX 1745930775819, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775819 XXXX 1745930775819, Thread 594: XXXX 1745930775819, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775819 XXXX 1745930775819, Thread 594: XXXX 1745930775819, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775824 XXXX 1745930775824, Thread 594: XXXX 1745930775824, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775824 XXXX 1745930775824, Thread 594: XXXX 1745930775824, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775824 XXXX 1745930775824, Thread 594: XXXX 1745930775824, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775826 XXXX 1745930775826, Thread 594: XXXX 1745930775826, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775826 XXXX 1745930775826, Thread 594: XXXX 1745930775826, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775826 XXXX 1745930775826, Thread 594: XXXX 1745930775826, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775832 XXXX 1745930775832, Thread 594: XXXX 1745930775832, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775832 XXXX 1745930775832, Thread 594: XXXX 1745930775832, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775832 XXXX 1745930775832, Thread 594: XXXX 1745930775832, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775835 XXXX 1745930775835, Thread 594: XXXX 1745930775835, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775835 XXXX 1745930775835, Thread 594: XXXX 1745930775835, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775835 XXXX 1745930775835, Thread 594: XXXX 1745930775835, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775840 XXXX 1745930775840, Thread 594: XXXX 1745930775840, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775840 XXXX 1745930775840, Thread 594: XXXX 1745930775840, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775840 XXXX 1745930775840, Thread 594: XXXX 1745930775840, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775842 XXXX 1745930775842, Thread 594: XXXX 1745930775842, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775842 XXXX 1745930775842, Thread 594: XXXX 1745930775842, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775842 XXXX 1745930775842, Thread 594: XXXX 1745930775842, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775848 XXXX 1745930775848, Thread 594: XXXX 1745930775848, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775848 XXXX 1745930775848, Thread 594: XXXX 1745930775848, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775848 XXXX 1745930775848, Thread 594: XXXX 1745930775848, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775850 XXXX 1745930775850, Thread 594: XXXX 1745930775850, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775850 XXXX 1745930775850, Thread 594: XXXX 1745930775850, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775850 XXXX 1745930775850, Thread 594: XXXX 1745930775850, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775856 XXXX 1745930775856, Thread 594: XXXX 1745930775856, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775856 XXXX 1745930775856, Thread 594: XXXX 1745930775856, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775856 XXXX 1745930775856, Thread 594: XXXX 1745930775856, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775858 XXXX 1745930775858, Thread 594: XXXX 1745930775858, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775858 XXXX 1745930775858, Thread 594: XXXX 1745930775858, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775858 XXXX 1745930775858, Thread 594: XXXX 1745930775858, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775863 XXXX 1745930775863, Thread 594: XXXX 1745930775863, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775863 XXXX 1745930775863, Thread 594: XXXX 1745930775863, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775863 XXXX 1745930775863, Thread 594: XXXX 1745930775863, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775865 XXXX 1745930775865, Thread 594: XXXX 1745930775865, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775865 XXXX 1745930775865, Thread 594: XXXX 1745930775865, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775865 XXXX 1745930775865, Thread 594: XXXX 1745930775865, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775871 XXXX 1745930775871, Thread 594: XXXX 1745930775871, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775871 XXXX 1745930775871, Thread 594: XXXX 1745930775871, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775871 XXXX 1745930775871, Thread 594: XXXX 1745930775871, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775873 XXXX 1745930775873, Thread 594: XXXX 1745930775873, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775873 XXXX 1745930775873, Thread 594: XXXX 1745930775873, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775873 XXXX 1745930775873, Thread 594: XXXX 1745930775873, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775878 XXXX 1745930775878, Thread 594: XXXX 1745930775878, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775878 XXXX 1745930775878, Thread 594: XXXX 1745930775878, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775878 XXXX 1745930775878, Thread 594: XXXX 1745930775878, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775881 XXXX 1745930775881, Thread 594: XXXX 1745930775881, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775881 XXXX 1745930775881, Thread 594: XXXX 1745930775881, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775881 XXXX 1745930775881, Thread 594: XXXX 1745930775881, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775886 XXXX 1745930775886, Thread 594: XXXX 1745930775886, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775886 XXXX 1745930775886, Thread 594: XXXX 1745930775886, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775886 XXXX 1745930775886, Thread 594: XXXX 1745930775886, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775889 XXXX 1745930775889, Thread 594: XXXX 1745930775889, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775889 XXXX 1745930775889, Thread 594: XXXX 1745930775889, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775889 XXXX 1745930775889, Thread 594: XXXX 1745930775889, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775894 XXXX 1745930775894, Thread 594: XXXX 1745930775894, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775894 XXXX 1745930775894, Thread 594: XXXX 1745930775894, Entering Thread 594: Commands::runScriptWithUpload, script name = ReadSFR  
+594 1745930775894 XXXX 1745930775894, Thread 594: XXXX 1745930775894, Entering Thread 594: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x2 bytes long  
+594 1745930775897 XXXX 1745930775897, Thread 594: XXXX 1745930775897, Exiting Thread 594: ToolCommUsb::readTransfer,  cr.status = 0x0  
+594 1745930775897 XXXX 1745930775897, Thread 594: XXXX 1745930775897, Exiting Thread 594: Commands::runScriptWithUpload  
+594 1745930775897 XXXX 1745930775897, Thread 594: XXXX 1745930775897, Entering Thread 594: Commands::runScriptWithDownload, script name = WriteSFR  
+594 1745930775902 XXXX 1745930775902, Thread 594: XXXX 1745930775902, Exiting Thread 594: Commands::runScriptWithDownload(WriteSFR)  
+594 1745930775902 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Post:SetFreezePerihperalInfo
+594 1745930775902 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return Value
+594 1745930775902 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 none
+594 1745930775902 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return End
 
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:selectCore
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 dsPIC33EP512MU814
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:selectCore
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 none
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
+594 1745930775903 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:GetPC
+594 1745930775903 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
+594 1745930775903 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 null
+594 1745930775903 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
+594 1745930775903 XXXX 1745930775903, Thread 594: XXXX 1745930775903, Entering Thread 594: Commands::runScriptBasic, script name = GetPC, timeOut = -1 ms  
+594 1745930775905 XXXX 1745930775905, Thread 594: XXXX 1745930775905, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930775905 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Post:GetPC
+594 1745930775905 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return Value
+594 1745930775905 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 0
+594 1745930775905 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return End
 
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ControllerDiagnosticsInterface
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4ControllerDiagnosticsInterfaceImpl@1b3f6e99
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 ProgrammerToGo
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 null
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Status
-352 1733759289771 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289772 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-352 1733759289772 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289772 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.OpStatus@6ba10653
-352 1733759289772 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-352 1733759289794 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Pre:SetProgramExec
-352 1733759289794 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289796 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Test
-352 1733759289796 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 800000
-352 1733759289796 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Length = 6126
-352 1733759289796 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289796 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Post:SetProgramExec
-352 1733759289796 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289796 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 true
-352 1733759289796 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Return End
-
-352 1733759289797 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:EstablishCommunincations
-352 1733759289797 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289797 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.mdbcore.ICD4Tool.ICD4Com@12bbab91
-352 1733759289797 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289806 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:EstablishCommunincations
-352 1733759289806 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289806 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 true
-352 1733759289806 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
-
-352 1733759289806 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:GetFirmwareInfo
-352 1733759289806 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289806 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 null
-352 1733759289806 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289816 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:GetFirmwareInfo
-352 1733759289816 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
-352 1733759289816 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 FirmwareInfo: Values:
-352 1733759289816 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 FirmwareInfo: boot = false, bootVer = 01.00.00, apVer = 02.01.00, fpgaVer = 01.00.14, scriptVer = 00.06.71, macAddress = 0495683578952544949485254485152, devID = a1020e01, devID1 = 2, devSN0 = ffffffff, devSN1 = ffffffff, serialNumber = BUR202672441, appCommitID = null, scriptCommitID = 74cdf38a4d, PCB_ID = 3
-352 1733759289816 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
-352 1733759289820 GEN4_CONNECT_DIAGNOSTICS:ENTERING: com.microchip.mplab.mdbcore.RI4Tool.ConnectionHandler.CheckForFWUpdates()
-352 1733759289824 GEN4_CONNECT_DIAGNOSTICS:Created FirmwareUpdateHandler com.microchip.mplab.mdbcore.ICD4Tool.ICD4FirmwareUpdateHandler@37063f23
-352 1733759289824 GEN4_CONNECT_DIAGNOSTICS:ENTERING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.GetUpdateInfo()
-352 1733759289894 GEN4_CONNECT_DIAGNOSTICS:Parsing file  for firmware updates
-352 1733759289894 GEN4_CONNECT_DIAGNOSTICS:ENTERING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.ri4ParseSelectedVersionsFromJamFile()
-352 1733759289894 GEN4_CONNECT_DIAGNOSTICS:Jame file line = app.hex,020100
-352 1733759289894 GEN4_CONNECT_DIAGNOSTICS:Jame file line = boot.hex,010000
-352 1733759289894 GEN4_CONNECT_DIAGNOSTICS:Jame file line = fpga.hex,010014
-352 1733759289894 GEN4_CONNECT_DIAGNOSTICS:Jame file line = scripts.xml,000671
-352 1733759289895 GEN4_CONNECT_DIAGNOSTICS:Selected firmware version for Boot = 01.00.00
-352 1733759289895 GEN4_CONNECT_DIAGNOSTICS:Selected firmware version for ap = 02.01.00
-352 1733759289895 GEN4_CONNECT_DIAGNOSTICS:Selected firmware version for fpga = 01.00.14
-352 1733759289895 GEN4_CONNECT_DIAGNOSTICS:EXITING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.ri4ParseSelectedVersionsFromJamFile()
-352 1733759289895 GEN4_CONNECT_DIAGNOSTICS:EXITING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.GetUpdateInfo()
-352 1733759289895 GEN4_CONNECT_DIAGNOSTICS:ENTERING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.updateRI4ToolsFirmware(FirmwareInfo, UpdateMessage)
-352 1733759289910 GEN4_CONNECT_DIAGNOSTICS:appNeedsUpdate returned false
-352 1733759289910 GEN4_CONNECT_DIAGNOSTICS:EXITING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.updateRI4ToolsFirmware(FirmwareInfo, UpdateMessage)
-352 1733759289910 GEN4_CONNECT_DIAGNOSTICS:EXITING: com.microchip.mplab.mdbcore.RI4Tool.ConnectionHandler.CheckForFWUpdates()
-
-352 1733759289912 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:SetPowerInfo
-352 1733759289912 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
-352 1733759289912 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 PowerInfo: Values:
-352 1733759289912 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 PowerInfo: shotDownSystem = false, isToolPower = false, voltage = 3,250000, useVppFirst = false, useLowVoltageProgramming = true, useMaintainActivePower = false
-352 1733759289912 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
-352 1733759289912 XXXX 1733759289912, Thread 352: XXXX 1733759289912, Entering Thread 352: Commands::runScriptBasic with script contents. contents[0] = 0x39, ...  
-352 1733759299945 XXXX 1733759299945, Thread 352: ToolCommUsb::read, com.Received returned -1 
-352 1733759299947 XXXX 1733759299947, Thread 352: transfer: exception after writeHeaderAndGetResult null 
-352 1733759299947 XXXX 1733759299947, Thread 352: XXXX 1733759299947, Entering Thread 352: ToolCommUsb::recoverFromProtocolError, type = NO_SCRIPT  
-352 1733759299947 XXXX 1733759299947, Thread 352: Send Abort Script Engine Command 
-352 1733759299947 XXXX 1733759299947, Thread 352: XXXX 1733759299947, Entering Thread 352: ToolCommUsb::killScriptEngine  
-352 1733759300017 XXXX 1733759300017, Thread 352: XXXX 1733759300017, Exiting Thread 352: ToolCommUsb::killScriptEngine  
-352 1733759300017 XXXX 1733759300017, Thread 352: Successfully Sent Abort Script EngineCommand 
-352 1733759300017 XXXX 1733759300017, Thread 352: Exiting recoverFromProtocolError 
-352 1733759300017 XXXX 1733759300017, Thread 352: XXXX 1733759300017, Exiting Thread 352: ToolCommUsb::recoverFromProtocolError,  
-352 1733759300017 XXXX 1733759300017, Thread 352: transfer: after recoverFromProtocolError 
+594 1745930775922 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:RunTarget
+594 1745930775922 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
+594 1745930775922 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.mdbcore.RI4Tool.DebugHandler@628c28c0
+594 1745930775922 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
+594 1745930775922 XXXX 1745930775922, Thread 594: XXXX 1745930775922, Entering Thread 594: Commands::runScriptBasic, script name = Run, timeOut = -1 ms  
+594 1745930775924 XXXX 1745930775924, Thread 594: XXXX 1745930775924, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930775924 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Post:RunTarget
+594 1745930775924 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return Value
+594 1745930775924 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 true
+594 1745930775924 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return End
+594 1745930776185 XXXX 1745930776185, Thread 594: XXXX 1745930776185, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930776187 XXXX 1745930776187, Thread 594: XXXX 1745930776187, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930776285 XXXX 1745930776285, Thread 594: XXXX 1745930776285, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930776287 XXXX 1745930776287, Thread 594: XXXX 1745930776287, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930776387 XXXX 1745930776387, Thread 594: XXXX 1745930776387, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930776389 XXXX 1745930776389, Thread 594: XXXX 1745930776389, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930776495 XXXX 1745930776495, Thread 594: XXXX 1745930776495, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930776497 XXXX 1745930776497, Thread 594: XXXX 1745930776497, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930776596 XXXX 1745930776596, Thread 594: XXXX 1745930776596, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930776598 XXXX 1745930776598, Thread 594: XXXX 1745930776598, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930776700 XXXX 1745930776700, Thread 594: XXXX 1745930776700, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930776702 XXXX 1745930776702, Thread 594: XXXX 1745930776702, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930776802 XXXX 1745930776802, Thread 594: XXXX 1745930776802, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930776804 XXXX 1745930776804, Thread 594: XXXX 1745930776804, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930776906 XXXX 1745930776906, Thread 594: XXXX 1745930776906, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930776911 XXXX 1745930776911, Thread 594: XXXX 1745930776911, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777006 XXXX 1745930777006, Thread 594: XXXX 1745930777006, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777008 XXXX 1745930777008, Thread 594: XXXX 1745930777008, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777109 XXXX 1745930777109, Thread 594: XXXX 1745930777109, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777110 XXXX 1745930777110, Thread 594: XXXX 1745930777110, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777213 XXXX 1745930777213, Thread 594: XXXX 1745930777213, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777215 XXXX 1745930777215, Thread 594: XXXX 1745930777215, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777314 XXXX 1745930777314, Thread 594: XXXX 1745930777314, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777316 XXXX 1745930777316, Thread 594: XXXX 1745930777316, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777420 XXXX 1745930777420, Thread 594: XXXX 1745930777420, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777422 XXXX 1745930777422, Thread 594: XXXX 1745930777422, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777521 XXXX 1745930777521, Thread 594: XXXX 1745930777521, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777523 XXXX 1745930777523, Thread 594: XXXX 1745930777523, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777622 XXXX 1745930777622, Thread 594: XXXX 1745930777622, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777624 XXXX 1745930777624, Thread 594: XXXX 1745930777624, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777729 XXXX 1745930777729, Thread 594: XXXX 1745930777729, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777732 XXXX 1745930777732, Thread 594: XXXX 1745930777732, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777832 XXXX 1745930777832, Thread 594: XXXX 1745930777832, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777834 XXXX 1745930777834, Thread 594: XXXX 1745930777834, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930777934 XXXX 1745930777934, Thread 594: XXXX 1745930777934, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930777936 XXXX 1745930777936, Thread 594: XXXX 1745930777936, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778037 XXXX 1745930778037, Thread 594: XXXX 1745930778037, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778039 XXXX 1745930778039, Thread 594: XXXX 1745930778039, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778143 XXXX 1745930778143, Thread 594: XXXX 1745930778143, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778144 XXXX 1745930778144, Thread 594: XXXX 1745930778144, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778244 XXXX 1745930778244, Thread 594: XXXX 1745930778244, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778246 XXXX 1745930778246, Thread 594: XXXX 1745930778246, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778347 XXXX 1745930778347, Thread 594: XXXX 1745930778347, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778349 XXXX 1745930778349, Thread 594: XXXX 1745930778349, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778451 XXXX 1745930778451, Thread 594: XXXX 1745930778451, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778453 XXXX 1745930778453, Thread 594: XXXX 1745930778453, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778554 XXXX 1745930778554, Thread 594: XXXX 1745930778554, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778555 XXXX 1745930778555, Thread 594: XXXX 1745930778555, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778655 XXXX 1745930778655, Thread 594: XXXX 1745930778655, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778657 XXXX 1745930778657, Thread 594: XXXX 1745930778657, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778765 XXXX 1745930778765, Thread 594: XXXX 1745930778765, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778767 XXXX 1745930778767, Thread 594: XXXX 1745930778767, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778867 XXXX 1745930778867, Thread 594: XXXX 1745930778867, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778868 XXXX 1745930778868, Thread 594: XXXX 1745930778868, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930778970 XXXX 1745930778970, Thread 594: XXXX 1745930778970, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930778971 XXXX 1745930778971, Thread 594: XXXX 1745930778971, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779072 XXXX 1745930779072, Thread 594: XXXX 1745930779072, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779073 XXXX 1745930779073, Thread 594: XXXX 1745930779073, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779175 XXXX 1745930779175, Thread 594: XXXX 1745930779175, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779176 XXXX 1745930779176, Thread 594: XXXX 1745930779176, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779279 XXXX 1745930779279, Thread 594: XXXX 1745930779279, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779281 XXXX 1745930779281, Thread 594: XXXX 1745930779281, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779382 XXXX 1745930779382, Thread 594: XXXX 1745930779382, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779385 XXXX 1745930779385, Thread 594: XXXX 1745930779385, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779488 XXXX 1745930779488, Thread 594: XXXX 1745930779488, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779489 XXXX 1745930779489, Thread 594: XXXX 1745930779489, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779597 XXXX 1745930779597, Thread 594: XXXX 1745930779597, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779599 XXXX 1745930779599, Thread 594: XXXX 1745930779599, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779699 XXXX 1745930779699, Thread 594: XXXX 1745930779699, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779702 XXXX 1745930779702, Thread 594: XXXX 1745930779702, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779805 XXXX 1745930779805, Thread 594: XXXX 1745930779805, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779806 XXXX 1745930779806, Thread 594: XXXX 1745930779806, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930779905 XXXX 1745930779905, Thread 594: XXXX 1745930779905, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930779907 XXXX 1745930779907, Thread 594: XXXX 1745930779907, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780005 XXXX 1745930780005, Thread 594: XXXX 1745930780005, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780009 XXXX 1745930780009, Thread 594: XXXX 1745930780009, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780106 XXXX 1745930780106, Thread 594: XXXX 1745930780106, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780108 XXXX 1745930780108, Thread 594: XXXX 1745930780108, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780208 XXXX 1745930780208, Thread 594: XXXX 1745930780208, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780210 XXXX 1745930780210, Thread 594: XXXX 1745930780210, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780309 XXXX 1745930780309, Thread 594: XXXX 1745930780309, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780311 XXXX 1745930780311, Thread 594: XXXX 1745930780311, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780411 XXXX 1745930780411, Thread 594: XXXX 1745930780411, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780413 XXXX 1745930780413, Thread 594: XXXX 1745930780413, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780518 XXXX 1745930780518, Thread 594: XXXX 1745930780518, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780520 XXXX 1745930780520, Thread 594: XXXX 1745930780520, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780621 XXXX 1745930780621, Thread 594: XXXX 1745930780621, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780623 XXXX 1745930780623, Thread 594: XXXX 1745930780623, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780721 XXXX 1745930780721, Thread 594: XXXX 1745930780721, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780723 XXXX 1745930780723, Thread 594: XXXX 1745930780723, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780822 XXXX 1745930780822, Thread 594: XXXX 1745930780822, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780824 XXXX 1745930780824, Thread 594: XXXX 1745930780824, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930780927 XXXX 1745930780927, Thread 594: XXXX 1745930780927, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930780929 XXXX 1745930780929, Thread 594: XXXX 1745930780929, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781029 XXXX 1745930781029, Thread 594: XXXX 1745930781029, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781032 XXXX 1745930781032, Thread 594: XXXX 1745930781032, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781133 XXXX 1745930781133, Thread 594: XXXX 1745930781133, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781135 XXXX 1745930781135, Thread 594: XXXX 1745930781135, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781234 XXXX 1745930781234, Thread 594: XXXX 1745930781234, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781237 XXXX 1745930781237, Thread 594: XXXX 1745930781237, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781336 XXXX 1745930781336, Thread 594: XXXX 1745930781336, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781339 XXXX 1745930781339, Thread 594: XXXX 1745930781339, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781437 XXXX 1745930781437, Thread 594: XXXX 1745930781437, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781440 XXXX 1745930781440, Thread 594: XXXX 1745930781440, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781539 XXXX 1745930781539, Thread 594: XXXX 1745930781539, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781541 XXXX 1745930781541, Thread 594: XXXX 1745930781541, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781642 XXXX 1745930781642, Thread 594: XXXX 1745930781642, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781645 XXXX 1745930781645, Thread 594: XXXX 1745930781645, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781744 XXXX 1745930781744, Thread 594: XXXX 1745930781744, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781747 XXXX 1745930781747, Thread 594: XXXX 1745930781747, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781848 XXXX 1745930781848, Thread 594: XXXX 1745930781848, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781851 XXXX 1745930781851, Thread 594: XXXX 1745930781851, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930781950 XXXX 1745930781950, Thread 594: XXXX 1745930781950, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930781952 XXXX 1745930781952, Thread 594: XXXX 1745930781952, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782051 XXXX 1745930782051, Thread 594: XXXX 1745930782051, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782054 XXXX 1745930782054, Thread 594: XXXX 1745930782054, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782153 XXXX 1745930782153, Thread 594: XXXX 1745930782153, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782155 XXXX 1745930782155, Thread 594: XXXX 1745930782155, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782254 XXXX 1745930782254, Thread 594: XXXX 1745930782254, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782257 XXXX 1745930782257, Thread 594: XXXX 1745930782257, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782357 XXXX 1745930782357, Thread 594: XXXX 1745930782357, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782359 XXXX 1745930782359, Thread 594: XXXX 1745930782359, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782461 XXXX 1745930782461, Thread 594: XXXX 1745930782461, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782463 XXXX 1745930782463, Thread 594: XXXX 1745930782463, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782570 XXXX 1745930782570, Thread 594: XXXX 1745930782570, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782572 XXXX 1745930782572, Thread 594: XXXX 1745930782572, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782672 XXXX 1745930782672, Thread 594: XXXX 1745930782672, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782675 XXXX 1745930782675, Thread 594: XXXX 1745930782675, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782790 XXXX 1745930782790, Thread 594: XXXX 1745930782790, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782792 XXXX 1745930782792, Thread 594: XXXX 1745930782792, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930782896 XXXX 1745930782896, Thread 594: XXXX 1745930782896, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930782898 XXXX 1745930782898, Thread 594: XXXX 1745930782898, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783006 XXXX 1745930783006, Thread 594: XXXX 1745930783006, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783008 XXXX 1745930783008, Thread 594: XXXX 1745930783008, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783108 XXXX 1745930783108, Thread 594: XXXX 1745930783108, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783110 XXXX 1745930783110, Thread 594: XXXX 1745930783110, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783216 XXXX 1745930783216, Thread 594: XXXX 1745930783216, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783218 XXXX 1745930783218, Thread 594: XXXX 1745930783218, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783319 XXXX 1745930783319, Thread 594: XXXX 1745930783319, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783321 XXXX 1745930783321, Thread 594: XXXX 1745930783321, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783423 XXXX 1745930783423, Thread 594: XXXX 1745930783423, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783425 XXXX 1745930783425, Thread 594: XXXX 1745930783425, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783524 XXXX 1745930783524, Thread 594: XXXX 1745930783524, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783526 XXXX 1745930783526, Thread 594: XXXX 1745930783526, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783638 XXXX 1745930783638, Thread 594: XXXX 1745930783638, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783640 XXXX 1745930783640, Thread 594: XXXX 1745930783640, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783742 XXXX 1745930783742, Thread 594: XXXX 1745930783742, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783744 XXXX 1745930783744, Thread 594: XXXX 1745930783744, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783844 XXXX 1745930783844, Thread 594: XXXX 1745930783844, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783846 XXXX 1745930783846, Thread 594: XXXX 1745930783846, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930783947 XXXX 1745930783947, Thread 594: XXXX 1745930783947, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930783949 XXXX 1745930783949, Thread 594: XXXX 1745930783949, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784057 XXXX 1745930784057, Thread 594: XXXX 1745930784057, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784059 XXXX 1745930784059, Thread 594: XXXX 1745930784059, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784160 XXXX 1745930784160, Thread 594: XXXX 1745930784160, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784163 XXXX 1745930784163, Thread 594: XXXX 1745930784163, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784262 XXXX 1745930784262, Thread 594: XXXX 1745930784262, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784264 XXXX 1745930784264, Thread 594: XXXX 1745930784264, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784370 XXXX 1745930784370, Thread 594: XXXX 1745930784370, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784372 XXXX 1745930784372, Thread 594: XXXX 1745930784372, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784475 XXXX 1745930784475, Thread 594: XXXX 1745930784475, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784478 XXXX 1745930784478, Thread 594: XXXX 1745930784478, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784578 XXXX 1745930784578, Thread 594: XXXX 1745930784578, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784580 XXXX 1745930784580, Thread 594: XXXX 1745930784580, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784681 XXXX 1745930784681, Thread 594: XXXX 1745930784681, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784683 XXXX 1745930784683, Thread 594: XXXX 1745930784683, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784786 XXXX 1745930784786, Thread 594: XXXX 1745930784786, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784788 XXXX 1745930784788, Thread 594: XXXX 1745930784788, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784887 XXXX 1745930784887, Thread 594: XXXX 1745930784887, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784889 XXXX 1745930784889, Thread 594: XXXX 1745930784889, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930784988 XXXX 1745930784988, Thread 594: XXXX 1745930784988, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930784990 XXXX 1745930784990, Thread 594: XXXX 1745930784990, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785093 XXXX 1745930785093, Thread 594: XXXX 1745930785093, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785095 XXXX 1745930785095, Thread 594: XXXX 1745930785095, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785195 XXXX 1745930785195, Thread 594: XXXX 1745930785195, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785197 XXXX 1745930785197, Thread 594: XXXX 1745930785197, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785297 XXXX 1745930785297, Thread 594: XXXX 1745930785297, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785300 XXXX 1745930785300, Thread 594: XXXX 1745930785300, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785397 XXXX 1745930785397, Thread 594: XXXX 1745930785397, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785399 XXXX 1745930785399, Thread 594: XXXX 1745930785399, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785498 XXXX 1745930785498, Thread 594: XXXX 1745930785498, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785500 XXXX 1745930785500, Thread 594: XXXX 1745930785500, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785600 XXXX 1745930785600, Thread 594: XXXX 1745930785600, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785602 XXXX 1745930785602, Thread 594: XXXX 1745930785602, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785703 XXXX 1745930785703, Thread 594: XXXX 1745930785703, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785705 XXXX 1745930785705, Thread 594: XXXX 1745930785705, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785807 XXXX 1745930785807, Thread 594: XXXX 1745930785807, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785809 XXXX 1745930785809, Thread 594: XXXX 1745930785809, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930785907 XXXX 1745930785907, Thread 594: XXXX 1745930785907, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930785909 XXXX 1745930785909, Thread 594: XXXX 1745930785909, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786009 XXXX 1745930786009, Thread 594: XXXX 1745930786009, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786011 XXXX 1745930786011, Thread 594: XXXX 1745930786011, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786112 XXXX 1745930786112, Thread 594: XXXX 1745930786112, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786114 XXXX 1745930786114, Thread 594: XXXX 1745930786114, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786214 XXXX 1745930786214, Thread 594: XXXX 1745930786214, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786216 XXXX 1745930786216, Thread 594: XXXX 1745930786216, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786316 XXXX 1745930786316, Thread 594: XXXX 1745930786316, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786318 XXXX 1745930786318, Thread 594: XXXX 1745930786318, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786418 XXXX 1745930786418, Thread 594: XXXX 1745930786418, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786420 XXXX 1745930786420, Thread 594: XXXX 1745930786420, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786521 XXXX 1745930786521, Thread 594: XXXX 1745930786521, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786523 XXXX 1745930786523, Thread 594: XXXX 1745930786523, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786623 XXXX 1745930786623, Thread 594: XXXX 1745930786623, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786625 XXXX 1745930786625, Thread 594: XXXX 1745930786625, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786724 XXXX 1745930786724, Thread 594: XXXX 1745930786724, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786726 XXXX 1745930786726, Thread 594: XXXX 1745930786726, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786827 XXXX 1745930786827, Thread 594: XXXX 1745930786827, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786829 XXXX 1745930786829, Thread 594: XXXX 1745930786829, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930786929 XXXX 1745930786929, Thread 594: XXXX 1745930786929, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930786931 XXXX 1745930786931, Thread 594: XXXX 1745930786931, Exiting Thread 594: Commands::runScriptBasic  
+594 1745930787031 XXXX 1745930787031, Thread 594: XXXX 1745930787031, Entering Thread 594: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+594 1745930787043 XXXX 1745930787043, Thread 594: com.Send returned false 
+594 1745930787044 XXXX 1745930787044, Thread 594: transfer: exception after writeHeaderAndGetResult null 
+594 1745930787044 XXXX 1745930787044, Thread 594: XXXX 1745930787044, Entering Thread 594: ToolCommUsb::recoverFromProtocolError, type = NO_SCRIPT  
+594 1745930787044 XXXX 1745930787044, Thread 594: Send Abort Script Engine Command 
+594 1745930787044 XXXX 1745930787044, Thread 594: XXXX 1745930787044, Entering Thread 594: ToolCommUsb::killScriptEngine  
+594 1745930787056 XXXX 1745930787056, Thread 594: com.Send returned false 
+594 1745930787056 XXXX 1745930787056, Thread 594: Failed sending Abort Script Engine Command. Set nuclear option = true 
+594 1745930787056 XXXX 1745930787056, Thread 594: About to nuke 
+594 1745930787056 XXXX 1745930787056, Thread 594: XXXX 1745930787056, Entering Thread 594: ToolCommUsb::nuclearOption  
+594 1745930787068 XXXX 1745930787067, Thread 594: com.Send returned false 
