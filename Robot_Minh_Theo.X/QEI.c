@@ -9,6 +9,7 @@
 #include "QEI.h"
 #include "IO.h"
 #include "timer.h"
+#include "UART_Protocol.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -23,22 +24,26 @@ double delta_g;
 double vitesseDroitFromOdometry;
 double vitesseGaucheFromOdometry;
 double FREQ_ECH_QEI = 250;
+int compteur;
+#define POSITION_DATA 0x0061
+#define DISTROUES 0.2812
 
 void InitQEI1()
 {
-QEI1IOCbits.SWPAB = 1; //QEAx and QEBx are swapped
-QEI1GECL = 0xFFFF;
-QEI1GECH = 0xFFFF;
-QEI1CONbits.QEIEN = 1; // Enable QEI Module
-}
-void InitQEI2(){
-QEI2IOCbits.SWPAB = 1; //QEAx and QEBx are not swapped
-QEI2GECL = 0xFFFF;
-QEI2GECH = 0xFFFF;
-QEI2CONbits.QEIEN = 1; // Enable QEI Module
+    QEI1IOCbits.SWPAB = 1; //QEAx and QEBx are swapped
+    QEI1GECL = 0xFFFF;
+    QEI1GECH = 0xFFFF;
+    QEI1CONbits.QEIEN = 1; // Enable QEI Module
 }
 
-#define DISTROUES 0.2812
+void InitQEI2()
+{
+    QEI2IOCbits.SWPAB = 1; //QEAx and QEBx are not swapped
+    QEI2GECL = 0xFFFF;
+    QEI2GECH = 0xFFFF;
+    QEI2CONbits.QEIEN = 1; // Enable QEI Module
+}
+
 void QEIUpdateData()
 {
     //On sauvegarde les anciennes valeurs
@@ -47,9 +52,9 @@ void QEIUpdateData()
     
     //On actualise les valeurs des positions
     long QEI1RawValue = POS1CNTL;
-    QEI1RawValue += ((long)POS1HLD<<16);
+    QEI1RawValue += ((long)POS1HLD << 16);
     long QEI2RawValue = POS2CNTL;
-    QEI2RawValue += ((long)POS2HLD<<16);
+    QEI2RawValue += ((long)POS2HLD << 16);
     
     //Conversion en mm (regle pour la taille des roues codeuses)
     QeiDroitPosition = 0.00001620*QEI1RawValue;
@@ -70,29 +75,36 @@ void QEIUpdateData()
     robotState.xPosFromOdometry_1 = robotState.xPosFromOdometry;
     robotState.yPosFromOdometry_1 = robotState.yPosFromOdometry;
     robotState.angleRadianFromOdometry_1 = robotState.angleRadianFromOdometry;
-    
+
     //Calcul des positions dans le referentiel du terrain
     robotState.xPosFromOdometry = robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) ;
     robotState.yPosFromOdometry = robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) ;
-    robotState.angleRadianFromOdometry = robotState.vitesseAngulaireFromOdometry ;
+    robotState.angleRadianFromOdometry = robotState.vitesseAngulaireFromOdometry;
+    if (robotState.xPosFromOdometry == 0)
+    {
+        compteur++;
+    }
+    else{
     
+    }
     
-    if(robotState.angleRadianFromOdometry > M_PI)
+    if(robotState.angleRadianFromOdometry > M_PI){
         robotState.angleRadianFromOdometry -= 2*M_PI;
-    if(robotState.angleRadianFromOdometry < -M_PI)
+    }
+    if(robotState.angleRadianFromOdometry < -M_PI){
         robotState.angleRadianFromOdometry += 2*M_PI;
+    }
 
 }
 
-#define POSITION_DATA 0x0061
 void SendPositionData()
 {
-unsigned char positionPayload[24];
-getBytesFromInt32(positionPayload, 0, timestamp);
-getBytesFromFloat(positionPayload, 4, (float)(robotState.xPosFromOdometry));
-getBytesFromFloat(positionPayload, 8, (float)(robotState.yPosFromOdometry));
-getBytesFromFloat(positionPayload, 12, (float)(robotState.angleRadianFromOdometry));
-getBytesFromFloat(positionPayload, 16, (float)(robotState.vitesseLineaireFromOdometry));
-getBytesFromFloat(positionPayload, 20, (float)(robotState.vitesseAngulaireFromOdometry));
-UartEncodeAndSendMessage(POSITION_DATA, 24, positionPayload);
+    unsigned char positionPayload[24];
+    getBytesFromInt32(positionPayload, 0, timestamp);
+    getBytesFromFloat(positionPayload, 4, (float)(robotState.xPosFromOdometry));
+    getBytesFromFloat(positionPayload, 8, (float)(robotState.yPosFromOdometry));
+    getBytesFromFloat(positionPayload, 12, (float)(robotState.angleRadianFromOdometry));
+    getBytesFromFloat(positionPayload, 16, (float)(robotState.vitesseLineaireFromOdometry));
+    getBytesFromFloat(positionPayload, 20, (float)(robotState.vitesseAngulaireFromOdometry));
+    UartEncodeAndSendMessage(POSITION_DATA, 24, positionPayload);
 }

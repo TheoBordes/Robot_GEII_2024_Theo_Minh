@@ -38,7 +38,7 @@ namespace RobotInterface_Ly_Bordes
         Robot robot = new Robot();
         private Timer TimerAffichage;
         private Controller gamepad;
-        public int pape;
+        public int flag;
 
         public MainWindow()
         {
@@ -49,7 +49,7 @@ namespace RobotInterface_Ly_Bordes
             serialPort1.Open();
             DispatcherTimer timerAffichage;
             timerAffichage = new DispatcherTimer();
-            timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 4);
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             gamepad = new Controller(UserIndex.One);
@@ -63,16 +63,11 @@ namespace RobotInterface_Ly_Bordes
         bool gamepad_state = true;
         int compteur = 0;
 
-
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
-            
-            //ProcessQueue();
-            //RichTextBox.Text += "100";
             if (!gamepad.IsConnected)
             {
                 gamepad_state = false ;
-                //RichTextBox.Text += "Gamepad not connected.\n";
                 byte[] mode = new byte[] {1};
                 UartEncodeAndSendMessage(0x0052, 0, mode);
             }   
@@ -100,31 +95,16 @@ namespace RobotInterface_Ly_Bordes
 
                 if (gamepadState.Buttons != GamepadButtonFlags.None)
                 {
-                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-                           RichTextBox.Text += $"Buttons: {gamepadState.Buttons}\n"));
+                    RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Buttons: {gamepadState.Buttons}\n"));
                 }
 
             }
-            if (pape == 1)
-            {
-                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-           RichTextBox.Text = $"posX: {robot.positionXOdo}\n"));
-
-                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-           RichTextBox.Text += $"posY: {robot.positionYOdo}\n"));
-
-                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-           RichTextBox.Text += $"Angle: {robot.angleRadianFromOdometry}\n"));
-
-                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-           RichTextBox.Text += $"VitLin: {robot.vitesseLineaireFromOdometry}\n"));
-
-                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-           RichTextBox.Text += $"VitAngl: {robot.vitesseAngulaireFromOdometry}\n"));
-                pape = 0;
-            }
-
-
+      
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text = $"posX: {robot.positionXOdo}\n"));
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"posY: {robot.positionYOdo}\n"));
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Angle: {robot.angleRadianFromOdometry}\n"));
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitLin: {robot.vitesseLineaireFromOdometry}\n"));
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitAngl: {robot.vitesseAngulaireFromOdometry}\n"));
         }
 
         private void ProcessQueue()
@@ -146,9 +126,9 @@ namespace RobotInterface_Ly_Bordes
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
+        { 
         }
+
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
             for (int i = 0;i <e.Data.Length;i++) {
@@ -173,7 +153,6 @@ namespace RobotInterface_Ly_Bordes
         }
         public byte CalculateChecksum(Int16 msgFunction,int msgPayloadLength, byte[] msgPayload)
         {
-           
             // Todo faire checksum pour command and playload    
             byte checksum = 0xFE;
             checksum = (byte) ( msgFunction ^ checksum) ;
@@ -200,15 +179,17 @@ namespace RobotInterface_Ly_Bordes
             serialPort1.Write(msgPayload, 0, msgPayload.Length);
             serialPort1.Write(checksum, 0, checksum.Length);
         }
+
+        //int compteur1 = 0;
         void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
             switch (msgFunction)
             {
                 case (byte)IDfonction.TextTransmission:
-                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-                                   RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength))); break;
+                    RichTextBox.Dispatcher.BeginInvoke(new Action(() => 
+                    RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength))); 
+                    break;
                 case (byte)IDfonction.SetLed:
-
                     break;
                 case (byte)IDfonction.IRdistance:
                     RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
@@ -253,17 +234,20 @@ namespace RobotInterface_Ly_Bordes
 
                 case (byte)IDfonction.QEIReception:
                     robot.positionXOdo = BitConverter.ToSingle(msgPayload, 4);
+                    //if (robot.positionXOdo != 0)
+                    //{
+                    //    Console.WriteLine(robot.positionXOdo.ToString());
+                    //    compteur1 = 0;
+
+                    //}
+                    //else
+                    //{
+                    //    compteur1++;
+                    //}
                     robot.positionYOdo = BitConverter.ToSingle(msgPayload, 8);
                     robot.angleRadianFromOdometry = BitConverter.ToSingle(msgPayload, 12);
                     robot.vitesseLineaireFromOdometry = BitConverter.ToSingle(msgPayload, 16);
                     robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
-                    pape = 1;
-
-
-
-
-
-
                     break;
             }
             
@@ -392,8 +376,6 @@ namespace RobotInterface_Ly_Bordes
             }
         }
 
-
-
         public enum IDfonction
         {
             TextTransmission = 0x0080,
@@ -404,7 +386,6 @@ namespace RobotInterface_Ly_Bordes
             QEIReception = 0x0061,
             functionTestValue
         }
-
 
         IDfonction func = IDfonction.TextTransmission;
         private void buttonTest_Click(object sender, RoutedEventArgs e)
