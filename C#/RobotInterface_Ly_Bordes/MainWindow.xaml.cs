@@ -198,11 +198,11 @@ namespace RobotInterface_Ly_Bordes
                 case (byte)IDfonction.IRdistance:
                     RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        IRpg.Content = msgDecodedPayload[4];
-                        IRg.Content = msgDecodedPayload[3];
-                        IRc.Content = msgDecodedPayload[2];
-                        IRd.Content = msgDecodedPayload[1];
-                        IRpd.Content = msgDecodedPayload[0];
+                        IRpg.Content = msgPayload[4];
+                        IRg.Content = msgPayload[3];
+                        IRc.Content = msgPayload[2];
+                        IRd.Content = msgPayload[1];
+                        IRpd.Content = msgPayload[0];
                     }));
                     break;
 
