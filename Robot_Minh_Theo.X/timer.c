@@ -6,6 +6,7 @@
 #include  "main.h"
 #include "robot.h"
 #include "UART_Protocol.h"
+#include "QEI.h"
 
 unsigned long timestamp;
 unsigned char toggle = 0;
@@ -36,10 +37,10 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
 
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
-    if(i < 10){
-    QEIUpdateData();
-    SendPositionData();
-    i++;
+    if (i < 10) {
+        QEIUpdateData();
+        SendPositionData();
+        i++;
     }
 
 }

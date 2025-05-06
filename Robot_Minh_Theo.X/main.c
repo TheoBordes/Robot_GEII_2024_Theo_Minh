@@ -124,7 +124,7 @@ unsigned char CallCap() {
 }
 
 void OperatingSystemLoop(void) {
-    determine_speeds();
+    //determine_speeds();
     switch (stateRobot) {
 
         case STATE_ATTENTE:

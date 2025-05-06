@@ -71,34 +71,34 @@ namespace RobotInterface_Ly_Bordes
                 byte[] mode = new byte[] {1};
                 UartEncodeAndSendMessage(0x0052, 0, mode);
             }   
-            else if ( gamepad.IsConnected ) {
-                byte[] mode = new byte[] { 0 };
-                UartEncodeAndSendMessage(0x0052, 1, mode);
-                var state = gamepad.GetState();
-                var gamepadState = state.Gamepad;
-                byte rightTrigger = gamepadState.RightTrigger; 
-                byte dividedValueR = (byte)(rightTrigger / 3f);
-                short rightThumbStickX = gamepadState.RightThumbX;
-                byte dividedValueSX = (byte)(rightThumbStickX / 650f);
-                byte leftTrigger = gamepadState.LeftTrigger;
-                byte dividedValueL = (byte)(leftTrigger / 3f);
-                //RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-                //           RichTextBox.Text += $"Buttons: {dividedValue}\n"));
-                byte[] vit = new byte[] { dividedValueR,dividedValueL };
+            //else if ( gamepad.IsConnected ) {
+            //    byte[] mode = new byte[] { 0 };
+            //    UartEncodeAndSendMessage(0x0052, 1, mode);
+            //    var state = gamepad.GetState();
+            //    var gamepadState = state.Gamepad;
+            //    byte rightTrigger = gamepadState.RightTrigger; 
+            //    byte dividedValueR = (byte)(rightTrigger / 3f);
+            //    short rightThumbStickX = gamepadState.RightThumbX;
+            //    byte dividedValueSX = (byte)(rightThumbStickX / 650f);
+            //    byte leftTrigger = gamepadState.LeftTrigger;
+            //    byte dividedValueL = (byte)(leftTrigger / 3f);
+            //    //RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+            //    //           RichTextBox.Text += $"Buttons: {dividedValue}\n"));
+            //    byte[] vit = new byte[] { dividedValueR,dividedValueL };
                
-                UartEncodeAndSendMessage(0X0090, 2, vit);
-                compteur += 1;
-                RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-                         // RichTextBox.Text += $"vitesse: {dividedValue}\n"));
-                         RichTextBox.Text = $"compteur {compteur}\n"
-                         ));
+            //    UartEncodeAndSendMessage(0X0090, 2, vit);
+            //    compteur += 1;
+            //    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+            //             // RichTextBox.Text += $"vitesse: {dividedValue}\n"));
+            //             RichTextBox.Text = $"compteur {compteur}\n"
+            //             ));
 
-                if (gamepadState.Buttons != GamepadButtonFlags.None)
-                {
-                    RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Buttons: {gamepadState.Buttons}\n"));
-                }
+            //    if (gamepadState.Buttons != GamepadButtonFlags.None)
+            //    {
+            //        RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Buttons: {gamepadState.Buttons}\n"));
+            //    }
 
-            }
+            //}
       
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text = $"posX: {robot.positionXOdo}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"posY: {robot.positionYOdo}\n"));
@@ -154,13 +154,17 @@ namespace RobotInterface_Ly_Bordes
         public byte CalculateChecksum(Int16 msgFunction,int msgPayloadLength, byte[] msgPayload)
         {
             // Todo faire checksum pour command and playload    
-            byte checksum = 0xFE;
-            checksum = (byte) ( msgFunction ^ checksum) ;
+            byte checksum = 0;
+
+            checksum ^= 0xFE;
+            checksum ^= (byte)(msgFunction >> 8);
+            checksum ^= (byte)(msgFunction >> 0);
+            checksum ^= (byte)(msgPayloadLength >> 8);
+            checksum ^= (byte)(msgPayloadLength >> 0);
 
             for (int j = 0; j < msgPayloadLength; j++)
             {
-                checksum = (byte)(checksum ^ msgPayload[j]);
-                
+                checksum ^= msgPayload[j];                
             }
             return checksum;
         }
@@ -314,37 +318,42 @@ namespace RobotInterface_Ly_Bordes
                 case StateReception.Waiting:
                     if (c == 0xFE)
                     {
-                        rcvState = StateReception.FunctionLSB;
-                        //RichTextBox.Text += "IN";
+                        rcvState = StateReception.FunctionMSB;
                     }
                     break;
                 case StateReception.FunctionMSB:
-                    msgDecodedFunction += c;
-                    rcvState = StateReception.PayloadLengthLSB;
+                    msgDecodedFunction = c<<8;
+                    rcvState = StateReception.FunctionLSB;
                     //RichTextBox.Text += "functionMSB";
                     break;
                 case StateReception.FunctionLSB:
                     msgDecodedFunction += c;
-                    rcvState = StateReception.FunctionMSB;
+                    rcvState = StateReception.PayloadLengthMSB;
                     //RichTextBox.Text += "functionLSB";
                     break;
                 case StateReception.PayloadLengthMSB:
-                    msgDecodedPayloadLength += c;
-                    rcvState = StateReception.Payload;
-                    Array.Resize(ref msgDecodedPayload, msgDecodedPayload.Length + msgDecodedPayloadLength);
+                    msgDecodedPayloadLength = c<<8;
+                    rcvState = StateReception.PayloadLengthLSB;
                     break;
                 case StateReception.PayloadLengthLSB:
                     msgDecodedPayloadLength += c;
-                    rcvState = StateReception.PayloadLengthMSB;
+                    if (msgDecodedPayloadLength == 0)
+                        rcvState = StateReception.CheckSum;
+                    else if (msgDecodedPayloadLength < 1024)
+                    {
+                        rcvState = StateReception.Payload;
+                        msgDecodedPayloadIndex = 0;
+                        msgDecodedPayload = new byte[msgDecodedPayloadLength];
+                    }
+                    else
+                        rcvState = StateReception.Waiting;
                     break;
                 case StateReception.Payload:
-                    //RichTextBox.Text += msgDecodedPayloadIndex;
-                    msgDecodedPayloadIndex += 1;
-                    if (msgDecodedPayloadIndex == msgDecodedPayloadLength){
+                    msgDecodedPayload[msgDecodedPayloadIndex++] = c;
+                    if (msgDecodedPayloadIndex >= msgDecodedPayloadLength)
+                    {
                         rcvState = StateReception.CheckSum;
-                        }
-                    msgDecodedPayload[msgDecodedPayloadIndex-1] = c;
-                    
+                    }                    
                     break;
                 case StateReception.CheckSum:
 

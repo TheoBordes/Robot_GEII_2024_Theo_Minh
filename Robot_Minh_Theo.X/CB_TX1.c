@@ -10,7 +10,7 @@ unsigned char isTransmitting = 0;
 
 void SendMessage(unsigned char* message, int length) {
     unsigned char i = 0;
-    if (CB_TX1_GetRemainingSize() > length) {
+    if (CB_TX1_GetRemainingSize() >= length) {
         for (i = 0; i < length; i++)
             CB_TX1_Add(message[i]);
         if (!CB_TX1_IsTranmitting())
@@ -19,23 +19,15 @@ void SendMessage(unsigned char* message, int length) {
 }
 
 void CB_TX1_Add(unsigned char value) {
-
-    if (CB_TX1_GetRemainingSize() > 0) {
-        cbTx1Buffer[cbTx1Head] = value;
-        if (cbTx1Head >= 128) {
-            cbTx1Head = 0;
-        }
-        cbTx1Head += 1;
-    }
+    cbTx1Buffer[cbTx1Head++] = value;
+    if (cbTx1Head >= 128)
+        cbTx1Head = 0;
 }
 
 unsigned char CB_TX1_Get(void) {
-    unsigned char value = cbTx1Buffer[cbTx1Tail];
-    cbTx1Buffer[cbTx1Tail] = 0;
-    if (cbTx1Tail >= 128) {
+    unsigned char value = cbTx1Buffer[cbTx1Tail++];
+    if (cbTx1Tail >= 128)
         cbTx1Tail = 0;
-    }
-    cbTx1Tail += 1;
     return value;
 
 }
@@ -66,5 +58,5 @@ int CB_TX1_GetDataSize(void) {
 }
 
 int CB_TX1_GetRemainingSize(void) {
-    return CBTX1_BUFFER_SIZE - CB_TX1_GetDataSize() - 1;
+    return CBTX1_BUFFER_SIZE - CB_TX1_GetDataSize();
 }

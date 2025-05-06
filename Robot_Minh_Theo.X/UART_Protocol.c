@@ -7,30 +7,37 @@
 #include "robot.h"
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload) {
-    // Fonction prenant entree la trame et sa longueur pour calculer le checksum
-    unsigned char checksum = (unsigned char) (msgFunction ^ 0xFE);
-    for (int j = 0; j < msgPayloadLength; j++) {
-        checksum = (unsigned char) (checksum ^ msgPayload[j]);
+    unsigned char checksum=0;
+        
+    checksum ^= 0xFE;
+    checksum ^= (unsigned char) (msgFunction >> 8);
+    checksum ^= (unsigned char) (msgFunction >> 0);
+    checksum ^= (unsigned char) (msgPayloadLength >> 8);
+    checksum ^= (unsigned char) (msgPayloadLength  >> 0);
+    for (int i = 0; i < msgPayloadLength; i++) {
+        checksum ^= msgPayload[i];
     }
+    
     return checksum;
 }
 
 void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, unsigned char *msgPayload) {
     // Fonction d?encodage et d?envoi d?un message
-    int j = 0;
-    unsigned char message[128] = {};
-    message[0] = 0XFE;
-    message[2] = (unsigned char) (msgFunction & 0xFF);
-    message[1] = (unsigned char) ((msgFunction >> 8) & 0xFF);
-    message[4] = (unsigned char) (msgPayloadLength & 0xFF);
-    message[3] = (unsigned char) ((msgPayloadLength >> 8) & 0xFF);
+    unsigned char message[msgPayloadLength+6];
+    
+    int pos = 0;
+    message[pos++] = 0xFE;
+    message[pos++] = (unsigned char) (msgFunction >> 8);
+    message[pos++] = (unsigned char) (msgFunction >> 0);
+    message[pos++] = (unsigned char) (msgPayloadLength >> 8);
+    message[pos++] = (unsigned char) (msgPayloadLength  >> 0);
     for (int i = 0; i < msgPayloadLength; i++) {
-        message[5 + i] = msgPayload[j];
-        j++;
+        message[pos++] = msgPayload[i];
     }
-    message[msgPayloadLength + 5] = UartCalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
-    SendMessage(message, 6 + msgPayloadLength);
+    message[pos++] = UartCalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
+    SendMessage(message, pos);
 }
+
 int rcvState = Waiting;
 int msgDecodedFunction = 0;
 int msgDecodedPayloadLength = 0;
@@ -64,35 +71,31 @@ void UartDecodeMessage(unsigned char c) {
             break;
         case PayloadLengthLSB:
             msgDecodedPayloadLength += c;
-            rcvState = PayloadLengthMSB;
+            if(msgDecodedPayloadLength == 0)
+                rcvState = CheckSum;
+            else if( msgDecodedPayloadLength<1024)
+            {
+                rcvState = Payload;
+                msgDecodedPayloadIndex=0;
+            }
+            else
+                rcvState = Waiting;
             break;
         case Payload:
-            //RichTextBox.Text += msgDecodedPayloadIndex;
-            msgDecodedPayloadIndex += 1;
-            if (msgDecodedPayloadIndex == msgDecodedPayloadLength) {
+            msgDecodedPayload[msgDecodedPayloadIndex++] = c;
+            if (msgDecodedPayloadIndex >= msgDecodedPayloadLength) {
                 rcvState = CheckSum;
             }
-            msgDecodedPayload[msgDecodedPayloadIndex - 1] = c;
-
             break;
         case CheckSum:
             calculatedChecksum = UartCalculateChecksum(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
             //RichTextBox.Text += calculatedChecksum;
             receivedChecksum = c;
-            if (calculatedChecksum == receivedChecksum) {
-                //RichTextBox.Text += "ça marche";
-                rcvState = Waiting;
+            if (calculatedChecksum == receivedChecksum) 
+            {
                 UartProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-
-            } else {
-                rcvState = Waiting;
-            }
-            msgDecodedFunction = 0;
-            msgDecodedPayloadLength = 0;
-            msgDecodedPayloadIndex = 0;
-            for (int i = 0; i < msgDecodedPayloadLength; i++) {
-                msgDecodedPayload[i] = 0;
-            }
+            } 
+            rcvState = Waiting;            
             break;
         default:
             rcvState = Waiting;
@@ -127,7 +130,7 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
         case SetLed:
             switch (payload[0]) {
                 case 1:
-                    L1 = payload[1];             
+                    L1 = payload[1];
                     break;
                 case 2:
                     L2 = payload[1];
@@ -142,9 +145,9 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
                     L5 = payload[1];
                     break;
             }
-            if ( L1== 1){
-                
-                 LED_BLANCHE_2 = L1;
+            if (L1 == 1) {
+
+                LED_BLANCHE_2 = L1;
             }
             LED_BLANCHE_2 = L1;
             LED_ORANGE_2 = L2;
