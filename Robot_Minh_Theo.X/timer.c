@@ -92,6 +92,7 @@ void InitTimer4(void) {
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
     SetFreqTimer4(1000);
+    timestamp++;
 }
 //Interruption du timer 1
 int messageMotorCounter = 0;

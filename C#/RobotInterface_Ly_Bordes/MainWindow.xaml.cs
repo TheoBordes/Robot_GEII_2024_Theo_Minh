@@ -23,6 +23,11 @@ using static System.Net.Mime.MediaTypeNames;
 using SharpDX.XInput;
 using System.Reflection.Metadata;
 using System.Linq.Expressions;
+using SciChart.Charting.Visuals;
+using static SciChart.Drawing.Utility.PointUtil;
+using WpfOscilloscopeControl;
+using SciChart.Data.Model;
+using System.ComponentModel.DataAnnotations;
 
 namespace RobotInterface_Ly_Bordes
 {
@@ -30,7 +35,7 @@ namespace RobotInterface_Ly_Bordes
     /// Interaction logic for MainWindow.xaml
     /// </summary> 
     /// 
-
+    
 
     public partial class MainWindow : Window
     {
@@ -39,17 +44,25 @@ namespace RobotInterface_Ly_Bordes
         private Timer TimerAffichage;
         private Controller gamepad;
         public int flag;
-
+        private double timestamp;
         public MainWindow()
         {
-            InitializeComponent();
+            timestamp = 0;
+            SciChartSurface.SetRuntimeLicenseKey("VKOUDZGU6WndydcBQTqx4px2yWsaXqbn+hIKIxA5AE7Vii9ai5FosulEM8j2NYkBkJFZ6Ei2pFlUIV8aoE7bc3FfN3QRUwtvCaGqmrseTOeNsCz9p4t2CBk7TjcTPW7JTOYnIH/UjoRxi8b0BK6MDi8XJUS98gXSybDb/cn070Y5voaiKvusgmvvAOjcwuGcPQuyV7vJlzqh3LqLL3TqJnJMTdGmM00s8VFb7U+sxfbzT/h8SQuY13u/3i5sSz0VEI6YYJeiiX3oMajfHwA/SGyyDFTZmDAAfILtohF7ag+hnEpUDqhudgYjXqVwVtc0oUZNT8Ghtx0ek2bjkQukPtp8/44M1wiOdZORUOCAxeh3oTPZKjEGRjkpbN/UKprgi8/Xvf11BuXzTJLXklmSZLFRsgxcx3nvQVwae9oY5HABtwOk+q/bdsNBKyPmhjNLM1+y5qSlpIQlHzm/EdvN44AX5iR43d4dxfLx9QN7KHvaUbHpqNXVKLUsq0g1g6mEGntw5fXj");
 
-            serialPort1 = new ExtendedSerialPort("COM4", 115200, Parity.None, 8, StopBits.One);// Cjhanger le port USB (COM)
+            InitializeComponent();
+           
+            //Setting SerialPort
+            serialPort1 = new ExtendedSerialPort("COM4", 115200, Parity.None, 8, StopBits.One);// Changer le port USB (COM)
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
+
+
+            //Setting Timer
             DispatcherTimer timerAffichage;
             timerAffichage = new DispatcherTimer();
             timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 4);
+
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             gamepad = new Controller(UserIndex.One);
@@ -58,6 +71,14 @@ namespace RobotInterface_Ly_Bordes
             //// Start thread
             //backgroundThread.IsBackground = true;
             //backgroundThread.Start();
+
+            //Setting Oscillo SEX
+            oscilloSpeed.isDisplayActivated = true;
+            oscilloSpeed.AddOrUpdateLine(1, 200, "Vitesse_Linéaire");
+            oscilloSpeed.ChangeLineColor(1, Colors.Blue);
+            oscilloSpeed.AddOrUpdateLine(2, 200, "Vitesse_Angulaire");
+            oscilloSpeed.ChangeLineColor(2, Colors.Green);
+            
         }
 
         bool gamepad_state = true;
@@ -70,7 +91,8 @@ namespace RobotInterface_Ly_Bordes
                 gamepad_state = false ;
                 byte[] mode = new byte[] {1};
                 UartEncodeAndSendMessage(0x0052, 0, mode);
-            }   
+            }
+            timestamp++;
             //else if ( gamepad.IsConnected ) {
             //    byte[] mode = new byte[] { 0 };
             //    UartEncodeAndSendMessage(0x0052, 1, mode);
@@ -85,7 +107,7 @@ namespace RobotInterface_Ly_Bordes
             //    //RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
             //    //           RichTextBox.Text += $"Buttons: {dividedValue}\n"));
             //    byte[] vit = new byte[] { dividedValueR,dividedValueL };
-               
+
             //    UartEncodeAndSendMessage(0X0090, 2, vit);
             //    compteur += 1;
             //    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
@@ -99,12 +121,18 @@ namespace RobotInterface_Ly_Bordes
             //    }
 
             //}
-      
-            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text = $"posX: {robot.positionXOdo}\n"));
+
+
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text =  $"posX: {robot.positionXOdo}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"posY: {robot.positionYOdo}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Angle: {robot.angleRadianFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitLin: {robot.vitesseLineaireFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitAngl: {robot.vitesseAngulaireFromOdometry}\n"));
+            
+            
+            oscilloSpeed.AddPointToLine(1, timestamp , robot.vitesseLineaireFromOdometry);
+            oscilloSpeed.AddPointToLine(2, timestamp , robot.vitesseAngulaireFromOdometry);
+
         }
 
         private void ProcessQueue()

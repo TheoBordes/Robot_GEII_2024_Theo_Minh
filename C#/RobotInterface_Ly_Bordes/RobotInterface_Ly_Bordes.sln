@@ -7,20 +7,40 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobotInterface_Ly_Bordes", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendedSerialPort", "..\ExtendedSerialPort\ExtendedSerialPort\ExtendedSerialPort.csproj", "{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOscilloscopeControl", "..\..\..\..\Users\E306_PC1\Downloads\WpfOscilloscope (2)\WpfOscilloscope\WpfOscilloscopeControl.csproj", "{88BAA407-3FEA-4F4B-BB41-5309CE48884E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{82B6B538-B844-4808-873A-9AEE3B47FB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{82B6B538-B844-4808-873A-9AEE3B47FB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B6B538-B844-4808-873A-9AEE3B47FB44}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{82B6B538-B844-4808-873A-9AEE3B47FB44}.Debug|x64.Build.0 = Debug|Any CPU
 		{82B6B538-B844-4808-873A-9AEE3B47FB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82B6B538-B844-4808-873A-9AEE3B47FB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82B6B538-B844-4808-873A-9AEE3B47FB44}.Release|x64.ActiveCfg = Release|Any CPU
+		{82B6B538-B844-4808-873A-9AEE3B47FB44}.Release|x64.Build.0 = Release|Any CPU
 		{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}.Debug|x64.Build.0 = Debug|Any CPU
 		{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}.Release|x64.ActiveCfg = Release|Any CPU
+		{48CFE2BC-4131-4EFC-8202-0AE03AA3940C}.Release|x64.Build.0 = Release|Any CPU
+		{88BAA407-3FEA-4F4B-BB41-5309CE48884E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BAA407-3FEA-4F4B-BB41-5309CE48884E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BAA407-3FEA-4F4B-BB41-5309CE48884E}.Debug|x64.ActiveCfg = Debug|x64
+		{88BAA407-3FEA-4F4B-BB41-5309CE48884E}.Debug|x64.Build.0 = Debug|x64
+		{88BAA407-3FEA-4F4B-BB41-5309CE48884E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BAA407-3FEA-4F4B-BB41-5309CE48884E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88BAA407-3FEA-4F4B-BB41-5309CE48884E}.Release|x64.ActiveCfg = Release|x64
+		{88BAA407-3FEA-4F4B-BB41-5309CE48884E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

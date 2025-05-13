@@ -81,11 +81,11 @@ void QEIUpdateData()
     robotState.yPosFromOdometry = robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI);
     robotState.angleRadianFromOdometry = robotState.angleRadianFromOdometry_1 + robotState.vitesseAngulaireFromOdometry / FREQ_ECH_QEI;
         
-    if(robotState.angleRadianFromOdometry > M_PI){
-        robotState.angleRadianFromOdometry -= 2*M_PI;
+    if(robotState.angleRadianFromOdometry > PI){
+        robotState.angleRadianFromOdometry -= 2*PI;
     }
-    if(robotState.angleRadianFromOdometry < -M_PI){
-        robotState.angleRadianFromOdometry += 2*M_PI;
+    if(robotState.angleRadianFromOdometry < -PI){
+        robotState.angleRadianFromOdometry += 2*PI;
     }
 }
 
@@ -98,5 +98,5 @@ void SendPositionData()
     getBytesFromFloat(positionPayload, 12, (float)(robotState.angleRadianFromOdometry));
     getBytesFromFloat(positionPayload, 16, (float)(robotState.vitesseLineaireFromOdometry));
     getBytesFromFloat(positionPayload, 20, (float)(robotState.vitesseAngulaireFromOdometry));
-    UartEncodeAndSendMessage(POSITION_DATA, 24, positionPayload);
+    UartEncodeAndSendMessage(POSITION_DATA, 24, positionPayload); // CACA
 }
