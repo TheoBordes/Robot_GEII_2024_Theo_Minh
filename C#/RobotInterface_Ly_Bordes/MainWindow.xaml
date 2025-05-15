@@ -1,5 +1,6 @@
-﻿<Window x:Class="RobotInterface_Ly_Bordes.MainWindow"
+﻿<!--<Window x:Class="RobotInterface_Ly_Bordes.MainWindow"
         xmlns:oscillo="clr-namespace:WpfOscilloscopeControl;assembly=WpfOscilloscopeControl"
+        xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay;assembly=WpfAsservissementDisplay"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,13 +10,13 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="0">
         <Grid.ColumnDefinitions>
-            <!-- with width-->
+            --><!-- with width--><!--
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <!-- with width-->
+            --><!-- with width--><!--
             <RowDefinition Height="5*" />
             <RowDefinition Height="50" />
             <RowDefinition Height="5*" />
@@ -90,9 +91,124 @@
         </StackPanel>
 
 
-        <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Column="1" Margin="0,50,0,0" Grid.RowSpan="2" Grid.Row="1"/>
+        <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Column="1" Margin="0,1,0,0" Grid.Row="2"/>
+        <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Margin="0,50,0,0" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1"/>
 
 
+
+    </Grid>
+</Window>-->
+
+
+
+    
+    
+    
+    <Window x:Class="RobotInterface_Ly_Bordes.MainWindow"
+        xmlns:oscillo="clr-namespace:WpfOscilloscopeControl;assembly=WpfOscilloscopeControl"
+        xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay;assembly=WpfAsservissementDisplay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RobotInterface_Ly_Bordes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900"
+        Background="DarkSalmon"
+        Foreground="White">
+    <Grid Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <GroupBox x:Name="Reception" Grid.Column="1" Grid.Row="0" Header="Reception" Background="Black" BorderBrush="White" Foreground="White">
+            <TextBox x:Name="RichTextBox" Background="Aquamarine" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" IsReadOnly="True" Text="" TextChanged="TextBox_TextChanged" />
+        </GroupBox>
+
+        <GroupBox x:Name="Emission" Grid.Column="0" Grid.Row="0" Header="Emission" Background="Black" BorderBrush="White" Foreground="White">
+            <TextBox x:Name="TextBoxEmission" Background="Chartreuse" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" AcceptsReturn="True" Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" />
+        </GroupBox>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1">
+            <Button x:Name ="buttonEnvoyer" Content="Envoyer" Width="60" Margin="5" Click="buttonEnvoyer_Click" Background="Black" Foreground="White" BorderBrush="White"/>
+            <Button x:Name ="buttonTest" Content="Test" Width="60" Margin="5" Click="buttonTest_Click" Background="Black" Foreground="White" BorderBrush="White"/>
+            <Button x:Name ="buttonClear" Content="Clear" Width="60" Margin="5" Click="buttonClear_Click" Background="Black" Foreground="White" BorderBrush="White"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.RowSpan="2">
+            <GroupBox x:Name="Leds" Header="Leds" Background="Black" Foreground="White" BorderBrush="White">
+                <StackPanel Orientation="Vertical">
+                    <CheckBox x:Name="Led1" Content="Led1" Foreground="White" Background="Black" Checked="Led1_Checked" Unchecked="Led1_Checked"/>
+                    <CheckBox x:Name="Led2" Content="Led2" Foreground="White" Background="Black" Checked="Led2_Checked" Unchecked="Led2_Checked"/>
+                    <CheckBox x:Name="Led3" Content="Led3" Foreground="White" Background="Black" Checked="Led3_Checked" Unchecked="Led3_Checked"/>
+                    <CheckBox x:Name="Led4" Content="Led4" Foreground="White" Background="Black" Checked="Led4_Checked" Unchecked="Led4_Checked"/>
+                    <CheckBox x:Name="Led5" Content="Led5" Foreground="White" Background="Black" Checked="Led5_Checked" Unchecked="Led5_Checked"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox x:Name="IRTels" Header="Telemetres IR" Background="Black" Foreground="White" BorderBrush="White">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="IR Plus Gauche :" />
+                        <Label x:Name="IRpg" Content="..." />
+                        <Label Content="cm" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="IR Gauche  :" />
+                        <Label x:Name="IRg" Content="..." />
+                        <Label Content="cm" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="IR Centre :" />
+                        <Label x:Name="IRc" Content="..." />
+                        <Label Content="cm" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="IR Droite  :" />
+                        <Label x:Name="IRd" Content="..." />
+                        <Label Content="cm" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="IR Plus Droite :" />
+                        <Label x:Name="IRpd" Content="..." />
+                        <Label Content=" cm" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox x:Name="Motors" Header="Moteurs" Width="131" Background="Black" Foreground="White" BorderBrush="White">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Vitesse Gauche :" />
+                        <Label x:Name="vitg" Content="..." />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Vitesse Droite :" />
+                        <Label x:Name="vitd" Content="..." />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        <AsservDisplay:AsservissementRobot2RouesDisplayControl
+            x:Name="asservSpeedDisplay"
+            Grid.Column="1"
+            Grid.Row="2"
+            Margin="0,5,0,0" />
+
+        <oscillo:WpfOscilloscope
+            x:Name="oscilloSpeed"
+            Grid.Column="1"
+            Grid.Row="3"
+            Margin="0,5,0,0" />
 
 
     </Grid>
