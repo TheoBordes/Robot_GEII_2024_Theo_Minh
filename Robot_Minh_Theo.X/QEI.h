@@ -13,6 +13,7 @@ void InitQEI1();
 void InitQEI2();
 void QEIUpdateData();
 void SendPositionData();
+void SendAsservissementData();
 
 #endif	/* QEI_H */
 

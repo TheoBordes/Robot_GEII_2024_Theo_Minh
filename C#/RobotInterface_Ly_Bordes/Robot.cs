@@ -21,6 +21,24 @@ namespace RobotInterface_Ly_Bordes
         public float angleRadianFromOdometry ;
         public float vitesseLineaireFromOdometry;
         public float vitesseAngulaireFromOdometry;
+        public float vitesseDroitFromOdometry;
+        public float vitesseGaucheFromOdometry;
+
+        public double Consigne;
+        public double Measure;
+        public double Error;
+        public double Command;
+        public double Kp;
+        public double CorrecP;
+        public double CorrecP_Max;
+        public double Ki;
+        public double CorrecI;
+        public double CorrecI_Max;
+        public double Kd;
+        public double CorrecD;
+        public double CorrecD_Max;
+
+
         public Robot()
         {
             

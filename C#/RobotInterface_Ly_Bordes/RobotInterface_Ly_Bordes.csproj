@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\E306_PC1\Downloads\Utilities (2)\Utilities\Utilities.csproj" />
     <ProjectReference Include="..\..\..\..\Users\E306_PC1\Downloads\WpfAsservissementDisplay\WpfAsservissementDisplay\WpfAsservissementDisplay.csproj" />
     <ProjectReference Include="..\..\..\..\Users\E306_PC1\Downloads\WpfOscilloscope (2)\WpfOscilloscope\WpfOscilloscopeControl.csproj" />
     <ProjectReference Include="..\ExtendedSerialPort\ExtendedSerialPort\ExtendedSerialPort.csproj" />

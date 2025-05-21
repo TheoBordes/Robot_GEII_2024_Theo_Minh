@@ -28,6 +28,8 @@ int compteur;
 #define POSITION_DATA 0x0061
 #define DISTROUES 0.2175
 
+
+
 void InitQEI1()
 {
     QEI1IOCbits.SWPAB = 1; //QEAx and QEBx are swapped
@@ -91,12 +93,16 @@ void QEIUpdateData()
 
 void SendPositionData()
 {
-    unsigned char positionPayload[24];
+    unsigned char positionPayload[37];
     getBytesFromInt32(positionPayload, 0, timestamp);
     getBytesFromFloat(positionPayload, 4, (float)(robotState.xPosFromOdometry));
     getBytesFromFloat(positionPayload, 8, (float)(robotState.yPosFromOdometry));
     getBytesFromFloat(positionPayload, 12, (float)(robotState.angleRadianFromOdometry));
     getBytesFromFloat(positionPayload, 16, (float)(robotState.vitesseLineaireFromOdometry));
     getBytesFromFloat(positionPayload, 20, (float)(robotState.vitesseAngulaireFromOdometry));
-    UartEncodeAndSendMessage(POSITION_DATA, 24, positionPayload); // CACA
+    getBytesFromFloat(positionPayload, 24, (float)(robotState.vitesseDroitFromOdometry));
+    getBytesFromFloat(positionPayload, 28, (float)(robotState.vitesseGaucheFromOdometry));
+    UartEncodeAndSendMessage(POSITION_DATA, 37, positionPayload); 
 }
+
+

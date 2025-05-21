@@ -10,13 +10,17 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="0">
         <Grid.ColumnDefinitions>
-            --><!-- with width--><!--
+            -->
+<!-- with width-->
+<!--
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            --><!-- with width--><!--
+            -->
+<!-- with width-->
+<!--
             <RowDefinition Height="5*" />
             <RowDefinition Height="50" />
             <RowDefinition Height="5*" />
@@ -101,10 +105,10 @@
 
 
 
-    
-    
-    
-    <Window x:Class="RobotInterface_Ly_Bordes.MainWindow"
+
+
+
+<Window x:Class="RobotInterface_Ly_Bordes.MainWindow"
         xmlns:oscillo="clr-namespace:WpfOscilloscopeControl;assembly=WpfOscilloscopeControl"
         xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay;assembly=WpfAsservissementDisplay"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -114,8 +118,8 @@
         xmlns:local="clr-namespace:RobotInterface_Ly_Bordes"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900"
-        Background="DarkSalmon"
-        Foreground="White">
+        Background="Black"
+        Foreground="black">
     <Grid Margin="0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -130,14 +134,14 @@
         </Grid.RowDefinitions>
 
         <GroupBox x:Name="Reception" Grid.Column="1" Grid.Row="0" Header="Reception" Background="Black" BorderBrush="White" Foreground="White">
-            <TextBox x:Name="RichTextBox" Background="Aquamarine" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" IsReadOnly="True" Text="" TextChanged="TextBox_TextChanged" />
+            <TextBox x:Name="RichTextBox" Background="Black" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" IsReadOnly="True" Text="" TextChanged="TextBox_TextChanged" />
         </GroupBox>
 
         <GroupBox x:Name="Emission" Grid.Column="0" Grid.Row="0" Header="Emission" Background="Black" BorderBrush="White" Foreground="White">
-            <TextBox x:Name="TextBoxEmission" Background="Chartreuse" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" AcceptsReturn="True" Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" />
+            <TextBox x:Name="TextBoxEmission" Background="Black" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" AcceptsReturn="True" Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" />
         </GroupBox>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,1" Grid.Row="1">
             <Button x:Name ="buttonEnvoyer" Content="Envoyer" Width="60" Margin="5" Click="buttonEnvoyer_Click" Background="Black" Foreground="White" BorderBrush="White"/>
             <Button x:Name ="buttonTest" Content="Test" Width="60" Margin="5" Click="buttonTest_Click" Background="Black" Foreground="White" BorderBrush="White"/>
             <Button x:Name ="buttonClear" Content="Clear" Width="60" Margin="5" Click="buttonClear_Click" Background="Black" Foreground="White" BorderBrush="White"/>
@@ -157,24 +161,24 @@
             <GroupBox x:Name="IRTels" Header="Telemetres IR" Background="Black" Foreground="White" BorderBrush="White">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="IR Plus Gauche :" />
-                        <Label x:Name="IRpg" Content="..." />
-                        <Label Content="cm" />
+                        <Label Content="IR Plus Gauche :" Foreground="White"/>
+                        <Label x:Name="IRpg" Content="..." Foreground="White"/>
+                        <Label Content="cm" Foreground="White"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="IR Gauche  :" />
-                        <Label x:Name="IRg" Content="..." />
-                        <Label Content="cm" />
+                        <Label Content="IR Gauche  :" Foreground="White"/>
+                        <Label x:Name="IRg" Content="..." Foreground="White"/>
+                        <Label Content="cm" Foreground="White"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="IR Centre :" />
-                        <Label x:Name="IRc" Content="..." />
-                        <Label Content="cm" />
+                        <Label Content="IR Centre :" Foreground="White"/>
+                        <Label x:Name="IRc" Content="..." Foreground="White"/>
+                        <Label Content="cm" Foreground="White"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="IR Droite  :" />
-                        <Label x:Name="IRd" Content="..." />
-                        <Label Content="cm" />
+                    <StackPanel Orientation="Horizontal" >
+                        <Label Content="IR Droite  :" Foreground="White"/>
+                        <Label x:Name="IRd" Content="..." Foreground="White"/>
+                        <Label Content="cm" Foreground="White"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="IR Plus Droite :" />
@@ -187,28 +191,19 @@
             <GroupBox x:Name="Motors" Header="Moteurs" Width="131" Background="Black" Foreground="White" BorderBrush="White">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Vitesse Gauche :" />
-                        <Label x:Name="vitg" Content="..." />
+                        <Label Content="Vitesse Gauche :" Foreground="White"/>
+                        <Label x:Name="vitg" Content="..." Foreground="White"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Vitesse Droite :" />
-                        <Label x:Name="vitd" Content="..." />
+                        <Label Content="Vitesse Droite :" Foreground="White"/>
+                        <Label x:Name="vitd" Content="..." Foreground="White"/>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
 
-        <AsservDisplay:AsservissementRobot2RouesDisplayControl
-            x:Name="asservSpeedDisplay"
-            Grid.Column="1"
-            Grid.Row="2"
-            Margin="0,5,0,0" />
-
-        <oscillo:WpfOscilloscope
-            x:Name="oscilloSpeed"
-            Grid.Column="1"
-            Grid.Row="3"
-            Margin="0,5,0,0" />
+        <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3"/>
+        <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Column="1" Grid.Row="3" />
 
 
     </Grid>

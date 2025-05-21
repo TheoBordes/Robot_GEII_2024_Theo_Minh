@@ -128,8 +128,12 @@ namespace RobotInterface_Ly_Bordes
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Angle: {robot.angleRadianFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitLin: {robot.vitesseLineaireFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitAngl: {robot.vitesseAngulaireFromOdometry}\n"));
-            
-            
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitD: {robot.vitesseDroitFromOdometry}\n"));
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitG: {robot.vitesseGaucheFromOdometry}\n"));
+
+            asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.positionXOdo, robot.angleRadianFromOdometry);
+
+
             oscilloSpeed.AddPointToLine(1, timestamp , robot.vitesseLineaireFromOdometry);
             oscilloSpeed.AddPointToLine(2, timestamp , robot.vitesseAngulaireFromOdometry);
 
@@ -266,21 +270,16 @@ namespace RobotInterface_Ly_Bordes
 
                 case (byte)IDfonction.QEIReception:
                     robot.positionXOdo = BitConverter.ToSingle(msgPayload, 4);
-                    //if (robot.positionXOdo != 0)
-                    //{
-                    //    Console.WriteLine(robot.positionXOdo.ToString());
-                    //    compteur1 = 0;
-
-                    //}
-                    //else
-                    //{
-                    //    compteur1++;
-                    //}
                     robot.positionYOdo = BitConverter.ToSingle(msgPayload, 8);
                     robot.angleRadianFromOdometry = BitConverter.ToSingle(msgPayload, 12);
                     robot.vitesseLineaireFromOdometry = BitConverter.ToSingle(msgPayload, 16);
                     robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
+                    robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 24);
+                    robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 28);
+                    
+
                     break;
+
             }
             
         }
@@ -559,6 +558,7 @@ namespace RobotInterface_Ly_Bordes
 
             UartEncodeAndSendMessage(0x0020, 2, ledList);
         }
+
     }
 
 
