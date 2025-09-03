@@ -311,7 +311,7 @@ void ADC_value() {
         payload_Telemetre[2] = (unsigned char) robotState.distanceTelemetreCentre;
         payload_Telemetre[3] = (unsigned char) robotState.distanceTelemetreDroit;
         payload_Telemetre[4] = (unsigned char) robotState.distanceTelemetrePlusDroit;
-        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);
+        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);        
     }
 }
 
@@ -460,21 +460,14 @@ int main(void) {
             while (CB_RX1_IsDataAvailable()) {
                 UartDecodeMessage(CB_RX1_Get());
             }
-            if (flagMessageMotor) {
-                flagMessageMotor = 0;
-                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
-                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
-                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
-            }                //            if (timestamp > 60000) {
-                //                PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
-                //                PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
-                //                timestamp = 0;
-                //            }
-
-
-            else {
-
-            }
+//            if (flagMessageMotor) {
+//                flagMessageMotor = 0;
+//                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
+//                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
+//                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
+//            }         
+//            else {
+//            }
             if (robotState.distanceTelemetreGauche > 20) {
                 LED_BLEUE_1 = 1;
             } else {

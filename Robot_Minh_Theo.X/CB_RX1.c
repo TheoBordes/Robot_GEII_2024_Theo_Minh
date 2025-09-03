@@ -11,21 +11,18 @@ unsigned char cbRx1Buffer[CBRX1_BUFFER_SIZE];
 
 void CB_RX1_Add(unsigned char value) {
     if (CB_RX1_GetRemainingSize() > 0) {
-        cbRx1Buffer[cbRx1Head] = value;
-        if (cbRx1Head >= 128) {
+        cbRx1Buffer[cbRx1Head++] = value;
+        if (cbRx1Head >= CBRX1_BUFFER_SIZE) {
             cbRx1Head = 0;
         }
-        cbRx1Head += 1;
     }
 }
 
 unsigned char CB_RX1_Get(void) {
-        unsigned char value = cbRx1Buffer[cbRx1Tail];
-        cbRx1Buffer[cbRx1Tail] = 0;
-        if (cbRx1Tail >= 128) {
+        unsigned char value = cbRx1Buffer[cbRx1Tail++];
+        if (cbRx1Tail >= CBRX1_BUFFER_SIZE) {
             cbRx1Tail = 0;
         }
-        cbRx1Tail += 1;
         return value;
 }
 
@@ -61,5 +58,5 @@ int CB_RX1_GetDataSize(void) {
 
 int CB_RX1_GetRemainingSize(void) {
 
-    return CBRX1_BUFFER_SIZE - CB_RX1_GetDataSize() - 1;
+    return CBRX1_BUFFER_SIZE - CB_RX1_GetDataSize();
 }

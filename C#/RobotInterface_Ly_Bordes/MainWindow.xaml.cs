@@ -20,7 +20,6 @@ using System.Collections;
 using System.Data.Common;
 using System.Threading;
 using static System.Net.Mime.MediaTypeNames;
-using SharpDX.XInput;
 using System.Reflection.Metadata;
 using System.Linq.Expressions;
 using SciChart.Charting.Visuals;
@@ -42,7 +41,7 @@ namespace RobotInterface_Ly_Bordes
         ExtendedSerialPort serialPort1;
         Robot robot = new Robot();
         private Timer TimerAffichage;
-        private Controller gamepad;
+        //private Controller gamepad;
         public int flag;
         private double timestamp;
         public MainWindow()
@@ -65,14 +64,14 @@ namespace RobotInterface_Ly_Bordes
 
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
-            gamepad = new Controller(UserIndex.One);
+            //gamepad = new Controller(UserIndex.One);
             // Create a thread
             //Thread backgroundThread = new Thread(new ThreadStart(ProcessQueue));
             //// Start thread
             //backgroundThread.IsBackground = true;
             //backgroundThread.Start();
 
-            //Setting Oscillo SEX
+            //Setting Oscillo 
             oscilloSpeed.isDisplayActivated = true;
             oscilloSpeed.AddOrUpdateLine(1, 200, "Vitesse_Linéaire");
             oscilloSpeed.ChangeLineColor(1, Colors.Blue);
@@ -86,12 +85,12 @@ namespace RobotInterface_Ly_Bordes
 
         private void TimerAffichage_Tick(object sender, EventArgs e)
         {
-            if (!gamepad.IsConnected)
-            {
-                gamepad_state = false ;
-                byte[] mode = new byte[] {1};
-                UartEncodeAndSendMessage(0x0052, 0, mode);
-            }
+            //if (!gamepad.IsConnected)
+            //{
+            //    gamepad_state = false ;
+            //    byte[] mode = new byte[] {1};
+            //    UartEncodeAndSendMessage(0x0052, 0, mode);
+            //}
             timestamp++;
             //else if ( gamepad.IsConnected ) {
             //    byte[] mode = new byte[] { 0 };
@@ -202,18 +201,19 @@ namespace RobotInterface_Ly_Bordes
         }
         void UartEncodeAndSendMessage(Int16 msgFunction, Int16 msgPayloadLength, byte[] msgPayload)
         {
-            byte start = 0xFE;
-            byte[] checksum = { CalculateChecksum((byte)msgFunction, msgPayloadLength, msgPayload) };
-            byte[] command = new byte[] { start };
-            byte[] codeFunction = BitConverter.GetBytes(msgFunction);
-            /*Array.Reverse(codeFunction);*/
-            byte[] PayloadLength = BitConverter.GetBytes(msgPayloadLength);
-            //Array.Reverse(PayloadLength);
-            serialPort1.Write(command, 0, command.Length);
-            serialPort1.Write(codeFunction, 0, codeFunction.Length); 
-            serialPort1.Write(PayloadLength, 0, PayloadLength.Length);
-            serialPort1.Write(msgPayload, 0, msgPayload.Length);
-            serialPort1.Write(checksum, 0, checksum.Length);
+            byte[] msg = new byte[msgDecodedPayloadLength+6];
+            int pos = 0;
+            msg[pos++] = 0xFE;
+            msg[pos++] = (byte)(msgFunction >> 8);
+            msg[pos++] = (byte)(msgFunction >> 0);
+            msg[pos++] = (byte)(msgPayloadLength >> 8);
+            msg[pos++] = (byte)(msgPayloadLength >> 0);
+            for (int i = 0; i < msgPayloadLength; i++)
+            {
+                msg[pos++] = msgPayload[i];
+            }
+            msg[pos++] = CalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
+            serialPort1.Write(msg, 0, pos);
         }
 
         //int compteur1 = 0;

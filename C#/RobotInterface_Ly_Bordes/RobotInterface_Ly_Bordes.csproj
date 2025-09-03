@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="SciChart" Version="8.5.0.28148" />
-    <PackageReference Include="SharpDX.XInput" Version="4.2.0" />
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
   </ItemGroup>
 

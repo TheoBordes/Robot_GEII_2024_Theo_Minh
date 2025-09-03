@@ -37,11 +37,9 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
 
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
-    if (i < 10) {
-        QEIUpdateData();
-        SendPositionData();
-        i++;
-    }
+
+    QEIUpdateData();
+    //SendPositionData();
 
 }
 

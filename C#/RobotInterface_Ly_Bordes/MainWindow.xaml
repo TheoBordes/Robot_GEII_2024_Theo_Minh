@@ -205,7 +205,7 @@
 
         <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3"/>
         <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Column="1" Grid.Row="3" />
-        <map:WpfWorldMap x:Name="" Loaded/>
+        
 
 
     </Grid>
