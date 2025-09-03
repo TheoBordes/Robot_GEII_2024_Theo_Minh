@@ -5,6 +5,8 @@
 #include "PWM.h"
 #include "IO.h"
 #include "robot.h"
+#include "Utilities.h"
+#include "asservissement.h"
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload) {
     unsigned char checksum = 0;
@@ -104,6 +106,9 @@ int L2 = 0;
 int L3 = 0;
 int L4 = 0;
 int L5 = 0;
+float kp = 0;
+float ki =0;
+float kd =0;
 
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
     int Signe = 1;
@@ -123,8 +128,13 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             break;
         case SET_ROBOT_MANUAL_CONTROL:
             SetRobotAutoControlState(payload[0]);
-//        case SetPID : 
-//            SetupPidAsservissement( )
+            break;
+        case SetPID:
+            kp  = getFloat(payload, 0);
+            ki = getFloat(payload, 4);
+            kd = getFloat(payload, 8);
+            
+            break;
         case SetLed:
             switch (payload[0]) {
                 case 1:

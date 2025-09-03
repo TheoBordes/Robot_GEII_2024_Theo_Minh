@@ -8,3 +8,5 @@ void SetupPidAsservissement(volatile PidCorrector* PidCorr, double Kp, double Ki
     PidCorr->Kd = Kd;
     PidCorr->erreurDeriveeMax = deriveeMax;
 }
+
+

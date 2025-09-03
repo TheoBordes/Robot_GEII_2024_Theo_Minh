@@ -27,6 +27,7 @@ using static SciChart.Drawing.Utility.PointUtil;
 using WpfOscilloscopeControl;
 using SciChart.Data.Model;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace RobotInterface_Ly_Bordes
 {
@@ -296,6 +297,27 @@ namespace RobotInterface_Ly_Bordes
             }
 
         }
+
+        private void KpEntry_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+
+                
+
+            }
+
+        }
+        private void KiEntry_KeyUp(object sender, KeyEventArgs e)
+        {
+
+
+        }
+        private void KdEntry_KeyUp(object sender, KeyEventArgs e)
+        {
+
+
+        }
         public enum StateReception
         {
             Waiting,
@@ -419,8 +441,8 @@ namespace RobotInterface_Ly_Bordes
             IRdistance = 0x0030,
             SpeedRule = 0x0040,
             RobotState = 0x0050,
-            QEIReception = 0x0061,
-            SetPid = 0x0061,
+            QEIReception = 0x0060,
+            SetPid = 0x0070,
             functionTestValue
         }
 
@@ -455,10 +477,17 @@ namespace RobotInterface_Ly_Bordes
             //    }
             //}
             //func = IDfonction.TextTransmission;
+
+            //Il faut envoyer les valeurs du Pid en float au microcontrolleur   
+
+
+            byte[] test = BitConverter.GetBytes(3.14f);
+            byte[] test2 = BitConverter.GetBytes(2.5f);
+            byte[] test3 = BitConverter.GetBytes(2.9f);
           
-            //Il faut envoyer les valeurs du Pid en float au microcontrolleur 
-            byte[] byteList = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
-            UartEncodeAndSendMessage(0x0090, 9, byteList);
+            byte[] result1 = test.Concat(test2).Concat(test3).ToArray();
+          
+            UartEncodeAndSendMessage((byte)IDfonction.SetPid, 12 , result1);
         }
 
         private void buttonClear_Click(object sender, RoutedEventArgs e)

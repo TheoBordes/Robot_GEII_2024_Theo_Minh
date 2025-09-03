@@ -28,19 +28,7 @@ typedef struct robotStateBITS {
             double angleRadianFromOdometry_1;
             double angleRadianFromOdometry;
             
-            double Consigne;
-            double Measure;
-            double Error;
-            double Command;
-            double Kp;
-            double CorrecP;
-            double CorrecP_Max;
-            double Ki;
-            double CorrecI;
-            double CorrecI_Max;
-            double Kd;
-            double CorrecD;
-            double CorrecD_Max;
+          
 
         };
     };
