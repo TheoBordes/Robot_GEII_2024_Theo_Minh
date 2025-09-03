@@ -201,7 +201,7 @@ namespace RobotInterface_Ly_Bordes
         }
         void UartEncodeAndSendMessage(Int16 msgFunction, Int16 msgPayloadLength, byte[] msgPayload)
         {
-            byte[] msg = new byte[msgDecodedPayloadLength+6];
+            byte[] msg = new byte[msgPayloadLength + 6];
             int pos = 0;
             msg[pos++] = 0xFE;
             msg[pos++] = (byte)(msgFunction >> 8);
@@ -420,48 +420,58 @@ namespace RobotInterface_Ly_Bordes
             SpeedRule = 0x0040,
             RobotState = 0x0050,
             QEIReception = 0x0061,
+            SetPid = 0x0061,
             functionTestValue
         }
 
-        IDfonction func = IDfonction.TextTransmission;
         private void buttonTest_Click(object sender, RoutedEventArgs e)
         {
-            byte[] byteList = new byte[] { 0x42, 0x6f, 0x6e, 0x6a, 0x6f, 0x75, 0x72, 0x0a, 0x0d };
-            while (func != IDfonction.functionTestValue)
-            {
-                switch (func)
-                {
+            //byte[] byteList = new byte[] { 0x42, 0x6f, 0x6e, 0x6a, 0x6f, 0x75, 0x72, 0x0a, 0x0d };
+            //while (func != IDfonction.functionTestValue)
+            //{
+            //    switch (func)
+            //    {
 
-                    case IDfonction.TextTransmission:
-                        UartEncodeAndSendMessage((byte)func, 9, byteList);
-                        func = IDfonction.SetLed;
-                        break;
-                    case IDfonction.SetLed:
-                        UartEncodeAndSendMessage((byte)func, 9, byteList);
-                        func = IDfonction.IRdistance;
-                        break;
-                    case IDfonction.IRdistance:
-                        UartEncodeAndSendMessage((byte)func, 9, byteList);
-                        func = IDfonction.SpeedRule;
-                        break;
-                    case IDfonction.SpeedRule:
-                        UartEncodeAndSendMessage((byte)func, 9, byteList);
-                        func = IDfonction.functionTestValue;
-                        break;
-                    default:
-                        func = IDfonction.TextTransmission;
-                        break;
+            //        case IDfonction.TextTransmission:
+            //            UartEncodeAndSendMessage((byte)func, 9, byteList);
+            //            func = IDfonction.SetLed;
+            //            break;
+            //        case IDfonction.SetLed:
+            //            UartEncodeAndSendMessage((byte)func, 9, byteList);
+            //            func = IDfonction.IRdistance;
+            //            break;
+            //        case IDfonction.IRdistance:
+            //            UartEncodeAndSendMessage((byte)func, 9, byteList);
+            //            func = IDfonction.SpeedRule;
+            //            break;
+            //        case IDfonction.SpeedRule:
+            //            UartEncodeAndSendMessage((byte)func, 9, byteList);
+            //            func = IDfonction.functionTestValue;
+            //            break;          
+            //        default:
+            //            func = IDfonction.TextTransmission;
+            //            break;
 
-                }
-            }
-            func = IDfonction.TextTransmission;
+            //    }
+            //}
+            //func = IDfonction.TextTransmission;
+          
+            //Il faut envoyer les valeurs du Pid en float au microcontrolleur 
+            byte[] byteList = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
+            UartEncodeAndSendMessage(0x0090, 9, byteList);
         }
 
         private void buttonClear_Click(object sender, RoutedEventArgs e)
         {
-            RichTextBox.Text = "";
+            //RichTextBox.Text = "";
+            //byte[] byteList = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
+            //UartEncodeAndSendMessage(0x0090, 9, byteList);
+
+
             byte[] byteList = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
             UartEncodeAndSendMessage(0x0090, 9, byteList);
+
+
         }
 
         private void TextBlock_TextInput(object sender, TextCompositionEventArgs e)
@@ -559,6 +569,8 @@ namespace RobotInterface_Ly_Bordes
             UartEncodeAndSendMessage(0x0020, 2, ledList);
         }
 
+      
+        
     }
 
 

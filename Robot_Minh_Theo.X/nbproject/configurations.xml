@@ -18,6 +18,7 @@
       <itemPath>UART_Protocol.h</itemPath>
       <itemPath>QEI.h</itemPath>
       <itemPath>Utilities.h</itemPath>
+      <itemPath>asservissement.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -46,6 +47,7 @@
       <itemPath>UART_Protocol.c</itemPath>
       <itemPath>QEI.c</itemPath>
       <itemPath>Utilities.c</itemPath>
+      <itemPath>asservissement.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -322,6 +324,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-7fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/debug/default/Robot_Minh_Theo_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>

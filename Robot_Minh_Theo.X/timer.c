@@ -10,7 +10,7 @@
 
 unsigned long timestamp;
 unsigned char toggle = 0;
-
+int tick = 0;
 //Initialisation d?un timer 16 bits
 
 void InitTimer1(void) {
@@ -32,15 +32,19 @@ void InitTimer1(void) {
 //Interruption du timer 1
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
-    int i;
     IFS0bits.T1IF = 0;
 
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
-
     QEIUpdateData();
-    //SendPositionData();
+    tick++;
+    if ( tick > 25 ){
+        SendPositionData();
+        tick = 0;
+    }
 
+  
+   
 }
 
 //Initialisation d?un timer 32 bits
@@ -90,7 +94,7 @@ void InitTimer4(void) {
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
     SetFreqTimer4(1000);
-    timestamp++;
+
 }
 //Interruption du timer 1
 int messageMotorCounter = 0;
@@ -109,6 +113,8 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
         OperatingSystemLoop();
     }
     ADC_value();
+    timestamp++;
+
 }
 
 void SetFreqTimer1(float freq) {

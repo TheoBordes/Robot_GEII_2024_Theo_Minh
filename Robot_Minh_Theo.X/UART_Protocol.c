@@ -123,6 +123,8 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             break;
         case SET_ROBOT_MANUAL_CONTROL:
             SetRobotAutoControlState(payload[0]);
+//        case SetPID : 
+//            SetupPidAsservissement( )
         case SetLed:
             switch (payload[0]) {
                 case 1:

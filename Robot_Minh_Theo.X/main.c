@@ -460,12 +460,12 @@ int main(void) {
             while (CB_RX1_IsDataAvailable()) {
                 UartDecodeMessage(CB_RX1_Get());
             }
-//            if (flagMessageMotor) {
-//                flagMessageMotor = 0;
-//                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
-//                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
-//                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
-//            }         
+            if (flagMessageMotor) {
+                flagMessageMotor = 0;
+                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
+                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
+                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
+            }         
 //            else {
 //            }
             if (robotState.distanceTelemetreGauche > 20) {

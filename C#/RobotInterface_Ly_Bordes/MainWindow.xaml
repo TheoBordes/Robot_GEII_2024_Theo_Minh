@@ -148,7 +148,7 @@
             <Button x:Name ="buttonClear" Content="Clear" Width="60" Margin="5" Click="buttonClear_Click" Background="Black" Foreground="White" BorderBrush="White"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.RowSpan="2">
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.RowSpan="1">
             <GroupBox x:Name="Leds" Header="Leds" Background="Black" Foreground="White" BorderBrush="White">
                 <StackPanel Orientation="Vertical">
                     <CheckBox x:Name="Led1" Content="Led1" Foreground="White" Background="Black" Checked="Led1_Checked" Unchecked="Led1_Checked"/>
@@ -204,7 +204,7 @@
         </StackPanel>
 
         <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3"/>
-        <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Column="1" Grid.Row="3" />
+        <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Column="0" Grid.Row="3"  />
         
 
 
