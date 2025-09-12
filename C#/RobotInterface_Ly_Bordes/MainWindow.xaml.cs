@@ -28,6 +28,12 @@ using WpfOscilloscopeControl;
 using SciChart.Data.Model;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using WpfAsservissementDisplay;
+
+
+
+
+
 
 namespace RobotInterface_Ly_Bordes
 {
@@ -41,6 +47,7 @@ namespace RobotInterface_Ly_Bordes
     {
         ExtendedSerialPort serialPort1;
         Robot robot = new Robot();
+        AsservissementRobot2RouesDisplayControl test;
         private Timer TimerAffichage;
         //private Controller gamepad;
         public int flag;
@@ -223,8 +230,8 @@ namespace RobotInterface_Ly_Bordes
             switch (msgFunction)
             {
                 case (byte)IDfonction.TextTransmission:
-                    RichTextBox.Dispatcher.BeginInvoke(new Action(() => 
-                    RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength))); 
+                    RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
+                    RichTextBox.Text += "0x" + msgFunction.ToString("X") + " " + Encoding.ASCII.GetString(msgPayload, 0, msgPayloadLength)));
                     break;
                 case (byte)IDfonction.SetLed:
                     break;
@@ -259,14 +266,14 @@ namespace RobotInterface_Ly_Bordes
                         //RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
                         //          RichTextBox.Text += "0x" + msgFunction.ToString("X")));
                     }
-                   
+
                     break;
                 case (byte)IDfonction.RobotState:
                     int instant = (((int)msgPayload[1]) << 24) + (((int)msgPayload[2]) << 16)
                     + (((int)msgPayload[3]) << 8) + ((int)msgPayload[4]);
-                    
+
                     RichTextBox.Dispatcher.BeginInvoke(new Action(() =>
-                    RichTextBox.Text += "\nRobot␣State␣:␣" +((StateRobot)(msgPayload[0])).ToString() +"␣-␣" + instant.ToString() + "␣ms"));
+                    RichTextBox.Text += "\nRobot␣State␣:␣" + ((StateRobot)(msgPayload[0])).ToString() + "␣-␣" + instant.ToString() + "␣ms"));
                     break;
 
                 case (byte)IDfonction.QEIReception:
@@ -277,9 +284,16 @@ namespace RobotInterface_Ly_Bordes
                     robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
                     robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 24);
                     robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 28);
-                    
-
                     break;
+                case (byte)IDfonction.SetPid:
+                    float kp = BitConverter.ToSingle(msgPayload, 0);
+                    float ki = BitConverter.ToSingle(msgPayload, 4);
+                    float kd = BitConverter.ToSingle(msgPayload, 8);
+
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(kp, msgPayload[3], ki, msgPayload[4],kd , msgPayload[5]);
+                    //test.UpdatePolarSpeedCorrectionGains(msgPayload[0], msgPayload[1], msgPayload[2], msgPayload[3], msgPayload[4], msgPayload[5]);
+                    break;
+            
 
             }
             
@@ -446,55 +460,35 @@ namespace RobotInterface_Ly_Bordes
             functionTestValue
         }
 
+        public enum PID_val
+        {
+            TextTransmission = 0x0071,
+            SetLed = 0x0072,
+            IRdistance = 0x0073,
+            SpeedRule = 0x0074,
+            RobotState = 0x0075,
+            QEIReception = 0x0076,
+            SetPid = 0x0077,
+            
+        }
+
         private void buttonTest_Click(object sender, RoutedEventArgs e)
         {
-            //byte[] byteList = new byte[] { 0x42, 0x6f, 0x6e, 0x6a, 0x6f, 0x75, 0x72, 0x0a, 0x0d };
-            //while (func != IDfonction.functionTestValue)
-            //{
-            //    switch (func)
-            //    {
+           
 
-            //        case IDfonction.TextTransmission:
-            //            UartEncodeAndSendMessage((byte)func, 9, byteList);
-            //            func = IDfonction.SetLed;
-            //            break;
-            //        case IDfonction.SetLed:
-            //            UartEncodeAndSendMessage((byte)func, 9, byteList);
-            //            func = IDfonction.IRdistance;
-            //            break;
-            //        case IDfonction.IRdistance:
-            //            UartEncodeAndSendMessage((byte)func, 9, byteList);
-            //            func = IDfonction.SpeedRule;
-            //            break;
-            //        case IDfonction.SpeedRule:
-            //            UartEncodeAndSendMessage((byte)func, 9, byteList);
-            //            func = IDfonction.functionTestValue;
-            //            break;          
-            //        default:
-            //            func = IDfonction.TextTransmission;
-            //            break;
+            byte[] kp = BitConverter.GetBytes(3.14f);
+            byte[] ki = BitConverter.GetBytes(2.5f);
+            byte[] kd = BitConverter.GetBytes(2.9f);
+            byte[] type = BitConverter.GetBytes(0); ;
 
-            //    }
-            //}
-            //func = IDfonction.TextTransmission;
-
-            //Il faut envoyer les valeurs du Pid en float au microcontrolleur   
-
-
-            byte[] test = BitConverter.GetBytes(3.14f);
-            byte[] test2 = BitConverter.GetBytes(2.5f);
-            byte[] test3 = BitConverter.GetBytes(2.9f);
-          
-            byte[] result1 = test.Concat(test2).Concat(test3).ToArray();
+            byte[] result1 = kp.Concat(ki).Concat(kd).Concat(type).ToArray();
           
             UartEncodeAndSendMessage((byte)IDfonction.SetPid, 12 , result1);
         }
 
-        private void buttonClear_Click(object sender, RoutedEventArgs e)
+        private void buttonConsigne_Click(object sender, RoutedEventArgs e)
         {
-            //RichTextBox.Text = "";
-            //byte[] byteList = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
-            //UartEncodeAndSendMessage(0x0090, 9, byteList);
+           
 
 
             byte[] byteList = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };

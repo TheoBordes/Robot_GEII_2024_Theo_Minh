@@ -8,6 +8,7 @@
 #include "robot.h"
 #include "QEI.h"
 #include "IO.h"
+#include "asservissement.h"
 #include "timer.h"
 #include "UART_Protocol.h"
 #include <stdio.h>
@@ -23,10 +24,11 @@ double delta_d;
 double delta_g;
 double vitesseDroitFromOdometry;
 double vitesseGaucheFromOdometry;
-double FREQ_ECH_QEI = 250;
 int compteur;
-#define POSITION_DATA 0x0061
+
+#define POSITION_DATA 0x0060
 #define DISTROUES 0.2175
+
 
 
 
@@ -72,7 +74,9 @@ void QEIUpdateData()
     robotState.vitesseGaucheFromOdometry = delta_g*FREQ_ECH_QEI;
     robotState.vitesseLineaireFromOdometry = (robotState.vitesseDroitFromOdometry + robotState.vitesseGaucheFromOdometry)/2.0;
     robotState.vitesseAngulaireFromOdometry = (robotState.vitesseDroitFromOdometry - robotState.vitesseGaucheFromOdometry)/DISTROUES;
-            
+     
+    
+    Correcteur(&robotState.PidTheta,  10 - robotState.vitesseAngulaireFromOdometry  );
     //Mise a jour du positionnement terrain a t-1          
     robotState.xPosFromOdometry_1 = robotState.xPosFromOdometry;
     robotState.yPosFromOdometry_1 = robotState.yPosFromOdometry;

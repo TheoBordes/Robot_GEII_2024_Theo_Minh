@@ -8,6 +8,9 @@
 #include "Utilities.h"
 #include "asservissement.h"
 
+unsigned char payload_Pid[28] = {};
+
+
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload) {
     unsigned char checksum = 0;
 
@@ -134,6 +137,19 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             ki = getFloat(payload, 4);
             kd = getFloat(payload, 8);
             
+            getBytesFromFloat(payload_Pid, 0, (float)(kp));
+            getBytesFromFloat(payload_Pid, 4, (float)(ki));
+            getBytesFromFloat(payload_Pid, 8, (float)(kd));
+            if ( payload [9] == 0 ){
+               SetupPidAsservissement(&robotState.PidX,kp,ki,kd,10,10,10);
+  
+            }
+            else if (payload [9] == 1 ) {
+               SetupPidAsservissement(&robotState.PidTheta,kp,ki,kd,10,10,10);      
+            }
+           
+        UartEncodeAndSendMessage(SetPID, 14, payload_Pid);        
+                        
             break;
         case SetLed:
             switch (payload[0]) {

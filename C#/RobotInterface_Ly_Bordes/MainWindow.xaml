@@ -144,8 +144,8 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,1" Grid.Row="1">
             <Button x:Name ="buttonEnvoyer" Content="Envoyer" Width="60" Margin="5" Click="buttonEnvoyer_Click" Background="Black" Foreground="White" BorderBrush="White"/>
-            <Button x:Name ="buttonTest" Content="Test" Width="60" Margin="5" Click="buttonTest_Click" Background="Black" Foreground="White" BorderBrush="White"/>
-            <Button x:Name ="buttonClear" Content="Clear" Width="60" Margin="5" Click="buttonClear_Click" Background="Black" Foreground="White" BorderBrush="White"/>
+            <Button x:Name ="buttonTest" Content="PID" Width="60" Margin="5" Click="buttonTest_Click" Background="Black" Foreground="White" BorderBrush="White"/>
+            <Button x:Name ="buttonConsigne" Content="Consigne" Width="60" Margin="5" Click="buttonConsigne_Click" Background="Black" Foreground="White" BorderBrush="White"/>
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,1" Grid.Row="1" Grid.Column="0">
