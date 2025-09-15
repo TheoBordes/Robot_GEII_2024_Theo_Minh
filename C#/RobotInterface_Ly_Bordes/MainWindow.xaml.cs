@@ -524,8 +524,8 @@ namespace RobotInterface_Ly_Bordes
 
 
 
-            byte[] kpT = BitConverter.GetBytes(1.0f);
-            byte[] kiT = BitConverter.GetBytes(0.0f);
+            byte[] kpT = BitConverter.GetBytes(1.5f);
+            byte[] kiT = BitConverter.GetBytes(0.01f);
             byte[] kdT = BitConverter.GetBytes(0.0f);
 
             byte[] resultT = kpT.Concat(kiT).Concat(kdT).ToArray();

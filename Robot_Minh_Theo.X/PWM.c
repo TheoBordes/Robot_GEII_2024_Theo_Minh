@@ -11,7 +11,7 @@
 float acceleration = 3;
 float talon = 20;
 #define DISTROUES 0.2175
-#define SPEED_TO_PERCENT 80.0
+#define SPEED_TO_PERCENT 30.0
 
 void InitPWM(void) {
     PTCON2bits.PCLKDIV = 0b000; //Divide by 1
@@ -65,12 +65,14 @@ void PWMUpdateSpeed() {
     if (robotState.vitesseDroiteCommandeCourante > robotState.vitesseDroiteConsigne)
         robotState.vitesseDroiteCommandeCourante = Max(robotState.vitesseDroiteCommandeCourante - acceleration, robotState.vitesseDroiteConsigne);
 
+    
+    
     if (robotState.vitesseDroiteCommandeCourante >= 0) {
-        SDC1 = robotState.vitesseDroiteCommandeCourante * PWMPER + talon;
-        PDC1 = talon;
+        SDC2 = robotState.vitesseDroiteCommandeCourante * PWMPER + talon;
+        PDC2 = talon;
     } else {
-        SDC1 = talon;
-        PDC1 = -robotState.vitesseDroiteCommandeCourante * PWMPER + talon;
+        SDC2 = talon;
+        PDC2 = -robotState.vitesseDroiteCommandeCourante * PWMPER + talon;
     }
 
     if (robotState.vitesseGaucheCommandeCourante < robotState.vitesseGaucheConsigne)
@@ -79,12 +81,13 @@ void PWMUpdateSpeed() {
     if (robotState.vitesseGaucheCommandeCourante > robotState.vitesseGaucheConsigne)
         robotState.vitesseGaucheCommandeCourante = Max(robotState.vitesseGaucheCommandeCourante - acceleration, robotState.vitesseGaucheConsigne);
 
+            
     if (robotState.vitesseGaucheCommandeCourante > 0) {
-        SDC2 = robotState.vitesseGaucheCommandeCourante * PWMPER + talon;
-        PDC2 = talon;
+        PDC1 = robotState.vitesseGaucheCommandeCourante * PWMPER + talon;
+        SDC1 = talon;
     } else {
-        SDC2 = talon;
-        PDC2 = -robotState.vitesseGaucheCommandeCourante * PWMPER + talon;
+        PDC1 = talon;
+        SDC1 = -robotState.vitesseGaucheCommandeCourante * PWMPER + talon;
     }
 
 }
@@ -99,7 +102,7 @@ void PWMSetSpeedConsignePercent(float vitesseEnPourcents, char moteur) {
             robotState.vitesseGaucheConsigne = vitesseEnPourcents;
             break;
         case MOTEUR_DROIT:
-            robotState.vitesseDroiteConsigne = -vitesseEnPourcents;
+            robotState.vitesseDroiteConsigne = vitesseEnPourcents;
             break;
     }
 }
