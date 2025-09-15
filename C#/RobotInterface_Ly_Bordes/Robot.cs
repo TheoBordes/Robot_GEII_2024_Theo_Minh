@@ -11,38 +11,65 @@ namespace RobotInterface_Ly_Bordes
     {
         public string receivedText = "";
         public Queue<byte> byteListReceived = new Queue<byte>();
-        public float distanceTelemetreplusDroit;
+
+        public float distanceTelemetrePlusDroit;
         public float distanceTelemetreDroit;
         public float distanceTelemetreCentre;
         public float distanceTelemetreGauche;
-        public float distanceTelemetreplusGauche;
+        public float distanceTelemetrePlusGauche;
+
+        public float positionXOdo;
         public float positionYOdo;
-        public float positionXOdo ;
-        public float angleRadianFromOdometry ;
+        public float angleRadianFromOdometry;
+
         public float vitesseLineaireFromOdometry;
         public float vitesseAngulaireFromOdometry;
         public float vitesseDroitFromOdometry;
         public float vitesseGaucheFromOdometry;
 
+        public PidCorrector PidX;
+        public PidCorrector PidTheta;
+
+        public Robot()
+        {
+            PidX = new PidCorrector();
+            PidTheta = new PidCorrector();
+        }
+    }
+
+    public class PidCorrector
+    {
         public double Consigne;
         public double Measure;
         public double Error;
         public double Command;
+
         public double Kp;
         public double CorrecP;
         public double CorrecP_Max;
+
         public double Ki;
         public double CorrecI;
         public double CorrecI_Max;
+
         public double Kd;
         public double CorrecD;
         public double CorrecD_Max;
 
-
-        public Robot()
+        public PidCorrector()
         {
-            
+            Consigne = 0;
+            Measure = 0;
+            Error = 0;
+            Command = 0;
+
+            Kp = 0;
+            Ki = 0;
+            Kd = 0;
+
+            CorrecP_Max = 0;
+            CorrecI_Max = 0;
+            CorrecD_Max = 0;
         }
-    
     }
 }

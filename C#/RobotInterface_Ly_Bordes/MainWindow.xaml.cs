@@ -282,8 +282,8 @@ namespace RobotInterface_Ly_Bordes
                     robot.angleRadianFromOdometry = BitConverter.ToSingle(msgPayload, 12);
                     robot.vitesseLineaireFromOdometry = BitConverter.ToSingle(msgPayload, 16);
                     robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
-                    robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 24);
-                    robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 28);
+                    robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 24);
+                    robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 28);
                     break;
                 case (byte)IDfonction.SetPid:
                     float kp = BitConverter.ToSingle(msgPayload, 0);
@@ -293,7 +293,50 @@ namespace RobotInterface_Ly_Bordes
                     asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(kp, msgPayload[3], ki, msgPayload[4],kd , msgPayload[5]);
                     //test.UpdatePolarSpeedCorrectionGains(msgPayload[0], msgPayload[1], msgPayload[2], msgPayload[3], msgPayload[4], msgPayload[5]);
                     break;
-            
+                case (byte)PID_val.info:
+                    robot.PidX.Consigne = BitConverter.ToSingle(msgPayload, 0);
+                    robot.PidX.Measure = BitConverter.ToSingle(msgPayload, 4);
+                    robot.PidX.Error = BitConverter.ToSingle(msgPayload, 8);
+                    robot.PidX.Command = BitConverter.ToSingle(msgPayload, 12);
+                    robot.PidX.Kp = BitConverter.ToSingle(msgPayload, 16);
+                    robot.PidX.CorrecP = BitConverter.ToSingle(msgPayload, 20);
+                    robot.PidX.CorrecP_Max = BitConverter.ToSingle(msgPayload, 24);
+                    robot.PidX.Ki = BitConverter.ToSingle(msgPayload, 28);
+                    robot.PidX.CorrecI = BitConverter.ToSingle(msgPayload, 32);
+                    robot.PidX.CorrecI_Max = BitConverter.ToSingle(msgPayload, 36);
+                    robot.PidX.Kd = BitConverter.ToSingle(msgPayload, 40);
+                    robot.PidX.CorrecD = BitConverter.ToSingle(msgPayload, 44);
+                    robot.PidX.CorrecD_Max = BitConverter.ToSingle(msgPayload, 48);
+
+                    robot.PidTheta.Consigne = BitConverter.ToSingle(msgPayload, 52);
+                    robot.PidTheta.Measure = BitConverter.ToSingle(msgPayload, 56);
+                    robot.PidTheta.Error = BitConverter.ToSingle(msgPayload, 60);
+                    robot.PidTheta.Command = BitConverter.ToSingle(msgPayload, 64);
+                    robot.PidTheta.Kp = BitConverter.ToSingle(msgPayload, 68);
+                    robot.PidTheta.CorrecP = BitConverter.ToSingle(msgPayload, 72);
+                    robot.PidTheta.CorrecP_Max = BitConverter.ToSingle(msgPayload, 76);
+                    robot.PidTheta.Ki = BitConverter.ToSingle(msgPayload, 80);
+                    robot.PidTheta.CorrecI = BitConverter.ToSingle(msgPayload, 84);
+                    robot.PidTheta.CorrecI_Max = BitConverter.ToSingle(msgPayload, 88);
+                    robot.PidTheta.Kd = BitConverter.ToSingle(msgPayload, 92);
+                    robot.PidTheta.CorrecD = BitConverter.ToSingle(msgPayload, 96);
+                    robot.PidTheta.CorrecD_Max = BitConverter.ToSingle(msgPayload, 100);
+
+              
+
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(robot.PidX.Kp, robot.PidTheta.Kp, robot.PidX.Ki, robot.PidTheta.Ki, robot.PidX.Kd, robot.PidTheta.Kd);
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(robot.PidX.CorrecP_Max, robot.PidTheta.CorrecP_Max, robot.PidX.CorrecI_Max, robot.PidTheta.CorrecI_Max, robot.PidX.CorrecD_Max, robot.PidTheta.CorrecD_Max);
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(robot.PidX.CorrecP, robot.PidTheta.CorrecP, robot.PidX.CorrecI, robot.PidTheta.CorrecI, robot.PidX.CorrecD , robot.PidTheta.CorrecD);
+                    asservSpeedDisplay.UpdatePolarSpeedErrorValues(robot.PidX.Error, robot.PidTheta.Error);
+                    asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.PidX.Measure, robot.PidTheta.Measure);
+                    asservSpeedDisplay.UpdatePolarSpeedCommandValues(robot.PidX.Command , robot.PidTheta.Command);
+                    asservSpeedDisplay.UpdatePolarSpeedConsigneValues(robot.PidX.Consigne, robot.PidTheta.Consigne);
+
+
+                    break;
+
+
+
 
             }
             
@@ -462,28 +505,34 @@ namespace RobotInterface_Ly_Bordes
 
         public enum PID_val
         {
-            TextTransmission = 0x0071,
-            SetLed = 0x0072,
-            IRdistance = 0x0073,
-            SpeedRule = 0x0074,
-            RobotState = 0x0075,
-            QEIReception = 0x0076,
-            SetPid = 0x0077,
-            
+            info = 0x0071,
+            SetPidX = 0x0072,
+            SetPidT = 0x0073,
+
         }
 
         private void buttonTest_Click(object sender, RoutedEventArgs e)
         {
            
 
-            byte[] kp = BitConverter.GetBytes(3.14f);
-            byte[] ki = BitConverter.GetBytes(2.5f);
-            byte[] kd = BitConverter.GetBytes(2.9f);
-            byte[] type = BitConverter.GetBytes(0); ;
+            byte[] kpX = BitConverter.GetBytes(0.0f);
+            byte[] kiX = BitConverter.GetBytes(0.0f);
+            byte[] kdX = BitConverter.GetBytes(0.0f);
 
-            byte[] result1 = kp.Concat(ki).Concat(kd).Concat(type).ToArray();
+            byte[] resultX = kpX.Concat(kiX).Concat(kdX).ToArray();
           
-            UartEncodeAndSendMessage((byte)IDfonction.SetPid, 12 , result1);
+            UartEncodeAndSendMessage((byte)PID_val.SetPidX, 12 , resultX);
+
+
+
+            byte[] kpT = BitConverter.GetBytes(1.0f);
+            byte[] kiT = BitConverter.GetBytes(0.0f);
+            byte[] kdT = BitConverter.GetBytes(0.0f);
+
+            byte[] resultT = kpT.Concat(kiT).Concat(kdT).ToArray();
+
+            UartEncodeAndSendMessage((byte)PID_val.SetPidT, 12, resultT);
+
         }
 
         private void buttonConsigne_Click(object sender, RoutedEventArgs e)

@@ -10,6 +10,8 @@
 
 float acceleration = 3;
 float talon = 20;
+#define DISTROUES 0.2175
+#define SPEED_TO_PERCENT 80.0
 
 void InitPWM(void) {
     PTCON2bits.PCLKDIV = 0b000; //Divide by 1
@@ -87,14 +89,7 @@ void PWMUpdateSpeed() {
 
 }
 
-void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
-    unsigned char payload_state[5] = {};
-    payload_state[0] = robotState.taskEnCours;
-    payload_state[1] = (unsigned char) (timestamp & 0xFF);
-    payload_state[2] = (unsigned char) ((timestamp >> 8) & 0xFF);
-    payload_state[3] = (unsigned char) ((timestamp >> 16) & 0xFF);
-    payload_state[4] = (unsigned char) ((timestamp >> 24) & 0xFF);
-//    UartEncodeAndSendMessage(0x0050, 5, payload_state);
+void PWMSetSpeedConsignePercent(float vitesseEnPourcents, char moteur) {
 
     if (Abs(vitesseEnPourcents) > 100) {
         return;
@@ -107,4 +102,11 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur) {
             robotState.vitesseDroiteConsigne = -vitesseEnPourcents;
             break;
     }
+}
+
+void PWMSetSpeedConsignePolaire( double vitesseX, double vitesseTheta ){
+    //mettre un limittointerval  
+    PWMSetSpeedConsignePercent( SPEED_TO_PERCENT * (vitesseX + vitesseTheta* DISTROUES), MOTEUR_DROIT);
+    PWMSetSpeedConsignePercent( SPEED_TO_PERCENT * (vitesseX - vitesseTheta* DISTROUES), MOTEUR_GAUCHE);
+    
 }

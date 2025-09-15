@@ -8,8 +8,8 @@
 #include "Utilities.h"
 #include "asservissement.h"
 
-unsigned char payload_Pid[28] = {};
-
+unsigned char payload_PidX[12] = {};
+unsigned char payload_PidT[12] = {};
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload) {
     unsigned char checksum = 0;
@@ -110,8 +110,8 @@ int L3 = 0;
 int L4 = 0;
 int L5 = 0;
 float kp = 0;
-float ki =0;
-float kd =0;
+float ki = 0;
+float kd = 0;
 
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
     int Signe = 1;
@@ -122,8 +122,8 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             }
 
 
-            PWMSetSpeedConsigne(Signe * payload[1], MOTEUR_DROIT);
-            PWMSetSpeedConsigne(Signe * payload[2], MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(Signe * payload[1], MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(Signe * payload[2], MOTEUR_GAUCHE);
 
             break;
         case SET_ROBOT_STATE:
@@ -132,24 +132,33 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
         case SET_ROBOT_MANUAL_CONTROL:
             SetRobotAutoControlState(payload[0]);
             break;
-        case SetPID:
-            kp  = getFloat(payload, 0);
+        case SetPIDX:
+            kp = getFloat(payload, 0);
             ki = getFloat(payload, 4);
             kd = getFloat(payload, 8);
-            
-            getBytesFromFloat(payload_Pid, 0, (float)(kp));
-            getBytesFromFloat(payload_Pid, 4, (float)(ki));
-            getBytesFromFloat(payload_Pid, 8, (float)(kd));
-            if ( payload [9] == 0 ){
-               SetupPidAsservissement(&robotState.PidX,kp,ki,kd,10,10,10);
-  
-            }
-            else if (payload [9] == 1 ) {
-               SetupPidAsservissement(&robotState.PidTheta,kp,ki,kd,10,10,10);      
-            }
-           
-        UartEncodeAndSendMessage(SetPID, 14, payload_Pid);        
-                        
+            robotState.vitesseLinearConsigne = 0;
+
+            getBytesFromFloat(payload_PidX, 0, (float) (kp));
+            getBytesFromFloat(payload_PidX, 4, (float) (ki));
+            getBytesFromFloat(payload_PidX, 8, (float) (kd));
+            SetupPidAsservissement(&robotState.PidX, kp, ki, kd, 100, 100, 100);
+
+
+            UartEncodeAndSendMessage(SetPIDX, 12, payload_PidX);
+            break;
+        case SetPIDT:
+            kp = getFloat(payload, 0);
+            ki = getFloat(payload, 4);
+            kd = getFloat(payload, 8);
+            robotState.vitesseAngulaireConsigne = 0;
+
+            getBytesFromFloat(payload_PidT, 0, (float) (kp));
+            getBytesFromFloat(payload_PidT, 4, (float) (ki));
+            getBytesFromFloat(payload_PidT, 8, (float) (kd));
+            SetupPidAsservissement(&robotState.PidTheta, kp, ki, kd, 100, 100, 100);
+
+
+            UartEncodeAndSendMessage(SetPIDT, 12, payload_PidT);
             break;
         case SetLed:
             switch (payload[0]) {

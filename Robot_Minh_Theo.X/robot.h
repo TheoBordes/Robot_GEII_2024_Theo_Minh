@@ -35,6 +35,12 @@ typedef struct robotStateBITS {
             PidCorrector PidX;
             PidCorrector PidTheta;
             
+            float CorrectionVitesseLineaire;
+            float CorrectionVitesseAngulaire;
+            float vitesseLinearConsigne;
+            float vitesseAngulaireConsigne;
+            
+            
         };
     };
 } ROBOT_STATE_BITS;

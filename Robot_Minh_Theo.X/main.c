@@ -129,8 +129,8 @@ void OperatingSystemLoop(void) {
 
         case STATE_ATTENTE:
             timestamp = 0;
-            PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(ARRET, MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(ARRET, MOTEUR_GAUCHE);
             stateRobot = STATE_ATTENTE_EN_COURS;
         case STATE_ATTENTE_EN_COURS:
             if (timestamp > 1000)
@@ -144,16 +144,16 @@ void OperatingSystemLoop(void) {
                 vitR = 15;
                 vitL = 15;
             }
-            PWMSetSpeedConsigne(speeds[0], MOTEUR_DROIT);
-            PWMSetSpeedConsigne(speeds[1], MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(speeds[0], MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(speeds[1], MOTEUR_GAUCHE);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_GAUCHE:
-            PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(speeds[0], MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(ARRET, MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(speeds[0], MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_EN_COURS:
@@ -161,8 +161,8 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_GAUCHE_PLUS:
-            PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(speeds[0], MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(ARRET, MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(speeds[0], MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_GAUCHE_PLUS_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_PLUS_EN_COURS:
@@ -170,8 +170,8 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_DROITE:
-            PWMSetSpeedConsigne(speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(speeds[1], MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(ARRET, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_DROITE_EN_COURS:
@@ -179,8 +179,8 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_DROITE_PLUS:
-            PWMSetSpeedConsigne(speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(speeds[1], MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(ARRET, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_PLUS_EN_COURS;
             break;
         case STATE_TOURNE_DROITE_PLUS_EN_COURS:
@@ -188,16 +188,16 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_SUR_PLACE_GAUCHE:
-            PWMSetSpeedConsigne(15 + speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsigne(-15 - speeds[0], MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(15 + speeds[1], MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(-15 - speeds[0], MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE:
-            PWMSetSpeedConsigne(-15 - speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsigne(15 + speeds[0], MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePercent(-15 - speeds[1], MOTEUR_DROIT);
+            PWMSetSpeedConsignePercent(15 + speeds[0], MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS:
@@ -311,7 +311,7 @@ void ADC_value() {
         payload_Telemetre[2] = (unsigned char) robotState.distanceTelemetreCentre;
         payload_Telemetre[3] = (unsigned char) robotState.distanceTelemetreDroit;
         payload_Telemetre[4] = (unsigned char) robotState.distanceTelemetrePlusDroit;
-        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);        
+        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);
     }
 }
 
@@ -438,7 +438,7 @@ int main(void) {
     LED_ORANGE_1 = 1;
     LED_VERTE_1 = 1;
     LED_ROUGE_1 = 1;
-    
+
     InitQEI1();
     InitQEI2();
     InitTimer23();
@@ -451,23 +451,23 @@ int main(void) {
     /***********************************************************************************************/
     //int vitesse = 20;
 
-
+  
     if (BOUTON1 == 0) {
 
 
         while (1) {
-
+               
             while (CB_RX1_IsDataAvailable()) {
                 UartDecodeMessage(CB_RX1_Get());
             }
-            if (flagMessageMotor) {
-                flagMessageMotor = 0;
-                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
-                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
-                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
-            }         
-//            else {
-//            }
+            //            if (flagMessageMotor) {
+            //                flagMessageMotor = 0;
+            //                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
+            //                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
+            //                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
+            //            }         
+            //            else {
+            //            }
             if (robotState.distanceTelemetreGauche > 20) {
                 LED_BLEUE_1 = 1;
             } else {
