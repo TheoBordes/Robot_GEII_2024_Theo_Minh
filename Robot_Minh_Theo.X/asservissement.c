@@ -38,25 +38,24 @@ double Correcteur(volatile PidCorrector* PidCorr, double erreur) {
 
 void UpdateAsservissement() {
     //    robotState.vitesseLinearConsigne = (robotState.vitesseDroiteConsigne - robotState.vitesseGaucheConsigne)/DISTROUES);
-        robotState.PidX.erreur = (robotState.vitesseLinearConsigne - robotState.vitesseLineaireFromOdometry)*0;
+    robotState.PidX.erreur = (robotState.vitesseLinearConsigne - robotState.vitesseLineaireFromOdometry)*0;
     robotState.PidTheta.erreur = robotState.vitesseAngulaireConsigne - robotState.vitesseAngulaireFromOdometry;
     robotState.CorrectionVitesseLineaire = Correcteur(&robotState.PidX, robotState.PidX.erreur);
     robotState.CorrectionVitesseAngulaire = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
-
     SendPidInfo();
+
     PWMSetSpeedConsignePolaire(0.3, 0.3);
     //PWMSetSpeedConsignePolaire(robotState.CorrectionVitesseLineaire, robotState.CorrectionVitesseAngulaire);
 }
 
-
-void SendPidInfo (){
+void SendPidInfo() {
 
     getBytesFromFloat(payload_Pid_info, 0, (float) robotState.vitesseLinearConsigne);
-    getBytesFromFloat(payload_Pid_info, 4, (float) robotState.vitesseLineaireFromOdometry );
-    getBytesFromFloat(payload_Pid_info, 8, (float) robotState.PidX.erreur );
+    getBytesFromFloat(payload_Pid_info, 4, (float) robotState.vitesseLineaireFromOdometry);
+    getBytesFromFloat(payload_Pid_info, 8, (float) robotState.PidX.erreur);
     getBytesFromFloat(payload_Pid_info, 12, (float) robotState.CorrectionVitesseLineaire);
-    getBytesFromFloat(payload_Pid_info,16 , (float) robotState.PidX.Kp);
-    getBytesFromFloat(payload_Pid_info,20, (float) robotState.PidX.corrP);
+    getBytesFromFloat(payload_Pid_info, 16, (float) robotState.PidX.Kp);
+    getBytesFromFloat(payload_Pid_info, 20, (float) robotState.PidX.corrP);
     getBytesFromFloat(payload_Pid_info, 24, (float) robotState.PidX.erreurProportionelleMax);
     getBytesFromFloat(payload_Pid_info, 28, (float) robotState.PidX.Ki);
     getBytesFromFloat(payload_Pid_info, 32, (float) robotState.PidX.corrI);
@@ -64,14 +63,14 @@ void SendPidInfo (){
     getBytesFromFloat(payload_Pid_info, 40, (float) robotState.PidX.Kd);
     getBytesFromFloat(payload_Pid_info, 44, (float) robotState.PidX.corrD);
     getBytesFromFloat(payload_Pid_info, 48, (float) robotState.PidX.erreurDeriveeMax);
-    
-    
-    getBytesFromFloat(payload_Pid_info,52 , (float) robotState.vitesseAngulaireConsigne);
-    getBytesFromFloat(payload_Pid_info, 56, (float) robotState.vitesseAngulaireFromOdometry );
-    getBytesFromFloat(payload_Pid_info, 60, (float) robotState.PidTheta.erreur );
+
+
+    getBytesFromFloat(payload_Pid_info, 52, (float) robotState.vitesseAngulaireConsigne);
+    getBytesFromFloat(payload_Pid_info, 56, (float) robotState.vitesseAngulaireFromOdometry);
+    getBytesFromFloat(payload_Pid_info, 60, (float) robotState.PidTheta.erreur);
     getBytesFromFloat(payload_Pid_info, 64, (float) robotState.CorrectionVitesseAngulaire);
     getBytesFromFloat(payload_Pid_info, 68, (float) robotState.PidTheta.Kp);
-    getBytesFromFloat(payload_Pid_info,72, (float) robotState.PidTheta.corrP);
+    getBytesFromFloat(payload_Pid_info, 72, (float) robotState.PidTheta.corrP);
     getBytesFromFloat(payload_Pid_info, 76, (float) robotState.PidTheta.erreurProportionelleMax);
     getBytesFromFloat(payload_Pid_info, 80, (float) robotState.PidTheta.Ki);
     getBytesFromFloat(payload_Pid_info, 84, (float) robotState.PidTheta.corrI);

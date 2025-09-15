@@ -7,6 +7,8 @@
 #include "robot.h"
 #include "UART_Protocol.h"
 #include "QEI.h"
+#include "asservissement.h"
+
 
 unsigned long timestamp;
 unsigned char toggle = 0;
@@ -37,14 +39,16 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
     QEIUpdateData();
+
     tick++;
-    if ( tick > 25 ){
+    if (tick > 25) {
         SendPositionData();
+
         tick = 0;
     }
 
-  
-   
+
+
 }
 
 //Initialisation d?un timer 32 bits

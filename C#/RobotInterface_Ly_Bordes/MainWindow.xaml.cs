@@ -138,7 +138,6 @@ namespace RobotInterface_Ly_Bordes
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitD: {robot.vitesseDroitFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitG: {robot.vitesseGaucheFromOdometry}\n"));
 
-            asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.positionXOdo, robot.angleRadianFromOdometry);
 
 
             oscilloSpeed.AddPointToLine(1, timestamp , robot.vitesseLineaireFromOdometry);

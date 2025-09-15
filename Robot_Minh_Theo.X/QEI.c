@@ -17,9 +17,9 @@
 #include <xc.h>
 
 double QeiDroitPosition_T_1;
-double QeiDroitPosition;
+double QeiDroitPosition =0;
 double QeiGauchePosition_T_1;
-double QeiGauchePosition;
+double QeiGauchePosition=0;
 double delta_d;
 double delta_g;
 double vitesseDroitFromOdometry;
