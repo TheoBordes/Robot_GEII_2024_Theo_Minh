@@ -21,6 +21,8 @@
 #define SetPIDX 0x0072
 #define SetPIDT 0x0073
 #define setConsigne 0x0074
+#define resetPid 0x0075
+
 
 
 unsigned char UartCalculateChecksum(int msgFunction,int msgPayloadLength, unsigned char* msgPayload);

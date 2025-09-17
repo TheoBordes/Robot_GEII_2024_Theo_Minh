@@ -67,6 +67,9 @@ namespace RobotInterface_Ly_Bordes
             Ki = 0;
             Kd = 0;
 
+
+
+
             CorrecP_Max = 0;
             CorrecI_Max = 0;
             CorrecD_Max = 0;

@@ -460,9 +460,16 @@ int main(void) {
     robotState.PidTheta.erreurProportionelleMax = 100 ;
     robotState.PidTheta.erreurIntegraleMax = 100 ;
     robotState.PidTheta.erreurDeriveeMax = 100 ;
+    
     robotState.PidX.erreurProportionelleMax = 100 ;
     robotState.PidX.erreurIntegraleMax = 100 ;
     robotState.PidX.erreurDeriveeMax = 100 ;
+    
+    
+    
+    
+    
+    
             /*********************************************************************************************** Boucle Principale*/
             /***********************************************************************************************/
             //int vitesse = 20;

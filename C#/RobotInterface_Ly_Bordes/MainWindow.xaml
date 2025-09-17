@@ -33,7 +33,7 @@
             </GroupBox>
             
             <GroupBox x:Name="Emission" Grid.Column="0" Grid.Row="0" Header="Emission" Background="Black" BorderBrush="White" Foreground="White" Width="225">
-            <TextBox x:Name="TextBoxEmission" Background="Black" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" AcceptsReturn="True" Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" TextChanged="TextBoxEmission_TextChanged" />
+            <TextBox x:Name="TextBoxEmission" Background="Black" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" AcceptsReturn="True" Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp"  />
         </GroupBox>
             
          </StackPanel>

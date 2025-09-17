@@ -139,14 +139,20 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 
             break;
         case SetPIDX:
+
+            robotState.PidX.corrP = 0;
+            robotState.PidX.corrI = 0;
+            robotState.PidX.corrD = 0;
+            robotState.PidX.erreurIntegrale = 0;
+            robotState.CorrectionVitesseLineaire = 0;
+            robotState.vitesseLinearConsigne = 0;
+
+
             kp = getFloat(payload, 0);
             ki = getFloat(payload, 4);
             kd = getFloat(payload, 8);
 
-            robotState.vitesseLinearConsigne = 0;
-            robotState.PidX.corrP = 0;
-            robotState.PidX.corrI = 0;
-            robotState.PidX.corrD = 0;
+
             getBytesFromFloat(payload_PidX, 0, (float) (kp));
             getBytesFromFloat(payload_PidX, 4, (float) (ki));
             getBytesFromFloat(payload_PidX, 8, (float) (kd));
@@ -157,20 +163,41 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             UartEncodeAndSendMessage(SetPIDX, 12, payload_PidX);
             break;
         case SetPIDT:
-            kp = getFloat(payload, 0);
-            ki = getFloat(payload, 4);
-            kd = getFloat(payload, 8);
-            robotState.vitesseAngulaireConsigne = 0;
+
             robotState.PidTheta.corrP = 0;
             robotState.PidTheta.corrI = 0;
             robotState.PidTheta.corrD = 0;
+            robotState.PidTheta.erreurIntegrale = 0;
+            robotState.CorrectionVitesseAngulaire = 0;
+            robotState.vitesseAngulaireConsigne = 0;
+
+
+            kp = getFloat(payload, 0);
+            ki = getFloat(payload, 4);
+            kd = getFloat(payload, 8);
+
             getBytesFromFloat(payload_PidT, 0, (float) (kp));
             getBytesFromFloat(payload_PidT, 4, (float) (ki));
             getBytesFromFloat(payload_PidT, 8, (float) (kd));
             SetupPidAsservissement(&robotState.PidTheta, (double) kp, (double) ki, (double) kd, 100, 100, 100);
-
-
             UartEncodeAndSendMessage(SetPIDT, 12, payload_PidT);
+            break;
+        case resetPid:
+            robotState.PidTheta.corrP = 0;
+            robotState.PidTheta.corrI = 0;
+            robotState.PidTheta.corrD = 0;
+            robotState.PidTheta.erreurIntegrale = 0;
+
+            robotState.PidX.corrP = 0;
+            robotState.PidX.corrI = 0;
+            robotState.PidX.corrD = 0;
+            robotState.PidX.erreurIntegrale = 0;
+            robotState.CorrectionVitesseAngulaire = 0;
+            robotState.CorrectionVitesseLineaire = 0;
+
+            SetupPidAsservissement(&robotState.PidTheta, 0, 0, 0, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PidX, 0, 0, 0, 100, 100, 100);
+
             break;
         case SetLed:
             switch (payload[0]) {

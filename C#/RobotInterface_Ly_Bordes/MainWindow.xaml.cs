@@ -526,8 +526,7 @@ namespace RobotInterface_Ly_Bordes
 
         private void buttonTest_Click(object sender, RoutedEventArgs e)
         {
-           
-
+         
             byte[] kpX = BitConverter.GetBytes(2.0f);
             byte[] kiX = BitConverter.GetBytes(40.0f);
             byte[] kdX = BitConverter.GetBytes(0.0f);
@@ -559,6 +558,30 @@ namespace RobotInterface_Ly_Bordes
 
 
         }
+
+
+        private void ResetConsigne_Click(object sender, RoutedEventArgs e)
+        {
+            byte[] consigneAngulaire = BitConverter.GetBytes(0.0f);
+            byte[] consigneLineaire = BitConverter.GetBytes(0.0f);
+
+            byte[] consigne = consigneLineaire.Concat(consigneAngulaire).ToArray();
+            UartEncodeAndSendMessage((byte)PID_val.setConsigne, 8, consigne);
+        }
+
+        private void ResetPid_Click(object sender, RoutedEventArgs e)
+        {
+
+            byte[] reset = new byte[] {0x00 };
+
+            UartEncodeAndSendMessage((byte)PID_val.ResetPid, 1, reset);
+
+
+        }
+
+
+
+
 
         private void TextBlock_TextInput(object sender, TextCompositionEventArgs e)
         {
@@ -655,42 +678,7 @@ namespace RobotInterface_Ly_Bordes
             UartEncodeAndSendMessage(0x0020, 2, ledList);
         }
 
-        private void TextBoxEmission_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
-
-        private void ResetConsigne_Click(object sender, RoutedEventArgs e)
-        {
-            byte[] consigneAngulaire = BitConverter.GetBytes(0.0f);
-            byte[] consigneLineaire = BitConverter.GetBytes(0.0f);
-
-            byte[] consigne = consigneLineaire.Concat(consigneAngulaire).ToArray();
-            UartEncodeAndSendMessage((byte)PID_val.setConsigne, 8, consigne);
-        }
-
-        private void ResetPid_Click(object sender, RoutedEventArgs e)
-        {
-            byte[] kpX = BitConverter.GetBytes(0.0f);
-            byte[] kiX = BitConverter.GetBytes(0.0f);
-            byte[] kdX = BitConverter.GetBytes(0.0f);
-
-            byte[] resultX = kpX.Concat(kiX).Concat(kdX).ToArray();
-
-            UartEncodeAndSendMessage((byte)PID_val.SetPidX, 12, resultX);
-
-
-
-            byte[] kpT = BitConverter.GetBytes(0.0f);
-            byte[] kiT = BitConverter.GetBytes(0.0f);
-            byte[] kdT = BitConverter.GetBytes(0.0f);
-
-            byte[] resultT = kpT.Concat(kiT).Concat(kdT).ToArray();
-
-            UartEncodeAndSendMessage((byte)PID_val.SetPidT, 12, resultT);
-
-           
-        }
     }
 
 
