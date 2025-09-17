@@ -52,6 +52,10 @@ namespace RobotInterface_Ly_Bordes
         private Timer TimerAffichage;
         //private Controller gamepad;
         public int flag;
+        public float  xPosRobot =50;
+        public float yPosRobot = 50;
+        public float last_xPosRobot = 0;
+        public float last_yPosRobot = 0;
         private double timestamp;
         public MainWindow()
         {
@@ -86,7 +90,9 @@ namespace RobotInterface_Ly_Bordes
             oscilloSpeed.ChangeLineColor(1, Colors.Blue);
             oscilloSpeed.AddOrUpdateLine(2, 200, "Vitesse_Angulaire");
             oscilloSpeed.ChangeLineColor(2, Colors.Green);
-            
+            WpfWorldMap.UpdatePosRobot(xPosRobot, yPosRobot);
+
+
         }
 
         bool gamepad_state = true;
@@ -284,6 +290,11 @@ namespace RobotInterface_Ly_Bordes
                     robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
                     robot.vitesseGaucheFromOdometry = BitConverter.ToSingle(msgPayload, 24);
                     robot.vitesseDroitFromOdometry = BitConverter.ToSingle(msgPayload, 28);
+                   
+
+
+                    WpfWorldMap.UpdatePosRobot(50 + 10.0* robot.positionXOdo, 50 +10.0 * robot.positionYOdo);
+                  
                     break;
                 case (byte)IDfonction.SetPid:
                     float kp = BitConverter.ToSingle(msgPayload, 0);
@@ -509,6 +520,7 @@ namespace RobotInterface_Ly_Bordes
             SetPidX = 0x0072,
             SetPidT = 0x0073,
             setConsigne = 0x0074,
+            ResetPid = 0x0075,
 
         }
 
@@ -538,11 +550,12 @@ namespace RobotInterface_Ly_Bordes
 
         private void buttonConsigne_Click(object sender, RoutedEventArgs e)
         {
-           
 
+            byte[] consigneAngulaire = BitConverter.GetBytes(0.00f);
+            byte[] consigneLineaire = BitConverter.GetBytes(0.05f);
 
-            byte[] byteList = new byte[] { 0x00 };
-            UartEncodeAndSendMessage((byte)PID_val.setConsigne, 1, byteList);
+            byte[] consigne = consigneLineaire.Concat(consigneAngulaire).ToArray();
+            UartEncodeAndSendMessage((byte)PID_val.setConsigne, 8, consigne);
 
 
         }
@@ -642,8 +655,40 @@ namespace RobotInterface_Ly_Bordes
             UartEncodeAndSendMessage(0x0020, 2, ledList);
         }
 
-      
-        
+        private void TextBoxEmission_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ResetConsigne_Click(object sender, RoutedEventArgs e)
+        {
+            byte[] consigneAngulaire = BitConverter.GetBytes(0.0f);
+            byte[] consigneLineaire = BitConverter.GetBytes(0.0f);
+
+            byte[] consigne = consigneLineaire.Concat(consigneAngulaire).ToArray();
+            UartEncodeAndSendMessage((byte)PID_val.setConsigne, 8, consigne);
+        }
+
+        private void ResetPid_Click(object sender, RoutedEventArgs e)
+        {
+            byte[] kpX = BitConverter.GetBytes(0.0f);
+            byte[] kiX = BitConverter.GetBytes(0.0f);
+            byte[] kdX = BitConverter.GetBytes(0.0f);
+
+            byte[] resultX = kpX.Concat(kiX).Concat(kdX).ToArray();
+
+            UartEncodeAndSendMessage((byte)PID_val.SetPidX, 12, resultX);
+
+
+
+            byte[] kpT = BitConverter.GetBytes(0.0f);
+            byte[] kiT = BitConverter.GetBytes(0.0f);
+            byte[] kdT = BitConverter.GetBytes(0.0f);
+
+            byte[] resultT = kpT.Concat(kiT).Concat(kdT).ToArray();
+
+            UartEncodeAndSendMessage((byte)PID_val.SetPidT, 12, resultT);
+        }
     }
 
 

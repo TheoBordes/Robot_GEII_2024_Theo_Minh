@@ -7,7 +7,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ext="clr-namespace:WpfWorldMapDisplay;assembly=WpfWorldMapDisplayIUT"
+        xmlns:ext="clr-namespace:WpfWorldMap_NS;assembly=WpfWorldMap"
         xmlns:local="clr-namespace:RobotInterface_Ly_Bordes"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900"
@@ -26,13 +26,18 @@
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
 
-        <GroupBox x:Name="Reception" Grid.Column="1" Grid.Row="0" Header="Reception" Background="Black" BorderBrush="White" Foreground="White">
-            <TextBox x:Name="RichTextBox" Background="Black" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" IsReadOnly="True" Text="" TextChanged="TextBox_TextChanged" />
-        </GroupBox>
 
-        <GroupBox x:Name="Emission" Grid.Column="0" Grid.Row="0" Header="Emission" Background="Black" BorderBrush="White" Foreground="White">
-            <TextBox x:Name="TextBoxEmission" Background="Black" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" AcceptsReturn="True" Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" />
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" >
+            <GroupBox x:Name="Reception" Grid.Column="1" Grid.Row="0" Header="Reception" Background="Black" BorderBrush="White" Foreground="White" Width="225" >
+                <TextBox x:Name="RichTextBox" Background="Black" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" IsReadOnly="True" Text="" TextChanged="TextBox_TextChanged" />
+            </GroupBox>
+            
+            <GroupBox x:Name="Emission" Grid.Column="0" Grid.Row="0" Header="Emission" Background="Black" BorderBrush="White" Foreground="White" Width="225">
+            <TextBox x:Name="TextBoxEmission" Background="Black" Foreground="White" BorderBrush="White" HorizontalAlignment="Stretch" AcceptsReturn="True" Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" TextChanged="TextBoxEmission_TextChanged" />
         </GroupBox>
+            
+         </StackPanel>
+        
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,1" Grid.Row="1">
             <Button x:Name ="buttonEnvoyer" Content="Envoyer" Width="60" Margin="5" Click="buttonEnvoyer_Click" Background="Black" Foreground="White" BorderBrush="White"/>
@@ -41,8 +46,8 @@
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,1" Grid.Row="1" Grid.Column="0">
-            <TextBox x:Name="KpEntry" Background="Black" Foreground="White" BorderBrush="White"  Width="60" Margin="5" KeyUp="KpEntry_KeyUp"/>
-            <TextBox x:Name="KiEntry" Background="Black" Foreground="White" BorderBrush="White"  Width="60" Margin="5" KeyUp="KiEntry_KeyUp" />
+            <Button x:Name ="ResetConsigne" Content="Reset Consigne" Width="60" Margin="5" Background="Black" Foreground="White" BorderBrush="White" Click="ResetConsigne_Click"/>
+            <Button x:Name ="ResetPid" Content="Reset PID" Width="60" Margin="5" Background="Black" Foreground="White" BorderBrush="White" Click="ResetPid_Click" />
             <TextBox x:Name="KdEntry" Background="Black" Foreground="White" BorderBrush="White"  Width="60" Margin="5" KeyUp="KdEntry_KeyUp" />
         </StackPanel>
 
@@ -103,7 +108,7 @@
 
         <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3"/>
         <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Column="0" Grid.Row="3"  />
-        
+        <ext:WpfWorldMap x:Name="WpfWorldMap" Grid.Column="0" Grid.Row="0"/>
 
 
     </Grid>

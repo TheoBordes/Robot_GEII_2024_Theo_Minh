@@ -132,20 +132,26 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
         case SET_ROBOT_MANUAL_CONTROL:
             SetRobotAutoControlState(payload[0]);
             break;
-        case setConsigne :
-              robotState.vitesseLinearConsigne = 0;
-              robotState.vitesseAngulaireConsigne = 0;
-            break; 
+        case setConsigne:
+            robotState.vitesseLinearConsigne = getFloat(payload, 0);
+            robotState.vitesseAngulaireConsigne = getFloat(payload, 4);
+
+
+            break;
         case SetPIDX:
             kp = getFloat(payload, 0);
             ki = getFloat(payload, 4);
             kd = getFloat(payload, 8);
-            robotState.vitesseLinearConsigne = 0;
 
+            robotState.vitesseLinearConsigne = 0;
+            robotState.PidX.corrP = 0;
+            robotState.PidX.corrI = 0;
+            robotState.PidX.corrD = 0;
             getBytesFromFloat(payload_PidX, 0, (float) (kp));
             getBytesFromFloat(payload_PidX, 4, (float) (ki));
             getBytesFromFloat(payload_PidX, 8, (float) (kd));
-            SetupPidAsservissement(&robotState.PidX, (double)kp, (double)ki, (double)kd, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PidX, (double) kp, (double) ki, (double) kd, 100, 100, 100);
+
 
 
             UartEncodeAndSendMessage(SetPIDX, 12, payload_PidX);
@@ -155,11 +161,13 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             ki = getFloat(payload, 4);
             kd = getFloat(payload, 8);
             robotState.vitesseAngulaireConsigne = 0;
-
+            robotState.PidTheta.corrP = 0;
+            robotState.PidTheta.corrI = 0;
+            robotState.PidTheta.corrD = 0;
             getBytesFromFloat(payload_PidT, 0, (float) (kp));
             getBytesFromFloat(payload_PidT, 4, (float) (ki));
             getBytesFromFloat(payload_PidT, 8, (float) (kd));
-            SetupPidAsservissement(&robotState.PidTheta, (double)kp,(double) ki, (double)kd, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PidTheta, (double) kp, (double) ki, (double) kd, 100, 100, 100);
 
 
             UartEncodeAndSendMessage(SetPIDT, 12, payload_PidT);

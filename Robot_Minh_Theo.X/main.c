@@ -447,16 +447,32 @@ int main(void) {
     InitPWM();
     InitADC1();
     InitUART();
-    /*********************************************************************************************** Boucle Principale*/
-    /***********************************************************************************************/
-    //int vitesse = 20;
 
-  
+
+    robotState.PidX.Kp = 2.0 ;
+    robotState.PidX.Ki = 40.0 ;
+    robotState.PidX.Kd = 0.0 ;
+    
+    robotState.PidTheta.Kp = 2.0 ;
+    robotState.PidTheta.Ki = 20.0 ;
+    robotState.PidTheta.Kd = 0.0 ;
+    
+    robotState.PidTheta.erreurProportionelleMax = 100 ;
+    robotState.PidTheta.erreurIntegraleMax = 100 ;
+    robotState.PidTheta.erreurDeriveeMax = 100 ;
+    robotState.PidX.erreurProportionelleMax = 100 ;
+    robotState.PidX.erreurIntegraleMax = 100 ;
+    robotState.PidX.erreurDeriveeMax = 100 ;
+            /*********************************************************************************************** Boucle Principale*/
+            /***********************************************************************************************/
+            //int vitesse = 20;
+
+
     if (BOUTON1 == 0) {
 
 
         while (1) {
-               
+
             while (CB_RX1_IsDataAvailable()) {
                 UartDecodeMessage(CB_RX1_Get());
             }
