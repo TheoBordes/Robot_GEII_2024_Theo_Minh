@@ -688,6 +688,8 @@ namespace RobotInterface_Ly_Bordes
             byte[] resultT = kpT.Concat(kiT).Concat(kdT).ToArray();
 
             UartEncodeAndSendMessage((byte)PID_val.SetPidT, 12, resultT);
+
+           
         }
     }
 
