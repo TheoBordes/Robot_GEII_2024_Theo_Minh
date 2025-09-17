@@ -1,113 +1,4 @@
-﻿<!--<Window x:Class="RobotInterface_Ly_Bordes.MainWindow"
-        xmlns:oscillo="clr-namespace:WpfOscilloscopeControl;assembly=WpfOscilloscopeControl"
-        xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay;assembly=WpfAsservissementDisplay"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RobotInterface_Ly_Bordes"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0">
-        <Grid.ColumnDefinitions>
-            -->
-<!-- with width-->
-<!--
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            -->
-<!-- with width-->
-<!--
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="5*" />
-
-        </Grid.RowDefinitions>
-        <GroupBox x:Name="Reception" Grid.Column="1" Grid.Row="0" Header="Reception" Background="#FF79ECC4" BorderBrush="Black">
-            <TextBox x:Name="RichTextBox" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" IsReadOnly="True" Text="" TextChanged="TextBox_TextChanged" />
-        </GroupBox>
-        <GroupBox x:Name="Emission" Grid.Column="0" Grid.Row="0" Header="Emission" Background="#FFA41C1C" BorderBrush="Black">
-            <TextBox x:Name="TextBoxEmission" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Stretch"  AcceptsReturn="True"  Margin="0" TextWrapping="Wrap" Text="" KeyUp="TextBoxEmission_KeyUp" />
-        </GroupBox>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1"  Grid.Row="1">
-            <Button x:Name ="buttonEnvoyer" Content="Envoyer" Width="60" Margin="5" Click="buttonEnvoyer_Click"/>
-            <Button x:Name ="buttonTest" Content="Test" Width="60" Margin="5" Click="buttonTest_Click"/>
-            <Button x:Name ="buttonClear" Content="Clear" Width="60" Margin="5" Click="buttonClear_Click"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.RowSpan="2">
-            <GroupBox x:Name="Leds"  Header="Leds">
-                <StackPanel Orientation="Vertical">
-                    <CheckBox x:Name="Led1" Content="Led1" HorizontalAlignment="Left" Checked="Led1_Checked" Unchecked="Led1_Checked"/>
-                    <CheckBox x:Name="Led2" Content="Led2" HorizontalAlignment="Left" Checked="Led2_Checked" Unchecked="Led2_Checked"/>
-                    <CheckBox x:Name="Led3" Content="Led3" HorizontalAlignment="Left" Checked="Led3_Checked" Unchecked="Led3_Checked"/>
-                    <CheckBox x:Name="Led4" Content="Led4" HorizontalAlignment="Left" Checked="Led4_Checked" Unchecked="Led4_Checked"/>
-                    <CheckBox x:Name="Led5" Content="Led5" HorizontalAlignment="Left" Checked="Led5_Checked" Unchecked="Led5_Checked"/>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox x:Name="IRTels" Header="Telemetres IR">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="IR Plus Gauche :" HorizontalAlignment="Left" />
-                        <Label x:Name="IRpg" Content="..." HorizontalAlignment="Left" />
-                        <Label Content="cm" HorizontalAlignment="Left" />
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal">
-                        <Label  Content="IR Gauche  :" HorizontalAlignment="Left" />
-                        <Label x:Name="IRg" Content="..." HorizontalAlignment="Left" />
-                        <Label  Content="cm" HorizontalAlignment="Left" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="IR Centre :" HorizontalAlignment="Left" />
-                        <Label x:Name="IRc" Content="..." HorizontalAlignment="Left" />
-                        <Label  Content="cm" HorizontalAlignment="Left" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label  Content="IR Droite  :" HorizontalAlignment="Left" />
-                        <Label x:Name="IRd" Content="..." HorizontalAlignment="Left" />
-                        <Label  Content="cm" HorizontalAlignment="Left" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label  Content="IR Plus Droite :" HorizontalAlignment="Left" />
-                        <Label x:Name="IRpd" Content="..." HorizontalAlignment="Left" />
-                        <Label  Content=" cm" HorizontalAlignment="Left" />
-                    </StackPanel>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox x:Name="Motors" Header="Moteurs" Width="131">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <StackPanel Orientation="Horizontal">
-                        <Label  Content="Vitesse Gauche :" HorizontalAlignment="Left" />
-                        <Label x:Name="vitg" Content="..." HorizontalAlignment="Left" />
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal">
-                        <Label  Content="Vitesse Droite :" HorizontalAlignment="Left" />
-                        <Label x:Name="vitd" Content="..." HorizontalAlignment="Left" />
-                    </StackPanel>
-                </StackPanel>
-            </GroupBox>
-        </StackPanel>
-
-
-        <oscillo:WpfOscilloscope x:Name="oscilloSpeed" Grid.Column="1" Margin="0,1,0,0" Grid.Row="2"/>
-        <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Margin="0,50,0,0" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1"/>
-
-
-
-    </Grid>
-</Window>-->
-
-
-
-
-
-
+﻿
 <Window x:Class="RobotInterface_Ly_Bordes.MainWindow"
         xmlns:oscillo="clr-namespace:WpfOscilloscopeControl;assembly=WpfOscilloscopeControl"
         xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay;assembly=WpfAsservissementDisplay"
@@ -116,6 +7,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="clr-namespace:WpfWorldMapDisplay;assembly=WpfWorldMapDisplayIUT"
         xmlns:local="clr-namespace:RobotInterface_Ly_Bordes"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900"

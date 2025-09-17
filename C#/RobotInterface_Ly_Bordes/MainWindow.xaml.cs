@@ -29,6 +29,7 @@ using SciChart.Data.Model;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using WpfAsservissementDisplay;
+using static RobotInterface_Ly_Bordes.MainWindow;
 
 
 
@@ -507,6 +508,7 @@ namespace RobotInterface_Ly_Bordes
             info = 0x0071,
             SetPidX = 0x0072,
             SetPidT = 0x0073,
+            setConsigne = 0x0074,
 
         }
 
@@ -514,8 +516,8 @@ namespace RobotInterface_Ly_Bordes
         {
            
 
-            byte[] kpX = BitConverter.GetBytes(0.0f);
-            byte[] kiX = BitConverter.GetBytes(0.0f);
+            byte[] kpX = BitConverter.GetBytes(2.0f);
+            byte[] kiX = BitConverter.GetBytes(40.0f);
             byte[] kdX = BitConverter.GetBytes(0.0f);
 
             byte[] resultX = kpX.Concat(kiX).Concat(kdX).ToArray();
@@ -524,8 +526,8 @@ namespace RobotInterface_Ly_Bordes
 
 
 
-            byte[] kpT = BitConverter.GetBytes(1.5f);
-            byte[] kiT = BitConverter.GetBytes(0.01f);
+            byte[] kpT = BitConverter.GetBytes(2.0f);
+            byte[] kiT = BitConverter.GetBytes(20.0f);
             byte[] kdT = BitConverter.GetBytes(0.0f);
 
             byte[] resultT = kpT.Concat(kiT).Concat(kdT).ToArray();
@@ -539,8 +541,8 @@ namespace RobotInterface_Ly_Bordes
            
 
 
-            byte[] byteList = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
-            UartEncodeAndSendMessage(0x0090, 9, byteList);
+            byte[] byteList = new byte[] { 0x00 };
+            UartEncodeAndSendMessage((byte)PID_val.setConsigne, 1, byteList);
 
 
         }

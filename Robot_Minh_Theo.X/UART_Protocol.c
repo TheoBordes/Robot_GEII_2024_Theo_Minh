@@ -132,6 +132,10 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
         case SET_ROBOT_MANUAL_CONTROL:
             SetRobotAutoControlState(payload[0]);
             break;
+        case setConsigne :
+              robotState.vitesseLinearConsigne = 0;
+              robotState.vitesseAngulaireConsigne = 0;
+            break; 
         case SetPIDX:
             kp = getFloat(payload, 0);
             ki = getFloat(payload, 4);
