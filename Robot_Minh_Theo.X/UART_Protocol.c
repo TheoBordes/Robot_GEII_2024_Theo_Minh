@@ -7,7 +7,7 @@
 #include "robot.h"
 #include "Utilities.h"
 #include "asservissement.h"
-
+#include "ghost.h"
 unsigned char payload_PidX[12] = {};
 unsigned char payload_PidT[12] = {};
 
@@ -112,20 +112,24 @@ int L5 = 0;
 float kp = 0;
 float ki = 0;
 float kd = 0;
+float posXGhost = 0;
+float posYGhost = 0;
+double angletest = 0;
+Point posRobot;
+Point posTarget;
 
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
-    int Signe = 1;
     switch (function) {
-        case ControlXbox:
-            if (payload[0] == 1) {
-                Signe = -1;
-            }
-
-
-            PWMSetSpeedConsignePercent(Signe * payload[1], MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(Signe * payload[2], MOTEUR_GAUCHE);
-
-            break;
+            //        case ControlXbox:
+            //            if (payload[0] == 1) {
+            //                Signe = -1;
+            //            }
+            //
+            //
+            //            PWMSetSpeedConsignePercent(Signe * payload[1], MOTEUR_DROIT);
+            //            PWMSetSpeedConsignePercent(Signe * payload[2], MOTEUR_GAUCHE);
+            //
+            //            break;
         case SET_ROBOT_STATE:
             // SetRobotState(payload[0]);
             break;
@@ -199,6 +203,20 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             SetupPidAsservissement(&robotState.PidX, 0, 0, 0, 100, 100, 100);
 
             break;
+
+        case ghost:
+                        posTarget.x = getFloat(payload, 0);
+                        posTarget.y = getFloat(payload, 4);
+                        posRobot.x = robotState.xPosFromOdometry;
+                        posRobot.y = robotState.yPosFromOdometry;
+                        robotState.thetaWaypoint = -AngleVersCible(posRobot, posTarget);
+          
+
+            robotState.thetaWaypoint = getFloat(payload, 0);
+
+
+            break;
+
         case SetLed:
             switch (payload[0]) {
                 case 1:

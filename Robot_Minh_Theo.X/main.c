@@ -450,11 +450,11 @@ int main(void) {
 
 
     robotState.PidX.Kp = 2.0 ;
-    robotState.PidX.Ki = 40.0 ;
+    robotState.PidX.Ki = 30.0 ;
     robotState.PidX.Kd = 0.0 ;
     
-    robotState.PidTheta.Kp = 2.0 ;
-    robotState.PidTheta.Ki = 20.0 ;
+    robotState.PidTheta.Kp = 3.0 ;
+    robotState.PidTheta.Ki = 10.0 ;
     robotState.PidTheta.Kd = 0.0 ;
     
     robotState.PidTheta.erreurProportionelleMax = 100 ;

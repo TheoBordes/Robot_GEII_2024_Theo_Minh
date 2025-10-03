@@ -36,3 +36,4 @@ float RadianToDegree(float value) {
 float DegreeToRadian(float value) {
     return value * PI / 180.0;
 }
+

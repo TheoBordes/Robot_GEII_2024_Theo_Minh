@@ -30,6 +30,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using WpfAsservissementDisplay;
 using static RobotInterface_Ly_Bordes.MainWindow;
+using System.Printing;
+using Vector = System.Windows.Vector;
 
 
 
@@ -54,9 +56,18 @@ namespace RobotInterface_Ly_Bordes
         public int flag;
         public float  xPosRobot =50;
         public float yPosRobot = 50;
-        public float last_xPosRobot = 0;
-        public float last_yPosRobot = 0;
         private double timestamp;
+
+
+        //Variable du Ghost
+        private double thetaGhost;
+        private double thetaWaypoint;
+        private double vTheta = 0;
+        private const double VThetaMax = 60;
+        private const double AccTheta = 180;
+        private const double Tsampling = 0.05;
+
+
         public MainWindow()
         {
             timestamp = 0;
@@ -139,7 +150,8 @@ namespace RobotInterface_Ly_Bordes
 
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text =  $"posX: {robot.positionXOdo}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"posY: {robot.positionYOdo}\n"));
-            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Angle: {robot.angleRadianFromOdometry}\n"));
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Angle: {robot.angleRadianFromOdometry * 180.0/Math.PI}\n"));
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"AngleGhost: {robot.ThetaGhost}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitLin: {robot.vitesseLineaireFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitAngl: {robot.vitesseAngulaireFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitD: {robot.vitesseDroitFromOdometry}\n"));
@@ -149,6 +161,10 @@ namespace RobotInterface_Ly_Bordes
 
             oscilloSpeed.AddPointToLine(1, timestamp , robot.vitesseLineaireFromOdometry);
             oscilloSpeed.AddPointToLine(2, timestamp , robot.vitesseAngulaireFromOdometry);
+
+            UpdateGhost();
+
+
 
         }
 
@@ -294,8 +310,8 @@ namespace RobotInterface_Ly_Bordes
 
 
                     WpfWorldMap.UpdatePosRobot(50 + 10.0* robot.positionXOdo, 50 +10.0 * robot.positionYOdo);
-                  
-                    break;
+                    WpfWorldMap.UpdateOrientationRobot(robot.angleRadianFromOdometry * 180.0 / Math.PI);
+                   break;
                 case (byte)IDfonction.SetPid:
                     float kp = BitConverter.ToSingle(msgPayload, 0);
                     float ki = BitConverter.ToSingle(msgPayload, 4);
@@ -345,6 +361,13 @@ namespace RobotInterface_Ly_Bordes
 
 
                     break;
+                case (byte)IDfonction.ghost:
+
+                    robot.ThetaGhost = BitConverter.ToSingle(msgPayload, 0);
+                    WpfWorldMap.UpdateOrientationRobotGhost(robot.ThetaGhost+180);
+
+                    break;
+
 
 
 
@@ -395,7 +418,9 @@ namespace RobotInterface_Ly_Bordes
             PayloadLengthLSB,
             Payload,
             CheckSum
+            
         }
+       
 
         public enum StateRobot
         {
@@ -511,6 +536,7 @@ namespace RobotInterface_Ly_Bordes
             RobotState = 0x0050,
             QEIReception = 0x0060,
             SetPid = 0x0070,
+            ghost=0x0090,
             functionTestValue
         }
 
@@ -524,11 +550,17 @@ namespace RobotInterface_Ly_Bordes
 
         }
 
+        public enum GhostState
+        {
+            Idle,
+            Rotation,
+            DeplacementLineaire
+        }
         private void buttonTest_Click(object sender, RoutedEventArgs e)
         {
          
-            byte[] kpX = BitConverter.GetBytes(2.0f);
-            byte[] kiX = BitConverter.GetBytes(40.0f);
+            byte[] kpX = BitConverter.GetBytes(3.0f);
+            byte[] kiX = BitConverter.GetBytes(25.0f);
             byte[] kdX = BitConverter.GetBytes(0.0f);
 
             byte[] resultX = kpX.Concat(kiX).Concat(kdX).ToArray();
@@ -538,7 +570,7 @@ namespace RobotInterface_Ly_Bordes
 
 
             byte[] kpT = BitConverter.GetBytes(2.0f);
-            byte[] kiT = BitConverter.GetBytes(20.0f);
+            byte[] kiT = BitConverter.GetBytes(15.0f);
             byte[] kdT = BitConverter.GetBytes(0.0f);
 
             byte[] resultT = kpT.Concat(kiT).Concat(kdT).ToArray();
@@ -550,12 +582,11 @@ namespace RobotInterface_Ly_Bordes
         private void buttonConsigne_Click(object sender, RoutedEventArgs e)
         {
 
-            byte[] consigneAngulaire = BitConverter.GetBytes(0.00f);
-            byte[] consigneLineaire = BitConverter.GetBytes(0.05f);
+            byte[] consigneAngulaire = BitConverter.GetBytes(0.05f);
+            byte[] consigneLineaire = BitConverter.GetBytes(0.00f);
 
             byte[] consigne = consigneLineaire.Concat(consigneAngulaire).ToArray();
             UartEncodeAndSendMessage((byte)PID_val.setConsigne, 8, consigne);
-
 
         }
 
@@ -677,8 +708,158 @@ namespace RobotInterface_Ly_Bordes
 
             UartEncodeAndSendMessage(0x0020, 2, ledList);
         }
+        GhostState Ghoststate = GhostState.Idle;
+        private void UpdateGhost()
+        {
+            switch (Ghoststate)
+            {
+                case GhostState.Idle:
+                    if (WpfWorldMap.Start)
+                    { 
+                        Ghoststate = GhostState.Rotation;
+                    }
+                    break;
+                case GhostState.Rotation:
+                    Point Robot = new Point(WpfWorldMap.pos_X, WpfWorldMap.pos_Y);
+                    Point Target = new Point(WpfWorldMap.xDataValue, WpfWorldMap.yDataValue);
+                    double AnglePoint = AngleVersCible(Robot, Target);
+                    SetWaypointAngle(AnglePoint);
+                    UpdateRotation();
+                    if ( WpfWorldMap._angleghost == AnglePoint)
+                    {
+                        Ghoststate = GhostState.DeplacementLineaire;
+
+                    }
+                    break;
+                case GhostState.DeplacementLineaire:
+
+                    //double distance = DistancePointToSegment();
+                    Ghoststate = GhostState.Idle;
+                    WpfWorldMap.Start = false;
+                    break;
+            }
+        }
+        private void UpdateRotation()
+        {
+            double thetaRestant = ModuloByAngle(thetaGhost, thetaWaypoint) - thetaGhost;
+            thetaRestant = NormalizeAngle(thetaRestant); // pour rester dans [-180, +180]
+
+            double thetaArret = (vTheta * vTheta) / (2 * AccTheta);
+            if (vTheta < 0)
+                thetaArret = -thetaArret;
+
+            double incrementTheta = vTheta * Tsampling;
+
+            if (((thetaArret >= 0 && thetaRestant >= 0) || (thetaArret <= 0 && thetaRestant <= 0)) &&
+                Math.Abs(thetaRestant) >= Math.Abs(thetaArret))
+            {
+                if (thetaRestant > 0)
+                    vTheta = Math.Min(vTheta + (AccTheta * Tsampling), VThetaMax);
+                else if (thetaRestant < 0)
+                    vTheta = Math.Max(vTheta - (AccTheta * Tsampling), -VThetaMax);
+            }
+            else
+            {
+                if (vTheta > 0)
+                    vTheta = Math.Max(vTheta - (AccTheta * Tsampling), 0);
+                else if (vTheta < 0)
+                    vTheta = Math.Min(vTheta + (AccTheta * Tsampling), 0);
+            }
+
+            if (Math.Abs(thetaRestant) < Math.Abs(incrementTheta))
+                incrementTheta = thetaRestant;
+
+            thetaGhost += incrementTheta;
+            thetaGhost = NormalizeAngle(thetaGhost);
+
+            if (vTheta == 0 && Math.Abs(thetaRestant) < 0.01)
+                thetaGhost = thetaWaypoint;
+
+        }
+
+        private static double DistancePointToSegment(Point p, Point a, Point b, out Point projection)
+        {
+            Vector ab = b - a;
+            Vector ap = p - a;
+
+            double abLengthSquared = ab.LengthSquared;
+
+            if (abLengthSquared == 0)
+            {
+                projection = a;
+                return (p - a).Length;
+            }
+
+            double t = Vector.Multiply(ap, ab) / abLengthSquared;
+
+            t = Math.Max(0, Math.Min(1, t));
+
+            projection = a + ab * t;
+
+            return (p - projection).Length;
+        }
 
 
+        private double ModuloByAngle(double current, double target)
+        {
+            double delta = NormalizeAngle(target - current);
+            return current + delta;
+        }
+
+
+        private double NormalizeAngle(double angle)
+        {
+            angle = angle % 360;
+            if (angle > 180) angle -= 360;
+            if (angle < -180) angle += 360;
+            return angle;
+        }
+
+        private double AngleVersCible(Point robot, Point target)
+        {
+            double dx = target.X - robot.X;
+            double dy = target.Y - robot.Y;
+            return Math.Atan2(dy, dx) * 180.0 / Math.PI ;
+        }
+
+        bool is_waypoint_ahead(Point robot, double theta, Point waypoint)
+        {
+            double dx = Math.Cos(theta);
+            double dy = Math.Sin(theta);
+
+            double wx = waypoint.X - robot.X;
+            double wy = waypoint.Y - robot.Y;
+
+            double dot = dx * wx + dy * wy;
+            return dot >= 0.0;
+        }
+
+
+        public void SetWaypointAngle(double angleDeg)
+        {
+            thetaWaypoint = NormalizeAngle(angleDeg);
+        }
+
+        private void testGhost_Click(object sender, RoutedEventArgs e)
+        {
+
+            byte[] posX = BitConverter.GetBytes((float)WpfWorldMap.xDataValue);
+            byte[] posy = BitConverter.GetBytes((float)WpfWorldMap.yDataValue);
+            byte[] position = posX.Concat(posy).ToArray();
+
+
+            Point Robot = new Point(WpfWorldMap.pos_X, WpfWorldMap.pos_Y);
+            Point Target = new Point(WpfWorldMap.xDataValue, WpfWorldMap.yDataValue);
+            double AnglePoint = AngleVersCible(Robot, Target);
+
+
+            //byte[] thetaW = BitConverter.GetBytes(-AnglePointf);
+
+            UartEncodeAndSendMessage((byte)IDfonction.ghost, 8, position);
+
+        }
+
+     
     }
 
 

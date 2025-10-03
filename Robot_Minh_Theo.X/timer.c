@@ -39,10 +39,11 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
     QEIUpdateData();
-
     tick++;
     if (tick > 25) {
         SendPositionData();
+        UpdateRotation();
+        
 
         tick = 0;
     }

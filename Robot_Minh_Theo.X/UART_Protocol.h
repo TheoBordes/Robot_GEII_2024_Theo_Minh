@@ -14,7 +14,7 @@
 #define PayloadLengthLSB 5
 #define Payload 6
 #define CheckSum 7
-#define ControlXbox 0x0090
+//#define ControlXbox 0x0090
 #define SET_ROBOT_STATE 0x0051
 #define SET_ROBOT_MANUAL_CONTROL 0x0052
 #define SetLed 0x0020
@@ -22,6 +22,8 @@
 #define SetPIDT 0x0073
 #define setConsigne 0x0074
 #define resetPid 0x0075
+#define ghost 0x0090
+
 
 
 

@@ -27,6 +27,11 @@ namespace RobotInterface_Ly_Bordes
         public float vitesseDroitFromOdometry;
         public float vitesseGaucheFromOdometry;
 
+
+        public float ThetaGhost;
+        public float ThetaWaypoint;
+
+
         public PidCorrector PidX;
         public PidCorrector PidTheta;
 
