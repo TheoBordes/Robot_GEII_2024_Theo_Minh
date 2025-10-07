@@ -66,14 +66,14 @@ void UpdateRotation()
          robotState.thetaGhost  = robotState.thetaWaypoint;
      
     getBytesFromFloat(payload_Ghost, 0, (float) robotState.thetaGhost);
-    UartEncodeAndSendMessage(ghost, 6, payload_Ghost);
+    UartEncodeAndSendMessage(Ghost_angle, 6, payload_Ghost);
     
 }
 
 
 void UpdateDeplacementGhost()
         {
-        UartEncodeAndSendMessage(ghost, 6, payload_Ghost);
+        UartEncodeAndSendMessage(Ghost_angle, 6, payload_Ghost);
         
             double dx = robotState.positionWaypoint.x - robotState.positionGhost.x;
             double dy = robotState.positionWaypoint.y - robotState.positionGhost.y;
