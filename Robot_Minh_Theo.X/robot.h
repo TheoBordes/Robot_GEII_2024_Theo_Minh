@@ -1,6 +1,7 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 #include "asservissement.h"
+#include "ghost.h"
 
 
 
@@ -43,6 +44,8 @@ typedef struct robotStateBITS {
             
             float thetaGhost;
             float thetaWaypoint;
+            Point positionWaypoint;
+            Point positionGhost;
             
         };
     };

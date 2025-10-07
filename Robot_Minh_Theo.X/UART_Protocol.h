@@ -22,7 +22,8 @@
 #define SetPIDT 0x0073
 #define setConsigne 0x0074
 #define resetPid 0x0075
-#define ghost 0x0090
+#define Ghost_angle 0x0090
+#define Ghost_distance 0x0091
 
 
 

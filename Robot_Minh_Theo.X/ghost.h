@@ -19,9 +19,10 @@ typedef struct {
 
 
 void UpdateRotation();
-float ModuloByAngle(float from, float to);
-float NormalizeAngle(float angle);
+double ModuloByAngle(double angle);
+double NormalizeAngle(double angle);
 double AngleVersCible(Point robot, Point target);
+void UpdateDeplacementGhost();
 
 
 

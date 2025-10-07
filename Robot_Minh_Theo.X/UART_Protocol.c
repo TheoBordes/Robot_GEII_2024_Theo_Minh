@@ -112,8 +112,6 @@ int L5 = 0;
 float kp = 0;
 float ki = 0;
 float kd = 0;
-float posXGhost = 0;
-float posYGhost = 0;
 double angletest = 0;
 Point posRobot;
 Point posTarget;
@@ -204,17 +202,17 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 
             break;
 
-        case ghost:
+        case Ghost_angle:
                         posTarget.x = getFloat(payload, 0);
                         posTarget.y = getFloat(payload, 4);
-                        posRobot.x = robotState.xPosFromOdometry;
-                        posRobot.y = robotState.yPosFromOdometry;
-                        robotState.thetaWaypoint = -AngleVersCible(posRobot, posTarget);
-          
-
-            robotState.thetaWaypoint = getFloat(payload, 0);
-
-
+                        posRobot.x = 50;
+                        posRobot.y = 50;
+                        angletest = AngleVersCible(posRobot, posTarget);
+                        robotState.thetaWaypoint = angletest;      
+                     
+            break;
+        case Ghost_distance:
+                      
             break;
 
         case SetLed:
