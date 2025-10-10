@@ -9,21 +9,23 @@
 //const float AccTheta = 60.0f;
 //const float VThetaMax = 17.0f;
 //const float Tsampling = 0.1f;
+extern int GhostFlag;
 
-const float AccTheta = 180.0f;
-const float VThetaMax = 60.0f;
-const float Tsampling = 0.05f;
+const float AccTheta = 60.0f;
+const float VThetaMax = 17.0f;
+const float Tsampling = 0.01f;
 
 float vLin = 0.0;
-const float accLin = 50.0;
-const float vLinMax = 100.0;
+const float accLin = 20.0;
+const float vLinMax = 8.0;
 double positionWaypoint;
-double distanceRestante;
+double distanceRestante= 0;
 
 
 float vTheta=0;
 unsigned char payload_Ghost[6] = {};
-double cercle =360;
+unsigned char payload_GhostPos[8] = {};
+double cercle = 360;
 
 
 
@@ -65,55 +67,64 @@ void UpdateRotation()
     if (vTheta == 0 && Abs(thetaRestant) < 0.01)
          robotState.thetaGhost  = robotState.thetaWaypoint;
      
-    getBytesFromFloat(payload_Ghost, 0, (float) robotState.thetaGhost);
-    UartEncodeAndSendMessage(Ghost_angle, 6, payload_Ghost);
+  
     
 }
 
 
 void UpdateDeplacementGhost()
-        {
-        UartEncodeAndSendMessage(Ghost_angle, 6, payload_Ghost);
-        
-            double dx = robotState.positionWaypoint.x - robotState.positionGhost.x;
-            double dy = robotState.positionWaypoint.y - robotState.positionGhost.y;
+{
+    double dx = robotState.positionWaypoint.x - robotState.positionGhost.x;
+    double dy = robotState.positionWaypoint.y - robotState.positionGhost.y;
+    double dirX =0;
+    double dirY =0;
+    
+    
+     double incrementD = vLin * Tsampling;
 
-            distanceRestante = sqrt(dx * dx + dy * dy);
 
 
-            double distanceArret = (vLin * vLin) / (2 * accLin);
-            if (vLin < 0)
-                distanceArret = -distanceArret;
+    double distanceArret = (vLin * vLin) / (2.0 * accLin);
+    if (vLin < 0)
+        distanceArret = -distanceArret;
 
-            double incrementD = vLin * Tsampling;
-
-            double dirX = dx / distanceRestante;
-            double dirY = dy / distanceRestante;
-
-            if (((distanceArret >= 0 && distanceRestante >= 0) || (distanceArret <= 0 && distanceRestante <= 0)) &&
-                Abs(distanceRestante) >= Abs(distanceArret))
-            {
-                vLin = Min(vLin + accLin * Tsampling, vLinMax);
-            }
-            else
-            {
-                vLin = Max(vLin - accLin * Tsampling, 0);
-            }
-
-            if (Abs(distanceRestante) < Abs(incrementD))
-            {
-                incrementD = distanceRestante;
-            }
-
-            robotState.positionGhost.x += (float)(dirX * incrementD);
-            robotState.positionGhost.y += (float)(dirY * incrementD);
-
-            if (vLin == 0 && distanceRestante < 0.01)
-            {
-                robotState.positionGhost = robotState.positionWaypoint;
-            }
-
+        distanceRestante = sqrt(dx * dx + dy * dy);
+            if (distanceRestante < 1e-6) {
+            dirX = 0;
+            dirY = 0;
+            incrementD = 0;
+        } else {
+            dirX = dx / distanceRestante;
+            dirY = dy / distanceRestante;
         }
+
+
+    if (((distanceArret >= 0 && distanceRestante >= 0) || (distanceArret <= 0 && distanceRestante <= 0)) &&
+        fabs(distanceRestante) >= fabs(distanceArret))
+    {
+        vLin = Min(vLin + accLin * Tsampling, vLinMax);
+    }
+    else
+    {
+        vLin = Max(vLin - accLin * Tsampling, 0);
+    }
+
+    if (fabs(distanceRestante) < fabs(incrementD))
+    {
+        incrementD = distanceRestante;
+    }
+
+    robotState.positionGhost.x += (float)(dirX * incrementD);
+    robotState.positionGhost.y += (float)(dirY * incrementD);
+
+    if (vLin == 0 && distanceRestante < 0.01)
+    {
+        robotState.positionGhost = robotState.positionWaypoint;
+    }
+
+}
+
+
 
 
 double AngleVersCible(Point robot, Point target)
@@ -137,3 +148,63 @@ double ModuloByAngle(double angle)
 {
     return fmod(angle + cercle, cercle);
 }
+
+int GhostState = 0;
+
+extern Point posRobot;
+extern Point posTarget;
+double angle = 0;
+
+
+void UpdateGhost()
+{
+    switch (GhostState)
+    {
+        case Idle:
+            if (GhostFlag)
+            { 
+                GhostState = Rotation;
+            }
+            break;
+        case Rotation:
+            angle = AngleVersCible(robotState.positionGhost, robotState.positionWaypoint);
+            robotState.thetaWaypoint = angle  ;   
+            UpdateRotation();
+
+       
+            if (  robotState.thetaGhost == angle)
+            {
+                GhostState = DeplacementLineaire;
+                
+            }
+            break;
+        case DeplacementLineaire:
+            //double distance = DistancePointToSegment();
+        UpdateDeplacementGhost();
+        if (distanceRestante < 1e-6)
+        {
+            vLin = 0;   
+            GhostFlag = 0;
+            GhostState = Idle;
+        }
+
+
+            break;
+    }
+}
+
+
+
+void sendInfoGhost(){
+    getBytesFromFloat(payload_GhostPos, 0, (float)robotState.positionGhost.x);
+    getBytesFromFloat(payload_GhostPos, 4, (float)robotState.positionGhost.y);
+    UartEncodeAndSendMessage(Ghost_position, 8, payload_GhostPos);
+    
+    
+    
+    getBytesFromFloat(payload_Ghost, 0, (float) robotState.thetaGhost);
+    UartEncodeAndSendMessage(Ghost_angle, 6, payload_Ghost);
+    
+}
+
+

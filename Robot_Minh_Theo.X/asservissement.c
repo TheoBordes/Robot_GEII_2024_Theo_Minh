@@ -1,9 +1,11 @@
+#include <math.h>
+
 #include "asservissement.h"
 #include "Toolbox.h"
 #include "QEI.h"
 #include "PWM.h"
 #include "Utilities.h"
-
+#include "UART_Protocol.h"
 
 #define DISTROUES 0.2175
 #define pidInfoLinear 0x0071
@@ -47,8 +49,23 @@ void UpdateAsservissement() {
     robotState.CorrectionVitesseAngulaire = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
     SendPidInfo();
     PWMSetSpeedConsignePolaire(robotState.CorrectionVitesseLineaire, robotState.CorrectionVitesseAngulaire);
-    //PWMSetSpeedConsignePolaire(0.5, 0.0);
+
 }
+
+
+void UpdateConsGhost() {
+    double erreurTheta = NormalizeAngle(robotState.thetaGhost - robotState.angleRadianFromOdometry * 180.0 / M_PI);
+    double dx = robotState.positionGhost.x - robotState.xPosFromOdometry;
+    double dy = robotState.positionGhost.y - robotState.yPosFromOdometry;
+
+    double directionX = cos(robotState.angleRadianFromOdometry);
+    double directionY = sin(robotState.angleRadianFromOdometry);
+    double erreurLineaire = dx * directionX + dy * directionY;
+
+    robotState.vitesseLinearConsigne = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
+    robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
+}
+
 
 void SendPidInfo() {
 

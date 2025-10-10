@@ -85,7 +85,7 @@ namespace RobotInterface_Ly_Bordes
             InitializeComponent();
            
             //Setting SerialPort
-            serialPort1 = new ExtendedSerialPort("COM5", 115200, Parity.None, 8, StopBits.One);// Changer le port USB (COM)
+            serialPort1 = new ExtendedSerialPort("COM4", 115200, Parity.None, 8, StopBits.One);// Changer le port USB (COM)
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
 
@@ -371,16 +371,14 @@ namespace RobotInterface_Ly_Bordes
 
 
                     break;
-                case (byte)IDfonction.Ghost_distance:
+                case (byte)IDfonction.Ghost_angle:
 
                     robot.ThetaGhost = BitConverter.ToSingle(msgPayload, 0);
                    WpfWorldMap.UpdateOrientationRobotGhost(robot.ThetaGhost);
 
                     break;
-                case (byte)IDfonction.Ghost_distance:
-
-                    robot.ThetaGhost = BitConverter.ToSingle(msgPayload, 0);
-                    WpfWorldMap.UpdateOrientationRobotGhost(robot.ThetaGhost);
+                case (byte)IDfonction.Ghost_position:
+                    WpfWorldMap.UpdatePosRobotGhost(BitConverter.ToSingle(msgPayload, 0), BitConverter.ToSingle(msgPayload, 4) );
                     break;
                     
 
@@ -553,7 +551,7 @@ namespace RobotInterface_Ly_Bordes
             QEIReception = 0x0060,
             SetPid = 0x0070,
             Ghost_angle=0x0090,
-            Ghost_distance = 0x0091,
+            Ghost_position = 0x0091,
             functionTestValue
         }
 

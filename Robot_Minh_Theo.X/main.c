@@ -465,7 +465,23 @@ int main(void) {
     robotState.PidX.erreurIntegraleMax = 100 ;
     robotState.PidX.erreurDeriveeMax = 100 ;
     
-    
+    robotState.positionGhost.x=50;
+    robotState.positionGhost.y=50;
+
+          robotState.PD_Position_Lineaire.corrP = 0;
+            robotState.PD_Position_Lineaire.corrI = 0;
+            robotState.PD_Position_Lineaire.corrD = 0;
+            robotState.PD_Position_Lineaire.erreurIntegrale = 0;
+
+            robotState.PD_Position_Angulaire.corrP = 0;
+            robotState.PD_Position_Angulaire.corrI = 0;
+            robotState.PD_Position_Angulaire.corrD = 0;
+            robotState.PD_Position_Angulaire.erreurIntegrale = 0;
+
+            SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.01, 0, 0, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0, 0, 0, 100, 100, 100);
+
+
     
     
     

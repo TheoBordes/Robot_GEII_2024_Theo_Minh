@@ -11,6 +11,7 @@
 #define Idle 0
 #define Rotation 1
 #define DeplacementLineaire 2
+#define Ghost_position 0x0091
 
 typedef struct {
     double x;
@@ -23,8 +24,8 @@ double ModuloByAngle(double angle);
 double NormalizeAngle(double angle);
 double AngleVersCible(Point robot, Point target);
 void UpdateDeplacementGhost();
-
-
+void sendInfoGhost();
+void UpdateGhost();
 
 
 #endif	/* GHOST_H */

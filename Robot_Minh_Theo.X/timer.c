@@ -8,7 +8,7 @@
 #include "UART_Protocol.h"
 #include "QEI.h"
 #include "asservissement.h"
-
+#include "ghost.h"
 
 unsigned long timestamp;
 unsigned char toggle = 0;
@@ -39,12 +39,14 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
     QEIUpdateData();
+    UpdateConsGhost();
     tick++;
+    UpdateGhost();
+    sendInfoGhost();
+    
+    
     if (tick > 25) {
         SendPositionData();
-        UpdateRotation();
-        
-
         tick = 0;
     }
 

@@ -112,10 +112,9 @@ int L5 = 0;
 float kp = 0;
 float ki = 0;
 float kd = 0;
-double angletest = 0;
 Point posRobot;
 Point posTarget;
-
+int GhostFlag = 0;
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
     switch (function) {
             //        case ControlXbox:
@@ -196,6 +195,8 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             robotState.PidX.erreurIntegrale = 0;
             robotState.CorrectionVitesseAngulaire = 0;
             robotState.CorrectionVitesseLineaire = 0;
+            
+      
 
             SetupPidAsservissement(&robotState.PidTheta, 0, 0, 0, 100, 100, 100);
             SetupPidAsservissement(&robotState.PidX, 0, 0, 0, 100, 100, 100);
@@ -203,16 +204,12 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             break;
 
         case Ghost_angle:
-                        posTarget.x = getFloat(payload, 0);
-                        posTarget.y = getFloat(payload, 4);
-                        posRobot.x = 50;
-                        posRobot.y = 50;
-                        angletest = AngleVersCible(posRobot, posTarget);
-                        robotState.thetaWaypoint = angletest;      
+            GhostFlag = 1;
+                    robotState.positionWaypoint.x = getFloat(payload, 0);
+                   robotState.positionWaypoint.y = getFloat(payload, 4);
+            
+   
                      
-            break;
-        case Ghost_distance:
-                      
             break;
 
         case SetLed:
