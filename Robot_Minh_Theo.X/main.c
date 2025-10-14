@@ -306,12 +306,12 @@ void ADC_value() {
         volts = ((float) result [4])* 3.3 / 4096;
         if (volts < 0.325)volts = 0.325;
         robotState.distanceTelemetrePlusDroit = 34 / volts - 5;
-        payload_Telemetre[0] = (unsigned char) robotState.distanceTelemetrePlusGauche;
-        payload_Telemetre[1] = (unsigned char) robotState.distanceTelemetreGauche;
-        payload_Telemetre[2] = (unsigned char) robotState.distanceTelemetreCentre;
-        payload_Telemetre[3] = (unsigned char) robotState.distanceTelemetreDroit;
-        payload_Telemetre[4] = (unsigned char) robotState.distanceTelemetrePlusDroit;
-        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);
+//        payload_Telemetre[0] = (unsigned char) robotState.distanceTelemetrePlusGauche;
+//        payload_Telemetre[1] = (unsigned char) robotState.distanceTelemetreGauche;
+//        payload_Telemetre[2] = (unsigned char) robotState.distanceTelemetreCentre;
+//        payload_Telemetre[3] = (unsigned char) robotState.distanceTelemetreDroit;
+//        payload_Telemetre[4] = (unsigned char) robotState.distanceTelemetrePlusDroit;
+//        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);
     }
 }
 
@@ -465,6 +465,8 @@ int main(void) {
     robotState.PidX.erreurIntegraleMax = 100 ;
     robotState.PidX.erreurDeriveeMax = 100 ;
     
+    robotState.xPosFromOdometry +=50;
+    robotState.yPosFromOdometry += 50;
     robotState.positionGhost.x=50;
     robotState.positionGhost.y=50;
 
@@ -478,8 +480,8 @@ int main(void) {
             robotState.PD_Position_Angulaire.corrD = 0;
             robotState.PD_Position_Angulaire.erreurIntegrale = 0;
 
-            SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.01, 0, 0, 100, 100, 100);
-            SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0, 0, 0, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.2, 0, 0, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.1, 0, 0, 100, 100, 100);
 
 
     

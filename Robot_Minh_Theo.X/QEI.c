@@ -88,6 +88,10 @@ void QEIUpdateData() {
     }
 
     UpdateAsservissement();
+//    unsigned char testEnvoi[8];
+//    getBytesFromFloat(testEnvoi, 0, (float) (QeiDroitPosition));
+//    getBytesFromFloat(testEnvoi, 4, (float) (QeiGauchePosition));
+//    UartEncodeAndSendMessage(0x00FF, 8, testEnvoi);
 
 }
 

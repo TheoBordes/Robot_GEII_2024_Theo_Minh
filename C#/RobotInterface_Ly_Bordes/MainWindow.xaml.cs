@@ -319,7 +319,7 @@ namespace RobotInterface_Ly_Bordes
                    
 
 
-                    WpfWorldMap.UpdatePosRobot(50 + 10.0* robot.positionXOdo, 50 +10.0 * robot.positionYOdo);
+                    WpfWorldMap.UpdatePosRobot(robot.positionXOdo,robot.positionYOdo);
                     WpfWorldMap.UpdateOrientationRobot(robot.angleRadianFromOdometry * 180.0 / Math.PI);
                    break;
                 case (byte)IDfonction.SetPid:
@@ -380,8 +380,13 @@ namespace RobotInterface_Ly_Bordes
                 case (byte)IDfonction.Ghost_position:
                     WpfWorldMap.UpdatePosRobotGhost(BitConverter.ToSingle(msgPayload, 0), BitConverter.ToSingle(msgPayload, 4) );
                     break;
-                    
 
+
+                case 0x00FF:
+                    float test = BitConverter.ToSingle(msgPayload, 0);
+                    float test1 = BitConverter.ToSingle(msgPayload, 4);
+                    asservSpeedDisplay.UpdateIndependantSpeedCommandValues(test, test1);
+                    break;
 
 
 
@@ -562,6 +567,7 @@ namespace RobotInterface_Ly_Bordes
             SetPidT = 0x0073,
             setConsigne = 0x0074,
             ResetPid = 0x0075,
+            ghostSetPid = 0x0076,
 
         }
 
@@ -585,19 +591,34 @@ namespace RobotInterface_Ly_Bordes
 
 
             byte[] kpT = BitConverter.GetBytes(2.0f);
-            byte[] kiT = BitConverter.GetBytes(15.0f);
+            byte[] kiT = BitConverter.GetBytes(10.0f);
             byte[] kdT = BitConverter.GetBytes(0.0f);
 
             byte[] resultT = kpT.Concat(kiT).Concat(kdT).ToArray();
 
             UartEncodeAndSendMessage((byte)PID_val.SetPidT, 12, resultT);
 
+            //byte[] kp_PD_Lin = BitConverter.GetBytes(0.2f);
+            //byte[] ki_PD_Lin = BitConverter.GetBytes(0.0f);
+            //byte[] kd_PD_Lin = BitConverter.GetBytes(0.0f);
+            //byte[] result_PD_Lin = kp_PD_Lin.Concat(ki_PD_Lin).Concat(kd_PD_Lin).ToArray();
+
+            //byte[] kp_PD_Ang = BitConverter.GetBytes(0.0f);
+            //byte[] ki_PD_Ang = BitConverter.GetBytes(0.0f);
+            //byte[] kd_PD_Ang = BitConverter.GetBytes(0.0f);
+            //byte[] result_PD_Ang = kp_PD_Ang.Concat(ki_PD_Ang).Concat(kd_PD_Ang).ToArray();
+
+            //byte[] result_ghost_PD = result_PD_Lin.Concat(result_PD_Ang).ToArray();
+
+            //UartEncodeAndSendMessage((byte)PID_val.ghostSetPid, 24, result_ghost_PD);
+
         }
 
+          
         private void buttonConsigne_Click(object sender, RoutedEventArgs e)
         {
 
-            byte[] consigneAngulaire = BitConverter.GetBytes(0.05f);
+            byte[] consigneAngulaire = BitConverter.GetBytes(0.00f);
             byte[] consigneLineaire = BitConverter.GetBytes(0.00f);
 
             byte[] consigne = consigneLineaire.Concat(consigneAngulaire).ToArray();

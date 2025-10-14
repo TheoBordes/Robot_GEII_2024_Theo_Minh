@@ -40,14 +40,11 @@ double Correcteur(volatile PidCorrector* PidCorr, double erreur) {
 }
 
 void UpdateAsservissement() {
-    //    robotState.vitesseLinearConsigne = (robotState.vitesseDroiteConsigne - robotState.vitesseGaucheConsigne)/DISTROUES);
     robotState.PidX.erreur = robotState.vitesseLinearConsigne - robotState.vitesseLineaireFromOdometry;
-//    robotState.PidX.erreur = 0;
-
     robotState.PidTheta.erreur = robotState.vitesseAngulaireConsigne - robotState.vitesseAngulaireFromOdometry;
     robotState.CorrectionVitesseLineaire = Correcteur(&robotState.PidX, robotState.PidX.erreur);
     robotState.CorrectionVitesseAngulaire = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
-    SendPidInfo();
+    
     PWMSetSpeedConsignePolaire(robotState.CorrectionVitesseLineaire, robotState.CorrectionVitesseAngulaire);
 
 }
@@ -58,13 +55,19 @@ void UpdateConsGhost() {
     double dx = robotState.positionGhost.x - robotState.xPosFromOdometry;
     double dy = robotState.positionGhost.y - robotState.yPosFromOdometry;
 
+    double distance = sqrt(dx * dx + dy * dy);
+
     double directionX = cos(robotState.angleRadianFromOdometry);
     double directionY = sin(robotState.angleRadianFromOdometry);
-    double erreurLineaire = dx * directionX + dy * directionY;
 
-    robotState.vitesseLinearConsigne = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
+    double dot = dx * directionX + dy * directionY;
+
+    double erreurLineaire = (dot >= 0) ? distance : -distance;
+
+    double test = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
     robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
 }
+
 
 
 void SendPidInfo() {

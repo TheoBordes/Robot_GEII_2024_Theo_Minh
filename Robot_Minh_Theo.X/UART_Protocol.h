@@ -20,10 +20,15 @@
 #define SetLed 0x0020
 #define SetPIDX 0x0072
 #define SetPIDT 0x0073
+
+
 #define setConsigne 0x0074
 #define resetPid 0x0075
+
+
 #define Ghost_angle 0x0090
 #define Ghost_distance 0x0091
+#define ghostSetPID 0x0076
 
 
 

@@ -112,9 +112,18 @@ int L5 = 0;
 float kp = 0;
 float ki = 0;
 float kd = 0;
+
+float kp_PD_Lin;
+float ki_PD_Lin;
+float kd_PD_Lin;
+
+float kp_PD_Ang;
+float ki_PD_Ang;
+float kd_PD_Ang;
 Point posRobot;
 Point posTarget;
 int GhostFlag = 0;
+
 void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* payload) {
     switch (function) {
             //        case ControlXbox:
@@ -153,10 +162,6 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             ki = getFloat(payload, 4);
             kd = getFloat(payload, 8);
 
-
-            getBytesFromFloat(payload_PidX, 0, (float) (kp));
-            getBytesFromFloat(payload_PidX, 4, (float) (ki));
-            getBytesFromFloat(payload_PidX, 8, (float) (kd));
             SetupPidAsservissement(&robotState.PidX, (double) kp, (double) ki, (double) kd, 100, 100, 100);
 
 
@@ -196,20 +201,67 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             robotState.CorrectionVitesseAngulaire = 0;
             robotState.CorrectionVitesseLineaire = 0;
             
-      
+            
+            robotState.PD_Position_Lineaire.corrP = 0;
+            robotState.PD_Position_Lineaire.corrI = 0;
+            robotState.PD_Position_Lineaire.corrD = 0;
+            robotState.PD_Position_Lineaire.erreurIntegrale = 0;
+
+            robotState.PD_Position_Angulaire.corrP = 0;
+            robotState.PD_Position_Angulaire.corrI = 0;
+            robotState.PD_Position_Angulaire.corrD = 0;
+            robotState.PD_Position_Angulaire.erreurIntegrale = 0;
+
+
 
             SetupPidAsservissement(&robotState.PidTheta, 0, 0, 0, 100, 100, 100);
             SetupPidAsservissement(&robotState.PidX, 0, 0, 0, 100, 100, 100);
+             SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0, 0, 0, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0, 0, 0, 100, 100, 100);
+
+            break;
+
+        case ghostSetPID:
+            robotState.PD_Position_Lineaire.corrP = 0;
+            robotState.PD_Position_Lineaire.corrI = 0;
+            robotState.PD_Position_Lineaire.corrD = 0;
+            robotState.PD_Position_Lineaire.erreurIntegrale = 0;
+
+            robotState.PD_Position_Angulaire.corrP = 0;
+            robotState.PD_Position_Angulaire.corrI = 0;
+            robotState.PD_Position_Angulaire.corrD = 0;
+            robotState.PD_Position_Angulaire.erreurIntegrale = 0;
+
+
+            kp_PD_Lin = getFloat(payload, 0);
+            ki_PD_Lin = getFloat(payload, 4);
+            kd_PD_Lin = getFloat(payload, 8);
+
+            kp_PD_Ang = getFloat(payload, 12);
+            ki_PD_Ang = getFloat(payload, 16);
+            kd_PD_Ang = getFloat(payload, 20);
+
+            getBytesFromFloat(payload_PidT, 0, (float) (kp_PD_Lin));
+            getBytesFromFloat(payload_PidT, 4, (float) (ki_PD_Lin));
+            getBytesFromFloat(payload_PidT, 8, (float) (kd_PD_Lin));
+
+            getBytesFromFloat(payload_PidT, 12, (float) (kp_PD_Ang));
+            getBytesFromFloat(payload_PidT, 16, (float) (ki_PD_Ang));
+            getBytesFromFloat(payload_PidT, 20, (float) (kd_PD_Ang));
+
+
+            SetupPidAsservissement(&robotState.PD_Position_Lineaire, (double) kp_PD_Lin, (double) ki_PD_Lin, (double) kd_PD_Lin, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PD_Position_Angulaire, (double) kp_PD_Ang, (double) ki_PD_Ang, (double) kd_PD_Ang, 100, 100, 100);
 
             break;
 
         case Ghost_angle:
             GhostFlag = 1;
-                    robotState.positionWaypoint.x = getFloat(payload, 0);
-                   robotState.positionWaypoint.y = getFloat(payload, 4);
-            
-   
-                     
+            robotState.positionWaypoint.x = getFloat(payload, 0);
+            robotState.positionWaypoint.y = getFloat(payload, 4);
+
+
+
             break;
 
         case SetLed:
