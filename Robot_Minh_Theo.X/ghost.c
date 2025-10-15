@@ -144,6 +144,16 @@ double AngleVersCible(Point robot, Point target)
       return angle;
   }
 
+ 
+ 
+ void SetGhostTarget(Point cible) {
+    robotState.positionWaypoint.x =cible.x;
+    robotState.positionWaypoint.y =cible.y;
+    GhostFlag = 1;     
+}
+
+ 
+ 
 double ModuloByAngle(double angle)
 {
     return fmod(angle + cercle, cercle);

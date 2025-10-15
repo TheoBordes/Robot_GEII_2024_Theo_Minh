@@ -26,7 +26,7 @@ double AngleVersCible(Point robot, Point target);
 void UpdateDeplacementGhost();
 void sendInfoGhost();
 void UpdateGhost();
-
+ void SetGhostTarget(Point cible);
 
 #endif	/* GHOST_H */
 

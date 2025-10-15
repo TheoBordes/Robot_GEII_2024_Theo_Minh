@@ -27,7 +27,21 @@ unsigned char stateRobot;
 int CapVal = 0;
 unsigned char payload_Telemetre[5] = {};
 unsigned char payload_motors[2] = {};
+extern int GhostFlag;
 
+Point positions[] = {
+    {0.0, 0.0},
+    {0.8, 0.0},
+    {0.8, 0.0},
+    {0.8, 0.4},
+    {0.4, 0.4},
+    {0.4, 0.0},
+    {0.8, 0.0},
+    {0.6, 0.2}
+};
+
+int currentTargetIndex = 0;
+int totalTargets = sizeof(positions) / sizeof(positions[0]);
 
 //void determine_speeds2() {
 //    int left_1 = robotState.distanceTelemetreGauche;
@@ -465,10 +479,10 @@ int main(void) {
     robotState.PidX.erreurIntegraleMax = 100 ;
     robotState.PidX.erreurDeriveeMax = 100 ;
     
-    robotState.xPosFromOdometry +=50;
-    robotState.yPosFromOdometry += 50;
-    robotState.positionGhost.x=50;
-    robotState.positionGhost.y=50;
+    robotState.xPosFromOdometry +=0;
+    robotState.yPosFromOdometry +=0;
+    robotState.positionGhost.x=0;
+    robotState.positionGhost.y=0;
 
           robotState.PD_Position_Lineaire.corrP = 0;
             robotState.PD_Position_Lineaire.corrI = 0;
@@ -480,8 +494,8 @@ int main(void) {
             robotState.PD_Position_Angulaire.corrD = 0;
             robotState.PD_Position_Angulaire.erreurIntegrale = 0;
 
-            SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.2, 0, 0, 100, 100, 100);
-            SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.1, 0, 0, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PD_Position_Angulaire,0.6 , 0,0.001, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PD_Position_Lineaire, 1, 0,0.005, 100, 100, 100);
 
 
     
@@ -494,13 +508,18 @@ int main(void) {
 
 
     if (BOUTON1 == 0) {
-
+        
 
         while (1) {
 
             while (CB_RX1_IsDataAvailable()) {
                 UartDecodeMessage(CB_RX1_Get());
             }
+            
+             if (GhostFlag == 0 && currentTargetIndex < totalTargets) {
+                   // SetGhostTarget(positions[currentTargetIndex]);
+                    currentTargetIndex++;
+                                }
             //            if (flagMessageMotor) {
             //                flagMessageMotor = 0;
             //                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;

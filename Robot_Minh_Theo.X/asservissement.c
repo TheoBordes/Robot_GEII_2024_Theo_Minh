@@ -7,6 +7,7 @@
 #include "Utilities.h"
 #include "UART_Protocol.h"
 
+#define FREQ_ECH_QEI 250
 #define DISTROUES 0.2175
 #define pidInfoLinear 0x0071
 unsigned char payload_Pid_info[104] = {};
@@ -64,8 +65,8 @@ void UpdateConsGhost() {
 
     double erreurLineaire = (dot >= 0) ? distance : -distance;
 
-    double test = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
-    robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
+    //robotState.vitesseLinearConsigne  = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
+    //robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
 }
 
 

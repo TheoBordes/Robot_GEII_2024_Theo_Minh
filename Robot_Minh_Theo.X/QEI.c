@@ -26,8 +26,10 @@ double vitesseDroitFromOdometry;
 double vitesseGaucheFromOdometry;
 int compteur;
 
+
 #define POSITION_DATA 0x0060
 #define DISTROUES 0.2175
+#define FREQ_ECH_QEI 250
 
 void InitQEI1() {
     QEI1IOCbits.SWPAB = 1; //QEAx and QEBx are swapped
@@ -55,8 +57,8 @@ void QEIUpdateData() {
     QEI2RawValue += ((long) POS2HLD << 16);
 
     //Conversion en mm (regle pour la taille des roues codeuses)
-    QeiDroitPosition = 0.00001620 * QEI1RawValue;
-    QeiGauchePosition = -0.00001620 * QEI2RawValue;
+    QeiDroitPosition =  (0.00001620) * QEI1RawValue ;
+    QeiGauchePosition = -(0.00001620)  * QEI2RawValue ;
 
     //Calcul des deltas de position
     delta_d = QeiDroitPosition - QeiDroitPosition_T_1;
@@ -76,8 +78,8 @@ void QEIUpdateData() {
     robotState.angleRadianFromOdometry_1 = robotState.angleRadianFromOdometry;
 
     //Calcul des positions dans le referentiel du terrain
-    robotState.xPosFromOdometry = robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI);
-    robotState.yPosFromOdometry = robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI);
+    robotState.xPosFromOdometry = (robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
+    robotState.yPosFromOdometry = (robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
     robotState.angleRadianFromOdometry = robotState.angleRadianFromOdometry_1 + robotState.vitesseAngulaireFromOdometry / FREQ_ECH_QEI;
 
     if (robotState.angleRadianFromOdometry > PI) {
@@ -98,8 +100,8 @@ void QEIUpdateData() {
 void SendPositionData() {
     unsigned char positionPayload[32];
     getBytesFromInt32(positionPayload, 0, timestamp);
-    getBytesFromFloat(positionPayload, 4, (float) (robotState.xPosFromOdometry));
-    getBytesFromFloat(positionPayload, 8, (float) (robotState.yPosFromOdometry));
+    getBytesFromFloat(positionPayload, 4, (double) (robotState.xPosFromOdometry));
+    getBytesFromFloat(positionPayload, 8, (double) (robotState.yPosFromOdometry));
     getBytesFromFloat(positionPayload, 12, (float) (robotState.angleRadianFromOdometry));
     getBytesFromFloat(positionPayload, 16, (float) (robotState.vitesseLineaireFromOdometry));
     getBytesFromFloat(positionPayload, 20, (float) (robotState.vitesseAngulaireFromOdometry));
