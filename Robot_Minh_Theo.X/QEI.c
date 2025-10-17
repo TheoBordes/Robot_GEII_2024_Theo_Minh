@@ -25,8 +25,8 @@ double delta_g;
 double vitesseDroitFromOdometry;
 double vitesseGaucheFromOdometry;
 int compteur;
-
-
+const float xoffset = 0.135;
+const float yoffset = 0.03;
 #define POSITION_DATA 0x0060
 #define DISTROUES 0.2175
 #define FREQ_ECH_QEI 250
@@ -88,7 +88,8 @@ void QEIUpdateData() {
     if (robotState.angleRadianFromOdometry < -PI) {
         robotState.angleRadianFromOdometry += 2 * PI;
     }
-
+    robotState.positionRobot.x =  robotState.xPosFromOdometry;
+    robotState.positionRobot.y = robotState.yPosFromOdometry;
     UpdateAsservissement();
 //    unsigned char testEnvoi[8];
 //    getBytesFromFloat(testEnvoi, 0, (float) (QeiDroitPosition));

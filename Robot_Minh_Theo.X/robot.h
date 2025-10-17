@@ -49,6 +49,7 @@ typedef struct robotStateBITS {
             float thetaWaypoint;
             Point positionWaypoint;
             Point positionGhost;
+            Point positionRobot;
             
         };
     };

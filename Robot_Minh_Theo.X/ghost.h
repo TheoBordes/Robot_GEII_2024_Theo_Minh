@@ -27,6 +27,6 @@ void UpdateDeplacementGhost();
 void sendInfoGhost();
 void UpdateGhost();
  void SetGhostTarget(Point cible);
-
+double distance(Point a, Point b);
 #endif	/* GHOST_H */
 

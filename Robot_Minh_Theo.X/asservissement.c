@@ -63,10 +63,10 @@ void UpdateConsGhost() {
 
     double dot = dx * directionX + dy * directionY;
 
-    double erreurLineaire = (dot >= 0) ? distance : -distance;
+    double erreurLineaire =distance;
 
-    //robotState.vitesseLinearConsigne  = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
-    //robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
+    robotState.vitesseLinearConsigne  = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
+    robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
 }
 
 

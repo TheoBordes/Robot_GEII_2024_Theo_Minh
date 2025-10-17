@@ -319,7 +319,7 @@ namespace RobotInterface_Ly_Bordes
                    
 
 
-                    WpfWorldMap.UpdatePosRobot(robot.positionXOdo,robot.positionYOdo);
+                    WpfWorldMap.UpdatePosRobot(robot.positionXOdo+0.1,robot.positionYOdo+1);
                     WpfWorldMap.UpdateOrientationRobot(robot.angleRadianFromOdometry * 180.0 / Math.PI);
                    break;
                 case (byte)IDfonction.SetPid:
@@ -598,19 +598,19 @@ namespace RobotInterface_Ly_Bordes
 
             UartEncodeAndSendMessage((byte)PID_val.SetPidT, 12, resultT);
 
-            //byte[] kp_PD_Lin = BitConverter.GetBytes(0.2f);
-            //byte[] ki_PD_Lin = BitConverter.GetBytes(0.0f);
-            //byte[] kd_PD_Lin = BitConverter.GetBytes(0.0f);
-            //byte[] result_PD_Lin = kp_PD_Lin.Concat(ki_PD_Lin).Concat(kd_PD_Lin).ToArray();
+            byte[] kp_PD_Lin = BitConverter.GetBytes(0.2f);
+            byte[] ki_PD_Lin = BitConverter.GetBytes(0.0f);
+            byte[] kd_PD_Lin = BitConverter.GetBytes(0.0f);
+            byte[] result_PD_Lin = kp_PD_Lin.Concat(ki_PD_Lin).Concat(kd_PD_Lin).ToArray();
 
-            //byte[] kp_PD_Ang = BitConverter.GetBytes(0.0f);
-            //byte[] ki_PD_Ang = BitConverter.GetBytes(0.0f);
-            //byte[] kd_PD_Ang = BitConverter.GetBytes(0.0f);
-            //byte[] result_PD_Ang = kp_PD_Ang.Concat(ki_PD_Ang).Concat(kd_PD_Ang).ToArray();
+            byte[] kp_PD_Ang = BitConverter.GetBytes(0.0f);
+            byte[] ki_PD_Ang = BitConverter.GetBytes(0.0f);
+            byte[] kd_PD_Ang = BitConverter.GetBytes(0.0f);
+            byte[] result_PD_Ang = kp_PD_Ang.Concat(ki_PD_Ang).Concat(kd_PD_Ang).ToArray();
 
-            //byte[] result_ghost_PD = result_PD_Lin.Concat(result_PD_Ang).ToArray();
+            byte[] result_ghost_PD = result_PD_Lin.Concat(result_PD_Ang).ToArray();
 
-            //UartEncodeAndSendMessage((byte)PID_val.ghostSetPid, 24, result_ghost_PD);
+            UartEncodeAndSendMessage((byte)PID_val.ghostSetPid, 24, result_ghost_PD);
 
         }
 

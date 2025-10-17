@@ -28,20 +28,20 @@ int CapVal = 0;
 unsigned char payload_Telemetre[5] = {};
 unsigned char payload_motors[2] = {};
 extern int GhostFlag;
-
+uint8_t BOUTON1_PREV = 0;
+uint8_t GhostStart = 0;
 Point positions[] = {
-    {0.0, 0.0},
-    {0.8, 0.0},
-    {0.8, 0.0},
-    {0.8, 0.4},
-    {0.4, 0.4},
-    {0.4, 0.0},
-    {0.8, 0.0},
-    {0.6, 0.2}
+    {1.0, 1.0},
+    {1.0, 1.5},
+    {2.0, 1.5},
+    {2.0, 0.5},
+    {1.0, 0.5},
+    {1.0, 1.0},
+    {1.5, 1.0}
 };
 
 int currentTargetIndex = 0;
-int totalTargets = sizeof(positions) / sizeof(positions[0]);
+int totalTargets = sizeof (positions) / sizeof (positions[0]);
 
 //void determine_speeds2() {
 //    int left_1 = robotState.distanceTelemetreGauche;
@@ -320,12 +320,12 @@ void ADC_value() {
         volts = ((float) result [4])* 3.3 / 4096;
         if (volts < 0.325)volts = 0.325;
         robotState.distanceTelemetrePlusDroit = 34 / volts - 5;
-//        payload_Telemetre[0] = (unsigned char) robotState.distanceTelemetrePlusGauche;
-//        payload_Telemetre[1] = (unsigned char) robotState.distanceTelemetreGauche;
-//        payload_Telemetre[2] = (unsigned char) robotState.distanceTelemetreCentre;
-//        payload_Telemetre[3] = (unsigned char) robotState.distanceTelemetreDroit;
-//        payload_Telemetre[4] = (unsigned char) robotState.distanceTelemetrePlusDroit;
-//        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);
+        //        payload_Telemetre[0] = (unsigned char) robotState.distanceTelemetrePlusGauche;
+        //        payload_Telemetre[1] = (unsigned char) robotState.distanceTelemetreGauche;
+        //        payload_Telemetre[2] = (unsigned char) robotState.distanceTelemetreCentre;
+        //        payload_Telemetre[3] = (unsigned char) robotState.distanceTelemetreDroit;
+        //        payload_Telemetre[4] = (unsigned char) robotState.distanceTelemetrePlusDroit;
+        //        UartEncodeAndSendMessage(0x0030, 5, payload_Telemetre);
     }
 }
 
@@ -463,104 +463,117 @@ int main(void) {
     InitUART();
 
 
-    robotState.PidX.Kp = 2.0 ;
-    robotState.PidX.Ki = 30.0 ;
-    robotState.PidX.Kd = 0.0 ;
-    
-    robotState.PidTheta.Kp = 3.0 ;
-    robotState.PidTheta.Ki = 10.0 ;
-    robotState.PidTheta.Kd = 0.0 ;
-    
-    robotState.PidTheta.erreurProportionelleMax = 100 ;
-    robotState.PidTheta.erreurIntegraleMax = 100 ;
-    robotState.PidTheta.erreurDeriveeMax = 100 ;
-    
-    robotState.PidX.erreurProportionelleMax = 100 ;
-    robotState.PidX.erreurIntegraleMax = 100 ;
-    robotState.PidX.erreurDeriveeMax = 100 ;
-    
-    robotState.xPosFromOdometry +=0;
-    robotState.yPosFromOdometry +=0;
-    robotState.positionGhost.x=0;
-    robotState.positionGhost.y=0;
+    robotState.PidX.Kp = 3.0;
+    robotState.PidX.Ki = 25.0;
+    robotState.PidX.Kd = 0.0;
 
-          robotState.PD_Position_Lineaire.corrP = 0;
-            robotState.PD_Position_Lineaire.corrI = 0;
-            robotState.PD_Position_Lineaire.corrD = 0;
-            robotState.PD_Position_Lineaire.erreurIntegrale = 0;
+    robotState.PidTheta.Kp = 2.0;
+    robotState.PidTheta.Ki = 10.0;
+    robotState.PidTheta.Kd = 0.0;
 
-            robotState.PD_Position_Angulaire.corrP = 0;
-            robotState.PD_Position_Angulaire.corrI = 0;
-            robotState.PD_Position_Angulaire.corrD = 0;
-            robotState.PD_Position_Angulaire.erreurIntegrale = 0;
+    robotState.PidTheta.erreurProportionelleMax = 100;
+    robotState.PidTheta.erreurIntegraleMax = 100;
+    robotState.PidTheta.erreurDeriveeMax = 100;
 
-            SetupPidAsservissement(&robotState.PD_Position_Angulaire,0.6 , 0,0.001, 100, 100, 100);
-            SetupPidAsservissement(&robotState.PD_Position_Lineaire, 1, 0,0.005, 100, 100, 100);
+    robotState.PidX.erreurProportionelleMax = 100;
+    robotState.PidX.erreurIntegraleMax = 100;
+    robotState.PidX.erreurDeriveeMax = 100;
 
+    robotState.xPosFromOdometry += 0;
+    robotState.yPosFromOdometry += 0;
+    robotState.positionGhost.x = 0;
+    robotState.positionGhost.y = 0;
 
-    
-    
-    
-    
-            /*********************************************************************************************** Boucle Principale*/
-            /***********************************************************************************************/
-            //int vitesse = 20;
+    robotState.PD_Position_Lineaire.corrP = 0;
+    robotState.PD_Position_Lineaire.corrI = 0;
+    robotState.PD_Position_Lineaire.corrD = 0;
+    robotState.PD_Position_Lineaire.erreurIntegrale = 0;
+
+    robotState.PD_Position_Angulaire.corrP = 0;
+    robotState.PD_Position_Angulaire.corrI = 0;
+    robotState.PD_Position_Angulaire.corrD = 0;
+    robotState.PD_Position_Angulaire.erreurIntegrale = 0;
+
+    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.8, 0, 0.001, 100, 100, 100);
+    SetupPidAsservissement(&robotState.PD_Position_Lineaire,0.8, 0, 0, 100, 100, 100);
 
 
-    if (BOUTON1 == 0) {
-        
 
-        while (1) {
 
-            while (CB_RX1_IsDataAvailable()) {
-                UartDecodeMessage(CB_RX1_Get());
-            }
+
+
+    /*********************************************************************************************** Boucle Principale*/
+    /***********************************************************************************************/
+    //int vitesse = 20;
+
+
+
+
+    while (1) {
+
+        while (CB_RX1_IsDataAvailable()) {
+            UartDecodeMessage(CB_RX1_Get());
+        }
+                    if (BOUTON1 == 1) {
+                        GhostStart=1;
+                        }
             
-             if (GhostFlag == 0 && currentTargetIndex < totalTargets) {
-                   // SetGhostTarget(positions[currentTargetIndex]);
-                    currentTargetIndex++;
-                                }
-            //            if (flagMessageMotor) {
-            //                flagMessageMotor = 0;
-            //                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
-            //                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
-            //                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
-            //            }         
-            //            else {
-            //            }
-            if (robotState.distanceTelemetreGauche > 20) {
-                LED_BLEUE_1 = 1;
-            } else {
-                LED_BLEUE_1 = 0;
+                    
+                     if (distance(robotState.positionGhost, robotState.positionRobot) < 0.01 && currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag==0) {
+                            SetGhostTarget(positions[currentTargetIndex]);
+                            currentTargetIndex++;
+                                        }
 
-            }
-            if (robotState.distanceTelemetrePlusGauche > 20) {
-                LED_BLANCHE_1 = 1;
 
-            } else {
-                LED_BLANCHE_1 = 0;
+//        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {
+//            if (currentTargetIndex < totalTargets) {
+//                SetGhostTarget(positions[currentTargetIndex]);
+//                currentTargetIndex++;
+//            }
+//        }
+//        BOUTON1_PREV = BOUTON1;
 
-            }
-            if (robotState.distanceTelemetreCentre > 20) {
-                LED_ORANGE_1 = 1;
-
-            } else {
-                LED_ORANGE_1 = 0;
-
-            }
-            if (robotState.distanceTelemetrePlusDroit > 20) {
-                LED_VERTE_1 = 1;
-
-            } else {
-                LED_VERTE_1 = 0;
-
-            }
-            if (robotState.distanceTelemetreDroit > 20) {
-                LED_ROUGE_1 = 1;
-            } else {
-                LED_ROUGE_1 = 0;
-            }
+        //            if (flagMessageMotor) {
+        //                flagMessageMotor = 0;
+        //                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
+        //                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
+        //                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
+        //            }         
+        //            else {
+        //            }
+        if (robotState.distanceTelemetreGauche > 20) {
+            LED_BLEUE_1 = 1;
+        } else {
+            LED_BLEUE_1 = 0;
 
         }
+        if (robotState.distanceTelemetrePlusGauche > 20) {
+            LED_BLANCHE_1 = 1;
+
+        } else {
+            LED_BLANCHE_1 = 0;
+
+        }
+        if (robotState.distanceTelemetreCentre > 20) {
+            LED_ORANGE_1 = 1;
+
+        } else {
+            LED_ORANGE_1 = 0;
+
+        }
+        if (robotState.distanceTelemetrePlusDroit > 20) {
+            LED_VERTE_1 = 1;
+
+        } else {
+            LED_VERTE_1 = 0;
+
+        }
+        if (robotState.distanceTelemetreDroit > 20) {
+            LED_ROUGE_1 = 1;
+        } else {
+            LED_ROUGE_1 = 0;
+        }
+
+
     }
 }

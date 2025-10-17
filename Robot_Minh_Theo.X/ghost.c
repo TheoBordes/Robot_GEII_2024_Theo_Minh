@@ -11,13 +11,13 @@
 //const float Tsampling = 0.1f;
 extern int GhostFlag;
 
-const float AccTheta = 60.0f;
-const float VThetaMax = 17.0f;
+const float AccTheta = 15.0f;
+const float VThetaMax = 30.0f;
 const float Tsampling = 0.01f;
 
 float vLin = 0.0;
-const float accLin = 20.0;
-const float vLinMax = 8.0;
+const float accLin = 0.5;
+const float vLinMax = 1.0;
 double positionWaypoint;
 double distanceRestante= 0;
 
@@ -203,7 +203,11 @@ void UpdateGhost()
     }
 }
 
-
+double distance(Point a, Point b) {
+    double dx = a.x - b.x;
+    double dy = a.y - b.y;
+    return sqrt(dx * dx + dy * dy);
+}
 
 void sendInfoGhost(){
     getBytesFromFloat(payload_GhostPos, 0, (float)robotState.positionGhost.x);
