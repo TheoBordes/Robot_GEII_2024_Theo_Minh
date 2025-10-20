@@ -52,21 +52,31 @@ void UpdateAsservissement() {
 
 
 void UpdateConsGhost() {
-    double erreurTheta = NormalizeAngle(robotState.thetaGhost - robotState.angleRadianFromOdometry * 180.0 / M_PI);
+    double erreurTheta = NormalizeAngle(robotState.thetaGhost - robotState.angleRadianFromOdometry);
+    
     double dx = robotState.positionGhost.x - robotState.xPosFromOdometry;
     double dy = robotState.positionGhost.y - robotState.yPosFromOdometry;
 
-    double distance = sqrt(dx * dx + dy * dy);
+    double erreurLineaire = sqrt(dx * dx + dy * dy);
 
-    double directionX = cos(robotState.angleRadianFromOdometry);
-    double directionY = sin(robotState.angleRadianFromOdometry);
+    double angleToGhost = atan2(dy, dx);
+    double angleRobot = robotState.angleRadianFromOdometry;
+    double diffAngle = NormalizeAngle(angleToGhost - angleRobot);
 
-    double dot = dx * directionX + dy * directionY;
-
-    double erreurLineaire =distance;
+    if (fabs(diffAngle) > M_PI / 2) {
+        erreurLineaire = -erreurLineaire;
+    }
 
     robotState.vitesseLinearConsigne  = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
     robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
+
+    unsigned char testEnvoi[16];
+    getBytesFromFloat(testEnvoi, 0, (float)(robotState.positionGhost.x));
+    getBytesFromFloat(testEnvoi, 4, (float)(robotState.positionGhost.y));
+    getBytesFromFloat(testEnvoi, 8, (float)(angleRobot));
+    getBytesFromFloat(testEnvoi, 12, (float)(erreurLineaire));
+    
+    UartEncodeAndSendMessage(0x00FF, 16, testEnvoi);
 }
 
 

@@ -78,8 +78,8 @@ void QEIUpdateData() {
     robotState.angleRadianFromOdometry_1 = robotState.angleRadianFromOdometry;
 
     //Calcul des positions dans le referentiel du terrain
-    robotState.xPosFromOdometry = (robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
-    robotState.yPosFromOdometry = (robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
+    robotState.xPosFromOdometry = (robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
+    robotState.yPosFromOdometry = (robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
     robotState.angleRadianFromOdometry = robotState.angleRadianFromOdometry_1 + robotState.vitesseAngulaireFromOdometry / FREQ_ECH_QEI;
 
     if (robotState.angleRadianFromOdometry > PI) {
@@ -90,7 +90,7 @@ void QEIUpdateData() {
     }
     robotState.positionRobot.x =  robotState.xPosFromOdometry;
     robotState.positionRobot.y = robotState.yPosFromOdometry;
-    UpdateAsservissement();
+    UpdateAsservissement();     
 //    unsigned char testEnvoi[8];
 //    getBytesFromFloat(testEnvoi, 0, (float) (QeiDroitPosition));
 //    getBytesFromFloat(testEnvoi, 4, (float) (QeiGauchePosition));

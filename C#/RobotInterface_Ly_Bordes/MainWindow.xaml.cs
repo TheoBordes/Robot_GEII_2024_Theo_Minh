@@ -57,8 +57,6 @@ namespace RobotInterface_Ly_Bordes
         private Timer TimerAffichage;
         //private Controller gamepad;
         public int flag;
-        public float  xPosRobot =50;
-        public float yPosRobot = 50;
         private double timestamp;
 
 
@@ -110,7 +108,6 @@ namespace RobotInterface_Ly_Bordes
             oscilloSpeed.ChangeLineColor(1, Colors.Blue);
             oscilloSpeed.AddOrUpdateLine(2, 200, "Vitesse_Angulaire");
             oscilloSpeed.ChangeLineColor(2, Colors.Green);
-            WpfWorldMap.UpdatePosRobot(xPosRobot, yPosRobot);
             
 
         }
@@ -160,7 +157,7 @@ namespace RobotInterface_Ly_Bordes
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text =  $"posX: {robot.positionXOdo}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"posY: {robot.positionYOdo}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"Angle: {robot.angleRadianFromOdometry * 180.0/Math.PI}\n"));
-            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"AngleGhost: {robot.ThetaGhost}\n"));
+            RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"AngleGhost: {robot.ThetaGhost*180.0/Math.PI}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitLin: {robot.vitesseLineaireFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitAngl: {robot.vitesseAngulaireFromOdometry}\n"));
             RichTextBox.Dispatcher.BeginInvoke(new Action(() => RichTextBox.Text += $"VitD: {robot.vitesseDroitFromOdometry}\n"));
@@ -319,7 +316,7 @@ namespace RobotInterface_Ly_Bordes
                    
 
 
-                    WpfWorldMap.UpdatePosRobot(robot.positionXOdo+0.1,robot.positionYOdo+1);
+                    WpfWorldMap.UpdatePosRobot(robot.positionXOdo,robot.positionYOdo);
                     WpfWorldMap.UpdateOrientationRobot(robot.angleRadianFromOdometry * 180.0 / Math.PI);
                    break;
                 case (byte)IDfonction.SetPid:
@@ -374,18 +371,24 @@ namespace RobotInterface_Ly_Bordes
                 case (byte)IDfonction.Ghost_angle:
 
                     robot.ThetaGhost = BitConverter.ToSingle(msgPayload, 0);
-                   WpfWorldMap.UpdateOrientationRobotGhost(robot.ThetaGhost);
+                    WpfWorldMap.UpdateOrientationRobotGhost(robot.ThetaGhost * 180.0 / Math.PI);
 
                     break;
                 case (byte)IDfonction.Ghost_position:
-                    WpfWorldMap.UpdatePosRobotGhost(BitConverter.ToSingle(msgPayload, 0), BitConverter.ToSingle(msgPayload, 4) );
+
+                    float x = BitConverter.ToSingle(msgPayload, 0);
+                    float y = BitConverter.ToSingle(msgPayload, 4);
+                    WpfWorldMap.UpdatePosRobotGhost(x, y);
+
                     break;
 
 
                 case 0x00FF:
                     float test = BitConverter.ToSingle(msgPayload, 0);
                     float test1 = BitConverter.ToSingle(msgPayload, 4);
+                    float test2 = BitConverter.ToSingle(msgPayload, 8);
                     asservSpeedDisplay.UpdateIndependantSpeedCommandValues(test, test1);
+                    asservSpeedDisplay.UpdateIndependantSpeedConsigneValues(test2, test2);
                     break;
 
 

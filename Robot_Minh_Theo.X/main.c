@@ -494,11 +494,12 @@ int main(void) {
     robotState.PD_Position_Angulaire.corrD = 0;
     robotState.PD_Position_Angulaire.erreurIntegrale = 0;
 
-    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.8, 0, 0.001, 100, 100, 100);
-    SetupPidAsservissement(&robotState.PD_Position_Lineaire,0.8, 0, 0, 100, 100, 100);
+    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 1.5, 0, 0.01, 100, 100, 100);
+    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 1.5, 0, 0.01, 100, 100, 100);
 
 
-
+    //    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.1, 0, 0.004, 100, 100, 100);
+    //    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 1.5, 0, 1.2, 100, 100, 100);
 
 
 
@@ -514,24 +515,32 @@ int main(void) {
         while (CB_RX1_IsDataAvailable()) {
             UartDecodeMessage(CB_RX1_Get());
         }
-                    if (BOUTON1 == 1) {
-                        GhostStart=1;
-                        }
+        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
+            SetGhostTarget(positions[currentTargetIndex]);
+            currentTargetIndex++;
             
-                    
-                     if (distance(robotState.positionGhost, robotState.positionRobot) < 0.01 && currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag==0) {
-                            SetGhostTarget(positions[currentTargetIndex]);
-                            currentTargetIndex++;
-                                        }
+        }
+        BOUTON1_PREV = BOUTON1;
 
 
-//        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {
-//            if (currentTargetIndex < totalTargets) {
-//                SetGhostTarget(positions[currentTargetIndex]);
-//                currentTargetIndex++;
-//            }
-//        }
-//        BOUTON1_PREV = BOUTON1;
+
+        //        if (BOUTON1 == 1) {
+        //            GhostStart = 1
+        //                    ;
+        //        }
+        //        if (distance(robotState.positionGhost, robotState.positionRobot) < 0.01 && currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
+        //            SetGhostTarget(positions[currentTargetIndex]);
+        //            currentTargetIndex++;
+        //        }
+
+
+        //        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {
+        //            if (currentTargetIndex < totalTargets) {
+        //                SetGhostTarget(positions[currentTargetIndex]);
+        //                currentTargetIndex++;
+        //            }
+        //        }
+        //        BOUTON1_PREV = BOUTON1;
 
         //            if (flagMessageMotor) {
         //                flagMessageMotor = 0;
