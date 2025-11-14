@@ -43,11 +43,11 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     tick++;
     UpdateGhost();
     sendInfoGhost();
-    
+    SendPositionData();
     
     if (tick > 25) {
         SendPidInfo();
-        SendPositionData();
+      
         
         
        

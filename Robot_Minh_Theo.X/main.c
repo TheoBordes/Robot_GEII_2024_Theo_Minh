@@ -28,6 +28,8 @@ int CapVal = 0;
 unsigned char payload_Telemetre[5] = {};
 unsigned char payload_motors[2] = {};
 extern int GhostFlag;
+const float xoffset = 0.14;
+const float yoffset = 0.14;
 uint8_t BOUTON1_PREV = 0;
 uint8_t GhostStart = 0;
 Point positions[] = {
@@ -468,8 +470,8 @@ int main(void) {
     robotState.PidX.Kd = 0.0;
 
     robotState.PidTheta.Kp = 2.0;
-    robotState.PidTheta.Ki = 10.0;
-    robotState.PidTheta.Kd = 0.0;
+    robotState.PidTheta.Ki = 18.0;
+    robotState.PidTheta.Kd = 0.001;
 
     robotState.PidTheta.erreurProportionelleMax = 100;
     robotState.PidTheta.erreurIntegraleMax = 100;
@@ -494,13 +496,20 @@ int main(void) {
     robotState.PD_Position_Angulaire.corrD = 0;
     robotState.PD_Position_Angulaire.erreurIntegrale = 0;
 
-    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 1.5, 0, 0.01, 100, 100, 100);
-    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 1.5, 0, 0.01, 100, 100, 100);
+//    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.5, 0, 0.01, 100, 100, 100);
+//    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.5, 0, 0.01, 100, 100, 100);
+    
+    
+//   SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.01, 0, 0.2, 100, 100, 100);
+//    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.01, 0, 0.1, 100, 100, 100);
 
-
-    //    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.1, 0, 0.004, 100, 100, 100);
-    //    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 1.5, 0, 1.2, 100, 100, 100);
-
+    robotState.positionGhost.x = xoffset;
+    robotState.positionGhost.y = yoffset;
+    robotState.xPosFromOdometry = xoffset;
+    robotState.yPosFromOdometry= yoffset;
+     SetupPidAsservissement(&robotState.PD_Position_Angulaire, 4.0, 0, 0.01, 100, 100, 100);
+     SetupPidAsservissement(&robotState.PD_Position_Lineaire,1.0, 0, 0.01, 100, 100, 100);
+     //il y a un problème pour coller à la vitesse du ghost si le coef kp est gros on colle au ghost mais instabilité par contre 
 
 
     /*********************************************************************************************** Boucle Principale*/
@@ -515,23 +524,22 @@ int main(void) {
         while (CB_RX1_IsDataAvailable()) {
             UartDecodeMessage(CB_RX1_Get());
         }
-        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
-            SetGhostTarget(positions[currentTargetIndex]);
-            currentTargetIndex++;
-            
-        }
-        BOUTON1_PREV = BOUTON1;
+//        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
+//            SetGhostTarget(positions[currentTargetIndex]);
+//            currentTargetIndex++;
+//            
+//        }
+//        BOUTON1_PREV = BOUTON1;
 
 
 
-        //        if (BOUTON1 == 1) {
-        //            GhostStart = 1
-        //                    ;
-        //        }
-        //        if (distance(robotState.positionGhost, robotState.positionRobot) < 0.01 && currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
-        //            SetGhostTarget(positions[currentTargetIndex]);
-        //            currentTargetIndex++;
-        //        }
+                if (BOUTON1 == 1) {
+                    GhostStart = 1;
+                }
+                if ( currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
+                    SetGhostTarget(positions[currentTargetIndex]);
+                    currentTargetIndex++;
+                }
 
 
         //        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {

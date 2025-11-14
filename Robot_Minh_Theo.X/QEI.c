@@ -25,8 +25,7 @@ double delta_g;
 double vitesseDroitFromOdometry;
 double vitesseGaucheFromOdometry;
 int compteur;
-const float xoffset = 0.135;
-const float yoffset = 0.03;
+
 #define POSITION_DATA 0x0060
 #define DISTROUES 0.2175
 #define FREQ_ECH_QEI 250
@@ -78,7 +77,7 @@ void QEIUpdateData() {
     robotState.angleRadianFromOdometry_1 = robotState.angleRadianFromOdometry;
 
     //Calcul des positions dans le referentiel du terrain
-    robotState.xPosFromOdometry = (robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
+    robotState.xPosFromOdometry = (robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI)) ;
     robotState.yPosFromOdometry = (robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
     robotState.angleRadianFromOdometry = robotState.angleRadianFromOdometry_1 + robotState.vitesseAngulaireFromOdometry / FREQ_ECH_QEI;
 
