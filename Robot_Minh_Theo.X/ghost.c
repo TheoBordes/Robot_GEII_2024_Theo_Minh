@@ -11,13 +11,23 @@
 //const float Tsampling = 0.1f;
 extern int GhostFlag;
 
+//const float AccTheta = 1.8;
+//const float VThetaMax = 2.0;
+//const float Tsampling = 0.01f;
+//
+//float vLin = 0.0;
+//const float accLin = 0.5;
+//const float vLinMax = 1;
+//double positionWaypoint;
+//double distanceRestante = 0;
+
 const float AccTheta = 1.8;
 const float VThetaMax = 2.0;
 const float Tsampling = 0.01f;
 
 float vLin = 0.0;
 const float accLin = 0.5;
-const float vLinMax = 1;
+const float vLinMax = 4.0;
 double positionWaypoint;
 double distanceRestante = 0;
 
