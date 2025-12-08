@@ -2,15 +2,22 @@
 
 #include "asservissement.h"
 #include "Toolbox.h"
+#include "ghost.h"
 #include "QEI.h"
 #include "PWM.h"
 #include "Utilities.h"
 #include "UART_Protocol.h"
+#include "IO.h"
+#include <xc.h>
+
 
 #define FREQ_ECH_QEI 250
 #define DISTROUES 0.2175
 #define pidInfoLinear 0x0071
 unsigned char payload_Pid_info[104] = {};
+
+
+
 
 void SetupPidAsservissement(volatile PidCorrector* PidCorr, double Kp, double Ki, double Kd, double proportionelleMax, double integralMax, double deriveeMax) {
     PidCorr->Kp = Kp;
@@ -52,31 +59,38 @@ void UpdateAsservissement() {
 
 
 void UpdateConsGhost() {
-    double erreurTheta = NormalizeAngle(robotState.thetaGhost - robotState.angleRadianFromOdometry);
+//    double erreurTheta = NormalizeAngle(robotState.thetaGhost - robotState.angleRadianFromOdometry);
+//    
+//    double dx = robotState.positionGhost.x - robotState.xPosFromOdometry;
+//    double dy = robotState.positionGhost.y - robotState.yPosFromOdometry;
+//
+//    double erreurLineaire = sqrt(dx * dx + dy * dy);
+//
+//    double angleToGhost = atan2(dy, dx);
+//    double angleRobot = robotState.angleRadianFromOdometry;
+//    double diffAngle = NormalizeAngle(angleToGhost - angleRobot);
+//
+//    if (fabs(diffAngle) > M_PI / 2) {
+//        erreurLineaire = -erreurLineaire;
+//    }
+
+//    robotState.vitesseLinearConsigne  = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
+//    robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
     
-    double dx = robotState.positionGhost.x - robotState.xPosFromOdometry;
-    double dy = robotState.positionGhost.y - robotState.yPosFromOdometry;
-
-    double erreurLineaire = sqrt(dx * dx + dy * dy);
-
-    double angleToGhost = atan2(dy, dx);
-    double angleRobot = robotState.angleRadianFromOdometry;
-    double diffAngle = NormalizeAngle(angleToGhost - angleRobot);
-
-    if (fabs(diffAngle) > M_PI / 2) {
-        erreurLineaire = -erreurLineaire;
-    }
-
-    robotState.vitesseLinearConsigne  = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
-    robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
-
-    unsigned char testEnvoi[16];
-    getBytesFromFloat(testEnvoi, 0, (float)(robotState.positionGhost.x));
-    getBytesFromFloat(testEnvoi, 4, (float)(robotState.positionGhost.y));
-    getBytesFromFloat(testEnvoi, 8, (float)(angleRobot));
-    getBytesFromFloat(testEnvoi, 12, (float)(erreurLineaire));
+    robotState.vitesseLinearConsigne  = robotState.vitesseLineaireGhost ;
+    robotState.vitesseAngulaireConsigne = robotState.vitesseAngulaireGhost ;
     
-    UartEncodeAndSendMessage(0x00FF, 16, testEnvoi);
+    
+    LED_ROUGE_1 = !LED_ROUGE_1;
+    
+//    
+//    unsigned char testEnvoi[16];
+//    getBytesFromFloat(testEnvoi, 0, (float)(robotState.positionGhost.x));
+//    getBytesFromFloat(testEnvoi, 4, (float)(robotState.positionGhost.y));
+//    getBytesFromFloat(testEnvoi, 8, (float)(angleRobot));
+//    getBytesFromFloat(testEnvoi, 12, (float)(erreurLineaire));
+//    
+//    UartEncodeAndSendMessage(0x00FF, 16, testEnvoi);
 }
 
 

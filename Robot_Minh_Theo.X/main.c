@@ -32,32 +32,32 @@ const float xoffset = 0.14;
 const float yoffset = 0.14;
 uint8_t BOUTON1_PREV = 0;
 uint8_t GhostStart = 0;
-Point positions[] = {
-    {1.0, 1.0},
-    {0.55, 0.69},
-    {2.11, 1.47},
-    {0.38, 0.92},
-    {1.77, 0.24},
-    {1.98, 1.8},
-{2.68, 0.71},
-{1.29, 1.7},
-{0.74, 0.15},
-{2.8, 1.32},
-{1.03, 0.58},
-{2.43, 1.76}
-
-};//quelque chose d'aléatoire
-
-// Carré
 //Point positions[] = {
 //    {1.0, 1.0},
-//    {1.0, 1.5},
-//    {2.0, 1.5},
-//    {2.0, 0.5},
-//    {1.0, 0.5},
-//    {1.0, 1.0},
-//    {1.5, 1.0}
-//};
+//    {0.55, 0.69},
+//    {2.11, 1.47},
+//    {0.38, 0.92},
+//    {1.77, 0.24},
+//    {1.98, 1.8},
+//{2.68, 0.71},
+//{1.29, 1.7},
+//{0.74, 0.15},
+//{2.8, 1.32},
+//{1.03, 0.58},
+//{2.43, 1.76}
+//
+//};//quelque chose d'aléatoire
+
+// Carré
+Point positions[] = {
+    {1.0, 1.0},
+    {1.0, 1.5},
+    {2.0, 1.5},
+    {2.0, 0.5},
+    {1.0, 0.5},
+    {1.0, 1.0},
+    {1.5, 1.0}
+};
 
 int currentTargetIndex = 0;
 int totalTargets = sizeof (positions) / sizeof (positions[0]);
@@ -482,11 +482,13 @@ int main(void) {
     InitUART();
 
 
-    robotState.PidX.Kp = 3.0;
-    robotState.PidX.Ki = 25.0;
+
+
+    robotState.PidX.Kp = 4.0;
+    robotState.PidX.Ki = 30.0;
     robotState.PidX.Kd = 0.0;
 
-    robotState.PidTheta.Kp = 2.0;
+    robotState.PidTheta.Kp = 2.2;
     robotState.PidTheta.Ki = 18.0;
     robotState.PidTheta.Kd = 0.001;
 
@@ -513,22 +515,26 @@ int main(void) {
     robotState.PD_Position_Angulaire.corrD = 0;
     robotState.PD_Position_Angulaire.erreurIntegrale = 0;
 
-//    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.5, 0, 0.01, 100, 100, 100);
-//    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.5, 0, 0.01, 100, 100, 100);
-    
-    
-//   SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.01, 0, 0.2, 100, 100, 100);
-//    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.01, 0, 0.1, 100, 100, 100);
+    //    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.5, 0, 0.01, 100, 100, 100);
+    //    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.5, 0, 0.01, 100, 100, 100);
+
+
+    //   SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.01, 0, 0.2, 100, 100, 100);
+    //    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.01, 0, 0.1, 100, 100, 100);
 
     robotState.positionGhost.x = xoffset;
     robotState.positionGhost.y = yoffset;
     robotState.xPosFromOdometry = xoffset;
-    robotState.yPosFromOdometry= yoffset;
-     SetupPidAsservissement(&robotState.PD_Position_Angulaire, 4.0, 0, 0.01, 100, 100, 100);
-     SetupPidAsservissement(&robotState.PD_Position_Lineaire,1.0, 0, 0.01, 100, 100, 100);
-     //il y a un problème pour coller à la vitesse du ghost si le coef kp est gros on colle au ghost mais instabilité par contre 
+    robotState.yPosFromOdometry = yoffset;
+    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 1.5, 0, 0.06, 100, 100, 100);
+    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.8, 0, 0.04, 100, 100, 100);
+    //il y a un problème pour coller à la vitesse du ghost si le coef kp est gros on colle au ghost mais instabilité par contre 
 
 
+    Point test[] = {
+        {3.0, 0.14},
+
+    };
     /*********************************************************************************************** Boucle Principale*/
     /***********************************************************************************************/
     //int vitesse = 20;
@@ -538,25 +544,28 @@ int main(void) {
 
     while (1) {
 
+        SetGhostTarget(test[0]);
+
+
         while (CB_RX1_IsDataAvailable()) {
             UartDecodeMessage(CB_RX1_Get());
         }
-//        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
-//            SetGhostTarget(positions[currentTargetIndex]);
-//            currentTargetIndex++;
-//            
-//        }
-//        BOUTON1_PREV = BOUTON1;
+        //        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
+        //            SetGhostTarget(positions[currentTargetIndex]);
+        //            currentTargetIndex++;
+        //            
+        //        }
+        //        BOUTON1_PREV = BOUTON1;
 
 
 
-                if (BOUTON1 == 1) {
-                    GhostStart = 1;
-                }
-                if ( currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
-                    SetGhostTarget(positions[currentTargetIndex]);
-                    currentTargetIndex++;
-                }
+        if (BOUTON1 == 1) {
+            GhostStart = 1;
+        }
+        if (currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
+            SetGhostTarget(positions[currentTargetIndex]);
+            currentTargetIndex++;
+        }
 
 
         //        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {
@@ -602,11 +611,11 @@ int main(void) {
             LED_VERTE_1 = 0;
 
         }
-        if (robotState.distanceTelemetreDroit > 20) {
-            LED_ROUGE_1 = 1;
-        } else {
-            LED_ROUGE_1 = 0;
-        }
+        //        if (robotState.distanceTelemetreDroit > 20) {
+        //            LED_ROUGE_1 = 1;
+        //        } else {
+        //            LED_ROUGE_1 = 0;
+        //        }
 
 
     }

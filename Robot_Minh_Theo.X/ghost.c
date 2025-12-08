@@ -6,6 +6,10 @@
 
 #include "Utilities.h"
 #include "Toolbox.h"
+
+
+
+
 //const float AccTheta = 60.0f;
 //const float VThetaMax = 17.0f;
 //const float Tsampling = 0.1f;
@@ -21,13 +25,13 @@ extern int GhostFlag;
 //double positionWaypoint;
 //double distanceRestante = 0;
 
-const float AccTheta = 1.8;
-const float VThetaMax = 2.0;
+const float AccTheta = 0.8;
+const float VThetaMax = 1.5;
 const float Tsampling = 0.01f;
 
 float vLin = 0.0;
-const float accLin = 0.5;
-const float vLinMax = 4.0;
+const float accLin = 0.1;
+const float vLinMax = 0.3;
 double positionWaypoint;
 double distanceRestante = 0;
 
@@ -64,10 +68,13 @@ void UpdateRotation() {
 
     robotState.thetaGhost += incrementTheta;
     robotState.thetaGhost = NormalizeAngle(robotState.thetaGhost);
+    robotState.vitesseAngulaireGhost = vTheta;
 
     if (fabs(thetaRestant) < 0.01 && fabs(vTheta) < 1e-3) {
         robotState.thetaGhost = robotState.thetaWaypoint;
         vTheta = 0;
+        robotState.vitesseAngulaireGhost = vTheta;
+
     }
 }
 
@@ -114,6 +121,7 @@ void UpdateDeplacementGhost() {
     if (vLin == 0 && distanceRestante < 0.01) {
         robotState.positionGhost = robotState.positionWaypoint;
     }
+        robotState.vitesseLineaireGhost = vLin;
 
 
 }
@@ -157,20 +165,18 @@ void UpdateGhost() {
             }
             break;
         case Rotation:
-            
+
             UpdateRotation();
 
-            if (fabs(robotState.thetaGhost - angle) < 0.2 && fabs(robotState.angleRadianFromOdometry - robotState.thetaGhost) < 0.2) {
+            if (fabs(robotState.thetaGhost - angle) < 0.001) {
                 GhostState = DeplacementLineaire;
             } // je suis pas sur s'il faut se baser sur la position du robot pour passer au ghost de déplacement linéaire
-//            if ( robotState.thetaGhost == robotState.thetaWaypoint){
-//                   GhostState = DeplacementLineaire;
-//            }
+
             break;
         case DeplacementLineaire:
             //double distance = DistancePointToSegment();
             UpdateDeplacementGhost();
-            if (distanceRestante < 1e-6 && distance(robotState.positionGhost, robotState.positionRobot) < 0.01) {
+            if (distanceRestante < 0.001) {
                 vLin = 0;
                 GhostFlag = 0;
                 GhostState = Idle;

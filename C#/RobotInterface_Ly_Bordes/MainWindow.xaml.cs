@@ -83,7 +83,7 @@ namespace RobotInterface_Ly_Bordes
             InitializeComponent();
            
             //Setting SerialPort
-            serialPort1 = new ExtendedSerialPort("COM4", 115200, Parity.None, 8, StopBits.One);// Changer le port USB (COM)
+            serialPort1 = new ExtendedSerialPort("COM9", 115200, Parity.None, 8, StopBits.One);// Changer le port USB (COM)
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
 
