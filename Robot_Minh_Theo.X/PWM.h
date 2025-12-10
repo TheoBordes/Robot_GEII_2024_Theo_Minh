@@ -3,6 +3,7 @@
 
 void InitPWM(void);
 void PWMUpdateSpeed();
-void PWMSetSpeedConsignePercent(float vitesseEnPourcents, char moteur);
+void PWMSetSpeedConsigne(float vitesse, char moteur);
 void PWMSetSpeedConsignePolaire();
+void PWMSetSpeedConsigneIndependant( double vitesse, unsigned char moteur );
 //void PWMSetSpeed(float vitesseEnPourcents, int moteur);

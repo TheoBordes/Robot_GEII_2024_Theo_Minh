@@ -11,15 +11,16 @@
 #include "asservissement.h"
 #include "timer.h"
 #include "UART_Protocol.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <xc.h>
 
 double QeiDroitPosition_T_1;
-double QeiDroitPosition =0;
+double QeiDroitPosition = 0;
 double QeiGauchePosition_T_1;
-double QeiGauchePosition=0;
+double QeiGauchePosition = 0;
 double delta_d;
 double delta_g;
 double vitesseDroitFromOdometry;
@@ -28,7 +29,6 @@ int compteur;
 
 #define POSITION_DATA 0x0060
 #define DISTROUES 0.2175
-#define FREQ_ECH_QEI 250
 
 void InitQEI1() {
     QEI1IOCbits.SWPAB = 1; //QEAx and QEBx are swapped
@@ -56,8 +56,8 @@ void QEIUpdateData() {
     QEI2RawValue += ((long) POS2HLD << 16);
 
     //Conversion en mm (regle pour la taille des roues codeuses)
-    QeiDroitPosition =  (0.00001620) * QEI1RawValue ;
-    QeiGauchePosition = -(0.00001620)  * QEI2RawValue ;
+    QeiDroitPosition = (0.00001620) * QEI1RawValue;
+    QeiGauchePosition = -(0.00001620) * QEI2RawValue;
 
     //Calcul des deltas de position
     delta_d = QeiDroitPosition - QeiDroitPosition_T_1;
@@ -77,7 +77,7 @@ void QEIUpdateData() {
     robotState.angleRadianFromOdometry_1 = robotState.angleRadianFromOdometry;
 
     //Calcul des positions dans le referentiel du terrain
-    robotState.xPosFromOdometry = (robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI)) ;
+    robotState.xPosFromOdometry = (robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * cos(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
     robotState.yPosFromOdometry = (robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry * sin(robotState.angleRadianFromOdometry_1) / (FREQ_ECH_QEI));
     robotState.angleRadianFromOdometry = robotState.angleRadianFromOdometry_1 + robotState.vitesseAngulaireFromOdometry / FREQ_ECH_QEI;
 
@@ -87,24 +87,34 @@ void QEIUpdateData() {
     if (robotState.angleRadianFromOdometry < -PI) {
         robotState.angleRadianFromOdometry += 2 * PI;
     }
-    robotState.positionRobot.x =  robotState.xPosFromOdometry;
+    robotState.positionRobot.x = robotState.xPosFromOdometry;
     robotState.positionRobot.y = robotState.yPosFromOdometry;
-    UpdateAsservissement();     
-//    unsigned char testEnvoi[8];
-//    getBytesFromFloat(testEnvoi, 0, (float) (QeiDroitPosition));
-//    getBytesFromFloat(testEnvoi, 4, (float) (QeiGauchePosition));
-//    UartEncodeAndSendMessage(0x00FF, 8, testEnvoi);
-
+    UpdateAsservissement();
+    //    unsigned char testEnvoi[8];
+    //    getBytesFromFloat(testEnvoi, 0, (float) (QeiDroitPosition));
+    //    getBytesFromFloat(testEnvoi, 4, (float) (QeiGauchePosition));
+    //    UartEncodeAndSendMessage(0x00FF, 8, testEnvoi);
+    //test();
 }
 
+
+void test() {
+    unsigned char testEnvoi[16];
+    getBytesFromFloat(testEnvoi, 0, (float) (robotState.vitesseLineaireGhost));
+    getBytesFromFloat(testEnvoi, 4, (float) (robotState.vitesseAngulaireGhost));
+    getBytesFromFloat(testEnvoi, 8, (float) (robotState.vitesseLineaireFromOdometry));
+    getBytesFromFloat(testEnvoi, 12, (float) (robotState.vitesseAngulaireFromOdometry));
+   UartEncodeAndSendMessage(0x00FF, 16, testEnvoi);
+
+}
 void SendPositionData() {
     unsigned char positionPayload[32];
     getBytesFromInt32(positionPayload, 0, timestamp);
     getBytesFromFloat(positionPayload, 4, (double) (robotState.xPosFromOdometry));
     getBytesFromFloat(positionPayload, 8, (double) (robotState.yPosFromOdometry));
     getBytesFromFloat(positionPayload, 12, (float) (robotState.angleRadianFromOdometry));
-    getBytesFromFloat(positionPayload, 16, (float) (robotState.vitesseLineaireFromOdometry));
-    getBytesFromFloat(positionPayload, 20, (float) (robotState.vitesseAngulaireFromOdometry));
+    getBytesFromFloat(positionPayload, 16, (float) (robotState.vitesseLinearConsigne));
+    getBytesFromFloat(positionPayload, 20, (float) (robotState.vitesseLineaireGhost));
     getBytesFromFloat(positionPayload, 24, (float) (robotState.vitesseLineaireFromOdometry));
     getBytesFromFloat(positionPayload, 28, (float) (robotState.vitesseLineaireGhost));
     UartEncodeAndSendMessage(POSITION_DATA, 32, positionPayload);

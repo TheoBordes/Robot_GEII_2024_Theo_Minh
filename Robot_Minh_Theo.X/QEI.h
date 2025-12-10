@@ -10,12 +10,12 @@
 #define	QEI_H
 
 
-
 void InitQEI1();
 void InitQEI2();
 void QEIUpdateData();
 void SendPositionData();
 void SendAsservissementData();
+void test();
 
 #endif	/* QEI_H */
 

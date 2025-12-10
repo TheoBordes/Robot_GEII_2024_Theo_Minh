@@ -1,16 +1,16 @@
-build/default/production/asservissement.o: asservissement.c \
- asservissement.h Toolbox.h ghost.h QEI.h robot.h PWM.h Utilities.h \
- UART_Protocol.h IO.h
+build/default/production/asservissement.o: asservissement.c robot.h \
+ asservissement.h ghost.h Toolbox.h QEI.h PWM.h Utilities.h \
+ UART_Protocol.h IO.h main.h
+
+robot.h:
 
 asservissement.h:
 
-Toolbox.h:
-
 ghost.h:
 
-QEI.h:
+Toolbox.h:
 
-robot.h:
+QEI.h:
 
 PWM.h:
 
@@ -19,3 +19,5 @@ Utilities.h:
 UART_Protocol.h:
 
 IO.h:
+
+main.h:

@@ -16,17 +16,20 @@ void SendMessage(unsigned char* message, int length) {
         if (!CB_TX1_IsTranmitting())
             SendOne();
     }
+    else{
+     i=0;
+    }
 }
 
 void CB_TX1_Add(unsigned char value) {
     cbTx1Buffer[cbTx1Head++] = value;
-    if (cbTx1Head >= 128)
+    if (cbTx1Head >= CBTX1_BUFFER_SIZE)
         cbTx1Head = 0;
 }
 
 unsigned char CB_TX1_Get(void) {
     unsigned char value = cbTx1Buffer[cbTx1Tail++];
-    if (cbTx1Tail >= 128)
+    if (cbTx1Tail >= CBTX1_BUFFER_SIZE)
         cbTx1Tail = 0;
     return value;
 

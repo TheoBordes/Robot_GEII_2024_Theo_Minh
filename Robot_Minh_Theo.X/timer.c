@@ -3,7 +3,7 @@
 #include "PWM.h"
 #include "IO.h"
 #include "ADC.h"
-#include  "main.h"
+#include "main.h"
 #include "robot.h"
 #include "UART_Protocol.h"
 #include "QEI.h"
@@ -28,7 +28,7 @@ void InitTimer1(void) {
     IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
-    SetFreqTimer1(250);
+    SetFreqTimer1(FREQ_ECH_QEI);
 
 }
 //Interruption du timer 1
@@ -38,19 +38,16 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
 
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
+    UpdateGhost();
     QEIUpdateData();
     UpdateConsGhost();
     tick++;
-    UpdateGhost();
-    sendInfoGhost();
-    SendPositionData();
-    
-    if (tick > 25) {
+
+
+    if (tick >= 20) {
         SendPidInfo();
-      
-        
-        
-       
+        SendInfoGhost();    
+        SendPositionData();
         tick = 0;
     }
 
@@ -120,9 +117,9 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     }
 
 
-    if (robotState.mode) {
-        OperatingSystemLoop();
-    }
+//    if (robotState.mode) {
+//        OperatingSystemLoop();
+//    }
     ADC_value();
     timestamp++;
 

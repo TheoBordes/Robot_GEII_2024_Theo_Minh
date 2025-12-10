@@ -37,6 +37,7 @@
 #define TOURNER_SUR_PLACE_VIT 22
 #define TOURNER_VIT 15
 
+#define FREQ_ECH_QEI 500.0f
 
 
 void determine_speeds();

@@ -387,8 +387,9 @@ namespace RobotInterface_Ly_Bordes
                     float test = BitConverter.ToSingle(msgPayload, 0);
                     float test1 = BitConverter.ToSingle(msgPayload, 4);
                     float test2 = BitConverter.ToSingle(msgPayload, 8);
+                    float test3 = BitConverter.ToSingle(msgPayload, 12);
                     asservSpeedDisplay.UpdateIndependantSpeedCommandValues(test, test1);
-                    asservSpeedDisplay.UpdateIndependantSpeedConsigneValues(test2, test2);
+                    asservSpeedDisplay.UpdateIndependantSpeedErrorValues(test2, test3);
                     break;
 
 

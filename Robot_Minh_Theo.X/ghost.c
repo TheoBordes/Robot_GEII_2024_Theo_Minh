@@ -6,7 +6,8 @@
 
 #include "Utilities.h"
 #include "Toolbox.h"
-
+#include "PWM.h"
+#include "main.h"
 
 
 
@@ -25,13 +26,13 @@ extern int GhostFlag;
 //double positionWaypoint;
 //double distanceRestante = 0;
 
-const float AccTheta = 0.8;
-const float VThetaMax = 1.5;
-const float Tsampling = 0.01f;
+const float AccTheta =3;
+const float VThetaMax = 5;
+const float Tsampling = 1/FREQ_ECH_QEI;
 
 float vLin = 0.0;
-const float accLin = 0.1;
-const float vLinMax = 0.3;
+const float accLin = 0.8;
+const float vLinMax = 1.5;
 double positionWaypoint;
 double distanceRestante = 0;
 
@@ -76,6 +77,8 @@ void UpdateRotation() {
         robotState.vitesseAngulaireGhost = vTheta;
 
     }
+//    
+    
 }
 
 void UpdateDeplacementGhost() {
@@ -157,7 +160,9 @@ double angle = 0;
 
 void UpdateGhost() {
     switch (GhostState) {
-        case Idle:
+        case Stopped:
+            
+
             if (GhostFlag) {
                 GhostState = Rotation;
                 angle = AngleVersCible(robotState.positionGhost, robotState.positionWaypoint);
@@ -179,12 +184,12 @@ void UpdateGhost() {
             if (distanceRestante < 0.001) {
                 vLin = 0;
                 GhostFlag = 0;
-                GhostState = Idle;
+                GhostState = Stopped;
             }
 
 
             break;
-    }
+    }            
 }
 
 double distance(Point a, Point b) {
@@ -193,7 +198,7 @@ double distance(Point a, Point b) {
     return sqrt(dx * dx + dy * dy);
 }
 
-void sendInfoGhost() {
+void SendInfoGhost() {
     getBytesFromFloat(payload_GhostPos, 0, (float) robotState.positionGhost.x);
     getBytesFromFloat(payload_GhostPos, 4, (float) robotState.positionGhost.y);
     UartEncodeAndSendMessage(Ghost_position, 10, payload_GhostPos);

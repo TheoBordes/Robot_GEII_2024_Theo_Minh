@@ -11,9 +11,11 @@ typedef struct robotStateBITS {
         struct {
             unsigned char taskEnCours;
             float vitesseGaucheConsigne;
-            float vitesseGaucheCommandeCourante;
-            float vitesseDroiteCommandeCourante;
             float vitesseDroiteConsigne;
+            float vitesseGaucheMoteurPercent;
+            float vitesseDroiteMoteurPercent;
+            float vitesseDroiteMoteur;
+            float vitesseGaucheMoteur;
             float distanceTelemetrePlusGauche;
             float distanceTelemetreGauche;
             float distanceTelemetreCentre;
@@ -35,12 +37,16 @@ typedef struct robotStateBITS {
             
             PidCorrector PidX;
             PidCorrector PidTheta;
+            PidCorrector PidSpeedGauche;
+            PidCorrector PidSpeedDroite;
             PidCorrector PD_Position_Lineaire;
             PidCorrector PD_Position_Angulaire;
             
             
             float CorrectionVitesseLineaire;
             float CorrectionVitesseAngulaire;
+            float CorrectionVitesseDroite;            
+            float CorrectionVitesseGauche;
             float vitesseLinearConsigne;
             float vitesseAngulaireConsigne;
             

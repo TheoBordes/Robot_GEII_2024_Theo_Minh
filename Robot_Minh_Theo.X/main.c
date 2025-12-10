@@ -156,91 +156,91 @@ unsigned char CallCap() {
     return value;
 }
 
-void OperatingSystemLoop(void) {
-    //determine_speeds();
-    switch (stateRobot) {
-
-        case STATE_ATTENTE:
-            timestamp = 0;
-            PWMSetSpeedConsignePercent(ARRET, MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(ARRET, MOTEUR_GAUCHE);
-            stateRobot = STATE_ATTENTE_EN_COURS;
-        case STATE_ATTENTE_EN_COURS:
-            if (timestamp > 1000)
-                stateRobot = STATE_AVANCE;
-            break;
-        case STATE_AVANCE:
-            if (robotState.distanceTelemetreCentre > 80) {
-                vitR = 25;
-                vitL = 25;
-            } else {
-                vitR = 15;
-                vitL = 15;
-            }
-            PWMSetSpeedConsignePercent(speeds[0], MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(speeds[1], MOTEUR_GAUCHE);
-            stateRobot = STATE_AVANCE_EN_COURS;
-            break;
-        case STATE_AVANCE_EN_COURS:
-            SetNextRobotStateInAutomaticMode();
-            break;
-        case STATE_TOURNE_GAUCHE:
-            PWMSetSpeedConsignePercent(ARRET, MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(speeds[0], MOTEUR_GAUCHE);
-            stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
-            break;
-        case STATE_TOURNE_GAUCHE_EN_COURS:
-            SetNextRobotStateInAutomaticMode();
-            break;
-
-        case STATE_TOURNE_GAUCHE_PLUS:
-            PWMSetSpeedConsignePercent(ARRET, MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(speeds[0], MOTEUR_GAUCHE);
-            stateRobot = STATE_TOURNE_GAUCHE_PLUS_EN_COURS;
-            break;
-        case STATE_TOURNE_GAUCHE_PLUS_EN_COURS:
-            SetNextRobotStateInAutomaticMode();
-            break;
-
-        case STATE_TOURNE_DROITE:
-            PWMSetSpeedConsignePercent(speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(ARRET, MOTEUR_GAUCHE);
-            stateRobot = STATE_TOURNE_DROITE_EN_COURS;
-            break;
-        case STATE_TOURNE_DROITE_EN_COURS:
-            SetNextRobotStateInAutomaticMode();
-            break;
-
-        case STATE_TOURNE_DROITE_PLUS:
-            PWMSetSpeedConsignePercent(speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(ARRET, MOTEUR_GAUCHE);
-            stateRobot = STATE_TOURNE_DROITE_PLUS_EN_COURS;
-            break;
-        case STATE_TOURNE_DROITE_PLUS_EN_COURS:
-            SetNextRobotStateInAutomaticMode();
-            break;
-
-        case STATE_TOURNE_SUR_PLACE_GAUCHE:
-            PWMSetSpeedConsignePercent(15 + speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(-15 - speeds[0], MOTEUR_GAUCHE);
-            stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
-            break;
-        case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
-            SetNextRobotStateInAutomaticMode();
-            break;
-        case STATE_TOURNE_SUR_PLACE_DROITE:
-            PWMSetSpeedConsignePercent(-15 - speeds[1], MOTEUR_DROIT);
-            PWMSetSpeedConsignePercent(15 + speeds[0], MOTEUR_GAUCHE);
-            stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
-            break;
-        case STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS:
-            SetNextRobotStateInAutomaticMode();
-            break;
-        default:
-            stateRobot = STATE_ATTENTE;
-            break;
-    }
-}
+//void OperatingSystemLoop(void) {
+//    //determine_speeds();
+//    switch (stateRobot) {
+//
+//        case STATE_ATTENTE:
+//            timestamp = 0;
+//            PWMSetSpeedConsigne(ARRET, MOTEUR_DROIT);
+//            PWMSetSpeedConsigne(ARRET, MOTEUR_GAUCHE);
+//            stateRobot = STATE_ATTENTE_EN_COURS;
+//        case STATE_ATTENTE_EN_COURS:
+//            if (timestamp > 1000)
+//                stateRobot = STATE_AVANCE;
+//            break;
+//        case STATE_AVANCE:
+//            if (robotState.distanceTelemetreCentre > 80) {
+//                vitR = 25;
+//                vitL = 25;
+//            } else {
+//                vitR = 15;
+//                vitL = 15;
+//            }
+//            PWMSetSpeedConsigne(speeds[0], MOTEUR_DROIT);
+//            PWMSetSpeedConsigne(speeds[1], MOTEUR_GAUCHE);
+//            stateRobot = STATE_AVANCE_EN_COURS;
+//            break;
+//        case STATE_AVANCE_EN_COURS:
+//            SetNextRobotStateInAutomaticMode();
+//            break;
+//        case STATE_TOURNE_GAUCHE:
+//            PWMSetSpeedConsignePercent(ARRET, MOTEUR_DROIT);
+//            PWMSetSpeedConsignePercent(speeds[0], MOTEUR_GAUCHE);
+//            stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
+//            break;
+//        case STATE_TOURNE_GAUCHE_EN_COURS:
+//            SetNextRobotStateInAutomaticMode();
+//            break;
+//
+//        case STATE_TOURNE_GAUCHE_PLUS:
+//            PWMSetSpeedConsignePercent(ARRET, MOTEUR_DROIT);
+//            PWMSetSpeedConsignePercent(speeds[0], MOTEUR_GAUCHE);
+//            stateRobot = STATE_TOURNE_GAUCHE_PLUS_EN_COURS;
+//            break;
+//        case STATE_TOURNE_GAUCHE_PLUS_EN_COURS:
+//            SetNextRobotStateInAutomaticMode();
+//            break;
+//
+//        case STATE_TOURNE_DROITE:
+//            PWMSetSpeedConsignePercent(speeds[1], MOTEUR_DROIT);
+//            PWMSetSpeedConsignePercent(ARRET, MOTEUR_GAUCHE);
+//            stateRobot = STATE_TOURNE_DROITE_EN_COURS;
+//            break;
+//        case STATE_TOURNE_DROITE_EN_COURS:
+//            SetNextRobotStateInAutomaticMode();
+//            break;
+//
+//        case STATE_TOURNE_DROITE_PLUS:
+//            PWMSetSpeedConsignePercent(speeds[1], MOTEUR_DROIT);
+//            PWMSetSpeedConsignePercent(ARRET, MOTEUR_GAUCHE);
+//            stateRobot = STATE_TOURNE_DROITE_PLUS_EN_COURS;
+//            break;
+//        case STATE_TOURNE_DROITE_PLUS_EN_COURS:
+//            SetNextRobotStateInAutomaticMode();
+//            break;
+//
+//        case STATE_TOURNE_SUR_PLACE_GAUCHE:
+//            PWMSetSpeedConsignePercent(15 + speeds[1], MOTEUR_DROIT);
+//            PWMSetSpeedConsignePercent(-15 - speeds[0], MOTEUR_GAUCHE);
+//            stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
+//            break;
+//        case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
+//            SetNextRobotStateInAutomaticMode();
+//            break;
+//        case STATE_TOURNE_SUR_PLACE_DROITE:
+//            PWMSetSpeedConsignePercent(-15 - speeds[1], MOTEUR_DROIT);
+//            PWMSetSpeedConsignePercent(15 + speeds[0], MOTEUR_GAUCHE);
+//            stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
+//            break;
+//        case STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS:
+//            SetNextRobotStateInAutomaticMode();
+//            break;
+//        default:
+//            stateRobot = STATE_ATTENTE;
+//            break;
+//    }
+//}
 
 //void OperatingSystemLoop(void) {
 //
@@ -484,21 +484,46 @@ int main(void) {
 
 
 
-    robotState.PidX.Kp = 4.0;
-    robotState.PidX.Ki = 30.0;
-    robotState.PidX.Kd = 0.0;
+//    robotState.PidX.Kp = 2.0;
+//    robotState.PidX.Ki = 50.0;
+//    robotState.PidX.Kd = 0.0;
 
-    robotState.PidTheta.Kp = 2.2;
-    robotState.PidTheta.Ki = 18.0;
-    robotState.PidTheta.Kd = 0.001;
+    robotState.PidSpeedDroite.Kp = 1.5;
+    robotState.PidSpeedDroite.Ki = 30.0;
+    robotState.PidSpeedDroite.Kd = 0;
+    
+    robotState.PidSpeedGauche.Kp = 1.5;
+    robotState.PidSpeedGauche.Ki = 30.0;
+    robotState.PidSpeedGauche.Kd = 0;
+        
+    robotState.PidSpeedDroite.erreurProportionelleMax = 100;
+    robotState.PidSpeedDroite.erreurIntegraleMax = 100;
+    robotState.PidSpeedDroite.erreurDeriveeMax = 100;
 
-    robotState.PidTheta.erreurProportionelleMax = 100;
-    robotState.PidTheta.erreurIntegraleMax = 100;
-    robotState.PidTheta.erreurDeriveeMax = 100;
-
-    robotState.PidX.erreurProportionelleMax = 100;
-    robotState.PidX.erreurIntegraleMax = 100;
-    robotState.PidX.erreurDeriveeMax = 100;
+    robotState.PidSpeedGauche.erreurProportionelleMax = 100;
+    robotState.PidSpeedGauche.erreurIntegraleMax = 100;
+    robotState.PidSpeedGauche.erreurDeriveeMax = 100;
+    
+    
+//    robotState.PidTheta.Kp = 1.0;
+//    robotState.PidTheta.Ki = 40.0;
+//    robotState.PidTheta.Kd = 0.001;
+//    
+//    robotState.PidX.Kp = 4.0;
+//    robotState.PidX.Ki = 30.0;
+//    robotState.PidX.Kd = 0.0;
+//
+//    robotState.PidTheta.Kp = 2.2;
+//    robotState.PidTheta.Ki = 18.0;
+//    robotState.PidTheta.Kd = 0.001;
+//
+//    robotState.PidTheta.erreurProportionelleMax = 100;
+//    robotState.PidTheta.erreurIntegraleMax = 100;
+//    robotState.PidTheta.erreurDeriveeMax = 100;
+//
+//    robotState.PidX.erreurProportionelleMax = 100;
+//    robotState.PidX.erreurIntegraleMax = 100;
+//    robotState.PidX.erreurDeriveeMax = 100;
 
     robotState.xPosFromOdometry += 0;
     robotState.yPosFromOdometry += 0;
@@ -526,15 +551,11 @@ int main(void) {
     robotState.positionGhost.y = yoffset;
     robotState.xPosFromOdometry = xoffset;
     robotState.yPosFromOdometry = yoffset;
-    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 1.5, 0, 0.06, 100, 100, 100);
-    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.8, 0, 0.04, 100, 100, 100);
+    SetupPidAsservissement(&robotState.PD_Position_Angulaire, 20, 0, 0.2, 100, 100, 100);
+    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 15, 0, 0.2, 100, 100, 100);
     //il y a un problème pour coller à la vitesse du ghost si le coef kp est gros on colle au ghost mais instabilité par contre 
 
 
-    Point test[] = {
-        {3.0, 0.14},
-
-    };
     /*********************************************************************************************** Boucle Principale*/
     /***********************************************************************************************/
     //int vitesse = 20;
@@ -544,79 +565,76 @@ int main(void) {
 
     while (1) {
 
-        SetGhostTarget(test[0]);
-
-
-        while (CB_RX1_IsDataAvailable()) {
-            UartDecodeMessage(CB_RX1_Get());
-        }
-        //        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
-        //            SetGhostTarget(positions[currentTargetIndex]);
-        //            currentTargetIndex++;
-        //            
-        //        }
-        //        BOUTON1_PREV = BOUTON1;
+            while (CB_RX1_IsDataAvailable()) {
+                UartDecodeMessage(CB_RX1_Get());
+            }
+            //        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
+            //            SetGhostTarget(positions[currentTargetIndex]);
+            //            currentTargetIndex++;
+            //            
+            //        }
+            //        BOUTON1_PREV = BOUTON1;
 
 
 
-        if (BOUTON1 == 1) {
-            GhostStart = 1;
-        }
-        if (currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
-            SetGhostTarget(positions[currentTargetIndex]);
-            currentTargetIndex++;
-        }
+            if (BOUTON1 == 1) {
+                GhostStart = 1;
+            }
+            if (currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
+                SetGhostTarget(positions[currentTargetIndex]);
+                currentTargetIndex++;
+            }
 
 
-        //        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {
-        //            if (currentTargetIndex < totalTargets) {
-        //                SetGhostTarget(positions[currentTargetIndex]);
-        //                currentTargetIndex++;
-        //            }
-        //        }
-        //        BOUTON1_PREV = BOUTON1;
+            //        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {
+            //            if (currentTargetIndex < totalTargets) {
+            //                SetGhostTarget(positions[currentTargetIndex]);
+            //                currentTargetIndex++;
+            //            }
+            //        }
+            //        BOUTON1_PREV = BOUTON1;
 
-        //            if (flagMessageMotor) {
-        //                flagMessageMotor = 0;
-        //                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
-        //                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
-        //                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
-        //            }         
-        //            else {
-        //            }
-        if (robotState.distanceTelemetreGauche > 20) {
-            LED_BLEUE_1 = 1;
-        } else {
-            LED_BLEUE_1 = 0;
+            //            if (flagMessageMotor) {
+            //                flagMessageMotor = 0;
+            //                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
+            //                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
+            //                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
+            //            }         
+            //            else {
+            //            }
+//            if (robotState.distanceTelemetreGauche > 20) {
+//                LED_BLEUE_1 = 1;
+//            } else {
+//                LED_BLEUE_1 = 0;
 
-        }
-        if (robotState.distanceTelemetrePlusGauche > 20) {
-            LED_BLANCHE_1 = 1;
+//            }
+            if (robotState.distanceTelemetrePlusGauche > 20) {
+                LED_BLANCHE_1 = 1;
 
-        } else {
-            LED_BLANCHE_1 = 0;
+            } else {
+                LED_BLANCHE_1 = 0;
 
-        }
-        if (robotState.distanceTelemetreCentre > 20) {
-            LED_ORANGE_1 = 1;
+            }
+            if (robotState.distanceTelemetreCentre > 20) {
+                LED_ORANGE_1 = 1;
 
-        } else {
-            LED_ORANGE_1 = 0;
+            } else {
+                LED_ORANGE_1 = 0;
 
-        }
-        if (robotState.distanceTelemetrePlusDroit > 20) {
-            LED_VERTE_1 = 1;
+            }
+            if (robotState.distanceTelemetrePlusDroit > 20) {
 
-        } else {
-            LED_VERTE_1 = 0;
+                LED_VERTE_1 = 1;
 
-        }
-        //        if (robotState.distanceTelemetreDroit > 20) {
-        //            LED_ROUGE_1 = 1;
-        //        } else {
-        //            LED_ROUGE_1 = 0;
-        //        }
+            } else {
+                LED_VERTE_1 = 0;
 
+            }
+            //        if (robotState.distanceTelemetreDroit > 20) {
+            //            LED_ROUGE_1 = 1;
+            //        } else {
+            //            LED_ROUGE_1 = 0;
+            //        }
 
-    }
 }
+    }

@@ -1,5 +1,5 @@
 build/default/production/ghost.o: ghost.c ghost.h robot.h \
- asservissement.h UART_Protocol.h Utilities.h Toolbox.h
+ asservissement.h UART_Protocol.h Utilities.h Toolbox.h PWM.h main.h
 
 ghost.h:
 
@@ -12,3 +12,7 @@ UART_Protocol.h:
 Utilities.h:
 
 Toolbox.h:
+
+PWM.h:
+
+main.h:

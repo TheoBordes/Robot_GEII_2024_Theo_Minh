@@ -8,7 +8,7 @@
 #ifndef GHOST_H
 #define	GHOST_H
 
-#define Idle 0
+#define Stopped 0
 #define Rotation 1
 #define DeplacementLineaire 2
 #define Ghost_position 0x0091
@@ -24,7 +24,7 @@ double ModuloByAngle(double angle);
 double NormalizeAngle(double angle);
 double AngleVersCible(Point robot, Point target);
 void UpdateDeplacementGhost();
-void sendInfoGhost();
+void SendInfoGhost();
 void UpdateGhost();
  void SetGhostTarget(Point cible);
 double distance(Point a, Point b);
