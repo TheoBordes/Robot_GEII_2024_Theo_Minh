@@ -11,8 +11,11 @@
 #include "robot.h"
 #include "CB_TX1.h"
 #include "CB_RX1.h"
+#include "CB_TX2.h"
+#include "CB_RX2.h"
 #include "UART_Protocol.h"
 #include "main.h"
+#include "aruco_ghost.h"
 #include <math.h>
 
 #define SPEED 10
@@ -479,8 +482,9 @@ int main(void) {
     InitTimer4();
     InitPWM();
     InitADC1();
-    InitUART();
-
+    InitUART1();
+    InitUART2();
+    ArUco_Init();
 
 
 
@@ -566,8 +570,13 @@ int main(void) {
     while (1) {
 
             while (CB_RX1_IsDataAvailable()) {
-                UartDecodeMessage(CB_RX1_Get());
+                UartDecodeMessageTX1(CB_RX1_Get());
             }
+             while (CB_RX2_IsDataAvailable()) {
+                UartDecodeMessageTX2(CB_RX2_Get());
+            }
+             
+
             //        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
             //            SetGhostTarget(positions[currentTargetIndex]);
             //            currentTargetIndex++;

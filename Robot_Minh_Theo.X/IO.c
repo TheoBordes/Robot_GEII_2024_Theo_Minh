@@ -46,12 +46,14 @@ void InitIO() {
     UnlockIO(); // On unlock les registres d'entrées/sorties, ainsi que les registres des PPS
 
     //Connecteur 1
-//    _U1RXR = 78;
-//    _RP79R = 0b00001;
+    _U1RXR = 78;
+    _RP79R = 0b00001;
     
     //Connecteur 2
-    _U1RXR = 18;
+    _U2RXR = 18;
     _RP98R = 0b00001;
+    
+    
     
     //******************** QEI *****************
     _QEA2R = 97; //assign QEI A to pin RP97

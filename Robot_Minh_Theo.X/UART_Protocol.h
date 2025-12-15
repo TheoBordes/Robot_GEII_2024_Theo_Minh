@@ -30,12 +30,14 @@
 #define Ghost_distance 0x0091
 #define ghostSetPID 0x0076
 
-
+#define Aruco_Detected 0x0050
 
 
 unsigned char UartCalculateChecksum(int msgFunction,int msgPayloadLength, unsigned char* msgPayload);
 void UartEncodeAndSendMessage(int msgFunction,int msgPayloadLength, unsigned char* msgPayload);
-void UartDecodeMessage(unsigned char c);
+void UartDecodeMessageTX1(unsigned char c);
+void UartDecodeMessageTX2(unsigned char c);
+
 void UartProcessDecodedMessage(int function,int payloadLength, unsigned char* payload);
 
 #endif	/* UART_PROTOCOL_H */

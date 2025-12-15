@@ -11,9 +11,9 @@
 int CB_TX1_GetRemainingSize(void);
 int CB_TX1_GetDataSize(void);
 unsigned char CB_TX1_IsTranmitting(void);
-void SendOne();
+void SendOneTX1();
 unsigned char CB_TX1_Get(void);
 void CB_TX1_Add(unsigned char value);
-void SendMessage(unsigned char* message, int length);
+void SendMessageTX1(unsigned char* message, int length);
 
 #endif	/* CB_TX1_H */

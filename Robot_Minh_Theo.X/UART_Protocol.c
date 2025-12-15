@@ -2,107 +2,201 @@
 #include "UART_Protocol.h"
 #include "CB_TX1.h"
 #include "CB_RX1.h"
+#include "CB_TX2.h"
+#include "CB_RX2.h"
 #include "PWM.h"
 #include "IO.h"
 #include "robot.h"
 #include "Utilities.h"
 #include "asservissement.h"
 #include "ghost.h"
+#include "aruco_ghost.h"
+
+
 unsigned char payload_PidX[12] = {};
 unsigned char payload_PidT[12] = {};
 
-unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload) {
+unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload)
+{
     unsigned char checksum = 0;
 
     checksum ^= 0xFE;
-    checksum ^= (unsigned char) (msgFunction >> 8);
-    checksum ^= (unsigned char) (msgFunction >> 0);
-    checksum ^= (unsigned char) (msgPayloadLength >> 8);
-    checksum ^= (unsigned char) (msgPayloadLength >> 0);
-    for (int i = 0; i < msgPayloadLength; i++) {
+    checksum ^= (unsigned char)(msgFunction >> 8);
+    checksum ^= (unsigned char)(msgFunction);
+    checksum ^= (unsigned char)(msgPayloadLength >> 8);
+    checksum ^= (unsigned char)(msgPayloadLength);
+    for (int i = 0; i < msgPayloadLength; i++)
         checksum ^= msgPayload[i];
-    }
 
     return checksum;
 }
 
-void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, unsigned char *msgPayload) {
-    // Fonction d?encodage et d?envoi d?un message
+void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, unsigned char *msgPayload)
+{
     unsigned char message[msgPayloadLength + 6];
-
     int pos = 0;
+
     message[pos++] = 0xFE;
-    message[pos++] = (unsigned char) (msgFunction >> 8);
-    message[pos++] = (unsigned char) (msgFunction >> 0);
-    message[pos++] = (unsigned char) (msgPayloadLength >> 8);
-    message[pos++] = (unsigned char) (msgPayloadLength >> 0);
-    for (int i = 0; i < msgPayloadLength; i++) {
+    message[pos++] = (unsigned char)(msgFunction >> 8);
+    message[pos++] = (unsigned char)(msgFunction);
+    message[pos++] = (unsigned char)(msgPayloadLength >> 8);
+    message[pos++] = (unsigned char)(msgPayloadLength);
+
+    for (int i = 0; i < msgPayloadLength; i++)
         message[pos++] = msgPayload[i];
-    }
+
     message[pos++] = UartCalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
-    SendMessage(message, pos);
+    SendMessageTX1(message, pos);
 }
 
-int rcvState = Waiting;
-int msgDecodedFunction = 0;
-int msgDecodedPayloadLength = 0;
-unsigned char msgDecodedPayload[128];
-int msgDecodedPayloadIndex = 0;
-unsigned char calculatedChecksum;
-unsigned char receivedChecksum;
+int rcvStateTX1 = Waiting;
+int msgDecodedFunctionTX1 = 0;
+int msgDecodedPayloadLengthTX1 = 0;
+unsigned char msgDecodedPayloadTX1[1024];
+int msgDecodedPayloadIndexTX1 = 0;
+unsigned char calculatedChecksumTX1;
+unsigned char receivedChecksumTX1;
 
-void UartDecodeMessage(unsigned char c) {
-    switch (rcvState) {
+void UartDecodeMessageTX1(unsigned char c)
+{
+    switch (rcvStateTX1)
+    {
         case Waiting:
-            if (c == 0xFE) {
-                rcvState = FunctionMSB;
-                //RichTextBox.Text += "IN";
+            if (c == 0xFE)
+            {
+                msgDecodedPayloadIndexTX1 = 0;
+                rcvStateTX1 = FunctionMSB;
             }
             break;
+
         case FunctionMSB:
-            msgDecodedFunction = c << 8;
-            rcvState = FunctionLSB;
-            //RichTextBox.Text += "functionMSB";
+            msgDecodedFunctionTX1 = c << 8;
+            rcvStateTX1 = FunctionLSB;
             break;
+
         case FunctionLSB:
-            msgDecodedFunction |= c << 0;
-            rcvState = PayloadLengthMSB;
-            //RichTextBox.Text += "functionLSB";
+            msgDecodedFunctionTX1 |= c;
+            rcvStateTX1 = PayloadLengthMSB;
             break;
+
         case PayloadLengthMSB:
-            msgDecodedPayloadLength = c << 8;
-            rcvState = PayloadLengthLSB;
+            msgDecodedPayloadLengthTX1 = c << 8;
+            rcvStateTX1 = PayloadLengthLSB;
             break;
+
         case PayloadLengthLSB:
-            msgDecodedPayloadLength = c << 0;
-            if (msgDecodedPayloadLength == 0)
-                rcvState = CheckSum;
-            else if (msgDecodedPayloadLength < 1024) {
-                rcvState = Payload;
-                msgDecodedPayloadIndex = 0;
-            } else
-                rcvState = Waiting;
+            msgDecodedPayloadLengthTX1 |= c;
+            msgDecodedPayloadIndexTX1 = 0;
+            if (msgDecodedPayloadLengthTX1 == 0)
+                rcvStateTX1 = CheckSum;
+            else if (msgDecodedPayloadLengthTX1 < 1024)
+                rcvStateTX1 = Payload;
+            else
+                rcvStateTX1 = Waiting;
             break;
+
         case Payload:
-            msgDecodedPayload[msgDecodedPayloadIndex++] = c;
-            if (msgDecodedPayloadIndex >= msgDecodedPayloadLength) {
-                rcvState = CheckSum;
-            }
+            msgDecodedPayloadTX1[msgDecodedPayloadIndexTX1++] = c;
+            if (msgDecodedPayloadIndexTX1 >= msgDecodedPayloadLengthTX1)
+                rcvStateTX1 = CheckSum;
             break;
+
         case CheckSum:
-            calculatedChecksum = UartCalculateChecksum(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-            //RichTextBox.Text += calculatedChecksum;
-            receivedChecksum = c;
-            if (calculatedChecksum == receivedChecksum) {
-                UartProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-            }
-            rcvState = Waiting;
+            calculatedChecksumTX1 = UartCalculateChecksum(
+                msgDecodedFunctionTX1,
+                msgDecodedPayloadLengthTX1,
+                msgDecodedPayloadTX1
+            );
+            receivedChecksumTX1 = c;
+            if (calculatedChecksumTX1 == receivedChecksumTX1)
+                UartProcessDecodedMessage(
+                    msgDecodedFunctionTX1,
+                    msgDecodedPayloadLengthTX1,
+                    msgDecodedPayloadTX1
+                );
+            rcvStateTX1 = Waiting;
             break;
+
         default:
-            rcvState = Waiting;
+            rcvStateTX1 = Waiting;
             break;
     }
 }
+
+int rcvStateTX2 = Waiting;
+int msgDecodedFunctionTX2 = 0;
+int msgDecodedPayloadLengthTX2 = 0;
+unsigned char msgDecodedPayloadTX2[1024];
+int msgDecodedPayloadIndexTX2 = 0;
+unsigned char calculatedChecksumTX2;
+unsigned char receivedChecksumTX2;
+
+void UartDecodeMessageTX2(unsigned char c)
+{
+    switch (rcvStateTX2)
+    {
+        case Waiting:
+            if (c == 0xFE)
+            {
+                msgDecodedPayloadIndexTX2 = 0;
+                rcvStateTX2 = FunctionMSB;
+            }
+            break;
+
+        case FunctionMSB:
+            msgDecodedFunctionTX2 = c << 8;
+            rcvStateTX2 = FunctionLSB;
+            break;
+
+        case FunctionLSB:
+            msgDecodedFunctionTX2 |= c;
+            rcvStateTX2 = PayloadLengthMSB;
+            break;
+
+        case PayloadLengthMSB:
+            msgDecodedPayloadLengthTX2 = c << 8;
+            rcvStateTX2 = PayloadLengthLSB;
+            break;
+
+        case PayloadLengthLSB:
+            msgDecodedPayloadLengthTX2 |= c;
+            msgDecodedPayloadIndexTX2 = 0;
+            if (msgDecodedPayloadLengthTX2 == 0)
+                rcvStateTX2 = CheckSum;
+            else if (msgDecodedPayloadLengthTX2 < 1024)
+                rcvStateTX2 = Payload;
+            else
+                rcvStateTX2 = Waiting;
+            break;
+
+        case Payload:
+            msgDecodedPayloadTX2[msgDecodedPayloadIndexTX2++] = c;
+            if (msgDecodedPayloadIndexTX2 >= msgDecodedPayloadLengthTX2)
+                rcvStateTX2 = CheckSum;
+            break;
+
+        case CheckSum:
+            calculatedChecksumTX2 = UartCalculateChecksum(
+                msgDecodedFunctionTX2,
+                msgDecodedPayloadLengthTX2,
+                msgDecodedPayloadTX2
+            );
+            receivedChecksumTX2 = c;
+            if (calculatedChecksumTX2 == receivedChecksumTX2)
+                UartProcessDecodedMessage(
+                    msgDecodedFunctionTX2,
+                    msgDecodedPayloadLengthTX2,
+                    msgDecodedPayloadTX2
+                );
+            rcvStateTX2 = Waiting;
+            break;
+
+        default:
+            rcvStateTX2 = Waiting;
+            break;
+    }
+}
+
 
 int L1 = 0;
 int L2 = 0;
@@ -200,8 +294,8 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             robotState.PidX.erreurIntegrale = 0;
             robotState.CorrectionVitesseAngulaire = 0;
             robotState.CorrectionVitesseLineaire = 0;
-            
-            
+
+
             robotState.PD_Position_Lineaire.corrP = 0;
             robotState.PD_Position_Lineaire.corrI = 0;
             robotState.PD_Position_Lineaire.corrD = 0;
@@ -216,7 +310,7 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 
             SetupPidAsservissement(&robotState.PidTheta, 0, 0, 0, 100, 100, 100);
             SetupPidAsservissement(&robotState.PidX, 0, 0, 0, 100, 100, 100);
-             SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0, 0, 0, 100, 100, 100);
+            SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0, 0, 0, 100, 100, 100);
             SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0, 0, 0, 100, 100, 100);
 
             break;
@@ -263,7 +357,11 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 
 
             break;
+        case Aruco_Detected:
+//            ArUco_ProcessMessage(function, payloadLength, payload);
+            LED_BLANCHE_2 = !LED_BLANCHE_2;
 
+            break;
         case SetLed:
             switch (payload[0]) {
                 case 1:

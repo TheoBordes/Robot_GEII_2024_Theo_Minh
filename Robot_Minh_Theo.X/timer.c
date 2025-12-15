@@ -9,6 +9,7 @@
 #include "QEI.h"
 #include "asservissement.h"
 #include "ghost.h"
+#include "aruco_ghost.h"
 
 unsigned long timestamp;
 unsigned char toggle = 0;

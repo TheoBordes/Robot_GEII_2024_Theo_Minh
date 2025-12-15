@@ -951,23 +951,32 @@ namespace RobotInterface_Ly_Bordes
 
         private void testGhost_Click(object sender, RoutedEventArgs e)
         {
+            // Ta trame hexadécimale convertie en tableau de bytes
+            byte[] frame = new byte[]
+            {
+        0x00, 0x16, 0x00, 0x2F, 0x34,
+        0x66, 0x5E, 0x43, 0x26, 0x62, 0x15, 0x44, 0xD4,
+        0xAF, 0x08, 0x42, 0xC0, 0xAF, 0xB6, 0x41, 0x64,
+        0x0D
+            };
 
+            UartEncodeAndSendMessage(0x0050, 22, frame);
+
+            // Si tu veux conserver ton code actuel :
+            /*
             byte[] posX = BitConverter.GetBytes((float)WpfWorldMap.xDataValue);
-            byte[] posy = BitConverter.GetBytes((float)WpfWorldMap.yDataValue);
-            byte[] position = posX.Concat(posy).ToArray();
-
+            byte[] posY = BitConverter.GetBytes((float)WpfWorldMap.yDataValue);
+            byte[] position = posX.Concat(posY).ToArray();
 
             Point Robot = new Point(WpfWorldMap.pos_X_robot, WpfWorldMap.pos_Y_robot);
             Point Target = new Point(WpfWorldMap.xDataValue, WpfWorldMap.yDataValue);
             double AnglePoint = AngleVersCible(Robot, Target);
 
-
-            //byte[] thetaW = BitConverter.GetBytes(-AnglePointf);
-            UartEncodeAndSendMessage((byte)IDfonction.Ghost_angle, 8, position);
-
+            UartEncodeAndSendMessage((byte)0x0050, 8, position);
+            */
         }
 
-     
+
     }
 
 

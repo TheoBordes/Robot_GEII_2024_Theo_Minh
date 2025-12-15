@@ -20,6 +20,9 @@
       <itemPath>Utilities.h</itemPath>
       <itemPath>asservissement.h</itemPath>
       <itemPath>ghost.h</itemPath>
+      <itemPath>aruco_ghost.h</itemPath>
+      <itemPath>CB_TX2.h</itemPath>
+      <itemPath>CB_RX2.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -50,6 +53,9 @@
       <itemPath>Utilities.c</itemPath>
       <itemPath>asservissement.c</itemPath>
       <itemPath>ghost.c</itemPath>
+      <itemPath>aruco_ghost.c</itemPath>
+      <itemPath>CB_RX2.c</itemPath>
+      <itemPath>CB_TX2.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
