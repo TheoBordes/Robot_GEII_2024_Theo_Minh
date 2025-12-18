@@ -41,13 +41,14 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     PWMUpdateSpeed();
     UpdateGhost();
     QEIUpdateData();
-    UpdateConsGhost();
+    UpdateArucoGhost();
+    ArUco_Update(timestamp);
     tick++;
 
 
     if (tick >= 20) {
         SendPidInfo();
-        SendInfoGhost();    
+        SendInfoGhost();
         SendPositionData();
         tick = 0;
     }
@@ -118,9 +119,9 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     }
 
 
-//    if (robotState.mode) {
-//        OperatingSystemLoop();
-//    }
+    //    if (robotState.mode) {
+    //        OperatingSystemLoop();
+    //    }
     ADC_value();
     timestamp++;
 

@@ -15,7 +15,7 @@
 
 unsigned char payload_PidX[12] = {};
 unsigned char payload_PidT[12] = {};
-
+unsigned char aruco_flag = 0;
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload)
 {
     unsigned char checksum = 0;
@@ -358,8 +358,10 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
 
             break;
         case Aruco_Detected:
-//            ArUco_ProcessMessage(function, payloadLength, payload);
-            LED_BLANCHE_2 = !LED_BLANCHE_2;
+            LED_BLANCHE_2 = !LED_BLANCHE_2;     
+            aruco_flag = 1;
+             
+            ArUco_ProcessMessage(function, payloadLength, payload);
 
             break;
         case SetLed:

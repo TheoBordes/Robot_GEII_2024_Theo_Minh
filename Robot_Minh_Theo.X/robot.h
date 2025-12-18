@@ -3,11 +3,10 @@
 #include "asservissement.h"
 #include "ghost.h"
 
-
-
-
 typedef struct robotStateBITS {
+
     union {
+
         struct {
             unsigned char taskEnCours;
             float vitesseGaucheConsigne;
@@ -22,7 +21,7 @@ typedef struct robotStateBITS {
             float distanceTelemetreDroit;
             float distanceTelemetrePlusDroit;
             unsigned int mode;
-            
+
             float vitesseDroitFromOdometry;
             float vitesseGaucheFromOdometry;
             float vitesseLineaireFromOdometry;
@@ -34,7 +33,7 @@ typedef struct robotStateBITS {
             float vitesseBITEAngulaireFromOdometry;
             float angleRadianFromOdometry_1;
             float angleRadianFromOdometry;
-            
+
             PidCorrector PidX;
             PidCorrector PidTheta;
             PidCorrector PidSpeedGauche;
@@ -42,24 +41,28 @@ typedef struct robotStateBITS {
             PidCorrector PD_Position_Lineaire;
             PidCorrector PD_Position_Angulaire;
             
-            
+            PidCorrector PD_Position_aruco_angle;
+
+            float centerX_Aruco;
+            float markerAvgSize;
+
             float CorrectionVitesseLineaire;
             float CorrectionVitesseAngulaire;
-            float CorrectionVitesseDroite;            
+            float CorrectionVitesseDroite;
             float CorrectionVitesseGauche;
             float vitesseLinearConsigne;
             float vitesseAngulaireConsigne;
-            
+
             float vitesseLineaireGhost;
             float vitesseAngulaireGhost;
-            
-            
+
+
             float thetaGhost;
             float thetaWaypoint;
             Point positionWaypoint;
             Point positionGhost;
             Point positionRobot;
-            
+
         };
     };
 } ROBOT_STATE_BITS;

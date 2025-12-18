@@ -13,6 +13,7 @@
 #include "IO.h"
 #include <xc.h>
 #include "main.h"
+#include "aruco_ghost.h"
 
 #define DISTROUES 0.2175
 #define pidInfoLinear 0x0071
@@ -81,7 +82,7 @@ void UpdateConsGhost() {
     double erreurLineaire = distance * cos(diffAngle);
 
 
-    robotState.vitesseLinearConsigne = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
+    //robotState.vitesseLinearConsigne = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
     robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
 
     robotState.vitesseDroiteConsigne = robotState.vitesseLinearConsigne + robotState.vitesseAngulaireConsigne * DISTROUES / 2;
@@ -101,6 +102,23 @@ void UpdateConsGhost() {
     //    
     //    UartEncodeAndSendMessage(0x00FF, 16, testEnvoi);
 }
+
+void UpdateArucoGhost() {
+    double erreurPixels = robotState.centerX_Aruco - (1280 / 2.0);
+    double erreurTheta = -atan2(erreurPixels, 1280);
+
+
+    // --- Correcteurs PD ---
+    //robotState.vitesseLinearConsigne  = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
+    robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_aruco_angle, erreurTheta);
+    
+    
+    robotState.vitesseDroiteConsigne = robotState.vitesseLinearConsigne + robotState.vitesseAngulaireConsigne * DISTROUES / 2;
+    robotState.vitesseGaucheConsigne = robotState.vitesseLinearConsigne - robotState.vitesseAngulaireConsigne * DISTROUES / 2;
+
+}
+
+
 
 void SendPidInfo() {
 

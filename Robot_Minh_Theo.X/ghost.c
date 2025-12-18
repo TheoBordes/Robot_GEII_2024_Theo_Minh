@@ -174,7 +174,7 @@ void UpdateGhost() {
             UpdateRotation();
 
             if (fabs(robotState.thetaGhost - angle) < 0.001) {
-                GhostState = DeplacementLineaire;
+                GhostState = Stopped; //test pour pas de déplacement linéaire 
             } // je suis pas sur s'il faut se baser sur la position du robot pour passer au ghost de déplacement linéaire
 
             break;

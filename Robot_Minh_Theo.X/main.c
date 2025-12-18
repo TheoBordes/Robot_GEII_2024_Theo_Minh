@@ -551,6 +551,13 @@ int main(void) {
     //   SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.01, 0, 0.2, 100, 100, 100);
     //    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.01, 0, 0.1, 100, 100, 100);
 
+    
+     robotState.PD_Position_aruco_angle.corrP = 0;
+    robotState.PD_Position_aruco_angle.corrI = 0;
+    robotState.PD_Position_aruco_angle.corrD = 0;
+    robotState.PD_Position_aruco_angle.erreurIntegrale = 0;
+       SetupPidAsservissement(&robotState.PD_Position_aruco_angle, 4, 0, 0.1, 100, 100, 100);
+    
     robotState.positionGhost.x = xoffset;
     robotState.positionGhost.y = yoffset;
     robotState.xPosFromOdometry = xoffset;
@@ -572,7 +579,7 @@ int main(void) {
             while (CB_RX1_IsDataAvailable()) {
                 UartDecodeMessageTX1(CB_RX1_Get());
             }
-             while (CB_RX2_IsDataAvailable()) {
+               while (CB_RX2_IsDataAvailable()) {
                 UartDecodeMessageTX2(CB_RX2_Get());
             }
              
