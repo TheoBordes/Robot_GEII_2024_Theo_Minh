@@ -6,14 +6,15 @@
 /* ================= PARAMETRES DE SUIVI ================= */
 #define ARUCO_CAMERA_WIDTH       1280      // Largeur image caméra JeVois (pixels)
 #define ARUCO_CAMERA_HEIGHT      720       // Hauteur image caméra JeVois (pixels)
-#define ARUCO_CAMERA_FOV_H       65.0f     // Champ de vision horizontal (degrés)
+#define ARUCO_CAMERA_FOV_H       60.0f     // Champ de vision horizontal (degrés)
 #define ARUCO_MARKER_REAL_SIZE   0.10f     // Taille réelle du marqueur ArUco (mètres)
 #define ARUCO_CAMERA_FOCAL_PX    985.0f    // Focale approximative en pixels (à calibrer)
+#define CAMERA_HFOV_RAD       (ARUCO_CAMERA_FOV_H * M_PI / 180.0) // ? 1.047 rad
 
-#define ARUCO_FOLLOW_DISTANCE    0.50f     // Distance cible de suivi (mètres)
-#define ARUCO_DISTANCE_TOLERANCE 0.10f     // Tolérance sur la distance (mètres)
-#define ARUCO_TIMEOUT_MS         500       // Timeout perte de détection (ms)
-#define ARUCO_LOST_TIMEOUT_MS    2000      // Timeout arrêt complet (ms)
+#define ARUCO_FOLLOW_DISTANCE    0.3f     // Distance cible de suivi (mètres)
+#define ARUCO_DISTANCE_TOLERANCE 0.01f     // Tolérance sur la distance (mètres)
+#define ARUCO_TIMEOUT_MS         200       // Timeout perte de détection (ms)
+#define ARUCO_LOST_TIMEOUT_MS    1000      // Timeout arrêt complet (ms)
 
 /* ================= MODES DE SUIVI ================= */
 typedef enum {
@@ -59,6 +60,8 @@ typedef struct {
     float targetDistance;           // Distance cible de suivi (mètres)
     float distanceTolerance;        // Tolérance distance (mètres)
     
+    
+    float rawcenterX;
     /* Consignes de sortie */
     float cmdLinearSpeed;           // Consigne vitesse linéaire (m/s)
     float cmdAngularSpeed;          // Consigne vitesse angulaire (rad/s)

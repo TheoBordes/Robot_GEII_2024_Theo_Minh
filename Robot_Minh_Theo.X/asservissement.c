@@ -104,34 +104,42 @@ void UpdateConsGhost() {
 }
 
 void UpdateArucoGhost() {
-    float linearCmd = 0.0f;
-    float angularCmd = 0.0f;
+//    float linearCmd = 0.0f;
+//    float angularCmd = 0.0f;
+//    
+//    if (ArUco_GetSpeedCommands(&linearCmd, &angularCmd)) {
+//        robotState.vitesseLinearConsigne = linearCmd;
+//        robotState.vitesseAngulaireConsigne = angularCmd;
+//    } else {
+//        robotState.vitesseLinearConsigne *= 0.9f;
+//        robotState.vitesseAngulaireConsigne *= 0.9f;
+//        
+//        if (robotState.vitesseLinearConsigne < 0.01f && 
+//            robotState.vitesseLinearConsigne > -0.01f) {
+//            robotState.vitesseLinearConsigne = 0.0f;
+//        }
+//        if (robotState.vitesseAngulaireConsigne < 0.01f && 
+//            robotState.vitesseAngulaireConsigne > -0.01f) {
+//            robotState.vitesseAngulaireConsigne = 0.0f;
+//        }
+//    }
     
-    // Récupère les consignes calculées par le module ArUco
-    if (ArUco_GetSpeedCommands(&linearCmd, &angularCmd)) {
-        // Marqueur visible: utilise les consignes ArUco
-        robotState.vitesseLinearConsigne = linearCmd;
-        robotState.vitesseAngulaireConsigne = angularCmd;
-    } else {
-        // Pas de marqueur: arrêt progressif
-        robotState.vitesseLinearConsigne *= 0.9f;
-        robotState.vitesseAngulaireConsigne *= 0.9f;
-        
-        if (robotState.vitesseLinearConsigne < 0.01f && 
-            robotState.vitesseLinearConsigne > -0.01f) {
-            robotState.vitesseLinearConsigne = 0.0f;
-        }
-        if (robotState.vitesseAngulaireConsigne < 0.01f && 
-            robotState.vitesseAngulaireConsigne > -0.01f) {
-            robotState.vitesseAngulaireConsigne = 0.0f;
-        }
-    }
     
-    // Conversion vers vitesses roues (modèle différentiel)
-    robotState.vitesseDroiteConsigne = robotState.vitesseLinearConsigne + 
-                                       robotState.vitesseAngulaireConsigne * DISTROUES / 2;
-    robotState.vitesseGaucheConsigne = robotState.vitesseLinearConsigne - 
-                                       robotState.vitesseAngulaireConsigne * DISTROUES / 2;
+ double erreurPixel = arucoState.rawcenterX - ARUCO_CAMERA_WIDTH / 2.0;
+    double erreurTheta =
+        (erreurPixel / (ARUCO_CAMERA_WIDTH / 2.0)) * (CAMERA_HFOV_RAD / 2.0);
+
+    erreurTheta = NormalizeAngle(erreurTheta);
+
+    robotState.thetaGhost = erreurTheta;
+//    robotState.vitesseAngulaireConsigne =
+//        Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
+//    
+    
+//    robotState.vitesseDroiteConsigne = robotState.vitesseLinearConsigne + 
+//                                       robotState.vitesseAngulaireConsigne * DISTROUES / 2;
+//    robotState.vitesseGaucheConsigne = robotState.vitesseLinearConsigne - 
+//                                       robotState.vitesseAngulaireConsigne * DISTROUES / 2;
 }
 
 

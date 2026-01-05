@@ -3,6 +3,8 @@
 #include <math.h>
 #include <string.h>
 
+
+
 /* ================= PARAMETRES FILTRE KALMAN ================= */
 #define KALMAN_Q_POS    0.5f    // Bruit processus position
 #define KALMAN_Q_SIZE   0.3f    // Bruit processus taille
@@ -128,7 +130,7 @@ void ArUco_Init(void) {
     // Gains par défaut
     arucoState.gainAngle = 2.0f;
     arucoState.gainDistance = 1.5f;
-    arucoState.maxLinearSpeed = 0.5f;    // m/s
+    arucoState.maxLinearSpeed = 0.2f;    // m/s
     arucoState.maxAngularSpeed = 2.0f;   // rad/s
     
     // Init filtres Kalman
@@ -186,123 +188,14 @@ void ArUco_ProcessMessage(uint16_t function, uint16_t payloadLength, uint8_t *pa
     m->rawWidth = width;
     m->rawHeight = height;
     m->rawSize = avgSize;
-    
+    arucoState.rawcenterX = centerX;
+
     arucoState.detectionCount++;
 }
 
 /* ================= MISE A JOUR PERIODIQUE ================= */
 void ArUco_Update(uint32_t currentTimeMs) {
-    float dt = (currentTimeMs - arucoState.lastUpdateTime) * 0.001f;
-    if (dt <= 0.0f || dt > 1.0f) dt = 0.01f;  // Sécurité
-    arucoState.lastUpdateTime = currentTimeMs;
-    
-    ArUcoMarker *m = &arucoState.marker;
-    
-    // Vérifie si marqueur visible (pas de timeout)
-    uint8_t wasVisible = arucoState.markerVisible;
-    arucoState.markerVisible = (m->valid && 
-                                (currentTimeMs - m->lastSeenTime) <= ARUCO_TIMEOUT_MS);
-    
-    // Détection de perte
-    if (wasVisible && !arucoState.markerVisible) {
-        arucoState.lostCount++;
-    }
-    
-    /* ========== FILTRE KALMAN ========== */
-    if (!kalmanX.initialized && arucoState.markerVisible) {
-        // Première détection: initialiser les filtres
-        Kalman_SetMeasurement(&kalmanX, m->rawCenterX);
-        Kalman_SetMeasurement(&kalmanSize, m->rawSize);
-        arucoState.hasValidEstimate = 1;
-        
-    } else if (kalmanX.initialized) {
-        // Prédiction (toujours)
-        Kalman_Predict(&kalmanX, dt);
-        Kalman_Predict(&kalmanSize, dt);
-        
-        // Mise à jour si mesure disponible
-        if (arucoState.markerVisible) {
-            Kalman_Update(&kalmanX, m->rawCenterX, dt);
-            Kalman_Update(&kalmanSize, m->rawSize, dt);
-        }
-        // Sinon on garde la prédiction
-    }
-    
-    /* ========== CALCUL ESTIMATIONS ========== */
-    if (arucoState.hasValidEstimate) {
-        arucoState.filtered.x = kalmanX.x;
-        arucoState.filtered.size = kalmanSize.x;
-        arucoState.estimatedDistance = estimateDistanceFromSize(kalmanSize.x);
-        arucoState.estimatedAngle = estimateAngleFromPosition(kalmanX.x);
-    }
-    
-    /* ========== CALCUL CONSIGNES DE SUIVI ========== */
-    if (arucoState.followMode == ARUCO_MODE_DISABLED || !arucoState.hasValidEstimate) {
-        arucoState.cmdLinearSpeed = 0.0f;
-        arucoState.cmdAngularSpeed = 0.0f;
-        
-    } else {
-        // Temps depuis dernière détection réelle
-        uint32_t timeSinceSeen = currentTimeMs - m->lastSeenTime;
-        
-        if (timeSinceSeen > ARUCO_LOST_TIMEOUT_MS) {
-            // Perdu depuis trop longtemps: arrêt complet
-            arucoState.cmdLinearSpeed = 0.0f;
-            arucoState.cmdAngularSpeed = 0.0f;
-            arucoState.hasValidEstimate = 0;
-            kalmanX.initialized = 0;
-            kalmanSize.initialized = 0;
-            
-        } else {
-            // Facteur d'atténuation si prédiction seule (pas de mesure récente)
-            float confidence = 1.0f;
-            if (timeSinceSeen > 100) {
-                confidence = 1.0f - ((float)(timeSinceSeen - 100) / (float)(ARUCO_LOST_TIMEOUT_MS - 100));
-                if (confidence < 0.2f) confidence = 0.2f;
-            }
-            
-            /* Consigne angulaire: corriger l'angle pour centrer le marqueur */
-            float angleError = arucoState.estimatedAngle;
-            arucoState.cmdAngularSpeed = arucoState.gainAngle * angleError * confidence;
-            arucoState.cmdAngularSpeed = clampf(arucoState.cmdAngularSpeed, 
-                                                -arucoState.maxAngularSpeed, 
-                                                arucoState.maxAngularSpeed);
-            
-            /* Consigne linéaire: maintenir la distance cible */
-            if (arucoState.followMode == ARUCO_MODE_ANGLE_ONLY) {
-                arucoState.cmdLinearSpeed = 0.0f;
-                
-            } else {
-                float distanceError = arucoState.estimatedDistance - arucoState.targetDistance;
-                
-                // Zone morte autour de la distance cible
-                if (absf(distanceError) < arucoState.distanceTolerance) {
-                    arucoState.cmdLinearSpeed = 0.0f;
-                } else {
-                    arucoState.cmdLinearSpeed = arucoState.gainDistance * distanceError * confidence;
-                    arucoState.cmdLinearSpeed = clampf(arucoState.cmdLinearSpeed,
-                                                       -arucoState.maxLinearSpeed,
-                                                       arucoState.maxLinearSpeed);
-                }
-                
-                // Mode APPROACH: ne pas reculer
-                if (arucoState.followMode == ARUCO_MODE_APPROACH && arucoState.cmdLinearSpeed < 0) {
-                    arucoState.cmdLinearSpeed = 0.0f;
-                }
-                
-                // Réduire vitesse linéaire si angle trop grand (tourner d'abord)
-                if (absf(angleError) > 0.3f) {  // ~17 degrés
-                    arucoState.cmdLinearSpeed *= 0.3f;
-                } else if (absf(angleError) > 0.15f) {  // ~8 degrés
-                    arucoState.cmdLinearSpeed *= 0.7f;
-                }
-            }
-        }
-    }
-    
-    /* ========== MISE A JOUR ROBOT STATE ========== */
-    robotState.centerX_Aruco = arucoState.filtered.x;
-    robotState.markerAvgSize = arucoState.filtered.size;
+   
 }
 
 /* ================= ACCESSEURS ================= */

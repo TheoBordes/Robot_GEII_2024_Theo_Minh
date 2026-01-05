@@ -361,7 +361,7 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             LED_BLANCHE_2 = !LED_BLANCHE_2;     
             aruco_flag = 1;
              
-            ArUco_ProcessMessage(function, payloadLength, payload);
+            //ArUco_ProcessMessage(function, payloadLength, payload);
 
             break;
         case SetLed:
