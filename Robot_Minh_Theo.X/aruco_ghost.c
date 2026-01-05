@@ -55,12 +55,12 @@ static float estimateAngleFromPosition(float centerX) {
 }
 
 /* ================= CALCUL POSITION RELATIVE ================= */
-static void calculateRelativePosition(float distance, float angle, float *outX, float *outZ) {
+static void calculateRelativePosition(float distance, float angle, float *outX, float *outY) {
     // Conversion polaire -> cartésien dans le repère robot
     // X = distance * sin(angle)  -> positif = droite
-    // Z = distance * cos(angle)  -> positif = devant
+    // Y = distance * cos(angle)  -> positif = devant
     *outX = distance * sinf(angle);
-    *outZ = distance * cosf(angle);
+    *outY = distance * cosf(angle);
 }
 
 /* ================= INITIALISATION ================= */
@@ -136,11 +136,17 @@ void ArUco_ProcessMessage(uint16_t function, uint16_t payloadLength, uint8_t *pa
     arucoState.estimatedDistance = estimateDistanceFromSize(avgSize);
     arucoState.estimatedAngle = estimateAngleFromPosition(centerX);
     
-    // Calcul de la position relative (X, Z) dans le repère robot
+    // Calcul de la position relative (X, Y) dans le repère caméra
+    float camX, camY;
     calculateRelativePosition(arucoState.estimatedDistance, 
                               arucoState.estimatedAngle,
-                              &arucoState.relativeX, 
-                              &arucoState.relativeZ);
+                              &camX, 
+                              &camY);
+    
+    // Conversion repère caméra -> repère robot (ajout offset caméra)
+    // La caméra est décalée de (CAMERA_OFFSET_X, CAMERA_OFFSET_Y) par rapport au centre robot
+    arucoState.relativeX = camX + CAMERA_OFFSET_X;
+    arucoState.relativeY = camY + CAMERA_OFFSET_Y;
     
     // Marquer le marqueur comme visible avec une estimation valide
     arucoState.markerVisible = 1;
@@ -240,14 +246,14 @@ float ArUco_GetDistance(void) {
     return arucoState.estimatedDistance;
 }
 
-uint8_t ArUco_GetRelativePosition(float *x, float *z) {
+uint8_t ArUco_GetRelativePosition(float *x, float *y) {
     if (!arucoState.hasValidEstimate) {
         *x = 0.0f;
-        *z = 0.0f;
+        *y = 0.0f;
         return 0;
     }
     
     *x = arucoState.relativeX;
-    *z = arucoState.relativeZ;
+    *y = arucoState.relativeY;
     return 1;
 }

@@ -20,6 +20,11 @@
 #define ARUCO_TIMEOUT_MS         200       // Timeout perte de détection (ms)
 #define ARUCO_LOST_TIMEOUT_MS    1000      // Timeout arrêt complet (ms)
 
+/* ================= OFFSET CAMERA PAR RAPPORT AU CENTRE ROBOT ================= */
+// Position de la caméra dans le repère robot (à ajuster selon ton montage)
+#define CAMERA_OFFSET_X          0.0f      // Décalage latéral caméra (m) - positif = droite
+#define CAMERA_OFFSET_Y          0.10f     // Décalage vers l'avant caméra (m) - positif = devant
+
 /* ================= MODES DE SUIVI ================= */
 typedef enum {
     ARUCO_MODE_DISABLED = 0,    // Suivi désactivé
@@ -49,7 +54,7 @@ typedef struct {
     
     /* Position relative du marqueur (repère robot) */
     float relativeX;                // Position X relative (mètres) - positif = droite
-    float relativeZ;                // Position Z relative (mètres) - positif = devant
+    float relativeY;                // Position Y relative (mètres) - positif = devant
     
     /* Estimations directes (sans filtre) */
     float estimatedDistance;        // Distance estimée (mètres)
@@ -144,9 +149,9 @@ float ArUco_GetDistance(void);
 /**
  * @brief Récupère la position relative du marqueur dans le repère robot
  * @param x Pointeur pour position X (mètres) - positif = droite
- * @param z Pointeur pour position Z (mètres) - positif = devant
+ * @param y Pointeur pour position Y (mètres) - positif = devant
  * @return 1 si position valide, 0 sinon
  */
-uint8_t ArUco_GetRelativePosition(float *x, float *z);
+uint8_t ArUco_GetRelativePosition(float *x, float *y);
 
 #endif // ARUCO_GHOST_H
