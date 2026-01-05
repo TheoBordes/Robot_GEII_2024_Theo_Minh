@@ -3,31 +3,17 @@
 #include <math.h>
 #include <string.h>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846f
+#endif
 
-
-/* ================= PARAMETRES FILTRE KALMAN ================= */
-#define KALMAN_Q_POS    0.5f    // Bruit processus position
-#define KALMAN_Q_SIZE   0.3f    // Bruit processus taille
-#define KALMAN_R_POS    8.0f    // Bruit mesure position
-#define KALMAN_R_SIZE   5.0f    // Bruit mesure taille
-#define KALMAN_P_INIT   20.0f   // Incertitude initiale
+/* ================= PARAMETRES DE SUIVI ================= */
+#define DEADZONE_ANGLE_DEG      3.0f    // Zone morte angulaire (degrés)
+#define DEADZONE_DISTANCE       0.05f   // Zone morte distance (mètres)
+#define MAX_ANGLE_FOR_LINEAR    30.0f   // Angle max pour avancer (degrés)
 
 /* ================= ETAT GLOBAL ================= */
 ArUcoState arucoState;
-
-/* ================= FILTRE KALMAN 1D AVEC VITESSE ================= */
-typedef struct {
-    float x;        // État estimé (position ou taille)
-    float v;        // Vitesse estimée
-    float P_x;      // Covariance position
-    float P_v;      // Covariance vitesse
-    float Q;        // Bruit processus
-    float R;        // Bruit mesure
-    uint8_t initialized;
-} Kalman1D;
-
-static Kalman1D kalmanX = {0};      // Filtre pour position X
-static Kalman1D kalmanSize = {0};   // Filtre pour taille (distance)
 
 /* ================= FONCTIONS UTILITAIRES ================= */
 static float getFloatFromBytes(uint8_t *bytes, int offset) {
@@ -49,55 +35,6 @@ static float absf(float x) {
     return (x < 0) ? -x : x;
 }
 
-/* ================= KALMAN 1D OPERATIONS ================= */
-static void Kalman_Init(Kalman1D *k, float Q, float R) {
-    k->x = 0.0f;
-    k->v = 0.0f;
-    k->P_x = KALMAN_P_INIT;
-    k->P_v = KALMAN_P_INIT;
-    k->Q = Q;
-    k->R = R;
-    k->initialized = 0;
-}
-
-static void Kalman_Predict(Kalman1D *k, float dt) {
-    // Prédiction: x = x + v*dt
-    k->x = k->x + k->v * dt;
-    
-    // Mise à jour covariance avec bruit de processus
-    k->P_x += k->P_v * dt * dt + k->Q;
-    k->P_v += k->Q * 0.5f;
-}
-
-static void Kalman_Update(Kalman1D *k, float measurement, float dt) {
-    // Gain de Kalman
-    float K = k->P_x / (k->P_x + k->R);
-    
-    // Innovation (différence mesure - prédiction)
-    float innovation = measurement - k->x;
-    
-    // Mise à jour état
-    float oldX = k->x;
-    k->x = k->x + K * innovation;
-    
-    // Mise à jour vitesse (estimation par différence)
-    if (dt > 0.001f) {
-        float newVelocity = (k->x - oldX) / dt;
-        k->v = k->v * 0.7f + newVelocity * 0.3f;  // Filtre passe-bas sur vitesse
-    }
-    
-    // Mise à jour covariance
-    k->P_x = (1.0f - K) * k->P_x;
-}
-
-static void Kalman_SetMeasurement(Kalman1D *k, float measurement) {
-    k->x = measurement;
-    k->v = 0.0f;
-    k->P_x = KALMAN_P_INIT;
-    k->P_v = KALMAN_P_INIT;
-    k->initialized = 1;
-}
-
 /* ================= ESTIMATION DISTANCE ================= */
 static float estimateDistanceFromSize(float markerSizePixels) {
     // Distance = (taille_réelle * focale) / taille_pixels
@@ -109,12 +46,12 @@ static float estimateDistanceFromSize(float markerSizePixels) {
 /* ================= ESTIMATION ANGLE ================= */
 static float estimateAngleFromPosition(float centerX) {
     // Convertit la position X en angle (0 = centre de l'image)
+    // Positif = marqueur à droite, négatif = marqueur à gauche
     float offsetPixels = centerX - (ARUCO_CAMERA_WIDTH / 2.0f);
     
-    // Angle = atan(offset / focale)
-    // Approximation linéaire pour petits angles: angle ≈ offset * (FOV/width)
-    float fovRad = ARUCO_CAMERA_FOV_H * (3.14159265f / 180.0f);
-    return -offsetPixels * (fovRad / ARUCO_CAMERA_WIDTH);
+    // Angle en radians: FOV_H / largeur_image * offset
+    float fovRad = ARUCO_CAMERA_FOV_H * (M_PI / 180.0f);
+    return offsetPixels * (fovRad / ARUCO_CAMERA_WIDTH);
 }
 
 /* ================= INITIALISATION ================= */
@@ -127,15 +64,11 @@ void ArUco_Init(void) {
     arucoState.targetDistance = ARUCO_FOLLOW_DISTANCE;
     arucoState.distanceTolerance = ARUCO_DISTANCE_TOLERANCE;
     
-    // Gains par défaut
-    arucoState.gainAngle = 2.0f;
-    arucoState.gainDistance = 1.5f;
-    arucoState.maxLinearSpeed = 0.2f;    // m/s
-    arucoState.maxAngularSpeed = 2.0f;   // rad/s
-    
-    // Init filtres Kalman
-    Kalman_Init(&kalmanX, KALMAN_Q_POS, KALMAN_R_POS);
-    Kalman_Init(&kalmanSize, KALMAN_Q_SIZE, KALMAN_R_SIZE);
+    // Gains par défaut (ajustés pour suivi direct sans Kalman)
+    arucoState.gainAngle = 2.0f;       // Gain proportionnel angulaire
+    arucoState.gainDistance = 1.5f;    // Gain proportionnel distance
+    arucoState.maxLinearSpeed = 0.3f;  // m/s max
+    arucoState.maxAngularSpeed = 2.0f; // rad/s max
 }
 
 /* ================= CONFIGURATION ================= */
@@ -189,13 +122,85 @@ void ArUco_ProcessMessage(uint16_t function, uint16_t payloadLength, uint8_t *pa
     m->rawHeight = height;
     m->rawSize = avgSize;
     arucoState.rawcenterX = centerX;
-
+    
+    // Calcul direct de la distance et de l'angle (sans Kalman)
+    arucoState.estimatedDistance = estimateDistanceFromSize(avgSize);
+    arucoState.estimatedAngle = estimateAngleFromPosition(centerX);
+    
+    // Marquer le marqueur comme visible avec une estimation valide
+    arucoState.markerVisible = 1;
+    arucoState.hasValidEstimate = 1;
+    
     arucoState.detectionCount++;
 }
 
 /* ================= MISE A JOUR PERIODIQUE ================= */
 void ArUco_Update(uint32_t currentTimeMs) {
-   
+    // Vérifier timeout de détection
+    uint32_t elapsed = currentTimeMs - arucoState.marker.lastSeenTime;
+    
+    if (elapsed > ARUCO_TIMEOUT_MS) {
+        // Marqueur perdu - arrêter le robot
+        arucoState.markerVisible = 0;
+        arucoState.cmdLinearSpeed = 0.0f;
+        arucoState.cmdAngularSpeed = 0.0f;
+        
+        if (elapsed > ARUCO_LOST_TIMEOUT_MS) {
+            arucoState.hasValidEstimate = 0;
+            arucoState.lostCount++;
+        }
+        return;
+    }
+    
+    // Mode désactivé
+    if (arucoState.followMode == ARUCO_MODE_DISABLED) {
+        arucoState.cmdLinearSpeed = 0.0f;
+        arucoState.cmdAngularSpeed = 0.0f;
+        return;
+    }
+    
+    // Calcul des erreurs
+    float angleError = arucoState.estimatedAngle;  // Angle vers le marqueur (rad)
+    float angleErrorDeg = angleError * (180.0f / M_PI);  // Conversion en degrés
+    
+    // Erreur de distance = distance actuelle - distance cible
+    float distanceError = arucoState.estimatedDistance - arucoState.targetDistance;
+    
+    // ========== COMMANDE ANGULAIRE ==========
+    float angularCmd = 0.0f;
+    if (absf(angleErrorDeg) > DEADZONE_ANGLE_DEG) {
+        // Correcteur proportionnel sur l'angle
+        angularCmd = angleError * arucoState.gainAngle;
+        angularCmd = clampf(angularCmd, -arucoState.maxAngularSpeed, arucoState.maxAngularSpeed);
+    }
+    
+    // ========== COMMANDE LINEAIRE ==========
+    float linearCmd = 0.0f;
+    
+    // N'avancer que si l'angle est suffisamment faible (comme dans le Python)
+    if (absf(angleErrorDeg) < MAX_ANGLE_FOR_LINEAR) {
+        if (arucoState.followMode == ARUCO_MODE_FULL_FOLLOW || 
+            arucoState.followMode == ARUCO_MODE_APPROACH) {
+            
+            // Avancer/reculer selon l'erreur de distance
+            if (absf(distanceError) > DEADZONE_DISTANCE) {
+                linearCmd = distanceError * arucoState.gainDistance;
+                linearCmd = clampf(linearCmd, -arucoState.maxLinearSpeed, arucoState.maxLinearSpeed);
+            }
+            
+            // Mode APPROACH: arrêter si distance cible atteinte
+            if (arucoState.followMode == ARUCO_MODE_APPROACH) {
+                if (absf(distanceError) < arucoState.distanceTolerance) {
+                    linearCmd = 0.0f;
+                }
+            }
+        }
+    }
+    
+    // Mise à jour des consignes
+    arucoState.cmdLinearSpeed = linearCmd;
+    arucoState.cmdAngularSpeed = angularCmd;
+    arucoState.lastUpdateTime = currentTimeMs;
 }
 
 /* ================= ACCESSEURS ================= */

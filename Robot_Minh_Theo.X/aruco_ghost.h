@@ -3,16 +3,20 @@
 
 #include <stdint.h>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846f
+#endif
+
 /* ================= PARAMETRES DE SUIVI ================= */
 #define ARUCO_CAMERA_WIDTH       1280      // Largeur image caméra JeVois (pixels)
 #define ARUCO_CAMERA_HEIGHT      720       // Hauteur image caméra JeVois (pixels)
 #define ARUCO_CAMERA_FOV_H       60.0f     // Champ de vision horizontal (degrés)
 #define ARUCO_MARKER_REAL_SIZE   0.10f     // Taille réelle du marqueur ArUco (mètres)
 #define ARUCO_CAMERA_FOCAL_PX    985.0f    // Focale approximative en pixels (à calibrer)
-#define CAMERA_HFOV_RAD       (ARUCO_CAMERA_FOV_H * M_PI / 180.0) // ? 1.047 rad
+#define CAMERA_HFOV_RAD          (ARUCO_CAMERA_FOV_H * M_PI / 180.0f) // ~1.047 rad
 
-#define ARUCO_FOLLOW_DISTANCE    0.3f     // Distance cible de suivi (mètres)
-#define ARUCO_DISTANCE_TOLERANCE 0.01f     // Tolérance sur la distance (mètres)
+#define ARUCO_FOLLOW_DISTANCE    0.3f      // Distance cible de suivi (mètres)
+#define ARUCO_DISTANCE_TOLERANCE 0.05f     // Tolérance sur la distance (mètres)
 #define ARUCO_TIMEOUT_MS         200       // Timeout perte de détection (ms)
 #define ARUCO_LOST_TIMEOUT_MS    1000      // Timeout arrêt complet (ms)
 
@@ -25,12 +29,6 @@ typedef enum {
 } ArUcoFollowMode;
 
 /* ================= STRUCTURES ================= */
-
-typedef struct {
-    float x;        // Position X estimée (pixels)
-    float y;        // Position Y estimée (pixels)  
-    float size;     // Taille estimée (pixels)
-} ArUcoEstimate;
 
 typedef struct {
     uint16_t id;
@@ -49,8 +47,7 @@ typedef struct {
     uint8_t markerVisible;          // Marqueur actuellement visible
     uint8_t hasValidEstimate;       // Estimation valide disponible
     
-    /* Estimations filtrées */
-    ArUcoEstimate filtered;         // Position/taille filtrées Kalman
+    /* Estimations directes (sans filtre) */
     float estimatedDistance;        // Distance estimée (mètres)
     float estimatedAngle;           // Angle vers marqueur (radians)
     
@@ -60,8 +57,8 @@ typedef struct {
     float targetDistance;           // Distance cible de suivi (mètres)
     float distanceTolerance;        // Tolérance distance (mètres)
     
+    float rawcenterX;               // Position X brute (pour debug)
     
-    float rawcenterX;
     /* Consignes de sortie */
     float cmdLinearSpeed;           // Consigne vitesse linéaire (m/s)
     float cmdAngularSpeed;          // Consigne vitesse angulaire (rad/s)
@@ -114,7 +111,7 @@ void ArUco_SetGains(float gainAngle, float gainDistance, float maxLinear, float 
 void ArUco_ProcessMessage(uint16_t function, uint16_t payloadLength, uint8_t *payload);
 
 /**
- * @brief Mise à jour du filtre Kalman et calcul des consignes
+ * @brief Mise à jour du suivi et calcul des consignes
  *        À appeler périodiquement (ex: dans interruption timer)
  * @param currentTimeMs Timestamp actuel en millisecondes
  */
