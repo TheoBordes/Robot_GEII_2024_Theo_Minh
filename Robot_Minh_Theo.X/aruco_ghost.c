@@ -54,6 +54,15 @@ static float estimateAngleFromPosition(float centerX) {
     return offsetPixels * (fovRad / ARUCO_CAMERA_WIDTH);
 }
 
+/* ================= CALCUL POSITION RELATIVE ================= */
+static void calculateRelativePosition(float distance, float angle, float *outX, float *outZ) {
+    // Conversion polaire -> cartésien dans le repère robot
+    // X = distance * sin(angle)  -> positif = droite
+    // Z = distance * cos(angle)  -> positif = devant
+    *outX = distance * sinf(angle);
+    *outZ = distance * cosf(angle);
+}
+
 /* ================= INITIALISATION ================= */
 void ArUco_Init(void) {
     memset(&arucoState, 0, sizeof(arucoState));
@@ -126,6 +135,12 @@ void ArUco_ProcessMessage(uint16_t function, uint16_t payloadLength, uint8_t *pa
     // Calcul direct de la distance et de l'angle (sans Kalman)
     arucoState.estimatedDistance = estimateDistanceFromSize(avgSize);
     arucoState.estimatedAngle = estimateAngleFromPosition(centerX);
+    
+    // Calcul de la position relative (X, Z) dans le repère robot
+    calculateRelativePosition(arucoState.estimatedDistance, 
+                              arucoState.estimatedAngle,
+                              &arucoState.relativeX, 
+                              &arucoState.relativeZ);
     
     // Marquer le marqueur comme visible avec une estimation valide
     arucoState.markerVisible = 1;
@@ -223,4 +238,16 @@ uint8_t ArUco_IsMarkerVisible(void) {
 float ArUco_GetDistance(void) {
     if (!arucoState.hasValidEstimate) return -1.0f;
     return arucoState.estimatedDistance;
+}
+
+uint8_t ArUco_GetRelativePosition(float *x, float *z) {
+    if (!arucoState.hasValidEstimate) {
+        *x = 0.0f;
+        *z = 0.0f;
+        return 0;
+    }
+    
+    *x = arucoState.relativeX;
+    *z = arucoState.relativeZ;
+    return 1;
 }

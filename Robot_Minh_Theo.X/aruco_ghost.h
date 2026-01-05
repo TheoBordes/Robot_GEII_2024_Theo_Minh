@@ -47,6 +47,10 @@ typedef struct {
     uint8_t markerVisible;          // Marqueur actuellement visible
     uint8_t hasValidEstimate;       // Estimation valide disponible
     
+    /* Position relative du marqueur (repère robot) */
+    float relativeX;                // Position X relative (mètres) - positif = droite
+    float relativeZ;                // Position Z relative (mètres) - positif = devant
+    
     /* Estimations directes (sans filtre) */
     float estimatedDistance;        // Distance estimée (mètres)
     float estimatedAngle;           // Angle vers marqueur (radians)
@@ -136,5 +140,13 @@ uint8_t ArUco_IsMarkerVisible(void);
  * @return Distance en mètres, ou -1 si pas d'estimation valide
  */
 float ArUco_GetDistance(void);
+
+/**
+ * @brief Récupère la position relative du marqueur dans le repère robot
+ * @param x Pointeur pour position X (mètres) - positif = droite
+ * @param z Pointeur pour position Z (mètres) - positif = devant
+ * @return 1 si position valide, 0 sinon
+ */
+uint8_t ArUco_GetRelativePosition(float *x, float *z);
 
 #endif // ARUCO_GHOST_H
