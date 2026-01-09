@@ -7,6 +7,11 @@
 #define M_PI 3.14159265358979323846f
 #endif
 
+
+#define Aruco_Follow_ID 36
+
+#define Aruco_Time_Loss 300
+
 ////#define ARUCO_CAMERA_WIDTH       1280.0f   
 #define ARUCO_CAMERA_HEIGHT      720.0f   
 
@@ -33,8 +38,7 @@ void ArUco_SetFollowParams(ArUcoFollowMode mode, uint16_t targetId, float target
 
 void ArUco_SetGains(float gainAngle, float gainDistance, float maxLinear, float maxAngular);
 
-void ArUco_ProcessMessage(uint16_t function, uint16_t payloadLength, uint8_t *payload);
-
+void ArUco_ProcessMessage(void);
 //float ArUco_GetDistance(void);
 
 

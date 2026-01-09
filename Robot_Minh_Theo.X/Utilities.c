@@ -7,15 +7,22 @@ double Modulo2PIAngleRadian(double angleRadian) {
     return fmod(angleTemp + PI, 2 * PI) - PI;
 }
 
-float getFloat(unsigned char *p, int index)
-{
-    float *result_ptr = (float*)(p + index);
+float getFloat(unsigned char *p, int index) {
+    float *result_ptr = (float*) (p + index);
     float result = *result_ptr;
     return result;
 }
 
-float getFloat2(unsigned char *p, int index)
-{
+int getIntFrom2Bytes(const unsigned char *p, int index) {
+    int16_t value16 = (int16_t) (
+            ((uint16_t) p[index] << 8) | 
+            (uint16_t) p[index + 1] 
+            );
+    return (int) value16;
+}
+
+float getFloat2(unsigned char *p, int index) {
+
     union {
         float f;
         unsigned char b[4];
@@ -29,33 +36,28 @@ float getFloat2(unsigned char *p, int index)
     return u.f;
 }
 
-
-double getDouble(unsigned char *p, int index)
-{
-    double *result_ptr = (double*)(p + index);
+double getDouble(unsigned char *p, int index) {
+    double *result_ptr = (double*) (p + index);
     return *result_ptr;
 }
 
-void getBytesFromFloat(unsigned char *p, int index, float f)
-{
+void getBytesFromFloat(unsigned char *p, int index, float f) {
     int i;
-    unsigned char *f_ptr = (unsigned char*)&f;
+    unsigned char *f_ptr = (unsigned char*) &f;
     for (i = 0; i < 4; i++)
         p[index + i] = f_ptr[i];
 }
 
-void getBytesFromInt32(unsigned char *p, int index, long in)
-{
+void getBytesFromInt32(unsigned char *p, int index, long in) {
     int i;
-    unsigned char *f_ptr = (unsigned char*)&in;
+    unsigned char *f_ptr = (unsigned char*) &in;
     for (i = 0; i < 4; i++)
-        p[index + i] = f_ptr[3-i];
+        p[index + i] = f_ptr[3 - i];
 }
 
-void getBytesFromDouble(unsigned char *p, int index, double d)
-{
+void getBytesFromDouble(unsigned char *p, int index, double d) {
     int i;
-    unsigned char *f_ptr = (unsigned char*)&d;
+    unsigned char *f_ptr = (unsigned char*) &d;
     for (i = 0; i < 8; i++)
         p[index + i] = f_ptr[i];
 }

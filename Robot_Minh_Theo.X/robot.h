@@ -40,15 +40,19 @@ typedef struct robotStateBITS {
             PidCorrector PidSpeedDroite;
             PidCorrector PD_Position_Lineaire;
             PidCorrector PD_Position_Angulaire;
-            
+
             PidCorrector PD_Position_aruco_angle;
 
             float centerX_Aruco;
             float markerAvgSize;
-            
+
+            int Aruco_Flag;
+            int Aruco_ID;
             float X_Aruco;
             float Y_Aruco;
             float Z_Aruco;
+            float ArucoSpeedLin;
+            float ArucoSpeedAngle;
 
             float CorrectionVitesseLineaire;
             float CorrectionVitesseAngulaire;

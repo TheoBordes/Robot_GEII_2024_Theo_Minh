@@ -111,7 +111,6 @@ unsigned char flagMessageMotor = 0;
 
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
-    timestamp += 1;
     if (messageMotorCounter++ >= 1000) {
         messageMotorCounter = 0;
         flagMessageMotor = 1;

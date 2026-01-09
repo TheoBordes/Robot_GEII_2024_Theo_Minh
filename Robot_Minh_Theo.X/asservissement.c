@@ -1,4 +1,3 @@
-
 #include "robot.h"
 
 #include <math.h>
@@ -14,10 +13,13 @@
 #include <xc.h>
 #include "main.h"
 #include "aruco_ghost.h"
+#include "timer.h"
 
 #define DISTROUES 0.2175
 #define pidInfoLinear 0x0071
 unsigned char payload_Pid_info[104] = {};
+extern unsigned long timestamp;
+extern unsigned long aruco_time;
 
 void SetupPidAsservissement(volatile PidCorrector* PidCorr, double Kp, double Ki, double Kd, double proportionelleMax, double integralMax, double deriveeMax) {
     PidCorr->Kp = Kp;
@@ -73,7 +75,7 @@ void UpdateConsGhost() {
     double dx = robotState.positionGhost.x - robotState.xPosFromOdometry;
     double dy = robotState.positionGhost.y - robotState.yPosFromOdometry;
 
-    double distance  = sqrt(dx * dx + dy * dy);
+    double distance = sqrt(dx * dx + dy * dy);
 
     double angleToGhost = atan2(dy, dx);
     double angleRobot = robotState.angleRadianFromOdometry;
@@ -103,34 +105,22 @@ void UpdateConsGhost() {
     //    UartEncodeAndSendMessage(0x00FF, 16, testEnvoi);
 }
 
-void UpdateArucoFollow()
-{
-    static double vitesseFiltree = 0.0;
+extern unsigned long  aruco_time;
+void UpdateArucoFollow() {
 
-    double dx = robotState.X_Aruco;
-    double dy = robotState.Y_Aruco;
-    double dz = robotState.Z_Aruco;
-
-    double distance = sqrt(dx*dx + dy*dy + dz*dz) / 1000.0;
-
-    double erreurDist = distance - 0.2;
-
-    double vitesseConsigne = 0.1 * erreurDist;
-
-    if (vitesseConsigne > 0.2)  vitesseConsigne = 0.2;
-    if (vitesseConsigne < -0.2) vitesseConsigne = -0.2;
-
-    vitesseFiltree = 0.2 ;
-
+    if ( (timestamp - aruco_time) > Aruco_Time_Loss ){
+        robotState.ArucoSpeedLin = 0;
+        robotState.ArucoSpeedAngle = 0;
+    }
     robotState.vitesseDroiteConsigne =
-        vitesseFiltree + robotState.vitesseAngulaireConsigne * DISTROUES / 2;
+            robotState.ArucoSpeedLin + robotState.ArucoSpeedAngle * DISTROUES / 2;
 
     robotState.vitesseGaucheConsigne =
-        vitesseFiltree - robotState.vitesseAngulaireConsigne * DISTROUES / 2;
+            robotState.ArucoSpeedLin - robotState.ArucoSpeedAngle * DISTROUES / 2;
+
+
+
 }
-
-
-
 
 void SendPidInfo() {
 
@@ -144,7 +134,7 @@ void SendPidInfo() {
     getBytesFromFloat(payload_Pid_info, 28, (float) robotState.PidX.Ki);
     getBytesFromFloat(payload_Pid_info, 32, (float) robotState.PidX.corrI);
     getBytesFromFloat(payload_Pid_info, 36, (float) robotState.PidX.erreurIntegraleMax);
-    getBytesFromFloat(payload_Pid_info, 40, (float) robotState.PidX.Kd);    
+    getBytesFromFloat(payload_Pid_info, 40, (float) robotState.PidX.Kd);
     getBytesFromFloat(payload_Pid_info, 44, (float) robotState.PidX.corrD);
     getBytesFromFloat(payload_Pid_info, 48, (float) robotState.PidX.erreurDeriveeMax);
 
