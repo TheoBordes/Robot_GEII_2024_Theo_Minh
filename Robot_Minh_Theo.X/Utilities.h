@@ -10,7 +10,7 @@ double getDouble(unsigned char *p, int index);
 void getBytesFromFloat(unsigned char *p, int index, float f);
 void getBytesFromInt32(unsigned char *p, int index, long in);
 void getBytesFromDouble(unsigned char *p, int index, double d);
-
+float getFloat2(unsigned char *p, int index);
 
 
 #endif /*UTILITIES_H*/

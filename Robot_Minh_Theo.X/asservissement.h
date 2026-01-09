@@ -27,7 +27,7 @@ typedef struct _PidCorrector
 }PidCorrector;
 
 void UpdateConsGhost();
-void UpdateArucoGhost();
+void UpdateArucoFollow();
 
 void SetupPidAsservissement(volatile PidCorrector* PidCorr, double Kp, double Ki, double Kd, double proportionelleMax, double integralMax , double deriveeMax);
 double Correcteur(volatile PidCorrector* PidCorr, double erreur);

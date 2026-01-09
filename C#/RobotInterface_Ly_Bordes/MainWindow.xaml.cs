@@ -83,7 +83,7 @@ namespace RobotInterface_Ly_Bordes
             InitializeComponent();
            
             //Setting SerialPort
-            serialPort1 = new ExtendedSerialPort("COM9", 115200, Parity.None, 8, StopBits.One);// Changer le port USB (COM)
+            serialPort1 = new ExtendedSerialPort("COM12", 115200, Parity.None, 8, StopBits.One);// Changer le port USB (COM)
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
 
@@ -387,9 +387,8 @@ namespace RobotInterface_Ly_Bordes
                     float test = BitConverter.ToSingle(msgPayload, 0);
                     float test1 = BitConverter.ToSingle(msgPayload, 4);
                     float test2 = BitConverter.ToSingle(msgPayload, 8);
-                    float test3 = BitConverter.ToSingle(msgPayload, 12);
                     asservSpeedDisplay.UpdateIndependantSpeedCommandValues(test, test1);
-                    asservSpeedDisplay.UpdateIndependantSpeedErrorValues(test2, test3);
+                    asservSpeedDisplay.UpdateIndependantSpeedErrorValues(test2,0);
                     break;
 
 

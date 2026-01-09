@@ -14,6 +14,22 @@ float getFloat(unsigned char *p, int index)
     return result;
 }
 
+float getFloat2(unsigned char *p, int index)
+{
+    union {
+        float f;
+        unsigned char b[4];
+    } u;
+
+    u.b[0] = p[index + 0];
+    u.b[1] = p[index + 1];
+    u.b[2] = p[index + 2];
+    u.b[3] = p[index + 3];
+
+    return u.f;
+}
+
+
 double getDouble(unsigned char *p, int index)
 {
     double *result_ptr = (double*)(p + index);

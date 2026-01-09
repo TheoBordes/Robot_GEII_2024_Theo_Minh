@@ -45,6 +45,10 @@ typedef struct robotStateBITS {
 
             float centerX_Aruco;
             float markerAvgSize;
+            
+            float X_Aruco;
+            float Y_Aruco;
+            float Z_Aruco;
 
             float CorrectionVitesseLineaire;
             float CorrectionVitesseAngulaire;

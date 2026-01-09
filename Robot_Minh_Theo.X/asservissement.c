@@ -103,44 +103,32 @@ void UpdateConsGhost() {
     //    UartEncodeAndSendMessage(0x00FF, 16, testEnvoi);
 }
 
-void UpdateArucoGhost() {
-//    float linearCmd = 0.0f;
-//    float angularCmd = 0.0f;
-//    
-//    if (ArUco_GetSpeedCommands(&linearCmd, &angularCmd)) {
-//        robotState.vitesseLinearConsigne = linearCmd;
-//        robotState.vitesseAngulaireConsigne = angularCmd;
-//    } else {
-//        robotState.vitesseLinearConsigne *= 0.9f;
-//        robotState.vitesseAngulaireConsigne *= 0.9f;
-//        
-//        if (robotState.vitesseLinearConsigne < 0.01f && 
-//            robotState.vitesseLinearConsigne > -0.01f) {
-//            robotState.vitesseLinearConsigne = 0.0f;
-//        }
-//        if (robotState.vitesseAngulaireConsigne < 0.01f && 
-//            robotState.vitesseAngulaireConsigne > -0.01f) {
-//            robotState.vitesseAngulaireConsigne = 0.0f;
-//        }
-//    }
-    
-    
- double erreurPixel = arucoState.rawcenterX - ARUCO_CAMERA_WIDTH / 2.0;
-    double erreurTheta =
-        (erreurPixel / (ARUCO_CAMERA_WIDTH / 2.0)) * (CAMERA_HFOV_RAD / 2.0);
+void UpdateArucoFollow()
+{
+    static double vitesseFiltree = 0.0;
 
-    erreurTheta = NormalizeAngle(erreurTheta);
+    double dx = robotState.X_Aruco;
+    double dy = robotState.Y_Aruco;
+    double dz = robotState.Z_Aruco;
 
-    robotState.thetaGhost = erreurTheta;
-//    robotState.vitesseAngulaireConsigne =
-//        Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
-//    
-    
-//    robotState.vitesseDroiteConsigne = robotState.vitesseLinearConsigne + 
-//                                       robotState.vitesseAngulaireConsigne * DISTROUES / 2;
-//    robotState.vitesseGaucheConsigne = robotState.vitesseLinearConsigne - 
-//                                       robotState.vitesseAngulaireConsigne * DISTROUES / 2;
+    double distance = sqrt(dx*dx + dy*dy + dz*dz) / 1000.0;
+
+    double erreurDist = distance - 0.2;
+
+    double vitesseConsigne = 0.1 * erreurDist;
+
+    if (vitesseConsigne > 0.2)  vitesseConsigne = 0.2;
+    if (vitesseConsigne < -0.2) vitesseConsigne = -0.2;
+
+    vitesseFiltree = 0.2 ;
+
+    robotState.vitesseDroiteConsigne =
+        vitesseFiltree + robotState.vitesseAngulaireConsigne * DISTROUES / 2;
+
+    robotState.vitesseGaucheConsigne =
+        vitesseFiltree - robotState.vitesseAngulaireConsigne * DISTROUES / 2;
 }
+
 
 
 
@@ -156,7 +144,7 @@ void SendPidInfo() {
     getBytesFromFloat(payload_Pid_info, 28, (float) robotState.PidX.Ki);
     getBytesFromFloat(payload_Pid_info, 32, (float) robotState.PidX.corrI);
     getBytesFromFloat(payload_Pid_info, 36, (float) robotState.PidX.erreurIntegraleMax);
-    getBytesFromFloat(payload_Pid_info, 40, (float) robotState.PidX.Kd);
+    getBytesFromFloat(payload_Pid_info, 40, (float) robotState.PidX.Kd);    
     getBytesFromFloat(payload_Pid_info, 44, (float) robotState.PidX.corrD);
     getBytesFromFloat(payload_Pid_info, 48, (float) robotState.PidX.erreurDeriveeMax);
 

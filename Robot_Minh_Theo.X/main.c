@@ -484,8 +484,6 @@ int main(void) {
     InitADC1();
     InitUART1();
     InitUART2();
-    ArUco_Init();
-
 
 
 //    robotState.PidX.Kp = 2.0;

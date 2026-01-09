@@ -15,6 +15,7 @@
 
 unsigned char payload_PidX[12] = {};
 unsigned char payload_PidT[12] = {};
+unsigned char payload_test[12] = {};
 unsigned char aruco_flag = 0;
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char *msgPayload)
 {
@@ -360,6 +361,15 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
         case Aruco_Detected:
             LED_BLANCHE_2 = !LED_BLANCHE_2;     
             aruco_flag = 1;
+            float X = getFloat(payload,2); 
+            float Y =  getFloat(payload, 6);
+            float Z = getFloat(payload, 10);
+            robotState.X_Aruco = X;
+            robotState.Y_Aruco = Y;
+            robotState.Z_Aruco = Z;
+
+            
+
              
             //ArUco_ProcessMessage(function, payloadLength, payload);
 
