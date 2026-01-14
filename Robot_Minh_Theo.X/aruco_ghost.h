@@ -10,7 +10,7 @@
 
 #define Aruco_Follow_ID 36
 
-#define Aruco_Time_Loss 300
+#define Aruco_Time_Loss 500
 
 ////#define ARUCO_CAMERA_WIDTH       1280.0f   
 #define ARUCO_CAMERA_HEIGHT      720.0f   

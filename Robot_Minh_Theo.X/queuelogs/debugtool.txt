@@ -1,1002 +1,168 @@
-15129 1767972873294 XXXX 1767972873294, Thread 15129: XXXX 1767972873294, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972873296 XXXX 1767972873296, Thread 15129: XXXX 1767972873296, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972873395 XXXX 1767972873395, Thread 15129: XXXX 1767972873395, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972873397 XXXX 1767972873397, Thread 15129: XXXX 1767972873397, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972873496 XXXX 1767972873496, Thread 15129: XXXX 1767972873496, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972873497 XXXX 1767972873497, Thread 15129: XXXX 1767972873497, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972873596 XXXX 1767972873596, Thread 15129: XXXX 1767972873596, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972873598 XXXX 1767972873598, Thread 15129: XXXX 1767972873598, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972873696 XXXX 1767972873696, Thread 15129: XXXX 1767972873696, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972873698 XXXX 1767972873698, Thread 15129: XXXX 1767972873698, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972873796 XXXX 1767972873796, Thread 15129: XXXX 1767972873796, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972873797 XXXX 1767972873797, Thread 15129: XXXX 1767972873797, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972873897 XXXX 1767972873897, Thread 15129: XXXX 1767972873897, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972873898 XXXX 1767972873898, Thread 15129: XXXX 1767972873898, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972873998 XXXX 1767972873998, Thread 15129: XXXX 1767972873998, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972873999 XXXX 1767972873999, Thread 15129: XXXX 1767972873999, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874098 XXXX 1767972874098, Thread 15129: XXXX 1767972874098, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874100 XXXX 1767972874100, Thread 15129: XXXX 1767972874100, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874199 XXXX 1767972874199, Thread 15129: XXXX 1767972874199, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874201 XXXX 1767972874201, Thread 15129: XXXX 1767972874201, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874300 XXXX 1767972874300, Thread 15129: XXXX 1767972874300, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874301 XXXX 1767972874301, Thread 15129: XXXX 1767972874301, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874401 XXXX 1767972874401, Thread 15129: XXXX 1767972874401, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874403 XXXX 1767972874403, Thread 15129: XXXX 1767972874403, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874503 XXXX 1767972874503, Thread 15129: XXXX 1767972874503, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874505 XXXX 1767972874505, Thread 15129: XXXX 1767972874505, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874604 XXXX 1767972874604, Thread 15129: XXXX 1767972874604, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874606 XXXX 1767972874606, Thread 15129: XXXX 1767972874606, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874706 XXXX 1767972874706, Thread 15129: XXXX 1767972874706, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874708 XXXX 1767972874708, Thread 15129: XXXX 1767972874708, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874808 XXXX 1767972874808, Thread 15129: XXXX 1767972874808, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874810 XXXX 1767972874810, Thread 15129: XXXX 1767972874810, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972874910 XXXX 1767972874910, Thread 15129: XXXX 1767972874910, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972874912 XXXX 1767972874912, Thread 15129: XXXX 1767972874912, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875011 XXXX 1767972875011, Thread 15129: XXXX 1767972875011, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875013 XXXX 1767972875013, Thread 15129: XXXX 1767972875013, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875111 XXXX 1767972875111, Thread 15129: XXXX 1767972875111, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875113 XXXX 1767972875113, Thread 15129: XXXX 1767972875113, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875211 XXXX 1767972875211, Thread 15129: XXXX 1767972875211, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875213 XXXX 1767972875213, Thread 15129: XXXX 1767972875213, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875311 XXXX 1767972875311, Thread 15129: XXXX 1767972875311, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875313 XXXX 1767972875313, Thread 15129: XXXX 1767972875313, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875411 XXXX 1767972875411, Thread 15129: XXXX 1767972875411, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875413 XXXX 1767972875413, Thread 15129: XXXX 1767972875413, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875511 XXXX 1767972875511, Thread 15129: XXXX 1767972875511, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875513 XXXX 1767972875513, Thread 15129: XXXX 1767972875513, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875612 XXXX 1767972875612, Thread 15129: XXXX 1767972875612, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875614 XXXX 1767972875614, Thread 15129: XXXX 1767972875614, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875713 XXXX 1767972875713, Thread 15129: XXXX 1767972875713, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875715 XXXX 1767972875715, Thread 15129: XXXX 1767972875715, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875814 XXXX 1767972875814, Thread 15129: XXXX 1767972875814, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875816 XXXX 1767972875816, Thread 15129: XXXX 1767972875816, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972875914 XXXX 1767972875914, Thread 15129: XXXX 1767972875914, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972875916 XXXX 1767972875916, Thread 15129: XXXX 1767972875916, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876015 XXXX 1767972876015, Thread 15129: XXXX 1767972876015, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876017 XXXX 1767972876017, Thread 15129: XXXX 1767972876017, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876115 XXXX 1767972876115, Thread 15129: XXXX 1767972876115, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876117 XXXX 1767972876117, Thread 15129: XXXX 1767972876117, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876215 XXXX 1767972876215, Thread 15129: XXXX 1767972876215, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876217 XXXX 1767972876217, Thread 15129: XXXX 1767972876217, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876315 XXXX 1767972876315, Thread 15129: XXXX 1767972876315, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876317 XXXX 1767972876317, Thread 15129: XXXX 1767972876317, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876415 XXXX 1767972876415, Thread 15129: XXXX 1767972876415, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876418 XXXX 1767972876418, Thread 15129: XXXX 1767972876418, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876517 XXXX 1767972876517, Thread 15129: XXXX 1767972876517, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876519 XXXX 1767972876519, Thread 15129: XXXX 1767972876519, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876620 XXXX 1767972876620, Thread 15129: XXXX 1767972876620, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876621 XXXX 1767972876621, Thread 15129: XXXX 1767972876621, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876720 XXXX 1767972876720, Thread 15129: XXXX 1767972876720, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876722 XXXX 1767972876722, Thread 15129: XXXX 1767972876722, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876820 XXXX 1767972876820, Thread 15129: XXXX 1767972876820, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876821 XXXX 1767972876821, Thread 15129: XXXX 1767972876821, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972876922 XXXX 1767972876922, Thread 15129: XXXX 1767972876922, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972876924 XXXX 1767972876924, Thread 15129: XXXX 1767972876924, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877021 XXXX 1767972877021, Thread 15129: XXXX 1767972877021, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877022 XXXX 1767972877022, Thread 15129: XXXX 1767972877022, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877122 XXXX 1767972877122, Thread 15129: XXXX 1767972877122, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877123 XXXX 1767972877123, Thread 15129: XXXX 1767972877123, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877223 XXXX 1767972877223, Thread 15129: XXXX 1767972877223, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877224 XXXX 1767972877224, Thread 15129: XXXX 1767972877224, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877324 XXXX 1767972877324, Thread 15129: XXXX 1767972877324, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877325 XXXX 1767972877325, Thread 15129: XXXX 1767972877325, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877425 XXXX 1767972877425, Thread 15129: XXXX 1767972877425, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877426 XXXX 1767972877426, Thread 15129: XXXX 1767972877426, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877525 XXXX 1767972877525, Thread 15129: XXXX 1767972877525, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877527 XXXX 1767972877527, Thread 15129: XXXX 1767972877527, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877625 XXXX 1767972877625, Thread 15129: XXXX 1767972877625, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877626 XXXX 1767972877626, Thread 15129: XXXX 1767972877626, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877726 XXXX 1767972877726, Thread 15129: XXXX 1767972877726, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877727 XXXX 1767972877727, Thread 15129: XXXX 1767972877727, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877827 XXXX 1767972877827, Thread 15129: XXXX 1767972877827, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877828 XXXX 1767972877828, Thread 15129: XXXX 1767972877828, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972877928 XXXX 1767972877928, Thread 15129: XXXX 1767972877928, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972877929 XXXX 1767972877929, Thread 15129: XXXX 1767972877929, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878028 XXXX 1767972878028, Thread 15129: XXXX 1767972878028, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878030 XXXX 1767972878030, Thread 15129: XXXX 1767972878030, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878129 XXXX 1767972878129, Thread 15129: XXXX 1767972878129, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878131 XXXX 1767972878131, Thread 15129: XXXX 1767972878131, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878230 XXXX 1767972878230, Thread 15129: XXXX 1767972878230, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878232 XXXX 1767972878232, Thread 15129: XXXX 1767972878232, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878331 XXXX 1767972878331, Thread 15129: XXXX 1767972878331, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878333 XXXX 1767972878333, Thread 15129: XXXX 1767972878333, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878433 XXXX 1767972878433, Thread 15129: XXXX 1767972878433, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878435 XXXX 1767972878435, Thread 15129: XXXX 1767972878435, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878535 XXXX 1767972878535, Thread 15129: XXXX 1767972878535, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878536 XXXX 1767972878536, Thread 15129: XXXX 1767972878536, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878636 XXXX 1767972878636, Thread 15129: XXXX 1767972878636, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878638 XXXX 1767972878638, Thread 15129: XXXX 1767972878638, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878737 XXXX 1767972878737, Thread 15129: XXXX 1767972878737, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878739 XXXX 1767972878739, Thread 15129: XXXX 1767972878739, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878839 XXXX 1767972878839, Thread 15129: XXXX 1767972878839, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878841 XXXX 1767972878841, Thread 15129: XXXX 1767972878841, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972878939 XXXX 1767972878939, Thread 15129: XXXX 1767972878939, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972878941 XXXX 1767972878941, Thread 15129: XXXX 1767972878941, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879040 XXXX 1767972879040, Thread 15129: XXXX 1767972879040, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879042 XXXX 1767972879042, Thread 15129: XXXX 1767972879042, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879142 XXXX 1767972879142, Thread 15129: XXXX 1767972879142, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879144 XXXX 1767972879144, Thread 15129: XXXX 1767972879144, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879242 XXXX 1767972879242, Thread 15129: XXXX 1767972879242, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879244 XXXX 1767972879244, Thread 15129: XXXX 1767972879244, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879344 XXXX 1767972879344, Thread 15129: XXXX 1767972879344, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879346 XXXX 1767972879346, Thread 15129: XXXX 1767972879346, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879446 XXXX 1767972879446, Thread 15129: XXXX 1767972879446, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879448 XXXX 1767972879448, Thread 15129: XXXX 1767972879448, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879547 XXXX 1767972879547, Thread 15129: XXXX 1767972879547, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879548 XXXX 1767972879548, Thread 15129: XXXX 1767972879548, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879647 XXXX 1767972879647, Thread 15129: XXXX 1767972879647, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879648 XXXX 1767972879648, Thread 15129: XXXX 1767972879648, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879748 XXXX 1767972879748, Thread 15129: XXXX 1767972879748, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879749 XXXX 1767972879749, Thread 15129: XXXX 1767972879749, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879849 XXXX 1767972879849, Thread 15129: XXXX 1767972879849, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879852 XXXX 1767972879852, Thread 15129: XXXX 1767972879852, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972879950 XXXX 1767972879950, Thread 15129: XXXX 1767972879950, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972879952 XXXX 1767972879952, Thread 15129: XXXX 1767972879952, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880050 XXXX 1767972880050, Thread 15129: XXXX 1767972880050, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880052 XXXX 1767972880052, Thread 15129: XXXX 1767972880052, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880152 XXXX 1767972880152, Thread 15129: XXXX 1767972880152, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880153 XXXX 1767972880153, Thread 15129: XXXX 1767972880153, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880253 XXXX 1767972880253, Thread 15129: XXXX 1767972880253, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880254 XXXX 1767972880254, Thread 15129: XXXX 1767972880254, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880354 XXXX 1767972880354, Thread 15129: XXXX 1767972880354, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880355 XXXX 1767972880355, Thread 15129: XXXX 1767972880355, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880455 XXXX 1767972880455, Thread 15129: XXXX 1767972880455, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880456 XXXX 1767972880456, Thread 15129: XXXX 1767972880456, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880555 XXXX 1767972880555, Thread 15129: XXXX 1767972880555, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880556 XXXX 1767972880556, Thread 15129: XXXX 1767972880556, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880656 XXXX 1767972880656, Thread 15129: XXXX 1767972880656, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880658 XXXX 1767972880658, Thread 15129: XXXX 1767972880658, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880756 XXXX 1767972880756, Thread 15129: XXXX 1767972880756, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880758 XXXX 1767972880758, Thread 15129: XXXX 1767972880758, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880857 XXXX 1767972880857, Thread 15129: XXXX 1767972880857, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880859 XXXX 1767972880859, Thread 15129: XXXX 1767972880859, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972880959 XXXX 1767972880959, Thread 15129: XXXX 1767972880959, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972880961 XXXX 1767972880961, Thread 15129: XXXX 1767972880961, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881060 XXXX 1767972881060, Thread 15129: XXXX 1767972881060, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881062 XXXX 1767972881062, Thread 15129: XXXX 1767972881062, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881162 XXXX 1767972881162, Thread 15129: XXXX 1767972881162, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881164 XXXX 1767972881164, Thread 15129: XXXX 1767972881164, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881264 XXXX 1767972881264, Thread 15129: XXXX 1767972881264, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881265 XXXX 1767972881265, Thread 15129: XXXX 1767972881265, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881365 XXXX 1767972881365, Thread 15129: XXXX 1767972881365, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881367 XXXX 1767972881367, Thread 15129: XXXX 1767972881367, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881465 XXXX 1767972881465, Thread 15129: XXXX 1767972881465, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881467 XXXX 1767972881467, Thread 15129: XXXX 1767972881467, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881565 XXXX 1767972881565, Thread 15129: XXXX 1767972881565, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881567 XXXX 1767972881567, Thread 15129: XXXX 1767972881567, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881667 XXXX 1767972881667, Thread 15129: XXXX 1767972881667, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881669 XXXX 1767972881669, Thread 15129: XXXX 1767972881669, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881769 XXXX 1767972881769, Thread 15129: XXXX 1767972881769, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881771 XXXX 1767972881771, Thread 15129: XXXX 1767972881771, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881870 XXXX 1767972881870, Thread 15129: XXXX 1767972881870, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881872 XXXX 1767972881872, Thread 15129: XXXX 1767972881872, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972881971 XXXX 1767972881971, Thread 15129: XXXX 1767972881971, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972881973 XXXX 1767972881973, Thread 15129: XXXX 1767972881973, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882072 XXXX 1767972882072, Thread 15129: XXXX 1767972882072, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882075 XXXX 1767972882075, Thread 15129: XXXX 1767972882075, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882172 XXXX 1767972882172, Thread 15129: XXXX 1767972882172, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882174 XXXX 1767972882174, Thread 15129: XXXX 1767972882174, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882272 XXXX 1767972882272, Thread 15129: XXXX 1767972882272, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882275 XXXX 1767972882275, Thread 15129: XXXX 1767972882275, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882373 XXXX 1767972882373, Thread 15129: XXXX 1767972882373, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882374 XXXX 1767972882374, Thread 15129: XXXX 1767972882374, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882474 XXXX 1767972882474, Thread 15129: XXXX 1767972882474, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882475 XXXX 1767972882475, Thread 15129: XXXX 1767972882475, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882574 XXXX 1767972882574, Thread 15129: XXXX 1767972882574, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882576 XXXX 1767972882575, Thread 15129: XXXX 1767972882575, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882674 XXXX 1767972882674, Thread 15129: XXXX 1767972882674, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882675 XXXX 1767972882675, Thread 15129: XXXX 1767972882675, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882774 XXXX 1767972882774, Thread 15129: XXXX 1767972882774, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882775 XXXX 1767972882775, Thread 15129: XXXX 1767972882775, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882875 XXXX 1767972882875, Thread 15129: XXXX 1767972882875, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882877 XXXX 1767972882877, Thread 15129: XXXX 1767972882877, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972882976 XXXX 1767972882976, Thread 15129: XXXX 1767972882976, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972882978 XXXX 1767972882978, Thread 15129: XXXX 1767972882978, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883076 XXXX 1767972883076, Thread 15129: XXXX 1767972883076, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883078 XXXX 1767972883078, Thread 15129: XXXX 1767972883078, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883176 XXXX 1767972883176, Thread 15129: XXXX 1767972883176, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883178 XXXX 1767972883178, Thread 15129: XXXX 1767972883178, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883277 XXXX 1767972883277, Thread 15129: XXXX 1767972883277, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883279 XXXX 1767972883279, Thread 15129: XXXX 1767972883279, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883377 XXXX 1767972883377, Thread 15129: XXXX 1767972883377, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883379 XXXX 1767972883379, Thread 15129: XXXX 1767972883379, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883477 XXXX 1767972883477, Thread 15129: XXXX 1767972883477, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883479 XXXX 1767972883479, Thread 15129: XXXX 1767972883479, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883577 XXXX 1767972883577, Thread 15129: XXXX 1767972883577, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883579 XXXX 1767972883579, Thread 15129: XXXX 1767972883579, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883677 XXXX 1767972883677, Thread 15129: XXXX 1767972883677, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883679 XXXX 1767972883679, Thread 15129: XXXX 1767972883679, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883777 XXXX 1767972883777, Thread 15129: XXXX 1767972883777, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883779 XXXX 1767972883779, Thread 15129: XXXX 1767972883779, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883878 XXXX 1767972883878, Thread 15129: XXXX 1767972883878, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883880 XXXX 1767972883880, Thread 15129: XXXX 1767972883880, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972883978 XXXX 1767972883978, Thread 15129: XXXX 1767972883978, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972883980 XXXX 1767972883980, Thread 15129: XXXX 1767972883980, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884078 XXXX 1767972884078, Thread 15129: XXXX 1767972884078, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884080 XXXX 1767972884080, Thread 15129: XXXX 1767972884080, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884178 XXXX 1767972884178, Thread 15129: XXXX 1767972884178, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884180 XXXX 1767972884180, Thread 15129: XXXX 1767972884180, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884278 XXXX 1767972884278, Thread 15129: XXXX 1767972884278, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884280 XXXX 1767972884280, Thread 15129: XXXX 1767972884280, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884378 XXXX 1767972884378, Thread 15129: XXXX 1767972884378, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884380 XXXX 1767972884380, Thread 15129: XXXX 1767972884380, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884479 XXXX 1767972884479, Thread 15129: XXXX 1767972884479, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884481 XXXX 1767972884481, Thread 15129: XXXX 1767972884481, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884579 XXXX 1767972884579, Thread 15129: XXXX 1767972884579, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884581 XXXX 1767972884581, Thread 15129: XXXX 1767972884581, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884680 XXXX 1767972884680, Thread 15129: XXXX 1767972884680, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884682 XXXX 1767972884682, Thread 15129: XXXX 1767972884682, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884781 XXXX 1767972884781, Thread 15129: XXXX 1767972884781, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884783 XXXX 1767972884783, Thread 15129: XXXX 1767972884783, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884881 XXXX 1767972884881, Thread 15129: XXXX 1767972884881, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884883 XXXX 1767972884883, Thread 15129: XXXX 1767972884883, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972884981 XXXX 1767972884981, Thread 15129: XXXX 1767972884981, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972884983 XXXX 1767972884983, Thread 15129: XXXX 1767972884983, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885082 XXXX 1767972885082, Thread 15129: XXXX 1767972885082, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885084 XXXX 1767972885084, Thread 15129: XXXX 1767972885084, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885183 XXXX 1767972885183, Thread 15129: XXXX 1767972885183, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885185 XXXX 1767972885185, Thread 15129: XXXX 1767972885185, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885284 XXXX 1767972885284, Thread 15129: XXXX 1767972885284, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885286 XXXX 1767972885286, Thread 15129: XXXX 1767972885286, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885387 XXXX 1767972885387, Thread 15129: XXXX 1767972885387, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885389 XXXX 1767972885389, Thread 15129: XXXX 1767972885389, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885487 XXXX 1767972885487, Thread 15129: XXXX 1767972885487, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885489 XXXX 1767972885489, Thread 15129: XXXX 1767972885489, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885588 XXXX 1767972885588, Thread 15129: XXXX 1767972885588, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885590 XXXX 1767972885590, Thread 15129: XXXX 1767972885590, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885688 XXXX 1767972885688, Thread 15129: XXXX 1767972885688, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885690 XXXX 1767972885690, Thread 15129: XXXX 1767972885690, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885789 XXXX 1767972885789, Thread 15129: XXXX 1767972885789, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885791 XXXX 1767972885791, Thread 15129: XXXX 1767972885791, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885890 XXXX 1767972885890, Thread 15129: XXXX 1767972885890, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885892 XXXX 1767972885892, Thread 15129: XXXX 1767972885892, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972885992 XXXX 1767972885992, Thread 15129: XXXX 1767972885992, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972885994 XXXX 1767972885994, Thread 15129: XXXX 1767972885994, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886093 XXXX 1767972886093, Thread 15129: XXXX 1767972886093, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886095 XXXX 1767972886095, Thread 15129: XXXX 1767972886095, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886194 XXXX 1767972886194, Thread 15129: XXXX 1767972886194, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886196 XXXX 1767972886196, Thread 15129: XXXX 1767972886196, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886295 XXXX 1767972886295, Thread 15129: XXXX 1767972886295, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886297 XXXX 1767972886297, Thread 15129: XXXX 1767972886297, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886396 XXXX 1767972886396, Thread 15129: XXXX 1767972886396, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886398 XXXX 1767972886398, Thread 15129: XXXX 1767972886398, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886498 XXXX 1767972886498, Thread 15129: XXXX 1767972886498, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886500 XXXX 1767972886500, Thread 15129: XXXX 1767972886500, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886600 XXXX 1767972886600, Thread 15129: XXXX 1767972886600, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886602 XXXX 1767972886602, Thread 15129: XXXX 1767972886602, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886702 XXXX 1767972886702, Thread 15129: XXXX 1767972886702, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886704 XXXX 1767972886704, Thread 15129: XXXX 1767972886704, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886804 XXXX 1767972886804, Thread 15129: XXXX 1767972886804, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886806 XXXX 1767972886806, Thread 15129: XXXX 1767972886806, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972886906 XXXX 1767972886906, Thread 15129: XXXX 1767972886906, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972886908 XXXX 1767972886908, Thread 15129: XXXX 1767972886908, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887008 XXXX 1767972887008, Thread 15129: XXXX 1767972887008, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887010 XXXX 1767972887010, Thread 15129: XXXX 1767972887010, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887109 XXXX 1767972887109, Thread 15129: XXXX 1767972887109, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887111 XXXX 1767972887111, Thread 15129: XXXX 1767972887111, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887209 XXXX 1767972887209, Thread 15129: XXXX 1767972887209, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887211 XXXX 1767972887211, Thread 15129: XXXX 1767972887211, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887310 XXXX 1767972887310, Thread 15129: XXXX 1767972887310, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887312 XXXX 1767972887312, Thread 15129: XXXX 1767972887312, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887410 XXXX 1767972887410, Thread 15129: XXXX 1767972887410, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887412 XXXX 1767972887412, Thread 15129: XXXX 1767972887412, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887510 XXXX 1767972887510, Thread 15129: XXXX 1767972887510, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887512 XXXX 1767972887512, Thread 15129: XXXX 1767972887512, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887610 XXXX 1767972887610, Thread 15129: XXXX 1767972887610, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887612 XXXX 1767972887612, Thread 15129: XXXX 1767972887612, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887711 XXXX 1767972887711, Thread 15129: XXXX 1767972887711, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887713 XXXX 1767972887713, Thread 15129: XXXX 1767972887713, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887812 XXXX 1767972887812, Thread 15129: XXXX 1767972887812, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887814 XXXX 1767972887814, Thread 15129: XXXX 1767972887814, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972887913 XXXX 1767972887913, Thread 15129: XXXX 1767972887913, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972887915 XXXX 1767972887915, Thread 15129: XXXX 1767972887915, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888012 XXXX 1767972888012, Thread 15129: XXXX 1767972888012, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888014 XXXX 1767972888014, Thread 15129: XXXX 1767972888014, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888112 XXXX 1767972888112, Thread 15129: XXXX 1767972888112, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888114 XXXX 1767972888114, Thread 15129: XXXX 1767972888114, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888213 XXXX 1767972888213, Thread 15129: XXXX 1767972888213, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888215 XXXX 1767972888215, Thread 15129: XXXX 1767972888215, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888314 XXXX 1767972888314, Thread 15129: XXXX 1767972888314, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888317 XXXX 1767972888317, Thread 15129: XXXX 1767972888317, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888414 XXXX 1767972888414, Thread 15129: XXXX 1767972888414, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888416 XXXX 1767972888416, Thread 15129: XXXX 1767972888416, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888514 XXXX 1767972888514, Thread 15129: XXXX 1767972888514, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888516 XXXX 1767972888516, Thread 15129: XXXX 1767972888516, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888615 XXXX 1767972888615, Thread 15129: XXXX 1767972888615, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888617 XXXX 1767972888617, Thread 15129: XXXX 1767972888617, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888717 XXXX 1767972888717, Thread 15129: XXXX 1767972888717, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888719 XXXX 1767972888719, Thread 15129: XXXX 1767972888719, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888818 XXXX 1767972888818, Thread 15129: XXXX 1767972888818, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888820 XXXX 1767972888820, Thread 15129: XXXX 1767972888820, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972888919 XXXX 1767972888919, Thread 15129: XXXX 1767972888919, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972888921 XXXX 1767972888921, Thread 15129: XXXX 1767972888921, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889021 XXXX 1767972889021, Thread 15129: XXXX 1767972889021, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889023 XXXX 1767972889023, Thread 15129: XXXX 1767972889023, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889123 XXXX 1767972889123, Thread 15129: XXXX 1767972889123, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889125 XXXX 1767972889125, Thread 15129: XXXX 1767972889125, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889224 XXXX 1767972889224, Thread 15129: XXXX 1767972889224, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889226 XXXX 1767972889226, Thread 15129: XXXX 1767972889226, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889326 XXXX 1767972889326, Thread 15129: XXXX 1767972889326, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889328 XXXX 1767972889328, Thread 15129: XXXX 1767972889328, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889428 XXXX 1767972889428, Thread 15129: XXXX 1767972889428, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889430 XXXX 1767972889430, Thread 15129: XXXX 1767972889430, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889529 XXXX 1767972889529, Thread 15129: XXXX 1767972889529, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889531 XXXX 1767972889531, Thread 15129: XXXX 1767972889531, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889629 XXXX 1767972889629, Thread 15129: XXXX 1767972889629, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889631 XXXX 1767972889631, Thread 15129: XXXX 1767972889631, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889729 XXXX 1767972889729, Thread 15129: XXXX 1767972889729, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889731 XXXX 1767972889731, Thread 15129: XXXX 1767972889731, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889831 XXXX 1767972889831, Thread 15129: XXXX 1767972889831, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889833 XXXX 1767972889833, Thread 15129: XXXX 1767972889833, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972889933 XXXX 1767972889933, Thread 15129: XXXX 1767972889933, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972889935 XXXX 1767972889935, Thread 15129: XXXX 1767972889935, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890036 XXXX 1767972890036, Thread 15129: XXXX 1767972890036, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890038 XXXX 1767972890038, Thread 15129: XXXX 1767972890038, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890136 XXXX 1767972890136, Thread 15129: XXXX 1767972890136, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890138 XXXX 1767972890138, Thread 15129: XXXX 1767972890138, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890236 XXXX 1767972890236, Thread 15129: XXXX 1767972890236, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890238 XXXX 1767972890238, Thread 15129: XXXX 1767972890238, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890338 XXXX 1767972890338, Thread 15129: XXXX 1767972890338, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890340 XXXX 1767972890340, Thread 15129: XXXX 1767972890340, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890439 XXXX 1767972890439, Thread 15129: XXXX 1767972890439, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890441 XXXX 1767972890441, Thread 15129: XXXX 1767972890441, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890540 XXXX 1767972890540, Thread 15129: XXXX 1767972890540, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890542 XXXX 1767972890542, Thread 15129: XXXX 1767972890542, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890642 XXXX 1767972890642, Thread 15129: XXXX 1767972890642, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890644 XXXX 1767972890644, Thread 15129: XXXX 1767972890644, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890743 XXXX 1767972890743, Thread 15129: XXXX 1767972890743, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890745 XXXX 1767972890745, Thread 15129: XXXX 1767972890745, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890844 XXXX 1767972890844, Thread 15129: XXXX 1767972890844, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890846 XXXX 1767972890846, Thread 15129: XXXX 1767972890846, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972890946 XXXX 1767972890946, Thread 15129: XXXX 1767972890946, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972890948 XXXX 1767972890948, Thread 15129: XXXX 1767972890948, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891046 XXXX 1767972891046, Thread 15129: XXXX 1767972891046, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891048 XXXX 1767972891048, Thread 15129: XXXX 1767972891048, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891147 XXXX 1767972891147, Thread 15129: XXXX 1767972891147, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891149 XXXX 1767972891149, Thread 15129: XXXX 1767972891149, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891247 XXXX 1767972891247, Thread 15129: XXXX 1767972891247, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891249 XXXX 1767972891249, Thread 15129: XXXX 1767972891249, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891349 XXXX 1767972891349, Thread 15129: XXXX 1767972891349, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891351 XXXX 1767972891351, Thread 15129: XXXX 1767972891351, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891450 XXXX 1767972891450, Thread 15129: XXXX 1767972891450, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891452 XXXX 1767972891452, Thread 15129: XXXX 1767972891452, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891550 XXXX 1767972891550, Thread 15129: XXXX 1767972891550, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891552 XXXX 1767972891552, Thread 15129: XXXX 1767972891552, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891652 XXXX 1767972891652, Thread 15129: XXXX 1767972891652, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891654 XXXX 1767972891654, Thread 15129: XXXX 1767972891654, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891753 XXXX 1767972891753, Thread 15129: XXXX 1767972891753, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891755 XXXX 1767972891755, Thread 15129: XXXX 1767972891755, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891854 XXXX 1767972891854, Thread 15129: XXXX 1767972891854, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891856 XXXX 1767972891856, Thread 15129: XXXX 1767972891856, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972891954 XXXX 1767972891954, Thread 15129: XXXX 1767972891954, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972891956 XXXX 1767972891956, Thread 15129: XXXX 1767972891956, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892054 XXXX 1767972892054, Thread 15129: XXXX 1767972892054, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892056 XXXX 1767972892056, Thread 15129: XXXX 1767972892056, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892155 XXXX 1767972892155, Thread 15129: XXXX 1767972892155, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892157 XXXX 1767972892157, Thread 15129: XXXX 1767972892157, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892255 XXXX 1767972892255, Thread 15129: XXXX 1767972892255, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892257 XXXX 1767972892257, Thread 15129: XXXX 1767972892257, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892355 XXXX 1767972892355, Thread 15129: XXXX 1767972892355, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892357 XXXX 1767972892357, Thread 15129: XXXX 1767972892357, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892455 XXXX 1767972892455, Thread 15129: XXXX 1767972892455, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892457 XXXX 1767972892457, Thread 15129: XXXX 1767972892457, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892555 XXXX 1767972892555, Thread 15129: XXXX 1767972892555, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892556 XXXX 1767972892556, Thread 15129: XXXX 1767972892556, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892657 XXXX 1767972892657, Thread 15129: XXXX 1767972892657, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892659 XXXX 1767972892659, Thread 15129: XXXX 1767972892659, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892757 XXXX 1767972892757, Thread 15129: XXXX 1767972892757, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892758 XXXX 1767972892758, Thread 15129: XXXX 1767972892758, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892858 XXXX 1767972892858, Thread 15129: XXXX 1767972892858, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892859 XXXX 1767972892859, Thread 15129: XXXX 1767972892859, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972892959 XXXX 1767972892959, Thread 15129: XXXX 1767972892959, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972892961 XXXX 1767972892961, Thread 15129: XXXX 1767972892961, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893060 XXXX 1767972893060, Thread 15129: XXXX 1767972893060, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893062 XXXX 1767972893062, Thread 15129: XXXX 1767972893062, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893162 XXXX 1767972893162, Thread 15129: XXXX 1767972893162, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893164 XXXX 1767972893164, Thread 15129: XXXX 1767972893164, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893263 XXXX 1767972893263, Thread 15129: XXXX 1767972893263, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893265 XXXX 1767972893265, Thread 15129: XXXX 1767972893265, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893364 XXXX 1767972893364, Thread 15129: XXXX 1767972893364, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893366 XXXX 1767972893366, Thread 15129: XXXX 1767972893366, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893465 XXXX 1767972893465, Thread 15129: XXXX 1767972893465, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893467 XXXX 1767972893467, Thread 15129: XXXX 1767972893467, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893567 XXXX 1767972893567, Thread 15129: XXXX 1767972893567, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893569 XXXX 1767972893569, Thread 15129: XXXX 1767972893569, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893669 XXXX 1767972893669, Thread 15129: XXXX 1767972893669, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893671 XXXX 1767972893671, Thread 15129: XXXX 1767972893671, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893769 XXXX 1767972893769, Thread 15129: XXXX 1767972893769, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893771 XXXX 1767972893771, Thread 15129: XXXX 1767972893771, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893869 XXXX 1767972893869, Thread 15129: XXXX 1767972893869, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893871 XXXX 1767972893871, Thread 15129: XXXX 1767972893871, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972893969 XXXX 1767972893969, Thread 15129: XXXX 1767972893969, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972893972 XXXX 1767972893972, Thread 15129: XXXX 1767972893972, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894069 XXXX 1767972894069, Thread 15129: XXXX 1767972894069, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894071 XXXX 1767972894071, Thread 15129: XXXX 1767972894071, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894170 XXXX 1767972894170, Thread 15129: XXXX 1767972894170, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894172 XXXX 1767972894172, Thread 15129: XXXX 1767972894172, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894272 XXXX 1767972894272, Thread 15129: XXXX 1767972894272, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894274 XXXX 1767972894274, Thread 15129: XXXX 1767972894274, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894372 XXXX 1767972894372, Thread 15129: XXXX 1767972894372, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894374 XXXX 1767972894374, Thread 15129: XXXX 1767972894374, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894473 XXXX 1767972894473, Thread 15129: XXXX 1767972894473, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894475 XXXX 1767972894475, Thread 15129: XXXX 1767972894475, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894573 XXXX 1767972894573, Thread 15129: XXXX 1767972894573, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894575 XXXX 1767972894575, Thread 15129: XXXX 1767972894575, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894674 XXXX 1767972894674, Thread 15129: XXXX 1767972894674, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894676 XXXX 1767972894676, Thread 15129: XXXX 1767972894676, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894775 XXXX 1767972894775, Thread 15129: XXXX 1767972894775, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894777 XXXX 1767972894777, Thread 15129: XXXX 1767972894777, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894875 XXXX 1767972894875, Thread 15129: XXXX 1767972894875, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894876 XXXX 1767972894876, Thread 15129: XXXX 1767972894876, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972894975 XXXX 1767972894975, Thread 15129: XXXX 1767972894975, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972894976 XXXX 1767972894976, Thread 15129: XXXX 1767972894976, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895076 XXXX 1767972895076, Thread 15129: XXXX 1767972895076, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895078 XXXX 1767972895078, Thread 15129: XXXX 1767972895078, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895177 XXXX 1767972895177, Thread 15129: XXXX 1767972895177, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895178 XXXX 1767972895178, Thread 15129: XXXX 1767972895178, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895277 XXXX 1767972895277, Thread 15129: XXXX 1767972895277, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895278 XXXX 1767972895278, Thread 15129: XXXX 1767972895278, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895377 XXXX 1767972895377, Thread 15129: XXXX 1767972895377, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895378 XXXX 1767972895378, Thread 15129: XXXX 1767972895378, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895477 XXXX 1767972895477, Thread 15129: XXXX 1767972895477, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895478 XXXX 1767972895478, Thread 15129: XXXX 1767972895478, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895578 XXXX 1767972895578, Thread 15129: XXXX 1767972895578, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895579 XXXX 1767972895579, Thread 15129: XXXX 1767972895579, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895679 XXXX 1767972895679, Thread 15129: XXXX 1767972895679, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895680 XXXX 1767972895680, Thread 15129: XXXX 1767972895680, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895779 XXXX 1767972895779, Thread 15129: XXXX 1767972895779, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895780 XXXX 1767972895780, Thread 15129: XXXX 1767972895780, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895880 XXXX 1767972895880, Thread 15129: XXXX 1767972895880, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895881 XXXX 1767972895881, Thread 15129: XXXX 1767972895881, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972895981 XXXX 1767972895981, Thread 15129: XXXX 1767972895981, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972895982 XXXX 1767972895982, Thread 15129: XXXX 1767972895982, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896081 XXXX 1767972896081, Thread 15129: XXXX 1767972896081, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896082 XXXX 1767972896082, Thread 15129: XXXX 1767972896082, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896182 XXXX 1767972896182, Thread 15129: XXXX 1767972896182, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896184 XXXX 1767972896184, Thread 15129: XXXX 1767972896184, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896283 XXXX 1767972896283, Thread 15129: XXXX 1767972896283, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896285 XXXX 1767972896285, Thread 15129: XXXX 1767972896285, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896383 XXXX 1767972896383, Thread 15129: XXXX 1767972896383, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896385 XXXX 1767972896385, Thread 15129: XXXX 1767972896385, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896484 XXXX 1767972896484, Thread 15129: XXXX 1767972896484, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896485 XXXX 1767972896485, Thread 15129: XXXX 1767972896485, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896586 XXXX 1767972896586, Thread 15129: XXXX 1767972896586, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896588 XXXX 1767972896588, Thread 15129: XXXX 1767972896588, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896686 XXXX 1767972896686, Thread 15129: XXXX 1767972896686, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896687 XXXX 1767972896687, Thread 15129: XXXX 1767972896687, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896786 XXXX 1767972896786, Thread 15129: XXXX 1767972896786, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896788 XXXX 1767972896788, Thread 15129: XXXX 1767972896788, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896887 XXXX 1767972896887, Thread 15129: XXXX 1767972896887, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896888 XXXX 1767972896888, Thread 15129: XXXX 1767972896888, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972896988 XXXX 1767972896988, Thread 15129: XXXX 1767972896988, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972896990 XXXX 1767972896990, Thread 15129: XXXX 1767972896990, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897090 XXXX 1767972897090, Thread 15129: XXXX 1767972897090, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897092 XXXX 1767972897092, Thread 15129: XXXX 1767972897092, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897191 XXXX 1767972897191, Thread 15129: XXXX 1767972897191, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897193 XXXX 1767972897193, Thread 15129: XXXX 1767972897193, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897292 XXXX 1767972897292, Thread 15129: XXXX 1767972897292, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897294 XXXX 1767972897294, Thread 15129: XXXX 1767972897294, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897394 XXXX 1767972897394, Thread 15129: XXXX 1767972897394, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897396 XXXX 1767972897396, Thread 15129: XXXX 1767972897396, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897496 XXXX 1767972897496, Thread 15129: XXXX 1767972897496, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897497 XXXX 1767972897497, Thread 15129: XXXX 1767972897497, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897597 XXXX 1767972897597, Thread 15129: XXXX 1767972897597, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897599 XXXX 1767972897599, Thread 15129: XXXX 1767972897599, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897698 XXXX 1767972897698, Thread 15129: XXXX 1767972897698, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897700 XXXX 1767972897700, Thread 15129: XXXX 1767972897700, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897800 XXXX 1767972897800, Thread 15129: XXXX 1767972897800, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897802 XXXX 1767972897802, Thread 15129: XXXX 1767972897802, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972897901 XXXX 1767972897901, Thread 15129: XXXX 1767972897901, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972897903 XXXX 1767972897903, Thread 15129: XXXX 1767972897903, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898002 XXXX 1767972898002, Thread 15129: XXXX 1767972898002, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898005 XXXX 1767972898005, Thread 15129: XXXX 1767972898005, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898103 XXXX 1767972898103, Thread 15129: XXXX 1767972898103, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898106 XXXX 1767972898106, Thread 15129: XXXX 1767972898106, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898203 XXXX 1767972898203, Thread 15129: XXXX 1767972898203, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898205 XXXX 1767972898205, Thread 15129: XXXX 1767972898205, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898303 XXXX 1767972898303, Thread 15129: XXXX 1767972898303, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898305 XXXX 1767972898305, Thread 15129: XXXX 1767972898305, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898404 XXXX 1767972898404, Thread 15129: XXXX 1767972898404, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898406 XXXX 1767972898406, Thread 15129: XXXX 1767972898406, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898505 XXXX 1767972898505, Thread 15129: XXXX 1767972898505, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898507 XXXX 1767972898507, Thread 15129: XXXX 1767972898507, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898606 XXXX 1767972898606, Thread 15129: XXXX 1767972898606, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898608 XXXX 1767972898608, Thread 15129: XXXX 1767972898608, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898707 XXXX 1767972898707, Thread 15129: XXXX 1767972898707, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898709 XXXX 1767972898709, Thread 15129: XXXX 1767972898709, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898808 XXXX 1767972898808, Thread 15129: XXXX 1767972898808, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898810 XXXX 1767972898810, Thread 15129: XXXX 1767972898810, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972898909 XXXX 1767972898909, Thread 15129: XXXX 1767972898909, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972898911 XXXX 1767972898911, Thread 15129: XXXX 1767972898911, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899009 XXXX 1767972899009, Thread 15129: XXXX 1767972899009, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899011 XXXX 1767972899011, Thread 15129: XXXX 1767972899011, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899111 XXXX 1767972899111, Thread 15129: XXXX 1767972899111, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899113 XXXX 1767972899113, Thread 15129: XXXX 1767972899113, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899212 XXXX 1767972899212, Thread 15129: XXXX 1767972899212, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899214 XXXX 1767972899214, Thread 15129: XXXX 1767972899214, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899313 XXXX 1767972899313, Thread 15129: XXXX 1767972899313, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899315 XXXX 1767972899315, Thread 15129: XXXX 1767972899315, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899414 XXXX 1767972899414, Thread 15129: XXXX 1767972899414, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899415 XXXX 1767972899415, Thread 15129: XXXX 1767972899415, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899515 XXXX 1767972899515, Thread 15129: XXXX 1767972899515, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899517 XXXX 1767972899517, Thread 15129: XXXX 1767972899517, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899615 XXXX 1767972899615, Thread 15129: XXXX 1767972899615, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899617 XXXX 1767972899617, Thread 15129: XXXX 1767972899616, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899715 XXXX 1767972899715, Thread 15129: XXXX 1767972899715, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899717 XXXX 1767972899717, Thread 15129: XXXX 1767972899716, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899816 XXXX 1767972899816, Thread 15129: XXXX 1767972899816, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899818 XXXX 1767972899818, Thread 15129: XXXX 1767972899818, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972899917 XXXX 1767972899917, Thread 15129: XXXX 1767972899917, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972899919 XXXX 1767972899919, Thread 15129: XXXX 1767972899919, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900017 XXXX 1767972900017, Thread 15129: XXXX 1767972900017, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900019 XXXX 1767972900019, Thread 15129: XXXX 1767972900019, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900119 XXXX 1767972900119, Thread 15129: XXXX 1767972900119, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900121 XXXX 1767972900121, Thread 15129: XXXX 1767972900121, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900221 XXXX 1767972900221, Thread 15129: XXXX 1767972900221, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900223 XXXX 1767972900223, Thread 15129: XXXX 1767972900223, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900323 XXXX 1767972900323, Thread 15129: XXXX 1767972900323, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900326 XXXX 1767972900326, Thread 15129: XXXX 1767972900326, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900424 XXXX 1767972900424, Thread 15129: XXXX 1767972900424, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900425 XXXX 1767972900425, Thread 15129: XXXX 1767972900425, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900525 XXXX 1767972900525, Thread 15129: XXXX 1767972900525, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900526 XXXX 1767972900526, Thread 15129: XXXX 1767972900526, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900626 XXXX 1767972900626, Thread 15129: XXXX 1767972900626, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900627 XXXX 1767972900627, Thread 15129: XXXX 1767972900627, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900726 XXXX 1767972900726, Thread 15129: XXXX 1767972900726, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900729 XXXX 1767972900729, Thread 15129: XXXX 1767972900729, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900827 XXXX 1767972900827, Thread 15129: XXXX 1767972900827, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900829 XXXX 1767972900829, Thread 15129: XXXX 1767972900829, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972900929 XXXX 1767972900929, Thread 15129: XXXX 1767972900929, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972900931 XXXX 1767972900931, Thread 15129: XXXX 1767972900931, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901029 XXXX 1767972901029, Thread 15129: XXXX 1767972901029, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901031 XXXX 1767972901031, Thread 15129: XXXX 1767972901031, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901130 XXXX 1767972901130, Thread 15129: XXXX 1767972901130, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901133 XXXX 1767972901133, Thread 15129: XXXX 1767972901133, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901230 XXXX 1767972901230, Thread 15129: XXXX 1767972901230, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901232 XXXX 1767972901232, Thread 15129: XXXX 1767972901232, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901331 XXXX 1767972901331, Thread 15129: XXXX 1767972901331, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901332 XXXX 1767972901332, Thread 15129: XXXX 1767972901332, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901432 XXXX 1767972901432, Thread 15129: XXXX 1767972901432, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901434 XXXX 1767972901434, Thread 15129: XXXX 1767972901434, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901532 XXXX 1767972901532, Thread 15129: XXXX 1767972901532, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901534 XXXX 1767972901534, Thread 15129: XXXX 1767972901534, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901633 XXXX 1767972901633, Thread 15129: XXXX 1767972901633, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901635 XXXX 1767972901635, Thread 15129: XXXX 1767972901635, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901737 XXXX 1767972901737, Thread 15129: XXXX 1767972901737, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901739 XXXX 1767972901739, Thread 15129: XXXX 1767972901739, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901837 XXXX 1767972901837, Thread 15129: XXXX 1767972901837, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901839 XXXX 1767972901839, Thread 15129: XXXX 1767972901839, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972901938 XXXX 1767972901938, Thread 15129: XXXX 1767972901938, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972901940 XXXX 1767972901940, Thread 15129: XXXX 1767972901940, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902039 XXXX 1767972902039, Thread 15129: XXXX 1767972902039, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902041 XXXX 1767972902041, Thread 15129: XXXX 1767972902041, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902139 XXXX 1767972902139, Thread 15129: XXXX 1767972902139, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902141 XXXX 1767972902141, Thread 15129: XXXX 1767972902141, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902239 XXXX 1767972902239, Thread 15129: XXXX 1767972902239, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902241 XXXX 1767972902241, Thread 15129: XXXX 1767972902241, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902340 XXXX 1767972902340, Thread 15129: XXXX 1767972902340, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902342 XXXX 1767972902342, Thread 15129: XXXX 1767972902342, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902441 XXXX 1767972902441, Thread 15129: XXXX 1767972902441, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902443 XXXX 1767972902443, Thread 15129: XXXX 1767972902443, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902541 XXXX 1767972902541, Thread 15129: XXXX 1767972902541, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902543 XXXX 1767972902543, Thread 15129: XXXX 1767972902543, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902641 XXXX 1767972902641, Thread 15129: XXXX 1767972902641, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902643 XXXX 1767972902643, Thread 15129: XXXX 1767972902643, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902742 XXXX 1767972902742, Thread 15129: XXXX 1767972902742, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902744 XXXX 1767972902744, Thread 15129: XXXX 1767972902744, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902842 XXXX 1767972902842, Thread 15129: XXXX 1767972902842, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902844 XXXX 1767972902844, Thread 15129: XXXX 1767972902844, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972902942 XXXX 1767972902942, Thread 15129: XXXX 1767972902942, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972902944 XXXX 1767972902944, Thread 15129: XXXX 1767972902944, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903043 XXXX 1767972903043, Thread 15129: XXXX 1767972903043, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903045 XXXX 1767972903045, Thread 15129: XXXX 1767972903045, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903144 XXXX 1767972903144, Thread 15129: XXXX 1767972903144, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903146 XXXX 1767972903146, Thread 15129: XXXX 1767972903146, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903244 XXXX 1767972903244, Thread 15129: XXXX 1767972903244, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903246 XXXX 1767972903246, Thread 15129: XXXX 1767972903246, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903345 XXXX 1767972903345, Thread 15129: XXXX 1767972903345, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903347 XXXX 1767972903347, Thread 15129: XXXX 1767972903347, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903446 XXXX 1767972903446, Thread 15129: XXXX 1767972903446, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903448 XXXX 1767972903448, Thread 15129: XXXX 1767972903448, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903546 XXXX 1767972903546, Thread 15129: XXXX 1767972903546, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903548 XXXX 1767972903548, Thread 15129: XXXX 1767972903548, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903647 XXXX 1767972903647, Thread 15129: XXXX 1767972903647, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903649 XXXX 1767972903649, Thread 15129: XXXX 1767972903649, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903747 XXXX 1767972903747, Thread 15129: XXXX 1767972903747, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903749 XXXX 1767972903749, Thread 15129: XXXX 1767972903749, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903849 XXXX 1767972903849, Thread 15129: XXXX 1767972903849, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903851 XXXX 1767972903851, Thread 15129: XXXX 1767972903851, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972903950 XXXX 1767972903950, Thread 15129: XXXX 1767972903950, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972903952 XXXX 1767972903952, Thread 15129: XXXX 1767972903952, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904051 XXXX 1767972904051, Thread 15129: XXXX 1767972904051, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904054 XXXX 1767972904054, Thread 15129: XXXX 1767972904054, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904152 XXXX 1767972904152, Thread 15129: XXXX 1767972904152, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904155 XXXX 1767972904155, Thread 15129: XXXX 1767972904155, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904254 XXXX 1767972904254, Thread 15129: XXXX 1767972904254, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904256 XXXX 1767972904256, Thread 15129: XXXX 1767972904256, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904355 XXXX 1767972904355, Thread 15129: XXXX 1767972904355, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904357 XXXX 1767972904357, Thread 15129: XXXX 1767972904357, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904456 XXXX 1767972904456, Thread 15129: XXXX 1767972904456, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904458 XXXX 1767972904458, Thread 15129: XXXX 1767972904458, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904555 XXXX 1767972904555, Thread 15129: XXXX 1767972904555, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904557 XXXX 1767972904557, Thread 15129: XXXX 1767972904557, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904656 XXXX 1767972904656, Thread 15129: XXXX 1767972904656, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904658 XXXX 1767972904658, Thread 15129: XXXX 1767972904658, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904758 XXXX 1767972904758, Thread 15129: XXXX 1767972904758, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904759 XXXX 1767972904759, Thread 15129: XXXX 1767972904759, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904859 XXXX 1767972904859, Thread 15129: XXXX 1767972904859, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904861 XXXX 1767972904861, Thread 15129: XXXX 1767972904861, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972904960 XXXX 1767972904960, Thread 15129: XXXX 1767972904960, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972904962 XXXX 1767972904962, Thread 15129: XXXX 1767972904962, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905061 XXXX 1767972905061, Thread 15129: XXXX 1767972905061, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905063 XXXX 1767972905063, Thread 15129: XXXX 1767972905063, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905161 XXXX 1767972905161, Thread 15129: XXXX 1767972905161, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905163 XXXX 1767972905163, Thread 15129: XXXX 1767972905163, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905263 XXXX 1767972905263, Thread 15129: XXXX 1767972905263, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905265 XXXX 1767972905265, Thread 15129: XXXX 1767972905265, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905364 XXXX 1767972905364, Thread 15129: XXXX 1767972905364, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905366 XXXX 1767972905366, Thread 15129: XXXX 1767972905366, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905464 XXXX 1767972905464, Thread 15129: XXXX 1767972905464, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905466 XXXX 1767972905466, Thread 15129: XXXX 1767972905466, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905565 XXXX 1767972905565, Thread 15129: XXXX 1767972905565, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905567 XXXX 1767972905567, Thread 15129: XXXX 1767972905567, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905665 XXXX 1767972905665, Thread 15129: XXXX 1767972905665, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905667 XXXX 1767972905667, Thread 15129: XXXX 1767972905667, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905766 XXXX 1767972905766, Thread 15129: XXXX 1767972905766, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905768 XXXX 1767972905768, Thread 15129: XXXX 1767972905768, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905866 XXXX 1767972905866, Thread 15129: XXXX 1767972905866, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905868 XXXX 1767972905868, Thread 15129: XXXX 1767972905868, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972905967 XXXX 1767972905967, Thread 15129: XXXX 1767972905967, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972905969 XXXX 1767972905969, Thread 15129: XXXX 1767972905969, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906068 XXXX 1767972906068, Thread 15129: XXXX 1767972906068, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906070 XXXX 1767972906070, Thread 15129: XXXX 1767972906070, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906170 XXXX 1767972906170, Thread 15129: XXXX 1767972906170, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906172 XXXX 1767972906172, Thread 15129: XXXX 1767972906172, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906272 XXXX 1767972906272, Thread 15129: XXXX 1767972906272, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906274 XXXX 1767972906274, Thread 15129: XXXX 1767972906274, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906373 XXXX 1767972906373, Thread 15129: XXXX 1767972906373, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906375 XXXX 1767972906375, Thread 15129: XXXX 1767972906375, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906474 XXXX 1767972906474, Thread 15129: XXXX 1767972906474, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906476 XXXX 1767972906476, Thread 15129: XXXX 1767972906476, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906574 XXXX 1767972906574, Thread 15129: XXXX 1767972906574, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906576 XXXX 1767972906576, Thread 15129: XXXX 1767972906576, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906676 XXXX 1767972906676, Thread 15129: XXXX 1767972906676, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906678 XXXX 1767972906678, Thread 15129: XXXX 1767972906678, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906778 XXXX 1767972906778, Thread 15129: XXXX 1767972906778, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906780 XXXX 1767972906780, Thread 15129: XXXX 1767972906780, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906878 XXXX 1767972906878, Thread 15129: XXXX 1767972906878, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906880 XXXX 1767972906880, Thread 15129: XXXX 1767972906880, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972906978 XXXX 1767972906978, Thread 15129: XXXX 1767972906978, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972906980 XXXX 1767972906980, Thread 15129: XXXX 1767972906980, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907079 XXXX 1767972907079, Thread 15129: XXXX 1767972907079, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907081 XXXX 1767972907081, Thread 15129: XXXX 1767972907081, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907179 XXXX 1767972907179, Thread 15129: XXXX 1767972907179, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907181 XXXX 1767972907181, Thread 15129: XXXX 1767972907181, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907280 XXXX 1767972907280, Thread 15129: XXXX 1767972907280, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907282 XXXX 1767972907282, Thread 15129: XXXX 1767972907282, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907382 XXXX 1767972907382, Thread 15129: XXXX 1767972907382, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907384 XXXX 1767972907384, Thread 15129: XXXX 1767972907384, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907483 XXXX 1767972907483, Thread 15129: XXXX 1767972907483, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907485 XXXX 1767972907485, Thread 15129: XXXX 1767972907485, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907584 XXXX 1767972907584, Thread 15129: XXXX 1767972907584, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907586 XXXX 1767972907586, Thread 15129: XXXX 1767972907586, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907685 XXXX 1767972907685, Thread 15129: XXXX 1767972907685, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907687 XXXX 1767972907687, Thread 15129: XXXX 1767972907687, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907786 XXXX 1767972907786, Thread 15129: XXXX 1767972907786, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907788 XXXX 1767972907788, Thread 15129: XXXX 1767972907788, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907887 XXXX 1767972907887, Thread 15129: XXXX 1767972907887, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907889 XXXX 1767972907889, Thread 15129: XXXX 1767972907889, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972907987 XXXX 1767972907987, Thread 15129: XXXX 1767972907987, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972907989 XXXX 1767972907989, Thread 15129: XXXX 1767972907989, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908087 XXXX 1767972908087, Thread 15129: XXXX 1767972908087, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908089 XXXX 1767972908089, Thread 15129: XXXX 1767972908089, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908187 XXXX 1767972908187, Thread 15129: XXXX 1767972908187, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908189 XXXX 1767972908189, Thread 15129: XXXX 1767972908189, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908288 XXXX 1767972908288, Thread 15129: XXXX 1767972908288, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908290 XXXX 1767972908290, Thread 15129: XXXX 1767972908290, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908388 XXXX 1767972908388, Thread 15129: XXXX 1767972908388, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908390 XXXX 1767972908390, Thread 15129: XXXX 1767972908390, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908489 XXXX 1767972908489, Thread 15129: XXXX 1767972908489, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908491 XXXX 1767972908491, Thread 15129: XXXX 1767972908491, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908591 XXXX 1767972908591, Thread 15129: XXXX 1767972908591, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908593 XXXX 1767972908593, Thread 15129: XXXX 1767972908593, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908692 XXXX 1767972908692, Thread 15129: XXXX 1767972908692, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908694 XXXX 1767972908694, Thread 15129: XXXX 1767972908694, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908792 XXXX 1767972908792, Thread 15129: XXXX 1767972908792, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908794 XXXX 1767972908794, Thread 15129: XXXX 1767972908794, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908892 XXXX 1767972908892, Thread 15129: XXXX 1767972908892, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908894 XXXX 1767972908894, Thread 15129: XXXX 1767972908894, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972908993 XXXX 1767972908993, Thread 15129: XXXX 1767972908993, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972908995 XXXX 1767972908995, Thread 15129: XXXX 1767972908995, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909093 XXXX 1767972909093, Thread 15129: XXXX 1767972909093, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909095 XXXX 1767972909095, Thread 15129: XXXX 1767972909095, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909195 XXXX 1767972909195, Thread 15129: XXXX 1767972909195, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909197 XXXX 1767972909197, Thread 15129: XXXX 1767972909197, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909296 XXXX 1767972909296, Thread 15129: XXXX 1767972909296, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909298 XXXX 1767972909298, Thread 15129: XXXX 1767972909298, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909397 XXXX 1767972909397, Thread 15129: XXXX 1767972909397, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909399 XXXX 1767972909399, Thread 15129: XXXX 1767972909399, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909498 XXXX 1767972909498, Thread 15129: XXXX 1767972909498, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909500 XXXX 1767972909500, Thread 15129: XXXX 1767972909500, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909598 XXXX 1767972909598, Thread 15129: XXXX 1767972909598, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909599 XXXX 1767972909599, Thread 15129: XXXX 1767972909599, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909699 XXXX 1767972909699, Thread 15129: XXXX 1767972909699, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909701 XXXX 1767972909701, Thread 15129: XXXX 1767972909701, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909800 XXXX 1767972909800, Thread 15129: XXXX 1767972909800, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909801 XXXX 1767972909801, Thread 15129: XXXX 1767972909801, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972909901 XXXX 1767972909901, Thread 15129: XXXX 1767972909901, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972909902 XXXX 1767972909902, Thread 15129: XXXX 1767972909902, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910002 XXXX 1767972910002, Thread 15129: XXXX 1767972910002, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910004 XXXX 1767972910004, Thread 15129: XXXX 1767972910004, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910102 XXXX 1767972910102, Thread 15129: XXXX 1767972910102, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910103 XXXX 1767972910103, Thread 15129: XXXX 1767972910103, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910202 XXXX 1767972910202, Thread 15129: XXXX 1767972910202, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910203 XXXX 1767972910203, Thread 15129: XXXX 1767972910203, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910303 XXXX 1767972910303, Thread 15129: XXXX 1767972910303, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910304 XXXX 1767972910304, Thread 15129: XXXX 1767972910304, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910403 XXXX 1767972910403, Thread 15129: XXXX 1767972910403, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910405 XXXX 1767972910405, Thread 15129: XXXX 1767972910405, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910504 XXXX 1767972910504, Thread 15129: XXXX 1767972910504, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910505 XXXX 1767972910505, Thread 15129: XXXX 1767972910505, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910604 XXXX 1767972910604, Thread 15129: XXXX 1767972910604, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910606 XXXX 1767972910606, Thread 15129: XXXX 1767972910606, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910705 XXXX 1767972910705, Thread 15129: XXXX 1767972910705, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910706 XXXX 1767972910706, Thread 15129: XXXX 1767972910706, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910805 XXXX 1767972910805, Thread 15129: XXXX 1767972910805, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910807 XXXX 1767972910807, Thread 15129: XXXX 1767972910807, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972910907 XXXX 1767972910907, Thread 15129: XXXX 1767972910907, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972910908 XXXX 1767972910908, Thread 15129: XXXX 1767972910908, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911008 XXXX 1767972911008, Thread 15129: XXXX 1767972911008, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911010 XXXX 1767972911010, Thread 15129: XXXX 1767972911010, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911109 XXXX 1767972911109, Thread 15129: XXXX 1767972911109, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911111 XXXX 1767972911111, Thread 15129: XXXX 1767972911111, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911209 XXXX 1767972911209, Thread 15129: XXXX 1767972911209, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911211 XXXX 1767972911211, Thread 15129: XXXX 1767972911211, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911311 XXXX 1767972911311, Thread 15129: XXXX 1767972911311, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911313 XXXX 1767972911313, Thread 15129: XXXX 1767972911313, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911412 XXXX 1767972911412, Thread 15129: XXXX 1767972911412, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911414 XXXX 1767972911414, Thread 15129: XXXX 1767972911414, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911512 XXXX 1767972911512, Thread 15129: XXXX 1767972911512, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911514 XXXX 1767972911514, Thread 15129: XXXX 1767972911514, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911614 XXXX 1767972911614, Thread 15129: XXXX 1767972911614, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911616 XXXX 1767972911616, Thread 15129: XXXX 1767972911616, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911716 XXXX 1767972911716, Thread 15129: XXXX 1767972911716, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911718 XXXX 1767972911718, Thread 15129: XXXX 1767972911718, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911816 XXXX 1767972911816, Thread 15129: XXXX 1767972911816, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911818 XXXX 1767972911818, Thread 15129: XXXX 1767972911818, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972911916 XXXX 1767972911916, Thread 15129: XXXX 1767972911916, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972911918 XXXX 1767972911918, Thread 15129: XXXX 1767972911918, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912017 XXXX 1767972912017, Thread 15129: XXXX 1767972912017, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912019 XXXX 1767972912019, Thread 15129: XXXX 1767972912019, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912118 XXXX 1767972912118, Thread 15129: XXXX 1767972912118, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912120 XXXX 1767972912120, Thread 15129: XXXX 1767972912120, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912219 XXXX 1767972912219, Thread 15129: XXXX 1767972912219, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912221 XXXX 1767972912221, Thread 15129: XXXX 1767972912221, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912320 XXXX 1767972912320, Thread 15129: XXXX 1767972912320, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912322 XXXX 1767972912322, Thread 15129: XXXX 1767972912322, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912422 XXXX 1767972912422, Thread 15129: XXXX 1767972912422, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912424 XXXX 1767972912424, Thread 15129: XXXX 1767972912424, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912522 XXXX 1767972912522, Thread 15129: XXXX 1767972912522, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912524 XXXX 1767972912524, Thread 15129: XXXX 1767972912524, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912623 XXXX 1767972912623, Thread 15129: XXXX 1767972912623, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912625 XXXX 1767972912625, Thread 15129: XXXX 1767972912625, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912724 XXXX 1767972912724, Thread 15129: XXXX 1767972912724, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912726 XXXX 1767972912726, Thread 15129: XXXX 1767972912726, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912824 XXXX 1767972912824, Thread 15129: XXXX 1767972912824, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912826 XXXX 1767972912826, Thread 15129: XXXX 1767972912826, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972912924 XXXX 1767972912924, Thread 15129: XXXX 1767972912924, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972912926 XXXX 1767972912926, Thread 15129: XXXX 1767972912926, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913025 XXXX 1767972913025, Thread 15129: XXXX 1767972913025, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913027 XXXX 1767972913027, Thread 15129: XXXX 1767972913027, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913125 XXXX 1767972913125, Thread 15129: XXXX 1767972913125, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913127 XXXX 1767972913127, Thread 15129: XXXX 1767972913127, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913225 XXXX 1767972913225, Thread 15129: XXXX 1767972913225, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913227 XXXX 1767972913227, Thread 15129: XXXX 1767972913227, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913325 XXXX 1767972913325, Thread 15129: XXXX 1767972913325, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913327 XXXX 1767972913327, Thread 15129: XXXX 1767972913327, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913425 XXXX 1767972913425, Thread 15129: XXXX 1767972913425, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913427 XXXX 1767972913427, Thread 15129: XXXX 1767972913427, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913525 XXXX 1767972913525, Thread 15129: XXXX 1767972913525, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913527 XXXX 1767972913527, Thread 15129: XXXX 1767972913527, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913626 XXXX 1767972913626, Thread 15129: XXXX 1767972913626, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913628 XXXX 1767972913628, Thread 15129: XXXX 1767972913628, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913726 XXXX 1767972913726, Thread 15129: XXXX 1767972913726, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913728 XXXX 1767972913728, Thread 15129: XXXX 1767972913728, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913826 XXXX 1767972913826, Thread 15129: XXXX 1767972913826, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913829 XXXX 1767972913829, Thread 15129: XXXX 1767972913829, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972913926 XXXX 1767972913926, Thread 15129: XXXX 1767972913926, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972913928 XXXX 1767972913928, Thread 15129: XXXX 1767972913928, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914026 XXXX 1767972914026, Thread 15129: XXXX 1767972914026, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914027 XXXX 1767972914027, Thread 15129: XXXX 1767972914027, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914126 XXXX 1767972914126, Thread 15129: XXXX 1767972914126, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914127 XXXX 1767972914127, Thread 15129: XXXX 1767972914127, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914226 XXXX 1767972914226, Thread 15129: XXXX 1767972914226, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914227 XXXX 1767972914227, Thread 15129: XXXX 1767972914227, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914327 XXXX 1767972914327, Thread 15129: XXXX 1767972914327, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914329 XXXX 1767972914329, Thread 15129: XXXX 1767972914329, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914428 XXXX 1767972914428, Thread 15129: XXXX 1767972914428, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914429 XXXX 1767972914429, Thread 15129: XXXX 1767972914429, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914528 XXXX 1767972914528, Thread 15129: XXXX 1767972914528, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914530 XXXX 1767972914530, Thread 15129: XXXX 1767972914530, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914628 XXXX 1767972914628, Thread 15129: XXXX 1767972914628, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914630 XXXX 1767972914630, Thread 15129: XXXX 1767972914630, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914730 XXXX 1767972914730, Thread 15129: XXXX 1767972914730, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914731 XXXX 1767972914731, Thread 15129: XXXX 1767972914731, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914830 XXXX 1767972914830, Thread 15129: XXXX 1767972914830, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914832 XXXX 1767972914832, Thread 15129: XXXX 1767972914832, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972914931 XXXX 1767972914931, Thread 15129: XXXX 1767972914931, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972914933 XXXX 1767972914933, Thread 15129: XXXX 1767972914933, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915031 XXXX 1767972915031, Thread 15129: XXXX 1767972915031, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915032 XXXX 1767972915032, Thread 15129: XXXX 1767972915032, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915132 XXXX 1767972915132, Thread 15129: XXXX 1767972915132, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915133 XXXX 1767972915133, Thread 15129: XXXX 1767972915133, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915233 XXXX 1767972915233, Thread 15129: XXXX 1767972915233, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915235 XXXX 1767972915235, Thread 15129: XXXX 1767972915235, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915333 XXXX 1767972915333, Thread 15129: XXXX 1767972915333, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915334 XXXX 1767972915334, Thread 15129: XXXX 1767972915334, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915434 XXXX 1767972915434, Thread 15129: XXXX 1767972915434, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915435 XXXX 1767972915435, Thread 15129: XXXX 1767972915435, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915534 XXXX 1767972915534, Thread 15129: XXXX 1767972915534, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915535 XXXX 1767972915535, Thread 15129: XXXX 1767972915535, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915634 XXXX 1767972915634, Thread 15129: XXXX 1767972915634, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915636 XXXX 1767972915636, Thread 15129: XXXX 1767972915636, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915735 XXXX 1767972915735, Thread 15129: XXXX 1767972915735, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915737 XXXX 1767972915737, Thread 15129: XXXX 1767972915737, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915836 XXXX 1767972915836, Thread 15129: XXXX 1767972915836, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915838 XXXX 1767972915838, Thread 15129: XXXX 1767972915838, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972915939 XXXX 1767972915939, Thread 15129: XXXX 1767972915939, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972915941 XXXX 1767972915941, Thread 15129: XXXX 1767972915941, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916039 XXXX 1767972916039, Thread 15129: XXXX 1767972916039, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916041 XXXX 1767972916041, Thread 15129: XXXX 1767972916041, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916139 XXXX 1767972916139, Thread 15129: XXXX 1767972916139, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916141 XXXX 1767972916141, Thread 15129: XXXX 1767972916141, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916240 XXXX 1767972916240, Thread 15129: XXXX 1767972916240, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916242 XXXX 1767972916242, Thread 15129: XXXX 1767972916242, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916341 XXXX 1767972916341, Thread 15129: XXXX 1767972916341, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916343 XXXX 1767972916343, Thread 15129: XXXX 1767972916343, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916443 XXXX 1767972916443, Thread 15129: XXXX 1767972916443, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916445 XXXX 1767972916445, Thread 15129: XXXX 1767972916445, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916544 XXXX 1767972916544, Thread 15129: XXXX 1767972916544, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916546 XXXX 1767972916546, Thread 15129: XXXX 1767972916546, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916644 XXXX 1767972916644, Thread 15129: XXXX 1767972916644, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916646 XXXX 1767972916646, Thread 15129: XXXX 1767972916646, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916744 XXXX 1767972916744, Thread 15129: XXXX 1767972916744, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916746 XXXX 1767972916746, Thread 15129: XXXX 1767972916746, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916845 XXXX 1767972916845, Thread 15129: XXXX 1767972916845, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916846 XXXX 1767972916846, Thread 15129: XXXX 1767972916846, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972916945 XXXX 1767972916945, Thread 15129: XXXX 1767972916945, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972916946 XXXX 1767972916946, Thread 15129: XXXX 1767972916946, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917046 XXXX 1767972917046, Thread 15129: XXXX 1767972917046, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917048 XXXX 1767972917048, Thread 15129: XXXX 1767972917048, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917146 XXXX 1767972917146, Thread 15129: XXXX 1767972917146, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917147 XXXX 1767972917147, Thread 15129: XXXX 1767972917147, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917246 XXXX 1767972917246, Thread 15129: XXXX 1767972917246, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917247 XXXX 1767972917247, Thread 15129: XXXX 1767972917247, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917346 XXXX 1767972917346, Thread 15129: XXXX 1767972917346, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917348 XXXX 1767972917348, Thread 15129: XXXX 1767972917348, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917446 XXXX 1767972917446, Thread 15129: XXXX 1767972917446, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917448 XXXX 1767972917448, Thread 15129: XXXX 1767972917448, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917546 XXXX 1767972917546, Thread 15129: XXXX 1767972917546, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917547 XXXX 1767972917547, Thread 15129: XXXX 1767972917547, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917647 XXXX 1767972917647, Thread 15129: XXXX 1767972917647, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917649 XXXX 1767972917649, Thread 15129: XXXX 1767972917649, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917748 XXXX 1767972917748, Thread 15129: XXXX 1767972917748, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917750 XXXX 1767972917750, Thread 15129: XXXX 1767972917750, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917849 XXXX 1767972917849, Thread 15129: XXXX 1767972917849, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917851 XXXX 1767972917851, Thread 15129: XXXX 1767972917851, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972917950 XXXX 1767972917950, Thread 15129: XXXX 1767972917950, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972917952 XXXX 1767972917952, Thread 15129: XXXX 1767972917952, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918051 XXXX 1767972918051, Thread 15129: XXXX 1767972918051, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918053 XXXX 1767972918053, Thread 15129: XXXX 1767972918053, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918152 XXXX 1767972918152, Thread 15129: XXXX 1767972918152, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918154 XXXX 1767972918154, Thread 15129: XXXX 1767972918154, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918254 XXXX 1767972918254, Thread 15129: XXXX 1767972918254, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918256 XXXX 1767972918256, Thread 15129: XXXX 1767972918256, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918356 XXXX 1767972918356, Thread 15129: XXXX 1767972918356, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918358 XXXX 1767972918358, Thread 15129: XXXX 1767972918358, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918457 XXXX 1767972918457, Thread 15129: XXXX 1767972918457, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918459 XXXX 1767972918459, Thread 15129: XXXX 1767972918459, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918558 XXXX 1767972918558, Thread 15129: XXXX 1767972918558, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918560 XXXX 1767972918560, Thread 15129: XXXX 1767972918560, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918659 XXXX 1767972918659, Thread 15129: XXXX 1767972918659, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918661 XXXX 1767972918661, Thread 15129: XXXX 1767972918661, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918760 XXXX 1767972918760, Thread 15129: XXXX 1767972918760, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918762 XXXX 1767972918762, Thread 15129: XXXX 1767972918762, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918862 XXXX 1767972918862, Thread 15129: XXXX 1767972918862, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918864 XXXX 1767972918864, Thread 15129: XXXX 1767972918864, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972918964 XXXX 1767972918964, Thread 15129: XXXX 1767972918964, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972918966 XXXX 1767972918966, Thread 15129: XXXX 1767972918966, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919065 XXXX 1767972919065, Thread 15129: XXXX 1767972919065, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919067 XXXX 1767972919067, Thread 15129: XXXX 1767972919067, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919166 XXXX 1767972919166, Thread 15129: XXXX 1767972919166, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919168 XXXX 1767972919168, Thread 15129: XXXX 1767972919168, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919267 XXXX 1767972919267, Thread 15129: XXXX 1767972919267, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919269 XXXX 1767972919269, Thread 15129: XXXX 1767972919269, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919368 XXXX 1767972919368, Thread 15129: XXXX 1767972919368, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919370 XXXX 1767972919370, Thread 15129: XXXX 1767972919370, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919470 XXXX 1767972919470, Thread 15129: XXXX 1767972919470, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919472 XXXX 1767972919472, Thread 15129: XXXX 1767972919472, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919571 XXXX 1767972919571, Thread 15129: XXXX 1767972919571, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919573 XXXX 1767972919573, Thread 15129: XXXX 1767972919573, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919672 XXXX 1767972919672, Thread 15129: XXXX 1767972919672, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919674 XXXX 1767972919674, Thread 15129: XXXX 1767972919674, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919774 XXXX 1767972919774, Thread 15129: XXXX 1767972919774, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919776 XXXX 1767972919776, Thread 15129: XXXX 1767972919776, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919875 XXXX 1767972919875, Thread 15129: XXXX 1767972919875, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919877 XXXX 1767972919877, Thread 15129: XXXX 1767972919877, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972919977 XXXX 1767972919977, Thread 15129: XXXX 1767972919977, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972919978 XXXX 1767972919978, Thread 15129: XXXX 1767972919978, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920077 XXXX 1767972920077, Thread 15129: XXXX 1767972920077, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920079 XXXX 1767972920079, Thread 15129: XXXX 1767972920079, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920178 XXXX 1767972920178, Thread 15129: XXXX 1767972920178, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920180 XXXX 1767972920180, Thread 15129: XXXX 1767972920180, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920279 XXXX 1767972920279, Thread 15129: XXXX 1767972920279, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920281 XXXX 1767972920281, Thread 15129: XXXX 1767972920281, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920381 XXXX 1767972920381, Thread 15129: XXXX 1767972920381, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920383 XXXX 1767972920383, Thread 15129: XXXX 1767972920383, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920483 XXXX 1767972920483, Thread 15129: XXXX 1767972920483, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920485 XXXX 1767972920485, Thread 15129: XXXX 1767972920485, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920584 XXXX 1767972920584, Thread 15129: XXXX 1767972920584, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920586 XXXX 1767972920586, Thread 15129: XXXX 1767972920586, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920685 XXXX 1767972920685, Thread 15129: XXXX 1767972920685, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920687 XXXX 1767972920687, Thread 15129: XXXX 1767972920687, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920786 XXXX 1767972920786, Thread 15129: XXXX 1767972920786, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920788 XXXX 1767972920788, Thread 15129: XXXX 1767972920788, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920886 XXXX 1767972920886, Thread 15129: XXXX 1767972920886, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920888 XXXX 1767972920888, Thread 15129: XXXX 1767972920888, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972920987 XXXX 1767972920987, Thread 15129: XXXX 1767972920987, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972920989 XXXX 1767972920989, Thread 15129: XXXX 1767972920989, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921087 XXXX 1767972921087, Thread 15129: XXXX 1767972921087, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921089 XXXX 1767972921089, Thread 15129: XXXX 1767972921089, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921188 XXXX 1767972921188, Thread 15129: XXXX 1767972921188, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921190 XXXX 1767972921190, Thread 15129: XXXX 1767972921190, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921289 XXXX 1767972921289, Thread 15129: XXXX 1767972921289, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921291 XXXX 1767972921291, Thread 15129: XXXX 1767972921291, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921390 XXXX 1767972921390, Thread 15129: XXXX 1767972921390, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921392 XXXX 1767972921392, Thread 15129: XXXX 1767972921392, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921491 XXXX 1767972921491, Thread 15129: XXXX 1767972921491, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921493 XXXX 1767972921493, Thread 15129: XXXX 1767972921493, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921593 XXXX 1767972921593, Thread 15129: XXXX 1767972921593, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921595 XXXX 1767972921595, Thread 15129: XXXX 1767972921595, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921694 XXXX 1767972921694, Thread 15129: XXXX 1767972921694, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921696 XXXX 1767972921696, Thread 15129: XXXX 1767972921696, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921796 XXXX 1767972921796, Thread 15129: XXXX 1767972921796, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921798 XXXX 1767972921798, Thread 15129: XXXX 1767972921798, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921898 XXXX 1767972921898, Thread 15129: XXXX 1767972921898, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972921901 XXXX 1767972921901, Thread 15129: XXXX 1767972921901, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972921999 XXXX 1767972921999, Thread 15129: XXXX 1767972921999, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972922002 XXXX 1767972922002, Thread 15129: XXXX 1767972922002, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972922099 XXXX 1767972922099, Thread 15129: XXXX 1767972922099, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972922102 XXXX 1767972922102, Thread 15129: XXXX 1767972922102, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972922199 XXXX 1767972922199, Thread 15129: XXXX 1767972922199, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972922201 XXXX 1767972922201, Thread 15129: XXXX 1767972922201, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972922300 XXXX 1767972922300, Thread 15129: XXXX 1767972922300, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972922302 XXXX 1767972922302, Thread 15129: XXXX 1767972922302, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972922400 XXXX 1767972922400, Thread 15129: XXXX 1767972922400, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972922402 XXXX 1767972922402, Thread 15129: XXXX 1767972922402, Exiting Thread 15129: Commands::runScriptBasic  
+6489 1768392962049 GEN4_CONNECT_DIAGNOSTICS:MPLABCommTool is null
 
-15129 1767972922407 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:HaltTarget
-15129 1767972922407 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
-15129 1767972922407 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 null
-15129 1767972922407 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
-15129 1767972922407 XXXX 1767972922407, Thread 15129: XXXX 1767972922407, Entering Thread 15129: Commands::runScriptBasic, script name = Halt, timeOut = -1 ms  
-15129 1767972922447 XXXX 1767972922447, Thread 15129: XXXX 1767972922447, Exiting Thread 15129: Commands::runScriptBasic  
-15129 1767972922448 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Post:HaltTarget
-15129 1767972922448 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return Value
-15129 1767972922448 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 true
-15129 1767972922448 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Return End
-15129 1767972922448 XXXX 1767972922448, Thread 15129: XXXX 1767972922448, Entering Thread 15129: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
-15129 1767972922469 XXXX 1767972922469, Thread 15129: XXXX 1767972922469, Exiting Thread 15129: Commands::runScriptBasic  
+6489 1768392962049 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:GetFirmwareInfo
+6489 1768392962049 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
+6489 1768392962049 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 null
+6489 1768392962049 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:GetFirmwareInfo
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 FirmwareInfo: Values:
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 FirmwareInfo: boot = false, bootVer = 01.00.00, apVer = 02.01.00, fpgaVer = 01.00.14, scriptVer = 00.06.71, macAddress = 0495583524952554853485152485253, devID = a1020e00, devID1 = 2, devSN0 = ffffffff, devSN1 = ffffffff, serialNumber = JIT173610241, appCommitID = null, scriptCommitID = 74cdf38a4d, PCB_ID = 2
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
 
-15129 1767972922481 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:DebugReadTargetMemory
-15129 1767972922481 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
-15129 1767972922481 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Emulation
-15129 1767972922481 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 fd0068
-15129 1767972922482 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 fd006b
-15129 1767972922482 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Length = 4
-15129 1767972922482 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
-15129 1767972922482 XXXX 1767972922482, Thread 15129: XXXX 1767972922482, Entering Thread 15129: Commands::runScriptWithUpload, script name = ReadEmu  
-15129 1767972922482 XXXX 1767972922482, Thread 15129: XXXX 1767972922482, Entering Thread 15129: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x4 bytes long  
-15855 1767973006785 XXXX 1767973006785, Thread 15855: ToolCommUsb::read, com.Received returned -1 
-15855 1767973006785 XXXX 1767973006785, Thread 15855: ToolCommUsb::DataReader::run, fatal RI4ControllerException: {null} 
-15129 1767973006797 XXXX 1767973006797, Thread 15129: com.Send returned false 
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:SetPowerInfo
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 PowerInfo: Values:
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 PowerInfo: shotDownSystem = true, isToolPower = false, voltage = 0,000000, useVppFirst = false, useLowVoltageProgramming = true, useMaintainActivePower = false
+6489 1768392962057 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
+6489 1768392962057 XXXX 1768392962057, Thread 6489: XXXX 1768392962057, Entering Thread 6489: Commands::runScriptBasic with script contents. contents[0] = 0x39, ...  
+6489 1768392962058 XXXX 1768392962058, Thread 6489: XXXX 1768392962058, Exiting Thread 6489: Commands::runScriptBasic  
+6489 1768392962058 XXXX 1768392962058, Thread 6489: XXXX 1768392962058, Entering Thread 6489: Commands::runScriptBasic with script contents. contents[0] = 0x44, ...  
+6489 1768392962079 XXXX 1768392962079, Thread 6489: XXXX 1768392962079, Exiting Thread 6489: Commands::runScriptBasic  
+6489 1768392962079 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:SetPowerInfo
+6489 1768392962079 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
+6489 1768392962079 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 none
+6489 1768392962079 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
+6489 1768392962079 GEN4_CONNECT_DIAGNOSTICS:Removing plug and play observer com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@5b266e5b
+6489 1768392962079 GEN4_CONNECT_DIAGNOSTICS:Begin PlugNPlayObservers list dump:
+6489 1768392962079 GEN4_CONNECT_DIAGNOSTICS:End PlugNPlayObservers list dump:
+6489 1768392962080 GEN4_CONNECT_DIAGNOSTICS:Calling RIDbgToolCom.Disconnect
+6489 1768392962080 GEN4_CONNECT_DIAGNOSTICS:Calling MPLABCommTool.Detach to remove tool from plug and play list
+6489 1768392962080 GEN4_CONNECT_DIAGNOSTICS:Calling RIDbgToolCom.DisconnectFromMPlabComm
+6489 1768392962080 GEN4_CONNECT_DIAGNOSTICS:Calling MPLABCommTool.Disconnect
+6499 1768392967570 GEN4_CONNECT_DIAGNOSTICS:MPLABCommTool is NOT null
+6499 1768392967570 GEN4_CONNECT_DIAGNOSTICS:AttachedToolPID = 9015, AttachedToolVID = 4d8
+6499 1768392967570 GEN4_CONNECT_DIAGNOSTICS:transport type = USB
+6499 1768392967570 GEN4_CONNECT_DIAGNOSTICS:AttachedToolPID = 9015, AttachedToolVID = 4d8
+6499 1768392967596 com.microchip.mplab.mdbcore.RealICETool.RIDbgToolCom
+6499 1768392967596 GEN4_CONNECT_DIAGNOSTICS:Before MPLABCommTool.Connect()
+6499 1768392967596 GEN4_CONNECT_DIAGNOSTICS:After MPLABCommTool.Connect()
+6499 1768392967596 GEN4_CONNECT_DIAGNOSTICS:Adding new plug and play observer com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@73130462
+6499 1768392967596 GEN4_CONNECT_DIAGNOSTICS:Begin PlugNPlayObservers list dump:
+6499 1768392967596 GEN4_CONNECT_DIAGNOSTICS:com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@73130462
+6499 1768392967596 GEN4_CONNECT_DIAGNOSTICS:End PlugNPlayObservers list dump:
+
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:init
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: Values:
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: pcAddress = 0000002e, Vpp = 3,25, useRowEraseIfVoltageIsLow = false, voltageBelowWhichUseRowErase = 0,00, deviceName = dsPIC33EP512MU814, programmerType = DSPIC33EP
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: MemInfo values:
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffffff, exists = true, startAddr = 00000000, endAddr = 007fffff, rowSize = 0800, rowEraseSize = 0800, addrInc = 0002, widthProgram = 0004
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffff, exists = true, startAddr = 00f80004, endAddr = 00f80011, rowSize = 0001, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 00ff, exists = true, startAddr = 00f80012, endAddr = 00f80013, rowSize = 0001, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffffff, exists = true, startAddr = 00800000, endAddr = 00800fff, rowSize = 0800, rowEraseSize = 0800, addrInc = 0002, widthProgram = 0004
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 7fffffff, exists = true, startAddr = 00ff0000, endAddr = 00ff0003, rowSize = 0001, rowEraseSize = 0000, addrInc = 0001, widthProgram = 0001
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: CfgRequiredBitsMask Values:
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80004, Mask = 00000003
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80006, Mask = 00000087
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80008, Mask = 000000e7
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000a, Mask = 000000ff
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000c, Mask = 0000003f
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000e, Mask = 00000077
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80010, Mask = 00000003
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 BasicInfo: Values:
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 BasicInfo: InputStream = com.microchip.mplab.libs.toolpacksupport.EquatableFileInputStream@d90ad689, ToolFlavor = PIC32C
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:init
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 none
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4DebugInterface
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4DebugInterfaceImpl@704d88a8
+6499 1768392967622 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ProgramInterface
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4ProgramInterfaceImpl@6505348a
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ConnectInterface
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ArmToolsController.comm.ICD4ArmConnectInterfaceImpl@34c7d21
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ControllerDiagnosticsInterface
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4ControllerDiagnosticsInterfaceImpl@6817493e
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 ProgrammerToGo
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 null
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Status
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.OpStatus@4d5a7c18
+6499 1768392967624 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Pre:SetProgramExec
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Test
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 800000
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Length = 6126
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Post:SetProgramExec
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 true
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:EstablishCommunincations
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.mdbcore.ICD4Tool.ICD4Com@21b8e2e1
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:EstablishCommunincations
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 true
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
+
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:GetFirmwareInfo
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 null
+6499 1768392967697 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
+6499 1768392967711 XXXX 1768392967711, Thread 6499: com.Send returned false 
+6499 1768392967711 XXXX 1768392967711, Thread 6499: execCommand: exception after writeSideChanel null 

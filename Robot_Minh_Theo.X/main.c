@@ -463,6 +463,7 @@ void SetNextRobotStateInAutomaticMode() {
 }
 
 int main(void) {
+    while (BOUTON1 == 0);
     /***********************************************************************************************Initialisation oscillateur*/
     /***********************************************************************************************/
     InitOscillator();
@@ -486,18 +487,18 @@ int main(void) {
     InitUART2();
 
 
-//    robotState.PidX.Kp = 2.0;
-//    robotState.PidX.Ki = 50.0;
-//    robotState.PidX.Kd = 0.0;
+    //    robotState.PidX.Kp = 2.0;
+    //    robotState.PidX.Ki = 50.0;
+    //    robotState.PidX.Kd = 0.0;
 
-    robotState.PidSpeedDroite.Kp = 1.5;
-    robotState.PidSpeedDroite.Ki = 30.0;
-    robotState.PidSpeedDroite.Kd = 0;
-    
-    robotState.PidSpeedGauche.Kp = 1.5;
-    robotState.PidSpeedGauche.Ki = 30.0;
-    robotState.PidSpeedGauche.Kd = 0;
-        
+    robotState.PidSpeedDroite.Kp = 2.5;
+    robotState.PidSpeedDroite.Ki = 40.0;
+    robotState.PidSpeedDroite.Kd = 0.005;
+
+    robotState.PidSpeedGauche.Kp = 2.5;
+    robotState.PidSpeedGauche.Ki = 40.0;
+    robotState.PidSpeedGauche.Kd = 0.005;
+
     robotState.PidSpeedDroite.erreurProportionelleMax = 100;
     robotState.PidSpeedDroite.erreurIntegraleMax = 100;
     robotState.PidSpeedDroite.erreurDeriveeMax = 100;
@@ -505,27 +506,27 @@ int main(void) {
     robotState.PidSpeedGauche.erreurProportionelleMax = 100;
     robotState.PidSpeedGauche.erreurIntegraleMax = 100;
     robotState.PidSpeedGauche.erreurDeriveeMax = 100;
-    
-    
-//    robotState.PidTheta.Kp = 1.0;
-//    robotState.PidTheta.Ki = 40.0;
-//    robotState.PidTheta.Kd = 0.001;
-//    
-//    robotState.PidX.Kp = 4.0;
-//    robotState.PidX.Ki = 30.0;
-//    robotState.PidX.Kd = 0.0;
-//
-//    robotState.PidTheta.Kp = 2.2;
-//    robotState.PidTheta.Ki = 18.0;
-//    robotState.PidTheta.Kd = 0.001;
-//
-//    robotState.PidTheta.erreurProportionelleMax = 100;
-//    robotState.PidTheta.erreurIntegraleMax = 100;
-//    robotState.PidTheta.erreurDeriveeMax = 100;
-//
-//    robotState.PidX.erreurProportionelleMax = 100;
-//    robotState.PidX.erreurIntegraleMax = 100;
-//    robotState.PidX.erreurDeriveeMax = 100;
+
+
+    //    robotState.PidTheta.Kp = 1.0;
+    //    robotState.PidTheta.Ki = 40.0;
+    //    robotState.PidTheta.Kd = 0.001;
+    //    
+    //    robotState.PidX.Kp = 4.0;
+    //    robotState.PidX.Ki = 30.0;
+    //    robotState.PidX.Kd = 0.0;
+    //
+    //    robotState.PidTheta.Kp = 2.2;
+    //    robotState.PidTheta.Ki = 18.0;
+    //    robotState.PidTheta.Kd = 0.001;
+    //
+    //    robotState.PidTheta.erreurProportionelleMax = 100;
+    //    robotState.PidTheta.erreurIntegraleMax = 100;
+    //    robotState.PidTheta.erreurDeriveeMax = 100;
+    //
+    //    robotState.PidX.erreurProportionelleMax = 100;
+    //    robotState.PidX.erreurIntegraleMax = 100;
+    //    robotState.PidX.erreurDeriveeMax = 100;
 
     robotState.xPosFromOdometry += 0;
     robotState.yPosFromOdometry += 0;
@@ -549,13 +550,13 @@ int main(void) {
     //   SetupPidAsservissement(&robotState.PD_Position_Angulaire, 0.01, 0, 0.2, 100, 100, 100);
     //    SetupPidAsservissement(&robotState.PD_Position_Lineaire, 0.01, 0, 0.1, 100, 100, 100);
 
-    
-     robotState.PD_Position_aruco_angle.corrP = 0;
+
+    robotState.PD_Position_aruco_angle.corrP = 0;
     robotState.PD_Position_aruco_angle.corrI = 0;
     robotState.PD_Position_aruco_angle.corrD = 0;
     robotState.PD_Position_aruco_angle.erreurIntegrale = 0;
-       SetupPidAsservissement(&robotState.PD_Position_aruco_angle, 4, 0, 0.1, 100, 100, 100);
-    
+    SetupPidAsservissement(&robotState.PD_Position_aruco_angle, 0.2, 0  ,5, 100, 100, 100);
+
     robotState.positionGhost.x = xoffset;
     robotState.positionGhost.y = yoffset;
     robotState.xPosFromOdometry = xoffset;
@@ -569,86 +570,85 @@ int main(void) {
     /***********************************************************************************************/
     //int vitesse = 20;
 
-
-
-
+    while (BOUTON1 == 1);
     while (1) {
-
-            while (CB_RX1_IsDataAvailable()) {
-                UartDecodeMessageTX1(CB_RX1_Get());
-            }
-               while (CB_RX2_IsDataAvailable()) {
-                UartDecodeMessageTX2(CB_RX2_Get());
-            }
-             
-
-            //        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
-            //            SetGhostTarget(positions[currentTargetIndex]);
-            //            currentTargetIndex++;
-            //            
-            //        }
-            //        BOUTON1_PREV = BOUTON1;
+      
+    
+    while (CB_RX1_IsDataAvailable()) {
+        UartDecodeMessageTX1(CB_RX1_Get());
+    }
+    while (CB_RX2_IsDataAvailable()) {
+        UartDecodeMessageTX2(CB_RX2_Get());
+    }
 
 
-
-            if (BOUTON1 == 1) {
-                GhostStart = 1;
-            }
-            if (currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
-                SetGhostTarget(positions[currentTargetIndex]);
-                currentTargetIndex++;
-            }
+    //        if (BOUTON1 == 1 && BOUTON1_PREV == 0 && GhostFlag == 0 ) {
+    //            SetGhostTarget(positions[currentTargetIndex]);
+    //            currentTargetIndex++;
+    //            
+    //        }
+    //        BOUTON1_PREV = BOUTON1;
 
 
-            //        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {
-            //            if (currentTargetIndex < totalTargets) {
-            //                SetGhostTarget(positions[currentTargetIndex]);
-            //                currentTargetIndex++;
-            //            }
-            //        }
-            //        BOUTON1_PREV = BOUTON1;
 
-            //            if (flagMessageMotor) {
-            //                flagMessageMotor = 0;
-            //                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
-            //                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
-            //                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
-            //            }         
-            //            else {
-            //            }
-//            if (robotState.distanceTelemetreGauche > 20) {
-//                LED_BLEUE_1 = 1;
-//            } else {
-//                LED_BLEUE_1 = 0;
+    //            if (BOUTON1 == 1) {
+    //                GhostStart = 1;
+    //            }
+    //            if (currentTargetIndex < totalTargets && GhostStart == 1 && GhostFlag == 0) {
+    //                SetGhostTarget(positions[currentTargetIndex]);
+    //                currentTargetIndex++;
+    //            }
 
-//            }
-            if (robotState.distanceTelemetrePlusGauche > 20) {
-                LED_BLANCHE_1 = 1;
 
-            } else {
-                LED_BLANCHE_1 = 0;
+    //        if (BOUTON1 == 1 && BOUTON1_PREV == 0) {
+    //            if (currentTargetIndex < totalTargets) {
+    //                SetGhostTarget(positions[currentTargetIndex]);
+    //                currentTargetIndex++;
+    //            }
+    //        }
+    //        BOUTON1_PREV = BOUTON1;
 
-            }
-            if (robotState.distanceTelemetreCentre > 20) {
-                LED_ORANGE_1 = 1;
+    //            if (flagMessageMotor) {
+    //                flagMessageMotor = 0;
+    //                payload_motors[0] = (unsigned char) robotState.vitesseGaucheConsigne;
+    //                payload_motors[1] = (unsigned char) robotState.vitesseDroiteConsigne;
+    //                UartEncodeAndSendMessage(0x0040, 2, payload_motors);
+    //            }         
+    //            else {
+    //            }
+    //            if (robotState.distanceTelemetreGauche > 20) {
+    //                LED_BLEUE_1 = 1;
+    //            } else {
+    //                LED_BLEUE_1 = 0;
 
-            } else {
-                LED_ORANGE_1 = 0;
+    //            }
+    if (robotState.distanceTelemetrePlusGauche > 20) {
+        LED_BLANCHE_1 = 1;
 
-            }
-            if (robotState.distanceTelemetrePlusDroit > 20) {
+    } else {
+        LED_BLANCHE_1 = 0;
 
-                LED_VERTE_1 = 1;
+    }
+    if (robotState.distanceTelemetreCentre > 20) {
+        LED_ORANGE_1 = 1;
 
-            } else {
-                LED_VERTE_1 = 0;
+    } else {
+        LED_ORANGE_1 = 0;
 
-            }
-            //        if (robotState.distanceTelemetreDroit > 20) {
-            //            LED_ROUGE_1 = 1;
-            //        } else {
-            //            LED_ROUGE_1 = 0;
-            //        }
+    }
+    if (robotState.distanceTelemetrePlusDroit > 20) {
+
+        LED_VERTE_1 = 1;
+
+    } else {
+        LED_VERTE_1 = 0;
+
+    }
+    //        if (robotState.distanceTelemetreDroit > 20) {
+    //            LED_ROUGE_1 = 1;
+    //        } else {
+    //            LED_ROUGE_1 = 0;
+    //        }
 
 }
-    }
+}

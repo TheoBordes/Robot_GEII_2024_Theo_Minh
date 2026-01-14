@@ -360,12 +360,15 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             float X = getFloat(payload, 2);
             float Y = getFloat(payload, 6);
             float Z = getFloat(payload, 10);
-            aruco_time = timestamp;
             robotState.Aruco_ID = getIntFrom2Bytes(payload, 0);
-            robotState.X_Aruco = X;
-            robotState.Y_Aruco = Y;
-            robotState.Z_Aruco = Z;
-            ArUco_ProcessMessage();
+            if (robotState.Aruco_ID == 36) {
+                aruco_time = timestamp;
+
+                robotState.X_Aruco = X;
+                robotState.Y_Aruco = Y;
+                robotState.Z_Aruco = Z;
+            }
+            //ArUco_ProcessMessage();
 
             break;
         case SetLed:

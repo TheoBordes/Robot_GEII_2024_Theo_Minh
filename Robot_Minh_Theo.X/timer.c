@@ -39,16 +39,20 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
 
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
-    UpdateGhost();
-    UpdateArucoFollow();
+    ArUco_ProcessMessage();
     QEIUpdateData();
+    UpdateArucoFollow();
+    UpdateGhost();
+    
+
+
     tick++;
 
 
     if (tick >= 20) {
-        SendPidInfo();
-        SendInfoGhost();
-        SendPositionData();
+        //        SendPidInfo();
+        //        SendInfoGhost();
+        //        SendPositionData();
         tick = 0;
     }
 
