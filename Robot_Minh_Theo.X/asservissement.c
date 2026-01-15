@@ -111,6 +111,7 @@ void UpdateArucoFollow() {
     if ( (timestamp - aruco_time) > Aruco_Time_Loss ){
         robotState.ArucoSpeedLin = 0;
         robotState.ArucoSpeedAngle = 0;
+        robotState.vitesseLineaireGhost=  0;
          
     }
                                                                                                                                                                                   
