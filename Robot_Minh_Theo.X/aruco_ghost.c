@@ -19,6 +19,20 @@ void ArUco_SetGains(float gainAngle, float gainDistance, float maxLinear, float 
 }
 
 void ArUco_ProcessMessage(void) {
+
+
+    static int sens_aruco = 1;
+    double notvisible = (timestamp - aruco_time) > 2000.0;
+    double alpha = (timestamp - aruco_time) / 500.0;
+    if (alpha > 1) alpha = 1;
+    else if (alpha < 0) alpha = 0;
+    
+    
+    static double targetLin = 0;
+    static double targetAng = 0;
+
+
+
     const double DIST_STOP = 0.30;
     const double Tsampling = 0.004;
     const double accLin = 0.4;
@@ -32,18 +46,23 @@ void ArUco_ProcessMessage(void) {
     double distanceRestante = sqrt(fX * fX + fY * fY);
     double erreurDistance = distanceRestante - DIST_STOP;
 
-    double vLinMaxAbs =1.5* (erreurDistance)* (1 - (fabs(angleCible) / 2.094));
-    double tAngleMaxAbs = 2.5* angleCible *( 1.6-  (distanceRestante/100.0));
+    double vLinMaxAbs = 2.4 * (erreurDistance)* (1 - (fabs(angleCible) / 2.094));
+    double tAngleMaxAbs = 3 * angleCible * (1.2 - (distanceRestante / 100.0));
+
 
     double VconsRech = 0;
-    double TconsRech = 0;
+    double TconsRech = 1;
 
-    double alpha = (timestamp - aruco_time) / 500.0;
-    if (alpha > 1) alpha = 1;
-    else if (alpha < 0) alpha = 0;
+    if (notvisible) {
 
-    double targetLin = (1 - alpha * alpha) * vLinMaxAbs + alpha * alpha * VconsRech;
-    double targetAng = (1 - alpha * alpha) * tAngleMaxAbs + alpha * alpha * TconsRech;
+         targetLin = 0;
+         targetAng =  TconsRech *alpha*alpha*alpha;
+    } else {
+
+         targetLin = (1 - alpha * alpha) * vLinMaxAbs;
+         targetAng = (1 - alpha * alpha) * tAngleMaxAbs;
+    }
+
 
     double diffLin = targetLin - robotState.ArucoSpeedLin;
     double maxStepLin = accLin * Tsampling;
@@ -59,6 +78,7 @@ void ArUco_ProcessMessage(void) {
     if (diffAng > maxStepAng) diffAng = maxStepAng;
     else if (diffAng < -maxStepAng) diffAng = -maxStepAng;
 
+    sens_aruco = (angleCible > 0) ? 1 : -1;
     robotState.ArucoSpeedAngle += diffAng;
 }
 

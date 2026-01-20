@@ -361,7 +361,7 @@ void UartProcessDecodedMessage(int function, int payloadLength, unsigned char* p
             float Y = getFloat(payload, 6);
             float Z = getFloat(payload, 10);
             robotState.Aruco_ID = getIntFrom2Bytes(payload, 0);
-            if (robotState.Aruco_ID == 47) {
+            if (robotState.Aruco_ID == 36) {
                 aruco_time = timestamp;
 
                 robotState.X_Aruco = X;

@@ -28,16 +28,16 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/robot.h</file>
+            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/aruco_ghost.c</file>
             <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/asservissement.c</file>
             <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/main.c</file>
-            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/aruco_ghost.h</file>
-            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/ghost.c</file>
             <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/UART_Protocol.c</file>
-            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/CB_RX1.c</file>
             <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/timer.c</file>
-            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/aruco_ghost.c</file>
+            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/aruco_ghost.h</file>
             <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/CB_RX2.c</file>
+            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/robot.h</file>
+            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/ghost.c</file>
+            <file>file:/C:/Github/Robot_GEII_2024_Theo_Minh/Robot_Minh_Theo.X/CB_RX1.c</file>
         </group>
     </open-files>
 </project-private>
