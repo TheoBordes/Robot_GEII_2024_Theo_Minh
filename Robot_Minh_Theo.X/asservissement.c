@@ -15,7 +15,6 @@
 #include "aruco_ghost.h"
 #include "timer.h"
 
-#define DISTROUES 0.2175
 #define pidInfoLinear 0x0071
 unsigned char payload_Pid_info[104] = {};
 extern unsigned long timestamp;
@@ -84,7 +83,7 @@ void UpdateConsGhost() {
     double erreurLineaire = distance * cos(diffAngle);
 
 
-    //robotState.vitesseLinearConsigne = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
+    robotState.vitesseLinearConsigne = Correcteur(&robotState.PD_Position_Lineaire, erreurLineaire);
     robotState.vitesseAngulaireConsigne = Correcteur(&robotState.PD_Position_Angulaire, erreurTheta);
 
     robotState.vitesseDroiteConsigne = robotState.vitesseLinearConsigne + robotState.vitesseAngulaireConsigne * DISTROUES / 2;

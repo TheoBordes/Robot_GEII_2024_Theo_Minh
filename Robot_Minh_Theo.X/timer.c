@@ -39,10 +39,10 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
 
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
-    ArUco_ProcessMessage();
     QEIUpdateData();
+    //UpdateConsGhost();
     UpdateArucoFollow();
-    UpdateGhost();
+   // UpdateGhost();
     
 
 
@@ -124,6 +124,8 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     //    if (robotState.mode) {
     //        OperatingSystemLoop();
     //    }
+    
+    ArUco_ProcessMessage();
     ADC_value();
     timestamp++;
 

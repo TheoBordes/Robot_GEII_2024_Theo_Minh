@@ -26,6 +26,8 @@ typedef struct _PidCorrector
     double corrD;
 }PidCorrector;
 
+#define DISTROUES 0.2175
+
 void UpdateConsGhost();
 void UpdateArucoFollow();
 

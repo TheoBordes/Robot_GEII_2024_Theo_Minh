@@ -26,9 +26,9 @@ extern int GhostFlag;
 //double positionWaypoint;
 //double distanceRestante = 0;
 
-const float AccTheta =3;
+const float AccTheta = 3;
 const float VThetaMax = 5;
-const float Tsampling = 1/FREQ_ECH_QEI;
+const float Tsampling = 1 / FREQ_ECH_QEI;
 
 float vLin = 0.0;
 const float accLin = 0.8;
@@ -77,8 +77,10 @@ void UpdateRotation() {
         robotState.vitesseAngulaireGhost = vTheta;
 
     }
-//    
+
+
     
+
 }
 
 void UpdateDeplacementGhost() {
@@ -124,8 +126,7 @@ void UpdateDeplacementGhost() {
     if (vLin == 0 && distanceRestante < 0.01) {
         robotState.positionGhost = robotState.positionWaypoint;
     }
-        robotState.vitesseLineaireGhost = vLin;
-
+    robotState.vitesseLineaireGhost = vLin;
 
 }
 
@@ -161,7 +162,7 @@ double angle = 0;
 void UpdateGhost() {
     switch (GhostState) {
         case Stopped:
-            
+
 
             if (GhostFlag) {
                 GhostState = Rotation;
@@ -174,7 +175,7 @@ void UpdateGhost() {
             UpdateRotation();
 
             if (fabs(robotState.thetaGhost - angle) < 0.001) {
-                GhostState = Stopped; //test pour pas de déplacement linéaire 
+                GhostState = DeplacementLineaire; //test pour pas de déplacement linéaire 
             } // je suis pas sur s'il faut se baser sur la position du robot pour passer au ghost de déplacement linéaire
 
             break;
@@ -189,7 +190,7 @@ void UpdateGhost() {
 
 
             break;
-    }            
+    }
 }
 
 double distance(Point a, Point b) {

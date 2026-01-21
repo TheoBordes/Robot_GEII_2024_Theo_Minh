@@ -20,20 +20,22 @@ void ArUco_SetGains(float gainAngle, float gainDistance, float maxLinear, float 
 
 void ArUco_ProcessMessage(void) {
 
-
+    static unsigned long preTimestamp = 0;
     static int sens_aruco = 1;
+    double notvisible2 = (timestamp - aruco_time) > 7000.0;
     double notvisible = (timestamp - aruco_time) > 2000.0;
-    double alpha = (timestamp - aruco_time) / 500.0;
+
+    double alpha = (timestamp - aruco_time) / 1000.0;
     if (alpha > 1) alpha = 1;
     else if (alpha < 0) alpha = 0;
-    
-    
+
+
     static double targetLin = 0;
     static double targetAng = 0;
+    static int sensRot = 1;
 
 
-
-    const double DIST_STOP = 0.30;
+    const double DIST_STOP = 0.2;
     const double Tsampling = 0.004;
     const double accLin = 0.4;
     const double accAng = 4.0;
@@ -46,23 +48,61 @@ void ArUco_ProcessMessage(void) {
     double distanceRestante = sqrt(fX * fX + fY * fY);
     double erreurDistance = distanceRestante - DIST_STOP;
 
-    double vLinMaxAbs = 2.4 * (erreurDistance)* (1 - (fabs(angleCible) / 2.094));
-    double tAngleMaxAbs = 3 * angleCible * (1.2 - (distanceRestante / 100.0));
+    double vLinMaxAbs = 2.1 * (erreurDistance)* (1 - (fabs(angleCible) / 2.094));
+    double tAngleMaxAbs = 2.3 * angleCible * (1.2 - (distanceRestante / 100.0));
 
-
-    double VconsRech = 0;
-    double TconsRech = 1;
-
-    if (notvisible) {
-
-         targetLin = 0;
-         targetAng =  TconsRech *alpha*alpha*alpha;
-    } else {
-
-         targetLin = (1 - alpha * alpha) * vLinMaxAbs;
-         targetAng = (1 - alpha * alpha) * tAngleMaxAbs;
+    double distanceCentre = (robotState.distanceTelemetreCentre - 5) / 60.0;
+    if (distanceCentre < 0) {
+        distanceCentre = 0;
     }
 
+    double coefficientAngleG = (20 - robotState.distanceTelemetreGauche) / 20 + ((10 - robotState.distanceTelemetrePlusGauche) / 10) * 0.5;
+    double coefficientAngleD = (20 - robotState.distanceTelemetreDroit) / 20 + ((10 - robotState.distanceTelemetrePlusDroit) / 10) * 0.5;
+    double coefficientAngle = coefficientAngleD;
+
+    if (coefficientAngleG > coefficientAngleD) {
+        coefficientAngle = coefficientAngleG;
+    }
+
+    if (coefficientAngle < 0) {
+        coefficientAngle = 0;
+    }
+
+    double VconsRech = 0.5;
+    double TconsRech = 2.2;
+
+
+//    if ((timestamp - preTimestamp) > 10000) {
+//        preTimestamp = timestamp;
+//        if (sensRot == 1) {
+//            sensRot = -1;
+//        } else {
+//            sensRot = 1;
+//        }
+//    }
+
+    if (notvisible2) {
+        targetLin = VconsRech * distanceCentre;
+        if (robotState.distanceTelemetreCentre < 10) {
+            targetAng = 3.0 *sensRot;
+        } else {
+            targetAng = TconsRech * coefficientAngle * sensRot;
+
+        }
+    } else if (notvisible && !notvisible2) {
+
+
+        targetAng = 1.8 * sens_aruco;
+
+    } else {
+        targetLin = (1 - alpha) * vLinMaxAbs;
+        targetAng = (1 - alpha) * tAngleMaxAbs;
+        if (sensRot == 1) {
+            sensRot = -1;
+        } else {
+            sensRot = 1;
+        }
+    }
 
     double diffLin = targetLin - robotState.ArucoSpeedLin;
     double maxStepLin = accLin * Tsampling;
