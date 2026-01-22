@@ -175,11 +175,11 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x14da          0x1f47  (8007)
 .const                      0x16da                0x1c            0x2a  (42)
-.text                       0x16f6              0x2e70          0x45a8  (17832)
-.dinit                      0x4566                0xfc           0x17a  (378)
-.text                       0x4662               0x556           0x801  (2049)
+.text                       0x16f6              0x2e54          0x457e  (17790)
+.dinit                      0x454a                0xfc           0x17a  (378)
+.text                       0x4646               0x556           0x801  (2049)
 
-                   Total "program" memory used (bytes):         0x6e94  (28308) 5%
+                   Total "program" memory used (bytes):         0x6e6a  (28266) 5%
 
 
 Auxflash Memory  [Origin = 0x7fc000, Length = 0x3ffa]
@@ -503,147 +503,147 @@ External Symbols in Program Memory (by address):
                   0x0033fe                  _ArUco_SetFollowParams
                   0x00340e                  _ArUco_SetGains
                   0x003424                  _ArUco_ProcessMessage
-                  0x003994                  _InitQEI1
-                  0x0039a4                  _InitQEI2
-                  0x0039b4                  _QEIUpdateData
-                  0x003c3e                  _test
-                  0x003c7e                  _SendPositionData
-                  0x003cf0                  _InitTimer1
-                  0x003d08                  _InitTimer23
-                  0x003d3c                  _InitTimer4
-                  0x003d54                  _SetFreqTimer1
-                  0x003ebe                  _SetFreqTimer4
-                  0x004028                  _InitPWM
-                  0x004060                  _PWMUpdateSpeed
-                  0x0041a0                  _PWMSetSpeedConsigne
-                  0x0041de                  _PWMSetSpeedConsignePolaire
-                  0x00424c                  _PWMSetSpeedConsigneIndependant
-                  0x004262                  _Modulo2PIAngleRadian
-                  0x0042c6                  _getFloat
-                  0x0042ee                  _getIntFrom2Bytes
-                  0x004316                  _getFloat2
-                  0x00435c                  _getDouble
-                  0x00437c                  _getBytesFromFloat
-                  0x0043b6                  _getBytesFromInt32
-                  0x0043f2                  _getBytesFromDouble
-                  0x00442c                  _Abs
-                  0x004456                  _Max
-                  0x004484                  _Min
-                  0x0044b2                  _LimitToInterval
-                  0x0044fa                  _RadianToDegree
-                  0x004530                  _DegreeToRadian
-                  0x004662                  _SendMessageTX1
-                  0x0046a6                  _CB_TX1_Add
-                  0x0046c6                  _CB_TX1_Get
-                  0x0046e4                  _SendOneTX1
-                  0x0046f8                  _CB_TX1_IsTranmitting
-                  0x004700                  _CB_TX1_GetDataSize
-                  0x004720                  _CB_TX1_GetRemainingSize
-                  0x00472e                  _SendMessageTX2
-                  0x004772                  _CB_TX2_Add
-                  0x004792                  _CB_TX2_Get
-                  0x0047b0                  _SendOneTX2
-                  0x0047c4                  _CB_TX2_IsTransmiting
-                  0x0047cc                  _CB_TX2_GetDataSize
-                  0x0047ec                  _CB_TX2_GetRemainingSize
-                  0x0047fa                  _InitIO
-                  0x004880                  _LockIO
-                  0x004894                  _UnlockIO
-                  0x0048a8                  _InitUART2
-                  0x0048da                  _InitUART1
-                  0x00490c                  _SendMessageDirect
-                  0x00494c                  _InitADC1
-                  0x0049c6                  _ADC1StartConversionSequence
-                  0x0049d0                  _ADCGetResult
-                  0x0049d8                  _ADCIsConversionFinished
-                  0x0049e0                  _ADCClearConversionFinishedFlag
-                  0x0049ea                  _InitOscillator
-                  0x004a84                  _CB_RX2_Add
-                  0x004ab6                  _CB_RX2_Get
-                  0x004ad6                  _CB_RX2_IsDataAvailable
-                  0x004aea                  _CB_RX2_GetDataSize
-                  0x004b0a                  _CB_RX2_GetRemainingSize
-                  0x004b18                  _CB_RX1_Add
-                  0x004b48                  _CB_RX1_Get
-                  0x004b68                  _CB_RX1_IsDataAvailable
-                  0x004b7c                  _CB_RX1_GetDataSize
-                  0x004b9c                  _CB_RX1_GetRemainingSize
-                  0x004baa                  _SetRobotAutoControlState
+                  0x003978                  _InitQEI1
+                  0x003988                  _InitQEI2
+                  0x003998                  _QEIUpdateData
+                  0x003c22                  _test
+                  0x003c62                  _SendPositionData
+                  0x003cd4                  _InitTimer1
+                  0x003cec                  _InitTimer23
+                  0x003d20                  _InitTimer4
+                  0x003d38                  _SetFreqTimer1
+                  0x003ea2                  _SetFreqTimer4
+                  0x00400c                  _InitPWM
+                  0x004044                  _PWMUpdateSpeed
+                  0x004184                  _PWMSetSpeedConsigne
+                  0x0041c2                  _PWMSetSpeedConsignePolaire
+                  0x004230                  _PWMSetSpeedConsigneIndependant
+                  0x004246                  _Modulo2PIAngleRadian
+                  0x0042aa                  _getFloat
+                  0x0042d2                  _getIntFrom2Bytes
+                  0x0042fa                  _getFloat2
+                  0x004340                  _getDouble
+                  0x004360                  _getBytesFromFloat
+                  0x00439a                  _getBytesFromInt32
+                  0x0043d6                  _getBytesFromDouble
+                  0x004410                  _Abs
+                  0x00443a                  _Max
+                  0x004468                  _Min
+                  0x004496                  _LimitToInterval
+                  0x0044de                  _RadianToDegree
+                  0x004514                  _DegreeToRadian
+                  0x004646                  _SendMessageTX1
+                  0x00468a                  _CB_TX1_Add
+                  0x0046aa                  _CB_TX1_Get
+                  0x0046c8                  _SendOneTX1
+                  0x0046dc                  _CB_TX1_IsTranmitting
+                  0x0046e4                  _CB_TX1_GetDataSize
+                  0x004704                  _CB_TX1_GetRemainingSize
+                  0x004712                  _SendMessageTX2
+                  0x004756                  _CB_TX2_Add
+                  0x004776                  _CB_TX2_Get
+                  0x004794                  _SendOneTX2
+                  0x0047a8                  _CB_TX2_IsTransmiting
+                  0x0047b0                  _CB_TX2_GetDataSize
+                  0x0047d0                  _CB_TX2_GetRemainingSize
+                  0x0047de                  _InitIO
+                  0x004864                  _LockIO
+                  0x004878                  _UnlockIO
+                  0x00488c                  _InitUART2
+                  0x0048be                  _InitUART1
+                  0x0048f0                  _SendMessageDirect
+                  0x004930                  _InitADC1
+                  0x0049aa                  _ADC1StartConversionSequence
+                  0x0049b4                  _ADCGetResult
+                  0x0049bc                  _ADCIsConversionFinished
+                  0x0049c4                  _ADCClearConversionFinishedFlag
+                  0x0049ce                  _InitOscillator
+                  0x004a68                  _CB_RX2_Add
+                  0x004a9a                  _CB_RX2_Get
+                  0x004aba                  _CB_RX2_IsDataAvailable
+                  0x004ace                  _CB_RX2_GetDataSize
+                  0x004aee                  _CB_RX2_GetRemainingSize
+                  0x004afc                  _CB_RX1_Add
+                  0x004b2c                  _CB_RX1_Get
+                  0x004b4c                  _CB_RX1_IsDataAvailable
+                  0x004b60                  _CB_RX1_GetDataSize
+                  0x004b80                  _CB_RX1_GetRemainingSize
+                  0x004b8e                  _SetRobotAutoControlState
                   0xf80004                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x0049c6                  _ADC1StartConversionSequence
-                  0x0049e0                  _ADCClearConversionFinishedFlag
-                  0x0049d0                  _ADCGetResult
-                  0x0049d8                  _ADCIsConversionFinished
+                  0x0049aa                  _ADC1StartConversionSequence
+                  0x0049c4                  _ADCClearConversionFinishedFlag
+                  0x0049b4                  _ADCGetResult
+                  0x0049bc                  _ADCIsConversionFinished
                   0x002106                  _ADC_value
-                  0x00442c                  _Abs
+                  0x004410                  _Abs
                   0x0016da                  _AccTheta
                   0x002b7e                  _AngleVersCible
                   0x0033f6                  _ArUco_Init
                   0x003424                  _ArUco_ProcessMessage
                   0x0033fe                  _ArUco_SetFollowParams
                   0x00340e                  _ArUco_SetGains
-                  0x004b18                  _CB_RX1_Add
-                  0x004b48                  _CB_RX1_Get
-                  0x004b7c                  _CB_RX1_GetDataSize
-                  0x004b9c                  _CB_RX1_GetRemainingSize
-                  0x004b68                  _CB_RX1_IsDataAvailable
-                  0x004a84                  _CB_RX2_Add
-                  0x004ab6                  _CB_RX2_Get
-                  0x004aea                  _CB_RX2_GetDataSize
-                  0x004b0a                  _CB_RX2_GetRemainingSize
-                  0x004ad6                  _CB_RX2_IsDataAvailable
-                  0x0046a6                  _CB_TX1_Add
-                  0x0046c6                  _CB_TX1_Get
-                  0x004700                  _CB_TX1_GetDataSize
-                  0x004720                  _CB_TX1_GetRemainingSize
-                  0x0046f8                  _CB_TX1_IsTranmitting
-                  0x004772                  _CB_TX2_Add
-                  0x004792                  _CB_TX2_Get
-                  0x0047cc                  _CB_TX2_GetDataSize
-                  0x0047ec                  _CB_TX2_GetRemainingSize
-                  0x0047c4                  _CB_TX2_IsTransmiting
+                  0x004afc                  _CB_RX1_Add
+                  0x004b2c                  _CB_RX1_Get
+                  0x004b60                  _CB_RX1_GetDataSize
+                  0x004b80                  _CB_RX1_GetRemainingSize
+                  0x004b4c                  _CB_RX1_IsDataAvailable
+                  0x004a68                  _CB_RX2_Add
+                  0x004a9a                  _CB_RX2_Get
+                  0x004ace                  _CB_RX2_GetDataSize
+                  0x004aee                  _CB_RX2_GetRemainingSize
+                  0x004aba                  _CB_RX2_IsDataAvailable
+                  0x00468a                  _CB_TX1_Add
+                  0x0046aa                  _CB_TX1_Get
+                  0x0046e4                  _CB_TX1_GetDataSize
+                  0x004704                  _CB_TX1_GetRemainingSize
+                  0x0046dc                  _CB_TX1_IsTranmitting
+                  0x004756                  _CB_TX2_Add
+                  0x004776                  _CB_TX2_Get
+                  0x0047b0                  _CB_TX2_GetDataSize
+                  0x0047d0                  _CB_TX2_GetRemainingSize
+                  0x0047a8                  _CB_TX2_IsTransmiting
                   0x0020aa                  _CallCap
                   0x002df0                  _Correcteur
-                  0x004530                  _DegreeToRadian
-                  0x00494c                  _InitADC1
-                  0x0047fa                  _InitIO
-                  0x0049ea                  _InitOscillator
-                  0x004028                  _InitPWM
-                  0x003994                  _InitQEI1
-                  0x0039a4                  _InitQEI2
-                  0x003cf0                  _InitTimer1
-                  0x003d08                  _InitTimer23
-                  0x003d3c                  _InitTimer4
-                  0x0048da                  _InitUART1
-                  0x0048a8                  _InitUART2
-                  0x0044b2                  _LimitToInterval
-                  0x004880                  _LockIO
-                  0x004456                  _Max
-                  0x004484                  _Min
-                  0x004262                  _Modulo2PIAngleRadian
+                  0x004514                  _DegreeToRadian
+                  0x004930                  _InitADC1
+                  0x0047de                  _InitIO
+                  0x0049ce                  _InitOscillator
+                  0x00400c                  _InitPWM
+                  0x003978                  _InitQEI1
+                  0x003988                  _InitQEI2
+                  0x003cd4                  _InitTimer1
+                  0x003cec                  _InitTimer23
+                  0x003d20                  _InitTimer4
+                  0x0048be                  _InitUART1
+                  0x00488c                  _InitUART2
+                  0x004496                  _LimitToInterval
+                  0x004864                  _LockIO
+                  0x00443a                  _Max
+                  0x004468                  _Min
+                  0x004246                  _Modulo2PIAngleRadian
                   0x002bd8                  _NormalizeAngle
-                  0x0041a0                  _PWMSetSpeedConsigne
-                  0x00424c                  _PWMSetSpeedConsigneIndependant
-                  0x0041de                  _PWMSetSpeedConsignePolaire
-                  0x004060                  _PWMUpdateSpeed
-                  0x0039b4                  _QEIUpdateData
-                  0x0044fa                  _RadianToDegree
+                  0x004184                  _PWMSetSpeedConsigne
+                  0x004230                  _PWMSetSpeedConsigneIndependant
+                  0x0041c2                  _PWMSetSpeedConsignePolaire
+                  0x004044                  _PWMUpdateSpeed
+                  0x003998                  _QEIUpdateData
+                  0x0044de                  _RadianToDegree
                   0x002d64                  _SendInfoGhost
-                  0x00490c                  _SendMessageDirect
-                  0x004662                  _SendMessageTX1
-                  0x00472e                  _SendMessageTX2
-                  0x0046e4                  _SendOneTX1
-                  0x0047b0                  _SendOneTX2
+                  0x0048f0                  _SendMessageDirect
+                  0x004646                  _SendMessageTX1
+                  0x004712                  _SendMessageTX2
+                  0x0046c8                  _SendOneTX1
+                  0x004794                  _SendOneTX2
                   0x0032ae                  _SendPidInfo
-                  0x003c7e                  _SendPositionData
-                  0x003d54                  _SetFreqTimer1
-                  0x003ebe                  _SetFreqTimer4
+                  0x003c62                  _SendPositionData
+                  0x003d38                  _SetFreqTimer1
+                  0x003ea2                  _SetFreqTimer4
                   0x002c26                  _SetGhostTarget
                   0x00231c                  _SetNextRobotStateInAutomaticMode
-                  0x004baa                  _SetRobotAutoControlState
+                  0x004b8e                  _SetRobotAutoControlState
                   0x002da0                  _SetupPidAsservissement
                   0x0016e2                  _Tsampling
                   0x0016f6                  _UartCalculateChecksum
@@ -651,7 +651,7 @@ External Symbols in Program Memory (by name):
                   0x001922                  _UartDecodeMessageTX2
                   0x001762                  _UartEncodeAndSendMessage
                   0x0019f8                  _UartProcessDecodedMessage
-                  0x004894                  _UnlockIO
+                  0x004878                  _UnlockIO
                   0x00321e                  _UpdateArucoFollow
                   0x00300e                  _UpdateAsservissement
                   0x003090                  _UpdateConsGhost
@@ -719,17 +719,17 @@ External Symbols in Program Memory (by name):
                   0x0010e2                  _fmaxf
                   0x001138                  _fminf
                   0x00118c                  _fmodf
-                  0x0043f2                  _getBytesFromDouble
-                  0x00437c                  _getBytesFromFloat
-                  0x0043b6                  _getBytesFromInt32
-                  0x00435c                  _getDouble
-                  0x0042c6                  _getFloat
-                  0x004316                  _getFloat2
-                  0x0042ee                  _getIntFrom2Bytes
+                  0x0043d6                  _getBytesFromDouble
+                  0x004360                  _getBytesFromFloat
+                  0x00439a                  _getBytesFromInt32
+                  0x004340                  _getDouble
+                  0x0042aa                  _getFloat
+                  0x0042fa                  _getFloat2
+                  0x0042d2                  _getIntFrom2Bytes
                   0x002456                  _main
                   0x0012c2                  _sinf
                   0x0013c2                  _sqrtf
-                  0x003c3e                  _test
+                  0x003c22                  _test
                   0x002072                  _trigger
                   0x00208e                  _trigger_mid
                   0x0016ea                  _vLinMax
@@ -1084,7 +1084,7 @@ __FUID0
  .debug_abbrev      0x1bf7         0x14 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
  .debug_abbrev      0x1c0b         0x14 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfdi.EP_o)
 
-.debug_line         0x0000       0x31e3
+.debug_line         0x0000       0x31dc
  *(.debug_line)
  .debug_line        0x0000        0x455 build/default/production/main.o
  .debug_line        0x0455        0x158 build/default/production/ChipConfig.o
@@ -1102,32 +1102,32 @@ __FUID0
  .debug_line        0x1a57        0x169 build/default/production/Utilities.o
  .debug_line        0x1bc0        0x388 build/default/production/asservissement.o
  .debug_line        0x1f48        0x2ba build/default/production/ghost.o
- .debug_line        0x2202        0x222 build/default/production/aruco_ghost.o
- .debug_line        0x2424        0x1b4 build/default/production/CB_RX2.o
- .debug_line        0x25d8        0x1d4 build/default/production/CB_TX2.o
- .debug_line        0x27ac         0x3a c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
- .debug_line        0x27e6         0x38 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
- .debug_line        0x281e         0x59 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
- .debug_line        0x2877         0x56 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
- .debug_line        0x28cd         0x3d c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
- .debug_line        0x290a         0x3e c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_line        0x2948         0x36 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fne.EP_o)
- .debug_line        0x297e         0x4d c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
- .debug_line        0x29cb        0x145 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_line        0x2b10        0x130 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_line        0x2c40         0xcf c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_line        0x2d0f         0x75 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_line        0x2d84         0x7d c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_line        0x2e01         0x61 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
- .debug_line        0x2e62         0x54 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_line        0x2eb6         0x9b c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
- .debug_line        0x2f51         0x7c c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_line        0x2fcd         0x56 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
- .debug_line        0x3023         0x4a c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_line        0x306d         0x73 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_line        0x30e0         0x5d c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
- .debug_line        0x313d         0x45 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
- .debug_line        0x3182         0x61 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfdi.EP_o)
+ .debug_line        0x2202        0x21b build/default/production/aruco_ghost.o
+ .debug_line        0x241d        0x1b4 build/default/production/CB_RX2.o
+ .debug_line        0x25d1        0x1d4 build/default/production/CB_TX2.o
+ .debug_line        0x27a5         0x3a c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
+ .debug_line        0x27df         0x38 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
+ .debug_line        0x2817         0x59 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
+ .debug_line        0x2870         0x56 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
+ .debug_line        0x28c6         0x3d c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
+ .debug_line        0x2903         0x3e c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_line        0x2941         0x36 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fne.EP_o)
+ .debug_line        0x2977         0x4d c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+ .debug_line        0x29c4        0x145 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
+ .debug_line        0x2b09        0x130 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
+ .debug_line        0x2c39         0xcf c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_line        0x2d08         0x75 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_line        0x2d7d         0x7d c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_line        0x2dfa         0x61 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
+ .debug_line        0x2e5b         0x54 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_line        0x2eaf         0x9b c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
+ .debug_line        0x2f4a         0x7c c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
+ .debug_line        0x2fc6         0x56 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
+ .debug_line        0x301c         0x4a c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
+ .debug_line        0x3066         0x73 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_line        0x30d9         0x5d c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
+ .debug_line        0x3136         0x45 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
+ .debug_line        0x317b         0x61 c:/program files/microchip/xc-dsc/v3.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfdi.EP_o)
 
 .debug_frame        0x0000        0xc98
  *(.debug_frame)
@@ -4466,7 +4466,7 @@ __c30_signature
                     0x96ee                  _xoffset
                     0x96f2                  _yoffset
 
-.text             0x0016f6       0x2e70
+.text             0x0016f6       0x2e54
  .text            0x0016f6        0x7e2 build/default/production/UART_Protocol.o
                   0x0016f6                  _UartCalculateChecksum
                   0x001762                  _UartEncodeAndSendMessage
@@ -4497,93 +4497,93 @@ __c30_signature
                   0x003090                  _UpdateConsGhost
                   0x00321e                  _UpdateArucoFollow
                   0x0032ae                  _SendPidInfo
- .text            0x0033f6        0x59e build/default/production/aruco_ghost.o
+ .text            0x0033f6        0x582 build/default/production/aruco_ghost.o
                   0x0033f6                  _ArUco_Init
                   0x0033fe                  _ArUco_SetFollowParams
                   0x00340e                  _ArUco_SetGains
                   0x003424                  _ArUco_ProcessMessage
- .text            0x003994        0x35c build/default/production/QEI.o
-                  0x003994                  _InitQEI1
-                  0x0039a4                  _InitQEI2
-                  0x0039b4                  _QEIUpdateData
-                  0x003c3e                  _test
-                  0x003c7e                  _SendPositionData
- .text            0x003cf0        0x338 build/default/production/timer.o
-                  0x003cf0                  _InitTimer1
-                  0x003d08                  _InitTimer23
-                  0x003d3c                  _InitTimer4
-                  0x003d54                  _SetFreqTimer1
-                  0x003ebe                  _SetFreqTimer4
- .text            0x004028        0x23a build/default/production/PWM.o
-                  0x004028                  _InitPWM
-                  0x004060                  _PWMUpdateSpeed
-                  0x0041a0                  _PWMSetSpeedConsigne
-                  0x0041de                  _PWMSetSpeedConsignePolaire
-                  0x00424c                  _PWMSetSpeedConsigneIndependant
- .text            0x004262        0x1ca build/default/production/Utilities.o
-                  0x004262                  _Modulo2PIAngleRadian
-                  0x0042c6                  _getFloat
-                  0x0042ee                  _getIntFrom2Bytes
-                  0x004316                  _getFloat2
-                  0x00435c                  _getDouble
-                  0x00437c                  _getBytesFromFloat
-                  0x0043b6                  _getBytesFromInt32
-                  0x0043f2                  _getBytesFromDouble
- .text            0x00442c        0x13a build/default/production/ToolBox.o
-                  0x00442c                  _Abs
-                  0x004456                  _Max
-                  0x004484                  _Min
-                  0x0044b2                  _LimitToInterval
-                  0x0044fa                  _RadianToDegree
-                  0x004530                  _DegreeToRadian
+ .text            0x003978        0x35c build/default/production/QEI.o
+                  0x003978                  _InitQEI1
+                  0x003988                  _InitQEI2
+                  0x003998                  _QEIUpdateData
+                  0x003c22                  _test
+                  0x003c62                  _SendPositionData
+ .text            0x003cd4        0x338 build/default/production/timer.o
+                  0x003cd4                  _InitTimer1
+                  0x003cec                  _InitTimer23
+                  0x003d20                  _InitTimer4
+                  0x003d38                  _SetFreqTimer1
+                  0x003ea2                  _SetFreqTimer4
+ .text            0x00400c        0x23a build/default/production/PWM.o
+                  0x00400c                  _InitPWM
+                  0x004044                  _PWMUpdateSpeed
+                  0x004184                  _PWMSetSpeedConsigne
+                  0x0041c2                  _PWMSetSpeedConsignePolaire
+                  0x004230                  _PWMSetSpeedConsigneIndependant
+ .text            0x004246        0x1ca build/default/production/Utilities.o
+                  0x004246                  _Modulo2PIAngleRadian
+                  0x0042aa                  _getFloat
+                  0x0042d2                  _getIntFrom2Bytes
+                  0x0042fa                  _getFloat2
+                  0x004340                  _getDouble
+                  0x004360                  _getBytesFromFloat
+                  0x00439a                  _getBytesFromInt32
+                  0x0043d6                  _getBytesFromDouble
+ .text            0x004410        0x13a build/default/production/ToolBox.o
+                  0x004410                  _Abs
+                  0x00443a                  _Max
+                  0x004468                  _Min
+                  0x004496                  _LimitToInterval
+                  0x0044de                  _RadianToDegree
+                  0x004514                  _DegreeToRadian
 
-.dinit            0x004566         0xfc
- .dinit           0x004566         0xfc data_init
+.dinit            0x00454a         0xfc
+ .dinit           0x00454a         0xfc data_init
 
-.text             0x004662        0x556
- .text            0x004662         0xcc build/default/production/CB_TX1.o
-                  0x004662                  _SendMessageTX1
-                  0x0046a6                  _CB_TX1_Add
-                  0x0046c6                  _CB_TX1_Get
-                  0x0046e4                  _SendOneTX1
-                  0x0046f8                  _CB_TX1_IsTranmitting
-                  0x004700                  _CB_TX1_GetDataSize
-                  0x004720                  _CB_TX1_GetRemainingSize
- .text            0x00472e         0xcc build/default/production/CB_TX2.o
-                  0x00472e                  _SendMessageTX2
-                  0x004772                  _CB_TX2_Add
-                  0x004792                  _CB_TX2_Get
-                  0x0047b0                  _SendOneTX2
-                  0x0047c4                  _CB_TX2_IsTransmiting
-                  0x0047cc                  _CB_TX2_GetDataSize
-                  0x0047ec                  _CB_TX2_GetRemainingSize
- .text            0x0047fa         0xae build/default/production/IO.o
-                  0x0047fa                  _InitIO
-                  0x004880                  _LockIO
-                  0x004894                  _UnlockIO
- .text            0x0048a8         0xa4 build/default/production/UART.o
-                  0x0048a8                  _InitUART2
-                  0x0048da                  _InitUART1
-                  0x00490c                  _SendMessageDirect
- .text            0x00494c         0x9e build/default/production/ADC.o
-                  0x00494c                  _InitADC1
-                  0x0049c6                  _ADC1StartConversionSequence
-                  0x0049d0                  _ADCGetResult
-                  0x0049d8                  _ADCIsConversionFinished
-                  0x0049e0                  _ADCClearConversionFinishedFlag
- .text            0x0049ea         0x9a build/default/production/ChipConfig.o
-                  0x0049ea                  _InitOscillator
- .text            0x004a84         0x94 build/default/production/CB_RX2.o
-                  0x004a84                  _CB_RX2_Add
-                  0x004ab6                  _CB_RX2_Get
-                  0x004ad6                  _CB_RX2_IsDataAvailable
-                  0x004aea                  _CB_RX2_GetDataSize
-                  0x004b0a                  _CB_RX2_GetRemainingSize
- .text            0x004b18         0x92 build/default/production/CB_RX1.o
-                  0x004b18                  _CB_RX1_Add
-                  0x004b48                  _CB_RX1_Get
-                  0x004b68                  _CB_RX1_IsDataAvailable
-                  0x004b7c                  _CB_RX1_GetDataSize
-                  0x004b9c                  _CB_RX1_GetRemainingSize
- .text            0x004baa          0xe build/default/production/robot.o
-                  0x004baa                  _SetRobotAutoControlState
+.text             0x004646        0x556
+ .text            0x004646         0xcc build/default/production/CB_TX1.o
+                  0x004646                  _SendMessageTX1
+                  0x00468a                  _CB_TX1_Add
+                  0x0046aa                  _CB_TX1_Get
+                  0x0046c8                  _SendOneTX1
+                  0x0046dc                  _CB_TX1_IsTranmitting
+                  0x0046e4                  _CB_TX1_GetDataSize
+                  0x004704                  _CB_TX1_GetRemainingSize
+ .text            0x004712         0xcc build/default/production/CB_TX2.o
+                  0x004712                  _SendMessageTX2
+                  0x004756                  _CB_TX2_Add
+                  0x004776                  _CB_TX2_Get
+                  0x004794                  _SendOneTX2
+                  0x0047a8                  _CB_TX2_IsTransmiting
+                  0x0047b0                  _CB_TX2_GetDataSize
+                  0x0047d0                  _CB_TX2_GetRemainingSize
+ .text            0x0047de         0xae build/default/production/IO.o
+                  0x0047de                  _InitIO
+                  0x004864                  _LockIO
+                  0x004878                  _UnlockIO
+ .text            0x00488c         0xa4 build/default/production/UART.o
+                  0x00488c                  _InitUART2
+                  0x0048be                  _InitUART1
+                  0x0048f0                  _SendMessageDirect
+ .text            0x004930         0x9e build/default/production/ADC.o
+                  0x004930                  _InitADC1
+                  0x0049aa                  _ADC1StartConversionSequence
+                  0x0049b4                  _ADCGetResult
+                  0x0049bc                  _ADCIsConversionFinished
+                  0x0049c4                  _ADCClearConversionFinishedFlag
+ .text            0x0049ce         0x9a build/default/production/ChipConfig.o
+                  0x0049ce                  _InitOscillator
+ .text            0x004a68         0x94 build/default/production/CB_RX2.o
+                  0x004a68                  _CB_RX2_Add
+                  0x004a9a                  _CB_RX2_Get
+                  0x004aba                  _CB_RX2_IsDataAvailable
+                  0x004ace                  _CB_RX2_GetDataSize
+                  0x004aee                  _CB_RX2_GetRemainingSize
+ .text            0x004afc         0x92 build/default/production/CB_RX1.o
+                  0x004afc                  _CB_RX1_Add
+                  0x004b2c                  _CB_RX1_Get
+                  0x004b4c                  _CB_RX1_IsDataAvailable
+                  0x004b60                  _CB_RX1_GetDataSize
+                  0x004b80                  _CB_RX1_GetRemainingSize
+ .text            0x004b8e          0xe build/default/production/robot.o
+                  0x004b8e                  _SetRobotAutoControlState
